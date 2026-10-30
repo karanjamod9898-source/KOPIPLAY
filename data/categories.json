@@ -1,82 +1,178 @@
 [
   {
-    "id": "pool",
-    "name": "Pool",
-    "slug": "pool",
-    "icon": "🎱",
-    "description": "Classic 8-ball pool, billiards, and cue trick shots.",
-    "color": "#10b981"
+    "id": "shooting",
+    "name": "Shooting",
+    "slug": "shooting",
+    "icon": "crosshair",
+    "description": "Adrenaline-fueled target shootouts, space combat, and alien battles.",
+    "color": "#ef4444"
   },
   {
     "id": "action",
     "name": "Action",
     "slug": "action",
-    "icon": "⚔️",
-    "description": "Fast-paced adrenaline-pumping action games, combat, and reflex battles.",
-    "color": "#ef4444"
+    "icon": "sword",
+    "description": "Fast-paced reflex action, martial arts combat, and explosive missions.",
+    "color": "#f97316"
   },
   {
     "id": "adventure",
     "name": "Adventure",
     "slug": "adventure",
-    "icon": "🗺️",
-    "description": "Explore dungeon labyrinths, collect crystals, and solve quests.",
+    "icon": "compass",
+    "description": "Labyrinth dungeon quests, crystal collection, and mystery escapes.",
     "color": "#f59e0b"
   },
   {
-    "id": "beauty",
-    "name": "Beauty",
-    "slug": "beauty",
-    "icon": "💄",
-    "description": "Dress-up, makeover, and fashion styling games.",
-    "color": "#ec4899"
+    "id": "racing",
+    "name": "Racing",
+    "slug": "racing",
+    "icon": "flag",
+    "description": "High-speed competitive racing, mega-ramp descents, and drift tracks.",
+    "color": "#3b82f6"
   },
   {
-    "id": "racing",
+    "id": "car",
     "name": "Car",
-    "slug": "racing",
-    "icon": "🏎️",
-    "description": "High-speed 3D car racing, drift stunts, and highway drives.",
+    "slug": "car",
+    "icon": "car",
+    "description": "Highway cruisers, monster trucks, sports cars, and city driving.",
     "color": "#2563eb"
   },
   {
-    "id": "puzzle",
-    "name": "Puzzle",
-    "slug": "puzzle",
-    "icon": "🧩",
-    "description": "Brain teasers, logic challenges, and sliding arrow puzzles.",
-    "color": "#8b5cf6"
-  },
-  {
-    "id": "casual",
-    "name": "Casual",
-    "slug": "casual",
-    "icon": "🎯",
-    "description": "Relaxing, instant-play casual games for quick fun.",
-    "color": "#06b6d4"
-  },
-  {
-    "id": "board",
-    "name": "Board",
-    "slug": "board",
-    "icon": "🎲",
-    "description": "Tabletop games, chess, ludo, and strategy board classics.",
-    "color": "#d97706"
+    "id": "driving",
+    "name": "Driving",
+    "slug": "driving",
+    "icon": "steering",
+    "description": "Realistic vehicular driving, parking challenges, and traffic survival.",
+    "color": "#6366f1"
   },
   {
     "id": "sports",
     "name": "Sports",
     "slug": "sports",
-    "icon": "🏀",
-    "description": "Arcade basketball shootouts, soccer, and athletic physics fun.",
-    "color": "#f97316"
+    "icon": "basketball",
+    "description": "Arcade basketball shootouts, tennis cups, and athletic challenges.",
+    "color": "#10b981"
+  },
+  {
+    "id": "football",
+    "name": "Football",
+    "slug": "football",
+    "icon": "soccer",
+    "description": "Penalty shootouts, free kicks, stadium tournaments, and soccer fun.",
+    "color": "#059669"
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "slug": "puzzle",
+    "icon": "puzzle",
+    "description": "Mind-bending logic puzzles, sliding blocks, match-3, and brain teasers.",
+    "color": "#8b5cf6"
+  },
+  {
+    "id": "strategy",
+    "name": "Strategy",
+    "slug": "strategy",
+    "icon": "shield",
+    "description": "Tower defense tactics, fortress sieges, and strategic board battles.",
+    "color": "#a855f7"
+  },
+  {
+    "id": "platform",
+    "name": "Platform",
+    "slug": "platform",
+    "icon": "layers",
+    "description": "Precision platform jumping, retro obstacle runners, and vertical climbs.",
+    "color": "#ec4899"
+  },
+  {
+    "id": "multiplayer",
+    "name": "Multiplayer",
+    "slug": "multiplayer",
+    "icon": "users",
+    "description": "Competitive head-to-head showdowns, 2-player battles, and arena fun.",
+    "color": "#06b6d4"
   },
   {
     "id": "arcade",
     "name": "Arcade",
     "slug": "arcade",
-    "icon": "🕹️",
-    "description": "Classic retro arcade games, neon brick breakers, and snake runners.",
+    "icon": "gamepad",
+    "description": "Golden age retro arcade machines, neon brick breakers, and snake runners.",
+    "color": "#14b8a6"
+  },
+  {
+    "id": "simulation",
+    "name": "Simulation",
+    "slug": "simulation",
+    "icon": "cpu",
+    "description": "Kitchen chef management, farm simulators, and hands-on scenarios.",
+    "color": "#eab308"
+  },
+  {
+    "id": "casual",
+    "name": "Casual",
+    "slug": "casual",
+    "icon": "smile",
+    "description": "Instant-play stress-free games designed for quick pick-up-and-play fun.",
+    "color": "#0ea5e9"
+  },
+  {
+    "id": "kids-games",
+    "name": "Kids Games",
+    "slug": "kids-games",
+    "icon": "heart",
+    "description": "Family-friendly colorful adventures, cute pets, and creative puzzles.",
+    "color": "#f43f5e"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty",
+    "slug": "beauty",
+    "icon": "sparkles",
+    "description": "Princess makeovers, high-fashion dress up, and runway styling.",
+    "color": "#d946ef"
+  },
+  {
+    "id": "pool",
+    "name": "Pool",
+    "slug": "pool",
+    "icon": "circle-dot",
+    "description": "8-ball billiards, snooker trick shots, and classic carrom table boards.",
     "color": "#10b981"
+  },
+  {
+    "id": "board-games",
+    "name": "Board Games",
+    "slug": "board-games",
+    "icon": "grid",
+    "description": "Classic tabletop ludo, dominoes, chess, and ancient mahjong solitaire.",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "card-games",
+    "name": "Card Games",
+    "slug": "card-games",
+    "icon": "cards",
+    "description": "Klondike, spider solitaire, freecell, pyramid, and trick-taking cards.",
+    "color": "#6366f1"
+  },
+  {
+    "id": "clicker",
+    "name": "Clicker",
+    "slug": "clicker",
+    "icon": "mouse-pointer",
+    "description": "Satisfying tap-and-click incremental progression and rapid-reaction games.",
+    "color": "#f97316"
+  },
+  {
+    "id": "io-games",
+    "name": ".io Games",
+    "slug": "io-games",
+    "icon": "globe",
+    "description": "Arena survival score-chasers and fast-paced multiplayer-style action.",
+    "color": "#06b6d4"
   }
 ]

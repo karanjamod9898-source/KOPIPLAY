@@ -1,69 +1,78 @@
 /* ==========================================================================
-   NEXUSPLAY - Modern Browser Gaming Platform
-   Clean, Unique & Premium Design System (Custom Vector Icons & Modern Aesthetics)
+   NEXUSPLAY - Professional Dark Gaming Portal Design System
+   Inspired by Modern Gaming Platforms with Original NexusPlay Blue & Purple Accents
    ========================================================================== */
 
 :root {
   /* Layout Dimensions */
-  --sidebar-width: 260px;
-  --sidebar-collapsed-width: 76px;
-  --header-height: 68px;
-  --max-content-width: 1680px;
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 72px;
+  --header-height: 64px;
+  --max-content-width: 1720px;
 
-  /* Color Palette - Clean, Luminous Modern Light Theme */
-  --bg-page: #F6F8FC;
-  --bg-surface: #FFFFFF;
-  --bg-surface-hover: #F8FAFD;
-  --bg-surface-active: #EFF6FF;
-  --bg-input: #EEF2F8;
-  --bg-input-focus: #FFFFFF;
+  /* Color Palette - Deep Navy / Dark Obsidian Gaming Theme */
+  --bg-page: #0A0D14;
+  --bg-page-secondary: #0D111A;
+  --bg-surface: #121620;
+  --bg-surface-hover: #181F2E;
+  --bg-surface-active: #20293D;
+  --bg-card: #151A24;
+  --bg-card-hover: #1D2433;
+  --bg-input: #151A24;
+  --bg-input-focus: #1A212E;
   
-  /* Brand & Vibrant Accents */
+  /* NexusPlay Brand Accents (Vibrant Electric Blue & Cyber Violet) */
   --accent-primary: #2563EB;
-  --accent-primary-hover: #1D4ED8;
-  --accent-primary-light: #EFF6FF;
-  --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1D4ED8 100%);
-  --accent-gradient-glow: rgba(37, 99, 235, 0.28);
+  --accent-primary-hover: #3B82F6;
+  --accent-primary-glow: rgba(37, 99, 235, 0.35);
+  --accent-purple: #8B5CF6;
+  --accent-purple-hover: #A78BFA;
+  --accent-purple-glow: rgba(139, 92, 246, 0.35);
   
+  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --accent-gradient-warm: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+  --accent-gradient-green: linear-gradient(135deg, #10B981 0%, #059669 100%);
+
+  /* Status & Category Tag Accents */
   --accent-green: #10B981;
   --accent-red: #EF4444;
   --accent-orange: #F97316;
   --accent-amber: #F59E0B;
-  --accent-purple: #8B5CF6;
-  --accent-indigo: #6366F1;
   --accent-cyan: #06B6D4;
   --accent-pink: #EC4899;
 
   /* Typography Colors */
-  --text-primary: #0F172A;
-  --text-secondary: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
   --text-muted: #64748B;
-  --text-light: #94A3B8;
+  --text-light: #475569;
   --text-on-accent: #FFFFFF;
 
   /* Borders & Dividers */
-  --border-subtle: #E2E8F0;
-  --border-card: #E5E7EB;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-card: rgba(255, 255, 255, 0.08);
+  --border-card-hover: rgba(37, 99, 235, 0.5);
   --border-focus: #3B82F6;
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Shadows - Layered & Ambient */
-  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.06);
-  --shadow-card: 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
-  --shadow-card-hover: 0 16px 32px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
-  --shadow-dropdown: 0 16px 36px -4px rgba(15, 23, 42, 0.14), 0 6px 12px -3px rgba(15, 23, 42, 0.06);
-  --shadow-elevated: 0 24px 48px -12px rgba(15, 23, 42, 0.18);
+  /* Shadows - Ambient & Dark Elevation */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 3px 8px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(37, 99, 235, 0.25);
+  --shadow-dropdown: 0 18px 40px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.3);
 
   /* Border Radii */
   --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
   
   /* Transitions */
@@ -82,7 +91,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -90,8 +99,9 @@ html {
 body {
   background-color: var(--bg-page);
   background-image: 
-    radial-gradient(at 10% 10%, rgba(99, 102, 241, 0.03) 0px, transparent 50%),
-    radial-gradient(at 90% 20%, rgba(6, 182, 212, 0.03) 0px, transparent 50%);
+    radial-gradient(ellipse at 15% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 10%, rgba(139, 92, 246, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -110,6 +120,7 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+  color: inherit;
 }
 
 input {
@@ -126,31 +137,24 @@ img {
   display: block;
 }
 
-/* Custom Scrollbar */
+/* Custom Dark Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: var(--bg-page);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #1F2839;
   border-radius: var(--radius-full);
+  border: 2px solid var(--bg-page);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: var(--max-content-width);
-  margin: 0 auto;
-  padding: 0 24px;
+  background: #334155;
 }
 
 /* App Layout Grid / Flex */
@@ -176,5 +180,5 @@ img {
 
 .main-content {
   flex: 1;
-  padding: 24px 32px 56px;
+  padding: 24px 28px 60px;
 }

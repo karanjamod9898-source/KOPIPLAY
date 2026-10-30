@@ -1,13 +1,19 @@
 /* ==========================================================================
-   NEXUSPLAY - Responsive Layout & Mobile Styles
-   Breakpoints, Mobile Drawer Sidebar, Touch UX
+   NEXUSPLAY - Responsive Layout & Mobile Styles (Dark Theme)
    ========================================================================== */
+
+/* Hide mobile overlay on desktop */
+@media (min-width: 1025px) {
+  .mobile-drawer-overlay {
+    display: none !important;
+  }
+}
 
 /* Tablet & Mobile Breakpoint (<= 1024px) */
 @media (max-width: 1024px) {
   .site-sidebar {
     transform: translateX(-100%);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
     z-index: 1000;
   }
 
@@ -26,17 +32,19 @@
   .mobile-drawer-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.45);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 999;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-fast);
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
   }
 
   .mobile-sidebar-open .mobile-drawer-overlay {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 
@@ -47,17 +55,17 @@
   .game-sidebar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .footer-top {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
-  .hero-shelf-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 12px;
+  .scroll-row .game-card {
+    flex: 0 0 170px;
+    max-width: 170px;
   }
 }
 
@@ -68,7 +76,7 @@
   }
 
   .main-content {
-    padding: 16px 14px 40px;
+    padding: 16px 14px 48px;
   }
 
   .site-header {
@@ -79,33 +87,29 @@
     max-width: 220px;
   }
 
-  .btn-install span:last-child {
-    display: none;
+  .scroll-controls {
+    display: none; /* Swipe is natural on mobile */
   }
 
-  .btn-install {
-    padding: 8px 12px;
+  .scroll-row .game-card {
+    flex: 0 0 150px;
+    max-width: 150px;
   }
 
   .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
     gap: 12px;
   }
 
-  .hero-shelf-grid {
-    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-    gap: 10px;
-  }
-
   .section-shelf-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .back-to-top-btn {
     bottom: 16px;
     right: 16px;
     padding: 8px 14px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .game-sidebar {
@@ -127,11 +131,16 @@
 /* Small Screens (<= 480px) */
 @media (max-width: 480px) {
   .search-wrapper {
-    max-width: 170px;
+    max-width: 160px;
   }
 
   .search-input {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
+  }
+
+  .scroll-row .game-card {
+    flex: 0 0 135px;
+    max-width: 135px;
   }
 
   .games-grid {
@@ -139,12 +148,7 @@
     gap: 10px;
   }
 
-  .hero-shelf-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
   .card-title {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
   }
 }

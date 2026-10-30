@@ -1,41 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
   <defs>
+    <!-- Vibrant Blue-to-Purple Gradient -->
     <linearGradient id="nexus-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6" />
-      <stop offset="50%" stop-color="#6366F1" />
-      <stop offset="100%" stop-color="#8B5CF6" />
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="35%" stop-color="#3B82F6" />
+      <stop offset="70%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#A855F7" />
     </linearGradient>
     <linearGradient id="nexus-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="0%" stop-color="#38BDF8" />
       <stop offset="100%" stop-color="#3B82F6" />
     </linearGradient>
-    <filter id="subtle-shadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#3B82F6" flood-opacity="0.25" />
+    <filter id="subtle-shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3B82F6" flood-opacity="0.35" />
     </filter>
   </defs>
 
-  <!-- Modern Gaming Emblem -->
+  <!-- Modern Gaming Emblem Icon -->
   <g transform="translate(6, 6)" filter="url(#subtle-shadow)">
     <!-- Base Rounded Shield -->
-    <rect x="0" y="0" width="44" height="44" rx="14" fill="url(#nexus-grad)" />
+    <rect x="0" y="0" width="44" height="44" rx="13" fill="url(#nexus-grad)" />
     
-    <!-- Dynamic Controller/Play Chevron Elements -->
-    <path d="M 17 14 L 32 22 L 17 30 Z" fill="#FFFFFF" />
+    <!-- Dynamic Play Triangle -->
+    <path d="M 18 14 L 33 22 L 18 30 Z" fill="#FFFFFF" />
     
-    <!-- Mini gamepad nodes -->
-    <circle cx="15" cy="15" r="2" fill="url(#nexus-accent)" />
-    <circle cx="31" cy="13" r="2.5" fill="#A5F3FC" />
-    <circle cx="30" cy="31" r="2.5" fill="#E0E7FF" />
+    <!-- Gamepad Accent Nodes -->
+    <circle cx="15" cy="14" r="2.2" fill="#38BDF8" />
+    <circle cx="32" cy="12" r="2.5" fill="#A5F3FC" />
+    <circle cx="31" cy="32" r="2.5" fill="#E0E7FF" />
     
-    <!-- Sleek inner highlight -->
-    <path d="M 6 12 Q 22 2 38 12" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <!-- Sleek inner highlight curve -->
+    <path d="M 6 12 Q 22 2 38 12" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1.5" fill="none" stroke-linecap="round" />
   </g>
 
-  <!-- Brand Typography -->
-  <text x="62" y="34" fill="#0F172A" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="23" font-weight="900" letter-spacing="-0.5">
-    NEXUS<tspan fill="url(#nexus-grad)" font-weight="900">PLAY</tspan>
+  <!-- Brand Typography: NEXUS in bright white, PLAY in vibrant blue-purple gradient -->
+  <text x="60" y="34" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">
+    <tspan fill="#FFFFFF">NEXUS</tspan><tspan fill="url(#nexus-grad)">PLAY</tspan>
   </text>
   
-  <!-- Mini Subtitle Tag -->
-  <text x="63" y="47" fill="#64748B" font-family="'Inter', sans-serif" font-size="9" font-weight="700" letter-spacing="1.5">ONLINE GAMES</text>
+  <!-- Subtitle Tag -->
+  <text x="61" y="47" fill="#94A3B8" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.8">ONLINE GAMES</text>
 </svg>

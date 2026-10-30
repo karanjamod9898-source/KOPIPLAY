@@ -45,12 +45,20 @@ export async function getAllGames() {
 
 export async function getGameBySlug(slug) {
   const { games } = await loadCatalog();
-  return games.find(g => g.slug.toLowerCase() === slug.toLowerCase()) || null;
+  if (!slug) return null;
+  const clean = slug.toLowerCase().trim();
+  return games.find(g => 
+    g.slug.toLowerCase() === clean || 
+    g.id.toLowerCase() === clean ||
+    (g.aliases && g.aliases.some(a => a.toLowerCase() === clean))
+  ) || null;
 }
 
 export async function getGameById(id) {
   const { games } = await loadCatalog();
-  return games.find(g => g.id === id) || null;
+  if (!id) return null;
+  const clean = id.toLowerCase().trim();
+  return games.find(g => g.id.toLowerCase() === clean || (g.aliases && g.aliases.some(a => a.toLowerCase() === clean))) || null;
 }
 
 export async function getCategories() {
