@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a14" />
+      <stop offset="50%" stop-color="#0d1424" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+    <linearGradient id="paddle-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#8a2be2" />
+    </linearGradient>
+    <linearGradient id="ball-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#00f0ff" />
+    </linearGradient>
+    <filter id="glow-neon">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="384" fill="url(#nc-bg)" />
+
+  <!-- Perspective 3D Grid Lines -->
+  <g stroke="#00f0ff" stroke-width="1" opacity="0.12">
+    <line x1="56" y1="384" x2="156" y2="180" />
+    <line x1="156" y1="384" x2="206" y2="180" />
+    <line x1="256" y1="384" x2="256" y2="180" />
+    <line x1="356" y1="384" x2="306" y2="180" />
+    <line x1="456" y1="384" x2="356" y2="180" />
+    <line x1="90" y1="280" x2="422" y2="280" />
+    <line x1="120" y1="230" x2="392" y2="230" />
+    <line x1="140" y1="200" x2="372" y2="200" />
+  </g>
+
+  <!-- Floating Geometric Shapes (from Game 1) -->
+  <polygon points="60,80 85,120 35,120" fill="none" stroke="#ff0055" stroke-width="2" opacity="0.4" />
+  <rect x="420" y="60" width="35" height="35" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.4" transform="rotate(15, 437, 77)" />
+  <polygon points="440,240 470,290 410,290" fill="none" stroke="#ffcc00" stroke-width="2" opacity="0.3" />
+
+  <!-- Neon Bricks Grid -->
+  <g transform="translate(66, 65)">
+    <!-- Row 1: Magenta / Pink -->
+    <rect x="0" y="0" width="68" height="20" rx="4" fill="#ff0055" filter="url(#glow-soft)" />
+    <rect x="78" y="0" width="68" height="20" rx="4" fill="#ff0055" filter="url(#glow-soft)" />
+    <rect x="156" y="0" width="68" height="20" rx="4" fill="#ff0055" filter="url(#glow-soft)" />
+    <rect x="234" y="0" width="68" height="20" rx="4" fill="#ff0055" filter="url(#glow-soft)" />
+    <rect x="312" y="0" width="68" height="20" rx="4" fill="#ff0055" filter="url(#glow-soft)" />
+
+    <!-- Row 2: Cyan -->
+    <rect x="0" y="28" width="68" height="20" rx="4" fill="#00f0ff" filter="url(#glow-soft)" />
+    <rect x="78" y="28" width="68" height="20" rx="4" fill="#00f0ff" filter="url(#glow-soft)" />
+    <rect x="156" y="28" width="68" height="20" rx="4" fill="#00f0ff" opacity="0.25" stroke="#00f0ff" stroke-width="1" stroke-dasharray="3,3" />
+    <rect x="234" y="28" width="68" height="20" rx="4" fill="#00f0ff" filter="url(#glow-soft)" />
+    <rect x="312" y="28" width="68" height="20" rx="4" fill="#00f0ff" filter="url(#glow-soft)" />
+
+    <!-- Row 3: Neon Yellow/Orange -->
+    <rect x="0" y="56" width="68" height="20" rx="4" fill="#ffbb00" filter="url(#glow-soft)" />
+    <rect x="78" y="56" width="68" height="20" rx="4" fill="#ffbb00" filter="url(#glow-soft)" />
+    <rect x="156" y="56" width="68" height="20" rx="4" fill="#ffbb00" filter="url(#glow-soft)" />
+    <rect x="234" y="56" width="68" height="20" rx="4" fill="#ffbb00" opacity="0.25" stroke="#ffbb00" stroke-width="1" />
+    <rect x="312" y="56" width="68" height="20" rx="4" fill="#ffbb00" filter="url(#glow-soft)" />
+
+    <!-- Row 4: Neon Green -->
+    <rect x="78" y="84" width="68" height="20" rx="4" fill="#10b981" filter="url(#glow-soft)" />
+    <rect x="156" y="84" width="68" height="20" rx="4" fill="#10b981" filter="url(#glow-soft)" />
+    <rect x="234" y="84" width="68" height="20" rx="4" fill="#10b981" filter="url(#glow-soft)" />
+  </g>
+
+  <!-- Laser / Ball Trajectory -->
+  <line x1="222" y1="210" x2="280" y2="155" stroke="#00f0ff" stroke-width="3" opacity="0.4" stroke-dasharray="6,4" />
+  
+  <!-- Glowing Energy Orb / Ball -->
+  <circle cx="280" cy="155" r="9" fill="url(#ball-glow)" filter="url(#glow-neon)" />
+
+  <!-- Falling Power-up Capsule -->
+  <g transform="translate(144, 210)" filter="url(#glow-soft)">
+    <rect x="0" y="0" width="32" height="16" rx="8" fill="#10b981" />
+    <text x="16" y="12" fill="#000" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="900" text-anchor="middle">E</text>
+  </g>
+
+  <!-- Player Paddle -->
+  <g transform="translate(176, 310)" filter="url(#glow-neon)">
+    <rect x="0" y="0" width="160" height="16" rx="8" fill="url(#paddle-grad)" />
+    <rect x="20" y="3" width="120" height="4" rx="2" fill="#ffffff" opacity="0.8" />
+  </g>
+
+  <!-- Category Badge -->
+  <rect x="24" y="24" width="90" height="26" rx="6" fill="rgba(0, 240, 255, 0.15)" stroke="#00f0ff" stroke-width="1.5" />
+  <text x="69" y="41" fill="#00f0ff" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">ARCADE</text>
+
+  <!-- Title Bottom -->
+  <text x="24" y="360" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="900" filter="url(#glow-neon)" letter-spacing="1">NEON COLLIDER</text>
+</svg>

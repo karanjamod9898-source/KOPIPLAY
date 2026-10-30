@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Chrono Dungeon: Crystal Quest</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background: #090610;
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      overflow: hidden;
+    }
+
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1 / 1;
+      background: #11091f;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hud {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .hud-box {
+      background: rgba(17, 9, 31, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .hud-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .hud-val {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(9, 6, 16, 0.9);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      z-index: 20;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #f59e0b, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-weight: 800;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 9999px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+      margin-top: 14px;
+    }
+
+    .mobile-controls {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .m-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .m-btn {
+      pointer-events: auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(24, 14, 44, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #f59e0b;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="480" height="480"></canvas>
+
+    <div class="hud">
+      <div class="hud-box">
+        <div class="hud-label">Crystals</div>
+        <div class="hud-val" id="hud-crystals">0 / 4 💎</div>
+      </div>
+      <div class="hud-box" style="text-align: center;">
+        <div class="hud-label">Key Status</div>
+        <div class="hud-val" id="hud-key">LOCKED 🗝️</div>
+      </div>
+      <div class="hud-box" style="text-align: right;">
+        <div class="hud-label">Floor</div>
+        <div class="hud-val" id="hud-level">Level 1</div>
+      </div>
+    </div>
+
+    <div class="mobile-controls">
+      <button class="m-btn" id="m-up">▲</button>
+      <div class="m-row">
+        <button class="m-btn" id="m-left">◀</button>
+        <button class="m-btn" id="m-down">▼</button>
+        <button class="m-btn" id="m-right">▶</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <h1 class="title" id="overlay-title">CHRONO DUNGEON</h1>
+      <p style="color: #94a3b8; font-size: 13px; max-width: 290px;" id="overlay-sub">
+        Explore the ancient crypt. Collect all crystals (💎), grab the dungeon key (🗝️), and reach the portal (🌀) to
+        ascend!
+      </p>
+      <button class="btn" id="start-btn">ENTER CRYPT</button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const hudCrystals = document.getElementById('hud-crystals');
+    const hudKey = document.getElementById('hud-key');
+    const hudLevel = document.getElementById('hud-level');
+    const overlay = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlaySub = document.getElementById('overlay-sub');
+    const startBtn = document.getElementById('start-btn');
+
+    const COLS = 12;
+    const ROWS = 12;
+    const TILE = 40;
+
+    let state = 'MENU';
+    let level = 1;
+    let crystalsCollected = 0;
+    let totalCrystals = 4;
+    let hasKey = false;
+
+    // 0 = empty floor, 1 = wall, 2 = crystal, 3 = key, 4 = exit portal
+    let map = [
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 1],
+      [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
+      [1, 2, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+      [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+      [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
+      [1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1],
+      [1, 2, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1],
+      [1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 3, 1],
+      [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+      [1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 4, 1],
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ];
+
+    let player = { x: 1, y: 1 };
+
+    function resetLevel() {
+      crystalsCollected = 0;
+      hasKey = false;
+      player = { x: 1, y: 1 };
+      hudCrystals.textContent = `0 / ${totalCrystals} 💎`;
+      hudKey.textContent = 'LOCKED 🗝️';
+      hudLevel.textContent = `Floor ${level}`;
+      state = 'PLAYING';
+      overlay.classList.add('hidden');
+    }
+    startBtn.addEventListener('click', resetLevel);
+
+    function move(dx, dy) {
+      if (state !== 'PLAYING') return;
+      const nx = player.x + dx;
+      const ny = player.y + dy;
+
+      if (nx < 0 || nx >= COLS || ny < 0 || ny >= ROWS) return;
+      if (map[ny][nx] === 1) return; // Wall
+
+      player.x = nx;
+      player.y = ny;
+
+      // Item interactions
+      const cell = map[ny][nx];
+      if (cell === 2) {
+        // Crystal
+        map[ny][nx] = 0;
+        crystalsCollected++;
+        hudCrystals.textContent = `${crystalsCollected} / ${totalCrystals} 💎`;
+      } else if (cell === 3) {
+        // Key
+        map[ny][nx] = 0;
+        hasKey = true;
+        hudKey.textContent = 'UNLOCKED! 🔑';
+      } else if (cell === 4) {
+        // Exit Portal
+        if (hasKey && crystalsCollected >= totalCrystals) {
+          levelWin();
+        }
+      }
+    }
+
+    function levelWin() {
+      state = 'VICTORY';
+      overlayTitle.textContent = 'FLOOR CLEARED!';
+      overlaySub.innerHTML = `You discovered all relics and unlocked the portal!<br><strong style="color:#f59e0b;">Victory on Floor ${level}!</strong>`;
+      startBtn.textContent = 'PLAY AGAIN';
+      overlay.classList.remove('hidden');
+    }
+
+    window.addEventListener('keydown', e => {
+      if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') { e.preventDefault(); move(0, -1); }
+      if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') { e.preventDefault(); move(0, 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') { e.preventDefault(); move(-1, 0); }
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') { e.preventDefault(); move(1, 0); }
+    });
+
+    document.getElementById('m-up').addEventListener('pointerdown', () => move(0, -1));
+    document.getElementById('m-down').addEventListener('pointerdown', () => move(0, 1));
+    document.getElementById('m-left').addEventListener('pointerdown', () => move(-1, 0));
+    document.getElementById('m-right').addEventListener('pointerdown', () => move(1, 0));
+
+    function draw() {
+      ctx.fillStyle = '#0f081c';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const x = c * TILE;
+          const y = r * TILE;
+          const cell = map[r][c];
+
+          if (cell === 1) {
+            // Dungeon Wall
+            ctx.fillStyle = '#1e1038';
+            ctx.fillRect(x, y, TILE, TILE);
+            ctx.strokeStyle = 'rgba(245, 158, 11, 0.2)';
+            ctx.strokeRect(x, y, TILE, TILE);
+          } else {
+            // Floor tile
+            ctx.fillStyle = '#0d0718';
+            ctx.fillRect(x, y, TILE, TILE);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+            ctx.strokeRect(x, y, TILE, TILE);
+
+            if (cell === 2) {
+              // Crystal
+              ctx.fillStyle = '#00f0ff';
+              ctx.font = '18px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('💎', x + TILE / 2, y + TILE / 2);
+            } else if (cell === 3) {
+              // Key
+              ctx.font = '18px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('🗝️', x + TILE / 2, y + TILE / 2);
+            } else if (cell === 4) {
+              // Portal
+              ctx.font = '22px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('🌀', x + TILE / 2, y + TILE / 2);
+            }
+          }
+        }
+      }
+
+      // Draw Player Knight
+      const px = player.x * TILE + TILE / 2;
+      const py = player.y * TILE + TILE / 2;
+      ctx.save();
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = '#f59e0b';
+      ctx.font = '22px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('🧙', px, py);
+      ctx.restore();
+
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  </script>
+</body>
+
+</html>

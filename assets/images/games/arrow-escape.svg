@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ae-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a14" />
+    </linearGradient>
+    <linearGradient id="arrow-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="arrow-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <linearGradient id="arrow-green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="arrow-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="ae-glow">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="384" fill="url(#ae-bg)" />
+
+  <!-- Maze Puzzle Board Container -->
+  <rect x="96" y="52" width="320" height="260" rx="16" fill="rgba(30, 41, 59, 0.7)" stroke="#334155" stroke-width="2" />
+
+  <!-- Grid Dots / Alignment -->
+  <g fill="#475569" opacity="0.4">
+    <circle cx="156" cy="112" r="3" />
+    <circle cx="216" cy="112" r="3" />
+    <circle cx="276" cy="112" r="3" />
+    <circle cx="336" cy="112" r="3" />
+    <circle cx="396" cy="112" r="3" />
+    
+    <circle cx="156" cy="172" r="3" />
+    <circle cx="216" cy="172" r="3" />
+    <circle cx="276" cy="172" r="3" />
+    <circle cx="336" cy="172" r="3" />
+    <circle cx="396" cy="172" r="3" />
+
+    <circle cx="156" cy="232" r="3" />
+    <circle cx="216" cy="232" r="3" />
+    <circle cx="276" cy="232" r="3" />
+    <circle cx="336" cy="232" r="3" />
+    <circle cx="396" cy="232" r="3" />
+  </g>
+
+  <!-- Arrow Blocks on the Board -->
+  <!-- Block 1: Pointing Right (Blue) -->
+  <g transform="translate(136, 92)" filter="url(#ae-glow)">
+    <rect x="0" y="0" width="80" height="40" rx="10" fill="url(#arrow-blue)" />
+    <!-- Arrow Head Right -->
+    <polygon points="56,12 70,20 56,28" fill="#ffffff" />
+    <line x1="20" y1="20" x2="60" y2="20" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Block 2: Pointing Down (Pink) -->
+  <g transform="translate(256, 82)" filter="url(#ae-glow)">
+    <rect x="0" y="0" width="40" height="80" rx="10" fill="url(#arrow-pink)" />
+    <!-- Arrow Head Down -->
+    <polygon points="12,56 20,70 28,56" fill="#ffffff" />
+    <line x1="20" y1="20" x2="20" y2="60" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Block 3: Pointing Up (Green) -->
+  <g transform="translate(336, 142)" filter="url(#ae-glow)">
+    <rect x="0" y="0" width="40" height="90" rx="10" fill="url(#arrow-green)" />
+    <!-- Arrow Head Up -->
+    <polygon points="12,24 20,10 28,24" fill="#ffffff" />
+    <line x1="20" y1="20" x2="20" y2="70" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Block 4: Pointing Left (Yellow / Escape Free) -->
+  <g transform="translate(146, 212)" filter="url(#ae-glow)">
+    <rect x="0" y="0" width="90" height="40" rx="10" fill="url(#arrow-yellow)" />
+    <!-- Arrow Head Left -->
+    <polygon points="24,12 10,20 24,28" fill="#ffffff" />
+    <line x1="18" y1="20" x2="72" y2="20" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Escape Dash Vector Line (Yellow Escaping) -->
+  <line x1="146" y1="232" x2="40" y2="232" stroke="#fbbf24" stroke-width="3" stroke-dasharray="6,4" opacity="0.8" filter="url(#ae-glow)" />
+
+  <!-- Tap Target Ripple on Block 4 -->
+  <circle cx="216" cy="232" r="16" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7" />
+  <circle cx="216" cy="232" r="6" fill="#ffffff" />
+
+  <!-- Category Badge -->
+  <rect x="24" y="24" width="90" height="26" rx="6" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7" stroke-width="1.5" />
+  <text x="69" y="41" fill="#a855f7" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">PUZZLE</text>
+
+  <!-- Level Indicator -->
+  <rect x="390" y="24" width="98" height="26" rx="6" fill="rgba(255, 255, 255, 0.08)" />
+  <text x="439" y="41" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" text-anchor="middle">800+ LEVELS</text>
+
+  <!-- Title Bottom -->
+  <text x="24" y="360" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="900" filter="url(#ae-glow)" letter-spacing="0.5">ARROW ESCAPE: TAP PUZZLE</text>
+</svg>

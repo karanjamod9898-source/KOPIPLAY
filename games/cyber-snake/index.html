@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Cyber Snake: Neon Overdrive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+    body {
+      background: #060910;
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      overflow: hidden;
+    }
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1 / 1;
+      background: #0a0f1d;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .hud {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .hud-box {
+      background: rgba(10, 15, 29, 0.75);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .hud-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #10b981;
+      font-weight: 700;
+    }
+    .hud-val {
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 9, 16, 0.88);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      z-index: 20;
+    }
+    .overlay.hidden { display: none; }
+    .title {
+      font-size: 30px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #10b981, #00f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .btn {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #000;
+      font-weight: 800;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 9999px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+      margin-top: 16px;
+    }
+    .mobile-controls {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .m-row { display: flex; gap: 8px; }
+    .m-btn {
+      pointer-events: auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(16, 24, 40, 0.6);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #10b981;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="480" height="480"></canvas>
+    
+    <div class="hud">
+      <div class="hud-box">
+        <div class="hud-label">Energy Score</div>
+        <div class="hud-val" id="hud-score">0</div>
+      </div>
+      <div class="hud-box" style="text-align: right;">
+        <div class="hud-label">Best Record</div>
+        <div class="hud-val" id="hud-best">0</div>
+      </div>
+    </div>
+
+    <div class="mobile-controls">
+      <button class="m-btn" id="m-up">▲</button>
+      <div class="m-row">
+        <button class="m-btn" id="m-left">◀</button>
+        <button class="m-btn" id="m-down">▼</button>
+        <button class="m-btn" id="m-right">▶</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <h1 class="title" id="overlay-title">CYBER SNAKE</h1>
+      <p style="color: #94a3b8; font-size: 14px; max-width: 280px;" id="overlay-sub">Consume energy nodes to grow your photon serpent. Don't hit the perimeter or your own energy tail!</p>
+      <button class="btn" id="start-btn">INITIALIZE</button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const hudScore = document.getElementById('hud-score');
+    const hudBest = document.getElementById('hud-best');
+    const overlay = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlaySub = document.getElementById('overlay-sub');
+    const startBtn = document.getElementById('start-btn');
+
+    const GRID_SIZE = 20;
+    const TILES = 24; // 24x24 = 480px
+
+    let snake = [];
+    let dir = { x: 1, y: 0 };
+    let nextDir = { x: 1, y: 0 };
+    let food = { x: 15, y: 12 };
+    let score = 0;
+    let best = parseInt(localStorage.getItem('cyber_snake_best') || '0', 10);
+    hudBest.textContent = best;
+    let state = 'MENU';
+    let stepTimer = 0;
+    let stepInterval = 0.09;
+
+    function initAudio() {
+      // Audio feedback
+    }
+
+    function resetGame() {
+      snake = [
+        { x: 8, y: 12 },
+        { x: 7, y: 12 },
+        { x: 6, y: 12 }
+      ];
+      dir = { x: 1, y: 0 };
+      nextDir = { x: 1, y: 0 };
+      score = 0;
+      stepInterval = 0.09;
+      hudScore.textContent = '0';
+      spawnFood();
+      state = 'PLAYING';
+      overlay.classList.add('hidden');
+    }
+
+    startBtn.addEventListener('click', resetGame);
+
+    function spawnFood() {
+      let valid = false;
+      while (!valid) {
+        food.x = Math.floor(Math.random() * TILES);
+        food.y = Math.floor(Math.random() * TILES);
+        valid = !snake.some(segment => segment.x === food.x && segment.y === food.y);
+      }
+    }
+
+    window.addEventListener('keydown', e => {
+      if ((e.key === 'ArrowUp' || e.key === 'w') && dir.y === 0) nextDir = { x: 0, y: -1 };
+      if ((e.key === 'ArrowDown' || e.key === 's') && dir.y === 0) nextDir = { x: 0, y: 1 };
+      if ((e.key === 'ArrowLeft' || e.key === 'a') && dir.x === 0) nextDir = { x: -1, y: 0 };
+      if ((e.key === 'ArrowRight' || e.key === 'd') && dir.x === 0) nextDir = { x: 1, y: 0 };
+    });
+
+    document.getElementById('m-up').addEventListener('pointerdown', () => { if (dir.y === 0) nextDir = { x: 0, y: -1 }; });
+    document.getElementById('m-down').addEventListener('pointerdown', () => { if (dir.y === 0) nextDir = { x: 0, y: 1 }; });
+    document.getElementById('m-left').addEventListener('pointerdown', () => { if (dir.x === 0) nextDir = { x: -1, y: 0 }; });
+    document.getElementById('m-right').addEventListener('pointerdown', () => { if (dir.x === 0) nextDir = { x: 1, y: 0 }; });
+
+    function update(dt) {
+      if (state !== 'PLAYING') return;
+
+      stepTimer += dt;
+      if (stepTimer >= stepInterval) {
+        stepTimer = 0;
+        dir = nextDir;
+
+        const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+        // Wall collisions
+        if (head.x < 0 || head.x >= TILES || head.y < 0 || head.y >= TILES) {
+          gameOver();
+          return;
+        }
+
+        // Self collision
+        if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+          gameOver();
+          return;
+        }
+
+        snake.unshift(head);
+
+        // Food collision
+        if (head.x === food.x && head.y === food.y) {
+          score += 100;
+          hudScore.textContent = score;
+          stepInterval = Math.max(0.05, 0.09 - (score / 5000) * 0.04);
+          spawnFood();
+        } else {
+          snake.pop();
+        }
+      }
+    }
+
+    function gameOver() {
+      state = 'GAMEOVER';
+      if (score > best) {
+        best = score;
+        localStorage.setItem('cyber_snake_best', best);
+        hudBest.textContent = best;
+      }
+      overlayTitle.textContent = 'CIRCUIT COLLAPSE';
+      overlaySub.innerHTML = `Energy Collected: <strong style="color:#10b981;">${score}</strong><br>Best Record: ${best}`;
+      startBtn.textContent = 'RETRY LINK';
+      overlay.classList.remove('hidden');
+    }
+
+    function draw() {
+      ctx.fillStyle = '#0a0f1d';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.05)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= TILES; i++) {
+        ctx.beginPath();
+        ctx.moveTo(i * GRID_SIZE, 0);
+        ctx.lineTo(i * GRID_SIZE, canvas.height);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, i * GRID_SIZE);
+        ctx.lineTo(canvas.width, i * GRID_SIZE);
+        ctx.stroke();
+      }
+
+      // Draw Food
+      ctx.save();
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = '#00f0ff';
+      ctx.fillStyle = '#00f0ff';
+      ctx.beginPath();
+      ctx.arc(food.x * GRID_SIZE + GRID_SIZE / 2, food.y * GRID_SIZE + GRID_SIZE / 2, GRID_SIZE / 2 - 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      // Draw Snake
+      snake.forEach((seg, index) => {
+        ctx.save();
+        ctx.shadowBlur = index === 0 ? 12 : 6;
+        ctx.shadowColor = '#10b981';
+        ctx.fillStyle = index === 0 ? '#34d399' : '#10b981';
+        ctx.beginPath();
+        ctx.roundRect(seg.x * GRID_SIZE + 1, seg.y * GRID_SIZE + 1, GRID_SIZE - 2, GRID_SIZE - 2, 4);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    let last = performance.now();
+    function loop(now) {
+      const dt = Math.min((now - last) / 1000, 0.1);
+      last = now;
+      update(dt);
+      draw();
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  </script>
+</body>
+</html>

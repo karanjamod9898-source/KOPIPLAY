@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dn-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110903" />
+      <stop offset="50%" stop-color="#241103" />
+      <stop offset="100%" stop-color="#0d0702" />
+    </linearGradient>
+    <filter id="glow-dungeon">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#dn-bg)" />
+
+  <!-- Stone Dungeon archway -->
+  <path d="M 60 250 L 60 110 C 60 40 340 40 340 110 L 340 250" fill="none" stroke="#451a03" stroke-width="24" />
+  <path d="M 90 250 L 90 120 C 90 60 310 60 310 120 L 310 250" fill="#0c0602" />
+
+  <!-- Torchlight glow -->
+  <circle cx="105" cy="110" r="18" fill="#f59e0b" filter="url(#glow-dungeon)" opacity="0.6" />
+  <circle cx="295" cy="110" r="18" fill="#f59e0b" filter="url(#glow-dungeon)" opacity="0.6" />
+
+  <!-- Pixelated Hero Sword -->
+  <g transform="translate(180, 70) scale(1.1)" filter="url(#glow-dungeon)">
+    <rect x="18" y="0" width="6" height="70" fill="#f59e0b" />
+    <polygon points="18,0 21,-12 24,0" fill="#fef3c7" />
+    <rect x="0" y="70" width="42" height="8" rx="2" fill="#78350f" />
+    <rect x="17" y="78" width="8" height="22" rx="2" fill="#451a03" />
+    <circle cx="21" cy="104" r="6" fill="#f59e0b" />
+  </g>
+
+  <!-- Badge -->
+  <rect x="15" y="15" width="96" height="22" rx="4" fill="rgba(245, 158, 11, 0.25)" stroke="#f59e0b" stroke-width="1" />
+  <text x="63" y="30" fill="#f59e0b" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="800" text-anchor="middle">ADVENTURE</text>
+
+  <text x="20" y="235" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="900" filter="url(#glow-dungeon)">CHRONO DUNGEON</text>
+</svg>

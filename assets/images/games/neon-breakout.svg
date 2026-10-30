@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bk-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0512" />
+      <stop offset="50%" stop-color="#190d29" />
+      <stop offset="100%" stop-color="#07030c" />
+    </linearGradient>
+    <filter id="glow-bk">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#bk-bg)" />
+
+  <!-- Bricks -->
+  <g filter="url(#glow-bk)">
+    <!-- Row 1 -->
+    <rect x="50" y="50" width="50" height="16" rx="3" fill="#ff0055" />
+    <rect x="110" y="50" width="50" height="16" rx="3" fill="#ff0055" />
+    <rect x="170" y="50" width="50" height="16" rx="3" fill="#ff0055" />
+    <rect x="230" y="50" width="50" height="16" rx="3" fill="#ff0055" />
+    <rect x="290" y="50" width="50" height="16" rx="3" fill="#ff0055" />
+
+    <!-- Row 2 -->
+    <rect x="50" y="74" width="50" height="16" rx="3" fill="#ff9900" />
+    <rect x="110" y="74" width="50" height="16" rx="3" fill="#ff9900" />
+    <rect x="230" y="74" width="50" height="16" rx="3" fill="#ff9900" />
+    <rect x="290" y="74" width="50" height="16" rx="3" fill="#ff9900" />
+
+    <!-- Row 3 -->
+    <rect x="50" y="98" width="50" height="16" rx="3" fill="#00f0ff" />
+    <rect x="110" y="98" width="50" height="16" rx="3" fill="#00f0ff" />
+    <rect x="290" y="98" width="50" height="16" rx="3" fill="#00f0ff" />
+
+    <!-- Ball with particle trail -->
+    <circle cx="170" cy="120" r="4" fill="#ff0055" opacity="0.3" />
+    <circle cx="180" cy="135" r="6" fill="#ff0055" opacity="0.6" />
+    <circle cx="195" cy="155" r="9" fill="#fff" />
+
+    <!-- Paddle -->
+    <rect x="150" y="200" width="90" height="14" rx="7" fill="#00f0ff" />
+  </g>
+
+  <!-- Badge -->
+  <rect x="15" y="15" width="80" height="22" rx="4" fill="rgba(255, 0, 85, 0.25)" stroke="#ff0055" stroke-width="1" />
+  <text x="55" y="30" fill="#ff3366" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="800" text-anchor="middle">ARCADE</text>
+
+  <text x="20" y="235" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="900" filter="url(#glow-bk)">NEON BREAKOUT</text>
+</svg>

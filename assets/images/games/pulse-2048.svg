@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p2048-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c18" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+    <filter id="glow-p">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#p2048-bg)" />
+
+  <!-- Matrix Grid of Glowing Tiles -->
+  <g transform="translate(110, 45)">
+    <!-- Tile 1024 -->
+    <rect x="0" y="0" width="80" height="80" rx="8" fill="#10b981" filter="url(#glow-p)" />
+    <text x="40" y="48" fill="#000" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="900" text-anchor="middle">1024</text>
+
+    <!-- Tile 2048 -->
+    <rect x="100" y="0" width="80" height="80" rx="8" fill="#00f0ff" filter="url(#glow-p)" />
+    <text x="140" y="48" fill="#000" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="900" text-anchor="middle">2048</text>
+
+    <!-- Tile 512 -->
+    <rect x="0" y="95" width="80" height="80" rx="8" fill="#f59e0b" filter="url(#glow-p)" />
+    <text x="40" y="145" fill="#000" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">512</text>
+
+    <!-- Tile 256 -->
+    <rect x="100" y="95" width="80" height="80" rx="8" fill="#8b5cf6" filter="url(#glow-p)" />
+    <text x="140" y="145" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">256</text>
+  </g>
+
+  <!-- Category Badge -->
+  <rect x="15" y="15" width="80" height="22" rx="4" fill="rgba(0, 240, 255, 0.2)" stroke="#00f0ff" stroke-width="1" />
+  <text x="55" y="30" fill="#00f0ff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="800" text-anchor="middle">PUZZLE</text>
+
+  <text x="20" y="235" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="900" filter="url(#glow-p)">PULSE 2048</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0e1a38" />
+      <stop offset="100%" stop-color="#040710" />
+    </linearGradient>
+    <filter id="glow-rt">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#rt-bg)" />
+
+  <!-- Tactical Hex Grid -->
+  <g filter="url(#glow-rt)">
+    <!-- Hex 1 -->
+    <polygon points="150,80 180,62 210,80 210,115 180,132 150,115" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2" />
+    <!-- Hex 2 -->
+    <polygon points="215,80 245,62 275,80 275,115 245,132 215,115" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="2.5" />
+    <!-- Hex 3 -->
+    <polygon points="182,137 212,120 242,137 242,172 212,190 182,172" fill="rgba(59, 130, 246, 0.25)" stroke="#3b82f6" stroke-width="2" />
+    <!-- Hex 4 -->
+    <polygon points="120,137 150,120 180,137 180,172 150,190 120,172" fill="rgba(255, 0, 85, 0.3)" stroke="#ff0055" stroke-width="2" />
+
+    <!-- Unit markers -->
+    <circle cx="245" cy="97" r="10" fill="#00f0ff" />
+    <circle cx="150" cy="155" r="10" fill="#ff0055" />
+  </g>
+
+  <!-- Badge -->
+  <rect x="15" y="15" width="80" height="22" rx="4" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="1" />
+  <text x="55" y="30" fill="#60a5fa" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="800" text-anchor="middle">STRATEGY</text>
+
+  <text x="20" y="235" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="900" filter="url(#glow-rt)">NEXUS TACTICS</text>
+</svg>

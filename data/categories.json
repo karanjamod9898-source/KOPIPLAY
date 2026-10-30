@@ -1,0 +1,82 @@
+[
+  {
+    "id": "pool",
+    "name": "Pool",
+    "slug": "pool",
+    "icon": "🎱",
+    "description": "Classic 8-ball pool, billiards, and cue trick shots.",
+    "color": "#10b981"
+  },
+  {
+    "id": "action",
+    "name": "Action",
+    "slug": "action",
+    "icon": "⚔️",
+    "description": "Fast-paced adrenaline-pumping action games, combat, and reflex battles.",
+    "color": "#ef4444"
+  },
+  {
+    "id": "adventure",
+    "name": "Adventure",
+    "slug": "adventure",
+    "icon": "🗺️",
+    "description": "Explore dungeon labyrinths, collect crystals, and solve quests.",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty",
+    "slug": "beauty",
+    "icon": "💄",
+    "description": "Dress-up, makeover, and fashion styling games.",
+    "color": "#ec4899"
+  },
+  {
+    "id": "racing",
+    "name": "Car",
+    "slug": "racing",
+    "icon": "🏎️",
+    "description": "High-speed 3D car racing, drift stunts, and highway drives.",
+    "color": "#2563eb"
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "slug": "puzzle",
+    "icon": "🧩",
+    "description": "Brain teasers, logic challenges, and sliding arrow puzzles.",
+    "color": "#8b5cf6"
+  },
+  {
+    "id": "casual",
+    "name": "Casual",
+    "slug": "casual",
+    "icon": "🎯",
+    "description": "Relaxing, instant-play casual games for quick fun.",
+    "color": "#06b6d4"
+  },
+  {
+    "id": "board",
+    "name": "Board",
+    "slug": "board",
+    "icon": "🎲",
+    "description": "Tabletop games, chess, ludo, and strategy board classics.",
+    "color": "#d97706"
+  },
+  {
+    "id": "sports",
+    "name": "Sports",
+    "slug": "sports",
+    "icon": "🏀",
+    "description": "Arcade basketball shootouts, soccer, and athletic physics fun.",
+    "color": "#f97316"
+  },
+  {
+    "id": "arcade",
+    "name": "Arcade",
+    "slug": "arcade",
+    "icon": "🕹️",
+    "description": "Classic retro arcade games, neon brick breakers, and snake runners.",
+    "color": "#10b981"
+  }
+]

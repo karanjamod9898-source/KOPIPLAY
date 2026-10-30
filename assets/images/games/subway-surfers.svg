@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ss-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1931" />
+      <stop offset="50%" stop-color="#153664" />
+      <stop offset="100%" stop-color="#0a1526" />
+    </linearGradient>
+    <linearGradient id="train-red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="coin-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <filter id="ss-glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Sky & Night Atmosphere -->
+  <rect width="512" height="384" fill="url(#ss-bg)" />
+
+  <!-- Falling Snow Particles -->
+  <circle cx="45" cy="40" r="3" fill="#ffffff" opacity="0.8" />
+  <circle cx="120" cy="90" r="2" fill="#ffffff" opacity="0.6" />
+  <circle cx="210" cy="35" r="4" fill="#ffffff" opacity="0.9" />
+  <circle cx="340" cy="65" r="2.5" fill="#ffffff" opacity="0.7" />
+  <circle cx="440" cy="45" r="3.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="80" cy="160" r="3" fill="#ffffff" opacity="0.7" />
+  <circle cx="420" cy="180" r="3" fill="#ffffff" opacity="0.6" />
+  <circle cx="470" cy="110" r="2" fill="#ffffff" opacity="0.8" />
+
+  <!-- Railway Perspective Ground & Tracks -->
+  <polygon points="176,140 336,140 512,384 0,384" fill="#111827" />
+
+  <!-- Snow covering sides -->
+  <polygon points="0,280 120,384 0,384" fill="#e0f2fe" opacity="0.3" />
+  <polygon points="512,280 392,384 512,384" fill="#e0f2fe" opacity="0.3" />
+
+  <!-- Center Rails -->
+  <line x1="230" y1="140" x2="130" y2="384" stroke="#94a3b8" stroke-width="6" />
+  <line x1="282" y1="140" x2="382" y2="384" stroke="#94a3b8" stroke-width="6" />
+  
+  <!-- Left Rails -->
+  <line x1="190" y1="140" x2="30" y2="384" stroke="#64748b" stroke-width="4" opacity="0.6" />
+  <!-- Right Rails -->
+  <line x1="322" y1="140" x2="482" y2="384" stroke="#64748b" stroke-width="4" opacity="0.6" />
+
+  <!-- Railway Sleepers / Ties -->
+  <g stroke="#334155" stroke-width="5" opacity="0.7">
+    <line x1="220" y1="170" x2="292" y2="170" />
+    <line x1="205" y1="210" x2="307" y2="210" />
+    <line x1="185" y1="260" x2="327" y2="260" />
+    <line x1="160" y1="320" x2="352" y2="320" />
+  </g>
+
+  <!-- Approaching Subway Train (Left Track) -->
+  <g transform="translate(60, 150)">
+    <rect x="0" y="0" width="70" height="90" rx="8" fill="url(#train-red)" stroke="#991b1b" stroke-width="2" />
+    <rect x="8" y="10" width="54" height="26" rx="4" fill="#1e293b" />
+    <circle cx="16" cy="72" r="6" fill="#fef08a" filter="url(#ss-glow)" />
+    <circle cx="54" cy="72" r="6" fill="#fef08a" filter="url(#ss-glow)" />
+    <rect x="18" y="44" width="34" height="8" rx="2" fill="#facc15" />
+  </g>
+
+  <!-- Gold Coins on Center Track -->
+  <g filter="url(#ss-glow)">
+    <circle cx="256" cy="180" r="12" fill="url(#coin-gold)" stroke="#eab308" stroke-width="2" />
+    <text x="256" y="184" fill="#713f12" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" text-anchor="middle">★</text>
+
+    <circle cx="256" cy="225" r="16" fill="url(#coin-gold)" stroke="#eab308" stroke-width="2" />
+    <text x="256" y="231" fill="#713f12" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="900" text-anchor="middle">★</text>
+
+    <circle cx="256" cy="285" r="20" fill="url(#coin-gold)" stroke="#eab308" stroke-width="2" />
+    <text x="256" y="292" fill="#713f12" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="900" text-anchor="middle">★</text>
+  </g>
+
+  <!-- Surfer Hoverboard Trail -->
+  <ellipse cx="256" cy="336" rx="46" ry="12" fill="#00f0ff" opacity="0.4" filter="url(#ss-glow)" />
+  <rect x="220" y="330" width="72" height="10" rx="5" fill="#00f0ff" filter="url(#ss-glow)" />
+
+  <!-- Category Badge -->
+  <rect x="24" y="24" width="90" height="26" rx="6" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1.5" />
+  <text x="69" y="41" fill="#10b981" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">ARCADE</text>
+
+  <!-- Title Bottom -->
+  <text x="24" y="360" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="900" filter="url(#ss-glow)" letter-spacing="0.5">SUBWAY SURFERS: WINTER</text>
+</svg>

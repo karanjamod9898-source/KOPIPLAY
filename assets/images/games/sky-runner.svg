@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sr-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05141f" />
+      <stop offset="50%" stop-color="#0b283d" />
+      <stop offset="100%" stop-color="#030c14" />
+    </linearGradient>
+    <filter id="glow-sr">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#sr-bg)" />
+
+  <!-- Floating Sky Islands -->
+  <g filter="url(#glow-sr)">
+    <!-- Island 1 -->
+    <polygon points="40,160 140,160 110,210 70,210" fill="#0f344d" stroke="#00f0ff" stroke-width="2" />
+    <!-- Island 2 (Higher) -->
+    <polygon points="170,120 290,120 260,180 200,180" fill="#144363" stroke="#00f0ff" stroke-width="2" />
+    <!-- Island 3 (Distant) -->
+    <polygon points="310,90 390,90 370,130 330,130" fill="#0a2436" stroke="#00f0ff" stroke-width="1.5" opacity="0.7" />
+
+    <!-- Leaping Runner Silhouette -->
+    <circle cx="150" cy="90" r="8" fill="#ffaa00" />
+    <line x1="150" y1="98" x2="155" y2="118" stroke="#ffaa00" stroke-width="4" stroke-linecap="round" />
+    <line x1="155" y1="105" x2="168" y2="95" stroke="#ffaa00" stroke-width="3" stroke-linecap="round" />
+    <line x1="155" y1="118" x2="142" y2="135" stroke="#ffaa00" stroke-width="3" stroke-linecap="round" />
+    <line x1="155" y1="118" x2="170" y2="132" stroke="#ffaa00" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Ancient Solar Gem -->
+    <polygon points="230,85 240,70 250,85 240,100" fill="#ffdd00" />
+  </g>
+
+  <!-- Badge -->
+  <rect x="15" y="15" width="96" height="22" rx="4" fill="rgba(0, 240, 255, 0.2)" stroke="#00f0ff" stroke-width="1" />
+  <text x="63" y="30" fill="#00f0ff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="800" text-anchor="middle">ADVENTURE</text>
+
+  <text x="20" y="235" fill="#fff" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="900" filter="url(#glow-sr)">SKY RUNNER</text>
+</svg>

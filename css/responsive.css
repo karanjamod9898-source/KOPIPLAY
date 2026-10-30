@@ -1,0 +1,150 @@
+/* ==========================================================================
+   NEXUSPLAY - Responsive Layout & Mobile Styles
+   Breakpoints, Mobile Drawer Sidebar, Touch UX
+   ========================================================================== */
+
+/* Tablet & Mobile Breakpoint (<= 1024px) */
+@media (max-width: 1024px) {
+  .site-sidebar {
+    transform: translateX(-100%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .mobile-sidebar-open .site-sidebar {
+    transform: translateX(0);
+  }
+
+  .app-main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .mobile-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .mobile-sidebar-open .mobile-drawer-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .game-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .hero-shelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Mobile Phone Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 58px;
+  }
+
+  .main-content {
+    padding: 16px 14px 40px;
+  }
+
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .search-wrapper {
+    max-width: 220px;
+  }
+
+  .btn-install span:last-child {
+    display: none;
+  }
+
+  .btn-install {
+    padding: 8px 12px;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .hero-shelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 10px;
+  }
+
+  .section-shelf-title {
+    font-size: 1.05rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .game-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* Small Screens (<= 480px) */
+@media (max-width: 480px) {
+  .search-wrapper {
+    max-width: 170px;
+  }
+
+  .search-input {
+    font-size: 0.84rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .hero-shelf-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .card-title {
+    font-size: 0.84rem;
+  }
+}
