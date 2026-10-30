@@ -35,12 +35,29 @@
     content="Play 200+ free online games on NexusPlay. Clean, simple, instant play browser gaming.">
   <meta property="twitter:image" content="assets/images/logo.svg">
 
+  <!-- Third-Party Game CDN Preconnect & Performance Hints -->
+  <link rel="preconnect" href="https://cdn.htmlgames.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.htmlgames.com">
+  <link rel="preconnect" href="https://www.htmlgames.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.htmlgames.com">
+
   <!-- Google Fonts: Inter and Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
     rel="stylesheet">
+
+  <!-- Structured Data JSON-LD for Search Engines -->
+  <script type="application/ld+json" id="nexus-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NexusPlay",
+    "url": "https://nexusplay.example.com/",
+    "description": "Play 200+ free online HTML5 games on NexusPlay with zero downloads or installs."
+  }
+  </script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
@@ -70,6 +87,12 @@
 
   <!-- Mobile Drawer Overlay Backdrop -->
   <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+  <!-- Modal Container for Report Game & Feedback -->
+  <div id="nexus-modal-root"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
   <!-- Floating Back to Top Button -->
   <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">

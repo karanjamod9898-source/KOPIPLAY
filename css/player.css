@@ -1,16 +1,40 @@
 /* ==========================================================================
    NEXUSPLAY - Game Detail & Player Styles (Dark Gaming Design)
-   Iframe container, Fullscreen, Theater Mode, Controls, and Metadata
+   Mobile-First Responsive Layout, Aspect Ratios, Fullscreen & Touch Controls
    ========================================================================== */
 
-/* Breadcrumbs */
+/* Breadcrumbs & Navigation Bar */
 .breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.player-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  margin-right: 4px;
+}
+
+.player-back-btn:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .breadcrumb-link {
@@ -31,6 +55,10 @@
 .breadcrumb-current {
   color: var(--text-primary);
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px;
 }
 
 /* --------------------------------------------------------------------------
@@ -41,6 +69,9 @@
   grid-template-columns: 1fr 340px;
   gap: 24px;
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .game-detail-layout.theater-mode {
@@ -48,35 +79,89 @@
 }
 
 .game-detail-layout.theater-mode .game-sidebar {
-  display: none;
+  display: none !important;
+}
+
+.game-main-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --------------------------------------------------------------------------
-   Player Container
+   Player Container & Multi-Aspect Ratio Support
    -------------------------------------------------------------------------- */
 .player-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  min-width: 0;
+  aspect-ratio: var(--player-aspect-ratio, 16 / 9);
+  min-height: 260px;
+  max-height: 82vh;
   background: #080B12;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
   border: 1px solid var(--border-card);
   transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Specific aspect ratio overrides */
+.player-container.ratio-16-9 {
+  aspect-ratio: 16 / 9 !important;
+}
+
+.player-container.ratio-4-3 {
+  aspect-ratio: 4 / 3 !important;
+}
+
+.player-container.ratio-1-1 {
+  aspect-ratio: 1 / 1 !important;
+  max-width: 720px;
+}
+
+.player-container.ratio-fit {
+  aspect-ratio: auto !important;
+  height: 75vh !important;
+  max-height: 850px;
+}
+
+/* Mobile landscape orientation */
+@media (max-height: 520px) and (orientation: landscape) {
+  .player-container {
+    height: calc(100vh - 75px) !important;
+    aspect-ratio: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
 }
 
 .player-container.is-fullscreen {
-  border-radius: 0;
-  border: none;
-  aspect-ratio: auto;
-  width: 100vw;
-  height: 100vh;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  max-width: 100vw !important;
+  aspect-ratio: auto !important;
+  z-index: 99999 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: #000 !important;
 }
 
 .game-iframe {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   border: none;
   display: block;
   background: #000;
@@ -123,38 +208,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Error Screen */
-.player-error {
-  position: absolute;
-  inset: 0;
-  background: #0A0D14;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 24px;
-  text-align: center;
-  z-index: 11;
-}
-
-.player-error.active {
-  display: flex;
-}
-
-.player-error-title {
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.player-error-desc {
-  color: var(--text-muted);
-  max-width: 360px;
-  font-size: 0.9rem;
-}
-
 /* --------------------------------------------------------------------------
    Player Controls Toolbar
    -------------------------------------------------------------------------- */
@@ -167,6 +220,31 @@
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   margin-top: 14px;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.player-controls-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.player-bar-thumb {
+  width: 40px;
+  height: 30px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.player-bar-info {
+  min-width: 0;
+  flex: 1;
 }
 
 .player-game-title {
@@ -174,17 +252,28 @@
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.player-bar-cat {
+  font-size: 0.74rem;
+  color: var(--text-muted);
 }
 
 .player-controls-right {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .ctrl-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
@@ -194,6 +283,9 @@
   font-weight: 600;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-height: 38px;
+  touch-action: manipulation;
 }
 
 .ctrl-btn:hover {
@@ -208,10 +300,22 @@
   border-color: rgba(239, 68, 68, 0.25);
 }
 
+.ctrl-btn.btn-fullscreen {
+  background: var(--accent-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+.ctrl-btn.btn-fullscreen:hover {
+  background: var(--accent-gradient-hover);
+  box-shadow: 0 0 14px var(--accent-primary-glow);
+}
+
 .ctrl-btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -223,6 +327,9 @@
   border-radius: var(--radius-lg);
   padding: 24px;
   margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .game-info-card h2 {
@@ -263,30 +370,6 @@
   margin-bottom: 20px;
 }
 
-.game-controls-guide {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 16px;
-}
-
-.game-controls-guide h4 {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.game-controls-guide p {
-  color: var(--text-muted);
-  font-size: 0.86rem;
-  line-height: 1.5;
-}
-
 /* --------------------------------------------------------------------------
    Game Sidebar (Related Games)
    -------------------------------------------------------------------------- */
@@ -294,21 +377,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.sidebar-shelf-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-}
-
-.sidebar-shelf-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 14px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .related-games-list {

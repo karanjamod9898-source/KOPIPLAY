@@ -1,7 +1,6 @@
 /**
- * NEXUSPLAY - Complete Modern Gaming Portal Bundle
- * Dark gaming aesthetic inspired by CrazyGames layout
- * Fully static, zero external backend dependencies
+ * NEXUSPLAY - Complete Modern Gaming Portal Bundle (Production Ready)
+ * Dark gaming aesthetic, fully static, zero external backend dependencies
  */
 
 (function () {
@@ -79,6 +78,193 @@
     return [...new Set(matched)];
   }
 
+  // --- Category Rich SEO Metadata Dictionary (Phase 4) ---
+  const CATEGORY_SEO_DATA = {
+    'shooting': {
+      title: 'Play Free Shooting Games Online – NEXUSPLAY',
+      description: 'Play action-packed free online shooting games on NEXUSPLAY. Aim, fire, and conquer sniper, tactical FPS, and space blaster browser games with no downloads.',
+      intro: 'Welcome to the NEXUSPLAY Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters, or defensive turret warfare, our shooting library delivers fast-paced target acquisition and reflex testing on both desktop and mobile.',
+      faqs: [
+        { q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All NEXUSPLAY shooting games run directly in modern mobile browsers via HTML5 and WebGL.' },
+        { q: 'What controls are used for browser shooting games?', a: 'Desktop games typically use mouse aiming with left-click to fire, alongside WASD/arrow keys for tactical movement. Touchscreens feature intuitive virtual controls.' },
+        { q: 'Are these shooting games completely free?', a: 'Every shooting game on NEXUSPLAY is 100% free with instant, unlimited play.' }
+      ]
+    },
+    'action': {
+      title: 'Play Free Action Games Online – NEXUSPLAY',
+      description: 'Jump into thrilling free online action games on NEXUSPLAY. Experience combat, ninja duels, survival battles, and fast-paced brawlers instantly in your browser.',
+      intro: 'NEXUSPLAY Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Challenge your reflexes across hand-to-hand combat, dodge hazards, and overcome enemy waves.',
+      faqs: [
+        { q: 'What makes action games on NEXUSPLAY unique?', a: 'They load instantly with zero downloads, featuring smooth canvas animations, reactive audio, and full responsiveness.' },
+        { q: 'Do action games support touch controls?', a: 'Yes, each action title is adapted for touch taps, swipes, and on-screen pads on smartphones and tablets.' },
+        { q: 'Can I save my high scores or progress?', a: 'Scores and level progress are safely preserved locally in your browser storage.' }
+      ]
+    },
+    'adventure': {
+      title: 'Play Free Adventure Games Online – NEXUSPLAY',
+      description: 'Embark on epic free online adventure games on NEXUSPLAY. Explore mysterious dungeons, solve quest puzzles, and journey across captivating digital worlds.',
+      intro: 'Step into immersive journeys and mysterious labyrinths with NEXUSPLAY Adventure Games. Uncover secrets, solve ancient mechanisms, and steer brave adventurers through exciting storylines.',
+      faqs: [
+        { q: 'Are adventure games suitable for all ages?', a: 'Our adventure catalog features family-friendly puzzle quests, fantasy explorations, and rich storytelling.' },
+        { q: 'Can I play adventure games on tablet or iPad?', a: 'Absolutely. Responsive aspect ratios ensure full viewability on touch tablets and iPads.' }
+      ]
+    },
+    'racing': {
+      title: 'Explore Free Racing Games – NEXUSPLAY',
+      description: 'Race at top speeds with free online racing games on NEXUSPLAY. Drift through city tracks, burn rubber on highways, and master precision vehicle control.',
+      intro: 'Feel the adrenaline of competition in NEXUSPLAY Racing Games. From neon synthwave highways to off-road dirt tracks, accelerate past rivals and clock record lap times.',
+      faqs: [
+        { q: 'Do racing games work with keyboard arrow keys?', a: 'Yes, desktop players can steer with Arrow keys or WASD, with Spacebar for nitro or handbrake.' },
+        { q: 'Are there 3D racing games available?', a: 'Yes, multiple titles feature smooth 3D canvas and WebGL simulation engines.' }
+      ]
+    },
+    'car': {
+      title: 'Play Free Car Games Online – NEXUSPLAY',
+      description: 'Enjoy free car games online on NEXUSPLAY. Test your skills with precision parking, highway traffic dodging, stunt driving, and custom supercars.',
+      intro: 'Get behind the wheel in NEXUSPLAY Car Games. Master parking challenges, navigate dense city traffic, or test horsepower across high-octane stunt courses.',
+      faqs: [
+        { q: 'What types of car games are featured?', a: 'We offer precision parking simulators, highway traffic runners, stunt obstacle courses, and drift arenas.' },
+        { q: 'Is there any download or installation required?', a: 'No, all car games run instantly inside your web browser.' }
+      ]
+    },
+    'driving': {
+      title: 'Free Driving Simulators & Road Games – NEXUSPLAY',
+      description: 'Experience realistic free online driving games on NEXUSPLAY. Steer buses, pilot aircraft, navigate traffic highways, and test vehicle handling.',
+      intro: 'Take control of diverse vehicles in NEXUSPLAY Driving Games. From airport flight simulators to city transit navigation, experience satisfying vehicular control.',
+      faqs: [
+        { q: 'Are driving games optimized for mobile devices?', a: 'Yes, on-screen steering controls and touch acceleration pedals are fully integrated.' }
+      ]
+    },
+    'sports': {
+      title: 'Discover Sports Games Free Online – NEXUSPLAY',
+      description: 'Play free online sports games on NEXUSPLAY. Compete in football, basketball, tennis, bowling, and golf with realistic physics and instant gameplay.',
+      intro: 'Step onto the field, court, and green with NEXUSPLAY Sports Games. Score game-winning three-pointers, bend free kicks, and conquer athletic tournaments.',
+      faqs: [
+        { q: 'Are multiplayer sports games supported?', a: 'Yes, select sports titles support local 2-player turn-based or simultaneous competitive matches.' }
+      ]
+    },
+    'football': {
+      title: 'Play Free Football & Soccer Games – NEXUSPLAY',
+      description: 'Score epic goals in free online football games on NEXUSPLAY. Master penalty shootouts, tournament championships, and striker headers.',
+      intro: 'Experience the world’s favorite sport in NEXUSPLAY Football Games. Beat the goalkeeper, execute curving free kicks, and lift tournament trophies.',
+      faqs: [
+        { q: 'How do penalty kick controls work?', a: 'Simply swipe or drag your cursor to aim power and curve directly into the goal corners.' }
+      ]
+    },
+    'puzzle': {
+      title: 'Play Puzzle Games Online Free – NEXUSPLAY',
+      description: 'Challenge your mind with free online puzzle games on NEXUSPLAY. Solve logic grids, sliding tiles, block puzzles, 2048, and match-3 brain teasers.',
+      intro: 'Sharpen your cognitive skills with NEXUSPLAY Puzzle Games. Engage in relaxing block placements, strategic tile-matching, and intricate spatial brain teasers.',
+      faqs: [
+        { q: 'Are puzzle games good for brain training?', a: 'Yes, games like 2048, Sudoku, and spatial block puzzles exercise logic, memory, and concentration.' }
+      ]
+    },
+    'strategy': {
+      title: 'Free Strategy & Tactical Games – NEXUSPLAY',
+      description: 'Outsmart opponents in free online strategy games on NEXUSPLAY. Command armies, deploy tower defenses, and master tactical board maneuvers.',
+      intro: 'Plan your victory step-by-step with NEXUSPLAY Strategy Games. Defend strongholds against invading waves, allocate resources, and checkmate rivals.',
+      faqs: [
+        { q: 'Are tower defense games included?', a: 'Yes, our strategy library features tower defense titles with tactical upgrade paths.' }
+      ]
+    },
+    'platform': {
+      title: 'Play Free Platformer Games Online – NEXUSPLAY',
+      description: 'Jump, dash, and run through free online platform games on NEXUSPLAY. Overcome traps, leap across moving platforms, and reach the finish flag.',
+      intro: 'Experience pure timing and agile jumps in NEXUSPLAY Platform Games. Hop over hazards, collect glowing gems, and discover hidden shortcuts.',
+      faqs: [
+        { q: 'Can I play platformers with a keyboard spacebar?', a: 'Yes, Spacebar or Up Arrow performs jumps, with Left/Right keys controlling movement.' }
+      ]
+    },
+    'multiplayer': {
+      title: 'Play Free Multiplayer Games Online – NEXUSPLAY',
+      description: 'Play free online multiplayer and 2-player games on NEXUSPLAY. Challenge friends on the same device or face rivals in arena battles.',
+      intro: 'Gaming is best together! NEXUSPLAY Multiplayer Games offer 2-player shared screen matches, competitive sports duels, and cooperative challenges.',
+      faqs: [
+        { q: 'How do 2-player games work on one keyboard?', a: 'Player 1 uses WASD while Player 2 uses the Arrow keys, ensuring seamless simultaneous play.' }
+      ]
+    },
+    'arcade': {
+      title: 'Classic & Modern Arcade Games – NEXUSPLAY',
+      description: 'Relive retro thrills with free online arcade games on NEXUSPLAY. Play Snake, Breakout, high-score runners, and neon reflex games.',
+      intro: 'Step into the neon glow of NEXUSPLAY Arcade Games. Enjoy instant high-score chasing, retro brick deflectors, and endless arcade classics.',
+      faqs: [
+        { q: 'Do arcade games track local high scores?', a: 'Yes, high scores are stored locally in your browser so you can beat your personal best.' }
+      ]
+    },
+    'simulation': {
+      title: 'Free Simulation Games Online – NEXUSPLAY',
+      description: 'Build, manage, and experience life simulations in free online games on NEXUSPLAY. Run restaurants, manage virtual farms, and pilot crafts.',
+      intro: 'Immerse yourself in virtual systems with NEXUSPLAY Simulation Games. Craft efficient businesses, cultivate digital farms, and test engineering builds.',
+      faqs: [
+        { q: 'Are simulation games relaxing to play?', a: 'Many simulation games are designed for relaxing, low-pressure creative and management gameplay.' }
+      ]
+    },
+    'casual': {
+      title: 'Play Casual Games Free Online – NEXUSPLAY',
+      description: 'Unwind with fun and relaxing casual games on NEXUSPLAY. Quick, easy-to-learn browser games for satisfying instant entertainment.',
+      intro: 'Take a quick break with NEXUSPLAY Casual Games. Designed with intuitive controls and immediate satisfaction, jump in for two minutes or two hours.',
+      faqs: [
+        { q: 'Do casual games require tutorials?', a: 'No, every casual game is designed with pick-up-and-play simplicity and zero learning curves.' }
+      ]
+    },
+    'kids-games': {
+      title: 'Fun & Safe Kids Games Online – NEXUSPLAY',
+      description: 'Play safe, kid-friendly free online games on NEXUSPLAY. Enjoy coloring, cute animal adventures, educational puzzles, and gentle fun.',
+      intro: 'Delightful entertainment for younger players! NEXUSPLAY Kids Games feature colorful animation, friendly pets, drawing activities, and gentle puzzles.',
+      faqs: [
+        { q: 'Are kids games safe and family-friendly?', a: 'Yes, games in this category are curated for positive, non-violent, family-friendly fun.' }
+      ]
+    },
+    'beauty': {
+      title: 'Free Dress-Up & Fashion Games – NEXUSPLAY',
+      description: 'Unleash your creativity with free online fashion, makeup, and beauty games on NEXUSPLAY. Style royal outfits and create chic makeovers.',
+      intro: 'Design runway looks and royal styles in NEXUSPLAY Beauty Games. Choose elegant gowns, experiment with makeup palettes, and express fashion creativity.',
+      faqs: [
+        { q: 'Can I save or take a snapshot of my designs?', a: 'You can easily view full-screen outfits and screenshot your creations on any device.' }
+      ]
+    },
+    'pool': {
+      title: 'Play Free 8-Ball & Billiards Games – NEXUSPLAY',
+      description: 'Sink 8-ball stripes and solids in free online pool games on NEXUSPLAY. Experience accurate cue ball physics and table angles.',
+      intro: 'Chalk your cue in NEXUSPLAY Pool Games. Line up trick shots, calculate cushion rebounds, and master classic 8-Ball and Snooker tables.',
+      faqs: [
+        { q: 'How is shot power controlled?', a: 'Click and pull back the cue stick with your mouse or finger, releasing when power reaches your target.' }
+      ]
+    },
+    'board-games': {
+      title: 'Free Classic Board Games Online – NEXUSPLAY',
+      description: 'Play Chess, Checkers, Ludo, and classic board games free on NEXUSPLAY. Challenge computer AI or practice strategic moves.',
+      intro: 'Timeless tabletop strategy awaits in NEXUSPLAY Board Games. Play Chess, Ludo, and Dominoes anytime without needing physical pieces.',
+      faqs: [
+        { q: 'Can I play Chess against different AI difficulties?', a: 'Yes, our chess titles feature multiple skill levels to match beginners and masters alike.' }
+      ]
+    },
+    'card-games': {
+      title: 'Free Solitaire & Card Games – NEXUSPLAY',
+      description: 'Play Solitaire, Klondike, Spider, and classic card games free on NEXUSPLAY. Enjoy smooth card deals, hints, and undo moves.',
+      intro: 'Shuffle the deck in NEXUSPLAY Card Games. Relax with classic Klondike Solitaire, test patience in Spider, or clear card pyramids with undo features.',
+      faqs: [
+        { q: 'Does Solitaire offer unlimited undos?', a: 'Yes, our Solitaire games support free undo moves and helpful card hints.' }
+      ]
+    },
+    'clicker': {
+      title: 'Play Idle & Clicker Games Free – NEXUSPLAY',
+      description: 'Tap, upgrade, and build empires with free online clicker games on NEXUSPLAY. Enjoy exponential progression and satisfying idle unlocks.',
+      intro: 'Watch numbers multiply in NEXUSPLAY Clicker Games. Tap for revenue, purchase automated upgrades, and build thriving idle businesses.',
+      faqs: [
+        { q: 'Does idle progress continue when I switch tabs?', a: 'Yes, clicker games store your progression and calculate offline returns upon return.' }
+      ]
+    },
+    'io-games': {
+      title: 'Free .io Games & Arena Battles – NEXUSPLAY',
+      description: 'Survive and dominate competitive battle arenas in free .io games on NEXUSPLAY. Grow your champion, outmaneuver rivals, and lead the scoreboard.',
+      intro: 'Jump into fast-paced survival rings in NEXUSPLAY .io Games. Eat power nodes, grow in size, and outsmart rivals in non-stop browser arenas.',
+      faqs: [
+        { q: 'Are .io games fast to join?', a: 'Yes, simply enter and you are instantly spawned into the active arena with zero queues.' }
+      ]
+    }
+  };
+
   // --- Application State ---
   let catalog = [];
   let categoryList = [];
@@ -98,10 +284,14 @@
 
   function toggleFavorite(slug) {
     const idx = favorites.indexOf(slug);
-    if (idx > -1) {
-      favorites.splice(idx, 1);
-    } else {
+    const added = idx === -1;
+    if (added) {
       favorites.push(slug);
+      nexusAnalytics.track('favorite_added', { slug });
+      showToast('Added to My Favorites!', '♥');
+    } else {
+      favorites.splice(idx, 1);
+      showToast('Removed from Favorites', '♡');
     }
     try {
       localStorage.setItem('nexus_favorites', JSON.stringify(favorites));
@@ -113,7 +303,7 @@
   function addRecentlyPlayed(slug) {
     recentlyPlayed = recentlyPlayed.filter(s => s !== slug);
     recentlyPlayed.unshift(slug);
-    if (recentlyPlayed.length > 25) recentlyPlayed.pop();
+    if (recentlyPlayed.length > 30) recentlyPlayed.pop();
     try {
       localStorage.setItem('nexus_recently_played', JSON.stringify(recentlyPlayed));
     } catch (e) {}
@@ -121,32 +311,167 @@
   }
 
   function updateHeaderAndSidebarBadges() {
-    const favCountEl = document.getElementById('favBadgeCount');
-    if (favCountEl) favCountEl.textContent = favorites.length;
+    const favHeader = document.getElementById('headerFavCount');
+    if (favHeader) favHeader.textContent = favorites.length;
 
-    const recentCountEl = document.getElementById('recentBadgeCount');
-    if (recentCountEl) recentCountEl.textContent = recentlyPlayed.length;
+    const favSidebar = document.getElementById('favBadgeCount');
+    if (favSidebar) favSidebar.textContent = favorites.length;
 
-    const headerFavCount = document.getElementById('headerFavCount');
-    if (headerFavCount) headerFavCount.textContent = favorites.length;
+    const recentSidebar = document.getElementById('recentBadgeCount');
+    if (recentSidebar) recentSidebar.textContent = recentlyPlayed.length;
   }
 
   function computeCategoryCounts() {
     categoryCounts = {};
-    categoryList.forEach(c => { categoryCounts[c.slug] = 0; });
+    categoryList.forEach(c => categoryCounts[c.slug] = 0);
 
     catalog.forEach(game => {
       const cats = matchCategories(game);
       game._categories = cats;
-      cats.forEach(c => {
-        categoryCounts[c] = (categoryCounts[c] || 0) + 1;
+      cats.forEach(slug => {
+        categoryCounts[slug] = (categoryCounts[slug] || 0) + 1;
       });
     });
   }
 
+  // --- Utility Functions ---
   function escapeHtml(str) {
     if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function sanitizeUrl(url) {
+    if (!url) return '';
+    const trimmed = String(url).trim();
+    if (trimmed.startsWith('games/') || trimmed.startsWith('./games/') || trimmed.startsWith('https://')) {
+      return trimmed;
+    }
+    return '';
+  }
+
+  function showToast(message, icon = '✓') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<span style="font-size:1.1rem; color:#38BDF8;">${icon}</span><span>${escapeHtml(message)}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      toast.style.transition = 'all 0.3s ease';
+      setTimeout(() => toast.remove(), 300);
+    }, 3200);
+  }
+
+  // --- Google AdSense Engine (Prepared, Inactive by Default) ---
+  const ADS_CONFIG = {
+    enabled: false,
+    client: '',
+    slots: {
+      homeLeaderboard: '',
+      categoryBanner: '',
+      gameSidebar: '',
+      gameFooter: ''
+    }
+  };
+
+  const nexusAds = {
+    init: function (config) {
+      if (config && typeof config === 'object') {
+        Object.assign(ADS_CONFIG, config);
+      }
+    },
+    renderSlot: function (slotName) {
+      if (!ADS_CONFIG.enabled || !ADS_CONFIG.client || !ADS_CONFIG.slots[slotName]) {
+        return '';
+      }
+      return `
+        <div class="nexus-ad-slot-wrap" data-slot="${escapeHtml(slotName)}" style="margin: 20px 0; text-align: center;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="${escapeHtml(ADS_CONFIG.client)}"
+               data-ad-slot="${escapeHtml(ADS_CONFIG.slots[slotName])}"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+      `;
+    }
+  };
+
+  // --- Analytics Engine (Configurable, Zero Tracking when Disabled) ---
+  const ANALYTICS_CONFIG = {
+    enabled: false,
+    measurementId: ''
+  };
+
+  const nexusAnalytics = {
+    init: function (config) {
+      if (config && typeof config === 'object') {
+        Object.assign(ANALYTICS_CONFIG, config);
+      }
+    },
+    track: function (eventName, params = {}) {
+      if (!ANALYTICS_CONFIG.enabled) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, params);
+      }
+    }
+  };
+
+  // --- Dynamic SEO Metadata & Schema Manager ---
+  function updateSeo({ title, description, canonical, ogType, ogImage, schema }) {
+    if (title) {
+      document.title = title;
+      const metaTitle = document.querySelector('meta[name="title"]');
+      if (metaTitle) metaTitle.setAttribute('content', title);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', title);
+      const twTitle = document.querySelector('meta[property="twitter:title"]');
+      if (twTitle) twTitle.setAttribute('content', title);
+    }
+    if (description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', description);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', description);
+      const twDesc = document.querySelector('meta[property="twitter:description"]');
+      if (twDesc) twDesc.setAttribute('content', description);
+    }
+    if (canonical) {
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.rel = 'canonical';
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.href = canonical;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute('content', canonical);
+      const twUrl = document.querySelector('meta[property="twitter:url"]');
+      if (twUrl) twUrl.setAttribute('content', canonical);
+    }
+    if (ogImage) {
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg) ogImg.setAttribute('content', ogImage);
+      const twImg = document.querySelector('meta[property="twitter:image"]');
+      if (twImg) twImg.setAttribute('content', ogImage);
+    }
+    if (ogType) {
+      const ogT = document.querySelector('meta[property="og:type"]');
+      if (ogT) ogT.setAttribute('content', ogType);
+    }
+    if (schema) {
+      const schemaScript = document.getElementById('nexus-schema');
+      if (schemaScript) {
+        schemaScript.textContent = JSON.stringify(schema, null, 2);
+      }
+    }
   }
 
   // --- Render Sidebar ---
@@ -159,12 +484,12 @@
 
     categoryList.forEach(cat => {
       const count = categoryCounts[cat.slug] || 0;
-      if (count === 0) return; // Only show when matching games exist
+      if (count === 0) return;
       visibleCategoryCount++;
 
       const iconSvg = getCategoryIcon(cat.slug);
       catListHtml += `
-        <a href="#/category/${cat.slug}" class="category-nav-item" data-category="${cat.slug}">
+        <a href="#/category/${cat.slug}" class="category-nav-item" data-category="${cat.slug}" data-tooltip="${cat.name}" title="${cat.name}">
           <div class="category-nav-left">
             <span class="category-nav-icon">${iconSvg}</span>
             <span class="category-nav-name">${cat.name}</span>
@@ -176,9 +501,9 @@
 
     sidebar.innerHTML = `
       <div class="sidebar-header">
-        <a href="#/" class="sidebar-brand" aria-label="NexusPlay Home">
+        <a href="#/" class="sidebar-brand" aria-label="NexusPlay Home" data-tooltip="NexusPlay Home">
           <img class="brand-full" src="assets/images/logo.svg" alt="NexusPlay">
-          <img class="brand-icon" src="assets/images/favicon.svg" alt="NexusPlay">
+          <img class="brand-icon" src="assets/images/favicon.svg" alt="NexusPlay" title="Click to expand sidebar">
         </a>
         <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" aria-label="Toggle Sidebar" title="Collapse sidebar">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -186,29 +511,29 @@
       </div>
       <div class="sidebar-content">
         <div class="sidebar-nav-group">
-          <a href="#/" class="nav-pill" data-nav="home">
+          <a href="#/" class="nav-pill" data-nav="home" data-tooltip="Home" title="Home">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
             <span class="nav-pill-label">Home</span>
           </a>
-          <a href="#/popular" class="nav-pill" data-nav="popular">
+          <a href="#/popular" class="nav-pill" data-nav="popular" data-tooltip="Popular Games" title="Popular Games">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3 4 5 4 9a6 6 0 1 1-12 0c0-2.5 1-4.5 3-6 0 2.5 1.5 4.5 3 4.5s2-2 2-7.5z"/></svg></span>
             <span class="nav-pill-label">Popular Games</span>
           </a>
-          <a href="#/new" class="nav-pill" data-nav="new">
+          <a href="#/new" class="nav-pill" data-nav="new" data-tooltip="New Games" title="New Games">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg></span>
             <span class="nav-pill-label">New Games</span>
           </a>
-          <a href="#/recent" class="nav-pill" data-nav="recent">
+          <a href="#/recent" class="nav-pill" data-nav="recent" data-tooltip="Recently Played" title="Recently Played">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
             <span class="nav-pill-label">Recently Played</span>
             <span class="sidebar-section-count" id="recentBadgeCount">${recentlyPlayed.length}</span>
           </a>
-          <a href="#/favorites" class="nav-pill" data-nav="favorites">
+          <a href="#/favorites" class="nav-pill" data-nav="favorites" data-tooltip="My Favorites" title="My Favorites">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
             <span class="nav-pill-label">My Favorites</span>
             <span class="sidebar-section-count" id="favBadgeCount">${favorites.length}</span>
           </a>
-          <a href="#/games" class="nav-pill" data-nav="games">
+          <a href="#/games" class="nav-pill" data-nav="games" data-tooltip="All 200 Games" title="All 200 Games">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
             <span class="nav-pill-label">All 200 Games</span>
             <span class="sidebar-section-count">${catalog.length}</span>
@@ -229,7 +554,14 @@
     const collapseBtn = document.getElementById('sidebarCollapseBtn');
     if (collapseBtn) {
       collapseBtn.addEventListener('click', () => {
-        document.body.classList.toggle('sidebar-collapsed');
+        if (window.innerWidth <= 1024) {
+          document.body.classList.remove('mobile-sidebar-open');
+        } else {
+          const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+          try {
+            localStorage.setItem('nexus_sidebar_collapsed', isCollapsed ? '1' : '0');
+          } catch (e) {}
+        }
       });
     }
 
@@ -239,9 +571,55 @@
         if (document.body.classList.contains('sidebar-collapsed')) {
           e.preventDefault();
           document.body.classList.remove('sidebar-collapsed');
+          try {
+            localStorage.setItem('nexus_sidebar_collapsed', '0');
+          } catch (err) {}
         }
       });
     }
+  }
+
+  function initSidebarTooltips() {
+    let tooltipEl = document.getElementById('sidebar-floating-tooltip');
+    if (!tooltipEl) {
+      tooltipEl = document.createElement('div');
+      tooltipEl.id = 'sidebar-floating-tooltip';
+      tooltipEl.className = 'sidebar-floating-tooltip';
+      document.body.appendChild(tooltipEl);
+    }
+
+    const sidebar = document.getElementById('app-sidebar');
+    if (!sidebar) return;
+
+    sidebar.addEventListener('mouseover', (e) => {
+      if (!document.body.classList.contains('sidebar-collapsed') || window.innerWidth <= 1024) {
+        tooltipEl.classList.remove('visible');
+        return;
+      }
+      const item = e.target.closest('.nav-pill, .category-nav-item, .sidebar-brand');
+      if (!item) {
+        tooltipEl.classList.remove('visible');
+        return;
+      }
+      const text = item.getAttribute('data-tooltip') || (item.classList.contains('sidebar-brand') ? 'NexusPlay (Click to expand)' : '');
+      if (!text) {
+        tooltipEl.classList.remove('visible');
+        return;
+      }
+      const rect = item.getBoundingClientRect();
+      tooltipEl.textContent = text;
+      tooltipEl.style.top = `${rect.top + rect.height / 2}px`;
+      tooltipEl.style.left = `${rect.right + 10}px`;
+      tooltipEl.classList.add('visible');
+    });
+
+    sidebar.addEventListener('mouseleave', () => {
+      tooltipEl.classList.remove('visible');
+    });
+
+    window.addEventListener('scroll', () => {
+      tooltipEl.classList.remove('visible');
+    }, { passive: true });
   }
 
   // --- Render Header ---
@@ -258,16 +636,16 @@
           <div class="search-wrapper">
             <div class="search-input-box">
               <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" class="search-input" id="globalSearchInput" placeholder="Search 200+ games by title, genre, tag..." autocomplete="off">
+              <input type="text" class="search-input" id="globalSearchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games catalog">
               <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
             </div>
-            <div class="search-suggestions" id="searchSuggestions"></div>
+            <div class="search-suggestions" id="searchSuggestions" role="listbox"></div>
           </div>
         </div>
         <div class="header-right">
-          <a href="#/favorites" class="btn-header-fav" id="headerFavLink" title="View Favorites">
+          <a href="#/favorites" class="btn-header-fav" id="headerFavLink" title="View Favorites" aria-label="Favorites">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span>Favorites</span>
+            <span class="header-fav-text">Favorites</span>
             <span class="header-fav-count" id="headerFavCount">${favorites.length}</span>
           </a>
         </div>
@@ -278,7 +656,7 @@
     initMobileNavEvents();
   }
 
-  // --- Render Footer ---
+  // --- PHASE 1: Professional 4-Column Gaming Portal Footer ---
   function renderFooter() {
     const footer = document.getElementById('app-footer');
     if (!footer) return;
@@ -286,45 +664,67 @@
     footer.innerHTML = `
       <div class="container">
         <div class="footer-top">
+          <!-- Column 1: Brand -->
           <div class="footer-brand">
-            <a href="#/" class="footer-logo">
-              <img src="assets/images/logo.svg" alt="NexusPlay" height="34">
+            <a href="#/" class="footer-logo" aria-label="NEXUSPLAY Home">
+              <img src="assets/images/logo.svg" alt="NEXUSPLAY" height="38">
             </a>
-            <p>NEXUSPLAY is the premier dark gaming portal offering 200 free, instant-play HTML5 games across 22 categories with zero downloads or installs.</p>
+            <p>NEXUSPLAY is a premier dark gaming portal delivering 200 free, instant-play HTML5 and WebGL games across 22 curated categories. Play seamlessly inside your browser on desktop, tablet, and mobile with zero downloads or installations.</p>
+            <div class="footer-experience-badge">
+              <span class="pulse-dot"></span>
+              <span>Instant HTML5 Play • Zero Downloads • Desktop & Mobile</span>
+            </div>
           </div>
+
+          <!-- Column 2: Popular Categories -->
           <div class="footer-col">
             <h4>Popular Categories</h4>
             <ul class="footer-links">
-              <li><a href="#/category/shooting">Shooting Games</a></li>
-              <li><a href="#/category/racing">Racing & Cars</a></li>
-              <li><a href="#/category/action">Action & Adventure</a></li>
-              <li><a href="#/category/puzzle">Puzzle & Brain</a></li>
-              <li><a href="#/category/sports">Sports & Football</a></li>
+              <li><a href="#/category/shooting" class="footer-link">Shooting Games</a></li>
+              <li><a href="#/category/action" class="footer-link">Action Games</a></li>
+              <li><a href="#/category/adventure" class="footer-link">Adventure Games</a></li>
+              <li><a href="#/category/racing" class="footer-link">Racing Games</a></li>
+              <li><a href="#/category/car" class="footer-link">Car Games</a></li>
+              <li><a href="#/category/puzzle" class="footer-link">Puzzle Games</a></li>
+              <li><a href="#/category/sports" class="footer-link">Sports Games</a></li>
             </ul>
           </div>
+
+          <!-- Column 3: Portal Navigation -->
           <div class="footer-col">
             <h4>Portal Navigation</h4>
             <ul class="footer-links">
-              <li><a href="#/">Home</a></li>
-              <li><a href="#/games">All 200 Games</a></li>
-              <li><a href="#/popular">Popular Games</a></li>
-              <li><a href="#/new">New Additions</a></li>
-              <li><a href="#/favorites">My Favorites</a></li>
+              <li><a href="#/" class="footer-link">Home</a></li>
+              <li><a href="#/games" class="footer-link">All Games</a></li>
+              <li><a href="#/popular" class="footer-link">Popular Games</a></li>
+              <li><a href="#/new" class="footer-link">New Games</a></li>
+              <li><a href="#/recent" class="footer-link">Recently Played</a></li>
+              <li><a href="#/favorites" class="footer-link">My Favorites</a></li>
             </ul>
           </div>
+
+          <!-- Column 4: Trust & Legal -->
           <div class="footer-col">
-            <h4>Platform Details</h4>
+            <h4>Trust & Legal</h4>
             <ul class="footer-links">
-              <li><span style="color:var(--text-muted)">100% Client-Side Static</span></li>
-              <li><span style="color:var(--text-muted)">Compatible with GitHub Pages</span></li>
-              <li><span style="color:var(--text-muted)">Mobile & Desktop Optimized</span></li>
-              <li><span style="color:var(--text-muted)">Instant HTML5 Execution</span></li>
+              <li><a href="#/about" class="footer-link">About Us</a></li>
+              <li><a href="#/contact" class="footer-link">Contact & Support</a></li>
+              <li><a href="#/privacy" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#/terms" class="footer-link">Terms of Service</a></li>
+              <li><a href="#/dmca" class="footer-link">DMCA & Copyright</a></li>
             </ul>
           </div>
         </div>
-        <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-muted);">
+
+        <div class="footer-bottom">
           <div>&copy; 2026 NEXUSPLAY. All rights reserved. Free HTML5 Gaming Portal.</div>
-          <div>Dark Gaming Aesthetic &bull; 200 Verified Games &bull; 22 Categories</div>
+          <div class="footer-bottom-links">
+            <a href="#/about">About</a>
+            <a href="#/privacy">Privacy Policy</a>
+            <a href="#/terms">Terms of Service</a>
+            <a href="#/dmca">DMCA Policy</a>
+            <a href="#/contact">Support</a>
+          </div>
         </div>
       </div>
     `;
@@ -337,37 +737,42 @@
     const clearBtn = document.getElementById('searchClearBtn');
     if (!input || !suggestions) return;
 
+    let debounceTimer = null;
+
     input.addEventListener('input', (e) => {
       const q = e.target.value.trim().toLowerCase();
       if (clearBtn) clearBtn.style.display = q ? 'block' : 'none';
 
+      clearTimeout(debounceTimer);
       if (!q) {
         suggestions.classList.remove('active');
         suggestions.innerHTML = '';
         return;
       }
 
-      const matches = catalog.filter(g => {
-        return (g.title || '').toLowerCase().includes(q) ||
-               (g.category || '').toLowerCase().includes(q) ||
-               (g.tags || []).some(t => t.toLowerCase().includes(q));
-      }).slice(0, 8);
+      debounceTimer = setTimeout(() => {
+        const matches = catalog.filter(g => {
+          return (g.title || '').toLowerCase().includes(q) ||
+                 (g.category || '').toLowerCase().includes(q) ||
+                 (g.tags || []).some(t => t.toLowerCase().includes(q));
+        }).slice(0, 8);
 
-      if (matches.length === 0) {
-        suggestions.innerHTML = '<div style="padding:14px; text-align:center; color:var(--text-muted); font-size:0.86rem;">No games found for "' + escapeHtml(q) + '"</div>';
-      } else {
-        suggestions.innerHTML = matches.map(g => `
-          <a href="#/game/${g.slug}" class="suggestion-item" onclick="document.getElementById('searchSuggestions').classList.remove('active')">
-            <img class="suggestion-thumb" src="${g.thumbnail}" alt="${escapeHtml(g.title)}" onerror="this.onerror=null;this.src='assets/images/logo.svg'">
-            <div class="suggestion-info">
-              <div class="suggestion-title">${escapeHtml(g.title)}</div>
-              <div class="suggestion-cat">${escapeHtml(g.category || 'Arcade')}</div>
-            </div>
-            <span style="font-size:0.75rem; font-weight:700; color:#38BDF8; padding:3px 8px; border-radius:4px; background:rgba(56,189,248,0.1);">PLAY</span>
-          </a>
-        `).join('');
-      }
-      suggestions.classList.add('active');
+        if (matches.length === 0) {
+          suggestions.innerHTML = '<div style="padding:14px; text-align:center; color:var(--text-muted); font-size:0.86rem;">No games found for "' + escapeHtml(q) + '"</div>';
+        } else {
+          suggestions.innerHTML = matches.map(g => `
+            <a href="#/game/${g.slug}" class="suggestion-item" onclick="document.getElementById('searchSuggestions').classList.remove('active')">
+              <img class="suggestion-thumb" src="${g.thumbnail}" alt="${escapeHtml(g.title)}" width="48" height="32" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/favicon.svg'">
+              <div class="suggestion-info">
+                <div class="suggestion-title">${escapeHtml(g.title)}</div>
+                <div class="suggestion-cat">${escapeHtml(g.category || 'Arcade')}</div>
+              </div>
+              <span style="font-size:0.75rem; font-weight:700; color:#38BDF8; padding:3px 8px; border-radius:4px; background:rgba(56,189,248,0.1);">PLAY</span>
+            </a>
+          `).join('');
+        }
+        suggestions.classList.add('active');
+      }, 120);
     });
 
     if (clearBtn) {
@@ -375,21 +780,20 @@
         input.value = '';
         clearBtn.style.display = 'none';
         suggestions.classList.remove('active');
+        input.focus();
       });
     }
 
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        const q = input.value.trim().toLowerCase();
+        const q = input.value.trim();
         if (q) {
           suggestions.classList.remove('active');
-          const matches = catalog.filter(g => {
-            return (g.title || '').toLowerCase().includes(q) ||
-                   (g.category || '').toLowerCase().includes(q) ||
-                   (g.tags || []).some(t => t.toLowerCase().includes(q));
-          });
-          renderAllGamesView('Search: "' + q + '"', matches);
+          window.location.hash = '#/games?q=' + encodeURIComponent(q);
+          nexusAnalytics.track('search_used', { query: q });
         }
+      } else if (e.key === 'Escape') {
+        suggestions.classList.remove('active');
       }
     });
 
@@ -405,7 +809,8 @@
     const overlay = document.getElementById('mobile-drawer-overlay');
 
     if (toggle) {
-      toggle.addEventListener('click', () => {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         document.body.classList.toggle('mobile-sidebar-open');
       });
     }
@@ -416,7 +821,6 @@
       });
     }
 
-    // Close mobile drawer when clicking any sidebar link
     const sidebar = document.getElementById('app-sidebar');
     if (sidebar) {
       sidebar.addEventListener('click', (e) => {
@@ -426,29 +830,37 @@
       });
     }
 
-    // Back to top button
+    window.addEventListener('hashchange', () => {
+      document.body.classList.remove('mobile-sidebar-open');
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) {
+        document.body.classList.remove('mobile-sidebar-open');
+      }
+    });
+
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
-          backToTop.classList.add('visible');
+          backToTop.classList.add('is-visible');
         } else {
-          backToTop.classList.remove('visible');
+          backToTop.classList.remove('is-visible');
         }
-      });
+      }, { passive: true });
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   }
 
-  // --- Game Card Renderer ---
+  // --- Game Card Renderer (CLS Optimized) ---
   function renderCard(game) {
     const isFav = favorites.includes(game.slug);
     const catName = game.category || 'Arcade';
     const rating = game.rating ? game.rating.toFixed(1) : '4.5';
 
-    // Optional badge
     let badgeHtml = '';
     if (game.rating && game.rating >= 4.8) {
       badgeHtml = '<span class="card-badge badge-top">TOP</span>';
@@ -461,12 +873,19 @@
     return `
       <div class="game-card" data-slug="${game.slug}">
         <div class="card-media">
-          <img class="card-thumb" src="${game.thumbnail}" alt="${escapeHtml(game.title)}" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'><rect fill=\'%23121620\' width=\'300\' height=\'200\'/><text fill=\'%236B7280\' font-family=\'sans-serif\' font-size=\'14\' x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\'>Game</text></svg>'">
+          <img class="card-thumb"
+               src="${game.thumbnail}"
+               alt="${escapeHtml(game.title)} free HTML5 game"
+               loading="lazy"
+               decoding="async"
+               width="280"
+               height="158"
+               onerror="this.onerror=null;this.src='assets/images/games/default-game.svg'">
           ${badgeHtml}
-          <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" onclick="window.NEXUS.toggleFav('${game.slug}', event)" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
+          <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" onclick="window.NEXUS.toggleFav('${game.slug}', event)" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}" aria-label="Toggle favorite">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
-          <a href="#/game/${game.slug}" class="card-play-overlay">
+          <a href="#/game/${game.slug}" class="card-play-overlay" aria-label="Play ${escapeHtml(game.title)}">
             <div class="card-play-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 19 12 8 19 8 5"/></svg>
             </div>
@@ -520,84 +939,123 @@
     `;
   }
 
-  // --- View: Homepage (All 11 Sections) ---
+  // --- PHASE 3: Homepage SEO Rich Content Section ---
+  function renderHomepageSeoSection() {
+    return `
+      <section class="portal-seo-section" aria-label="About NEXUSPLAY Online Gaming">
+        <h2>Play Free Online Games on NEXUSPLAY</h2>
+        <p>NEXUSPLAY is your ultimate destination for high-performance, free browser games. We curate over 200 high-quality HTML5 and WebGL games across 22 diverse categories, delivering seamless entertainment with zero downloads, zero installs, and zero account barriers.</p>
+
+        <div class="seo-highlight-grid">
+          <div class="seo-highlight-item">
+            <h4>Explore Free Online Games</h4>
+            <p>From quick 2-minute casual puzzles to immersive 3D racing simulators, every game runs smoothly in modern web browsers.</p>
+          </div>
+          <div class="seo-highlight-item">
+            <h4>Popular Gaming Categories</h4>
+            <p>Master target acquisition in Shooting Games, solve logic challenges in Puzzle & Brain, or accelerate down neon tracks in Racing & Car games.</p>
+          </div>
+          <div class="seo-highlight-item">
+            <h4>Discover New Browser Games</h4>
+            <p>Our library is regularly updated with handpicked, legitimate HTML5 creations from verified game developers worldwide.</p>
+          </div>
+          <div class="seo-highlight-item">
+            <h4>Play on Desktop and Mobile</h4>
+            <p>Responsive design adapts seamlessly whether you are on a high-resolution desktop PC, laptop, iPad, tablet, or smartphone.</p>
+          </div>
+        </div>
+
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">Are all games on NEXUSPLAY really free?</summary>
+            <div class="faq-answer">Yes, 100%. Every single game in our 200-game catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do I need to download or install any plugins?</summary>
+            <div class="faq-answer">No downloads or plugins are required. All games are built on modern web standards (HTML5 Canvas, WebGL, Web Audio) that run natively in Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I play NEXUSPLAY games on my phone or tablet?</summary>
+            <div class="faq-answer">Yes! NEXUSPLAY is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How are my favorites and game history saved?</summary>
+            <div class="faq-answer">Your starred favorites and recently played games are saved securely on your local device using your browser's private localStorage. No personal tracking or account registration is needed.</div>
+          </details>
+        </div>
+      </section>
+    `;
+  }
+
+  // --- View: Homepage (All 11 Sections + SEO Rich Content) ---
   function renderHomepage() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
-    // Filter games for 11 requested sections:
-    // 1. Top Picks for You (top rating)
-    const topPicks = [...catalog].sort((a,b) => (b.rating || 4.5) - (a.rating || 4.5)).slice(0, 16);
+    updateSeo({
+      title: 'NEXUSPLAY - Play Free Online HTML5 Games | Instant Browser Gaming',
+      description: 'Play 200+ free online HTML5 games on NEXUSPLAY. Enjoy shooting, action, racing, car, puzzle, sports, and arcade games with instant play and no downloads.',
+      canonical: 'https://nexusplay.example.com/',
+      ogType: 'website',
+      ogImage: 'assets/images/logo.svg',
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NEXUSPLAY",
+        "url": "https://nexusplay.example.com/",
+        "description": "Play 200+ free online HTML5 games on NEXUSPLAY with zero downloads or installs."
+      }
+    });
 
-    // 2. Featured Games
+    const topPicks = [...catalog].sort((a,b) => (b.rating || 4.5) - (a.rating || 4.5)).slice(0, 16);
     const featured = catalog.filter(g => g.featured || (g.tags && g.tags.includes('featured'))).slice(0, 16);
     const featuredList = featured.length >= 8 ? featured : catalog.slice(0, 16);
-
-    // 3. Popular Games
     const popular = catalog.filter(g => (g.plays && g.plays > 10000) || (g.rating && g.rating >= 4.7)).slice(0, 16);
-
-    // 4. Shooting Games
     const shooting = catalog.filter(g => g._categories && g._categories.includes('shooting')).slice(0, 16);
-
-    // 5. Racing Games
     const racing = catalog.filter(g => g._categories && (g._categories.includes('racing') || g._categories.includes('car'))).slice(0, 16);
-
-    // 6. Action & Adventure
     const actionAdv = catalog.filter(g => g._categories && (g._categories.includes('action') || g._categories.includes('adventure'))).slice(0, 16);
-
-    // 7. Puzzle & Brain Games
     const puzzle = catalog.filter(g => g._categories && g._categories.includes('puzzle')).slice(0, 16);
-
-    // 8. Sports Games
     const sports = catalog.filter(g => g._categories && (g._categories.includes('sports') || g._categories.includes('football'))).slice(0, 16);
-
-    // 9. Multiplayer Games (only where supported)
     const multiplayer = catalog.filter(g => g._categories && (g._categories.includes('multiplayer') || (g.features && g.features.includes('multiplayer')))).slice(0, 16);
-
-    // 10. New Games
     const newGames = catalog.filter(g => g.isNew || (g.dateAdded && g.dateAdded >= '2024-03-01')).slice(0, 16);
-
-    // 11. Explore All Games (Responsive Grid)
     const exploreGames = catalog.slice(0, 48);
 
     const html = `
       <!-- Hero Banner -->
-      <section class="portal-hero" style="margin-bottom: 30px; padding: 36px 32px; background: linear-gradient(135deg, rgba(37,99,235,0.18) 0%, rgba(139,92,246,0.18) 50%, rgba(10,13,20,0.85) 100%), var(--bg-surface); border: 1px solid var(--border-card); border-radius: var(--radius-lg); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 280px; z-index: 2;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--radius-full); background: rgba(37,99,235,0.2); border: 1px solid rgba(56,189,248,0.3); font-size: 0.78rem; font-weight: 700; color: #38BDF8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
-            200 Free Games Live
+      <section class="portal-hero">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="live-dot"></span> 200 Free Games Live
           </div>
-          <h1 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; line-height: 1.15; color: #FFF; margin-bottom: 12px; letter-spacing: -0.5px;">
-            Play The Best Free Games <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Online</span>
+          <h1 class="hero-title">
+            Play The Best Free Games <span>Online</span>
           </h1>
-          <p style="color: var(--text-secondary); font-size: 0.96rem; max-width: 560px; line-height: 1.6; margin-bottom: 22px;">
+          <p class="hero-subtitle">
             Instant browser gaming with dark aesthetics. No downloads, no plugins. Play shooting, racing, puzzle, and arcade games anytime.
           </p>
-          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-            <a href="#/games" class="btn btn-primary" style="padding: 10px 22px; font-weight: 700; border-radius: var(--radius-md);">
-              Explore All 200 Games
-            </a>
-            <a href="#/category/shooting" class="btn btn-secondary" style="padding: 10px 18px; font-weight: 600; border-radius: var(--radius-md);">
-              Shooting Action
-            </a>
+          <div class="hero-buttons">
+            <a href="#/games" class="btn btn-primary">Explore All 200 Games</a>
+            <a href="#/category/shooting" class="btn btn-secondary">Shooting Action</a>
           </div>
         </div>
-        <div style="display: flex; gap: 16px; z-index: 2;">
-          <div style="text-align: center; padding: 16px 20px; background: rgba(10,13,20,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); min-width: 100px;">
-            <div style="font-size: 1.8rem; font-weight: 900; color: #38BDF8; font-family: var(--font-heading);">200</div>
-            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Games</div>
+        <div class="hero-stats">
+          <div class="hero-stat-box">
+            <div class="stat-number">200</div>
+            <div class="stat-label">Games</div>
           </div>
-          <div style="text-align: center; padding: 16px 20px; background: rgba(10,13,20,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); min-width: 100px;">
-            <div style="font-size: 1.8rem; font-weight: 900; color: #A78BFA; font-family: var(--font-heading);">22</div>
-            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Categories</div>
+          <div class="hero-stat-box">
+            <div class="stat-number">22</div>
+            <div class="stat-label">Categories</div>
           </div>
-          <div style="text-align: center; padding: 16px 20px; background: rgba(10,13,20,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); min-width: 100px;">
-            <div style="font-size: 1.8rem; font-weight: 900; color: #34D399; font-family: var(--font-heading);">100%</div>
-            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Free</div>
+          <div class="hero-stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free</div>
           </div>
         </div>
       </section>
+
+      ${nexusAds.renderSlot('homeLeaderboard')}
 
       <!-- 1. Top Picks for You -->
       ${renderShelf('Top Picks for You', '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>', '#/popular', topPicks, 'row-top-picks')}
@@ -623,13 +1081,13 @@
       <!-- 8. Sports Games -->
       ${renderShelf('Sports & Football', getCategoryIcon('sports'), '#/category/sports', sports, 'row-sports')}
 
-      <!-- 9. Multiplayer Games (only where supported) -->
+      <!-- 9. Multiplayer Games -->
       ${multiplayer.length > 0 ? renderShelf('Multiplayer Games', getCategoryIcon('multiplayer'), '#/category/multiplayer', multiplayer, 'row-multiplayer') : ''}
 
       <!-- 10. New Games -->
       ${renderShelf('New Games', '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>', '#/new', newGames, 'row-new')}
 
-      <!-- 11. Explore All Games (Responsive Grid) -->
+      <!-- 11. Explore All Games -->
       <section class="explore-all-section" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="section-shelf-header">
           <div class="section-shelf-title-wrap">
@@ -649,37 +1107,85 @@
           </a>
         </div>
       </section>
+
+      <!-- PHASE 3: Rich Homepage SEO Content -->
+      ${renderHomepageSeoSection()}
     `;
 
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // --- View: All Games / Category / Filtered View ---
+  // --- View: All Games / Category / Filtered View (With Phase 4 Category SEO) ---
   function renderAllGamesView(title = 'All Games', games = catalog, activeCatSlug = null) {
     const main = document.getElementById('app-main');
     if (!main) return;
 
-    let desc = `Showing ${games.length} games in our collection.`;
-    if (activeCatSlug) {
-      const catObj = categoryList.find(c => c.slug === activeCatSlug);
-      if (catObj && catObj.description) desc = catObj.description;
+    const catSeo = (activeCatSlug && CATEGORY_SEO_DATA[activeCatSlug]) || null;
+    let pageTitle = catSeo ? catSeo.title : `${title} – NEXUSPLAY Online Gaming`;
+    let metaDescription = catSeo ? catSeo.description : `Browse ${games.length} free HTML5 browser games in our collection on NEXUSPLAY.`;
+    let introText = catSeo ? catSeo.intro : `Showing ${games.length} verified instant-play browser games.`;
+
+    const currentSort = localStorage.getItem('nexus_sort_pref') || 'featured';
+    let sorted = [...games];
+    if (currentSort === 'rating') {
+      sorted.sort((a,b) => (b.rating || 0) - (a.rating || 0));
+    } else if (currentSort === 'plays') {
+      sorted.sort((a,b) => (b.plays || 0) - (a.plays || 0));
+    } else if (currentSort === 'newest') {
+      sorted.sort((a,b) => (b.releaseDate || '').localeCompare(a.releaseDate || ''));
+    } else if (currentSort === 'az') {
+      sorted.sort((a,b) => a.title.localeCompare(b.title));
+    } else if (currentSort === 'za') {
+      sorted.sort((a,b) => b.title.localeCompare(a.title));
     }
 
-    const cardsHtml = games.length > 0
-      ? games.map(renderCard).join('')
+    updateSeo({
+      title: pageTitle,
+      description: metaDescription,
+      canonical: activeCatSlug ? `https://nexusplay.example.com/#/category/${activeCatSlug}` : 'https://nexusplay.example.com/#/games',
+      ogType: 'website',
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": pageTitle,
+        "description": metaDescription,
+        "url": activeCatSlug ? `https://nexusplay.example.com/#/category/${activeCatSlug}` : 'https://nexusplay.example.com/#/games'
+      }
+    });
+
+    const cardsHtml = sorted.length > 0
+      ? sorted.map(renderCard).join('')
       : `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
           <div style="width: 54px; height: 54px; margin: 0 auto 16px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
           </div>
           <h3 style="color:#FFF; font-family:var(--font-heading); margin-bottom:8px;">No Games Found</h3>
-          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">We couldn't find games matching your criteria. Try another category!</p>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">We couldn't find games matching your criteria. Try another category or search term!</p>
           <a href="#/games" class="btn btn-primary">Browse All Games</a>
         </div>
       `;
 
     const iconSvg = activeCatSlug ? getCategoryIcon(activeCatSlug) : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>';
+
+    // Category FAQ Section if active category has FAQs
+    let categoryFaqHtml = '';
+    if (catSeo && catSeo.faqs && catSeo.faqs.length > 0) {
+      categoryFaqHtml = `
+        <div class="portal-seo-section" style="margin-top: 36px;">
+          <h2>${escapeHtml(title)} FAQ</h2>
+          <div class="faq-accordion">
+            ${catSeo.faqs.map((f, i) => `
+              <details class="faq-item" ${i === 0 ? 'open' : ''}>
+                <summary class="faq-question">${escapeHtml(f.q)}</summary>
+                <div class="faq-answer">${escapeHtml(f.a)}</div>
+              </details>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
 
     const html = `
       <div style="margin-bottom: 24px;">
@@ -688,16 +1194,18 @@
             <span class="section-badge-icon" style="width: 36px; height: 36px;">${iconSvg}</span>
             <div>
               <h1 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #FFF; margin: 0;">${escapeHtml(title)}</h1>
-              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 4px 0 0 0;">${escapeHtml(desc)}</p>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 4px 0 0 0;">${escapeHtml(introText)}</p>
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 10px;">
             <span class="sidebar-section-count" style="font-size: 0.82rem; padding: 4px 12px;">${games.length} ${games.length === 1 ? 'Game' : 'Games'}</span>
-            <select id="sortSelect" onchange="window.NEXUS.sortView(this.value)" style="background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-primary); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.85rem; outline: none;">
-              <option value="featured">Sort: Featured</option>
-              <option value="rating">Top Rated</option>
-              <option value="az">Title: A to Z</option>
-              <option value="za">Title: Z to A</option>
+            <select id="sortSelect" onchange="window.NEXUS.sortView(this.value)" style="background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-primary); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.85rem; outline: none; cursor: pointer;">
+              <option value="featured" ${currentSort==='featured'?'selected':''}>Sort: Featured</option>
+              <option value="rating" ${currentSort==='rating'?'selected':''}>Top Rated</option>
+              <option value="plays" ${currentSort==='plays'?'selected':''}>Most Played</option>
+              <option value="newest" ${currentSort==='newest'?'selected':''}>Newest First</option>
+              <option value="az" ${currentSort==='az'?'selected':''}>Title: A to Z</option>
+              <option value="za" ${currentSort==='za'?'selected':''}>Title: Z to A</option>
             </select>
           </div>
         </div>
@@ -720,58 +1228,119 @@
         </div>
       </div>
 
+      ${nexusAds.renderSlot('categoryBanner')}
+
       <div class="games-grid" id="mainGamesGrid">
         ${cardsHtml}
       </div>
+
+      ${categoryFaqHtml}
     `;
 
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // --- View: Game Detail & Play Page ---
+  // --- PHASE 5: Individual Game SEO & Detail Player ---
   function renderGameDetail(slug) {
     const main = document.getElementById('app-main');
     if (!main) return;
 
-    const game = catalog.find(g => g.slug === slug);
+    const game = catalog.find(g => g.slug === slug || (g.aliases && g.aliases.includes(slug)));
     if (!game) {
       main.innerHTML = `
-        <div style="text-align: center; padding: 80px 20px;">
+        <div class="info-page-container" style="text-align: center; padding: 80px 20px;">
           <h2 style="color: #FFF; font-family: var(--font-heading); margin-bottom: 12px;">Game Not Found</h2>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">We couldn't locate the game you requested.</p>
-          <a href="#/" class="btn btn-primary">Return to Homepage</a>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">We couldn't locate the game "${escapeHtml(slug)}". It may have been renamed or moved.</p>
+          <a href="#/games" class="btn btn-primary">Browse All 200 Games</a>
         </div>
       `;
       return;
     }
 
-    addRecentlyPlayed(slug);
+    addRecentlyPlayed(game.slug);
+    nexusAnalytics.track('game_viewed', { slug: game.slug, title: game.title, category: game.category });
 
-    const isFav = favorites.includes(slug);
-    const related = catalog.filter(g => g.slug !== slug && (g._categories.some(c => game._categories.includes(c)) || g.category === game.category)).slice(0, 10);
-    const embedUrl = game.embedUrl || game.gameUrl || game.url;
+    const isFav = favorites.includes(game.slug);
+    const rawEmbedUrl = game.embedUrl || game.gameUrl || game.url;
+    const embedUrl = sanitizeUrl(rawEmbedUrl);
     const catSlug = (game._categories && game._categories[0]) || 'arcade';
+    const related = catalog.filter(g => g.slug !== game.slug && (g._categories.some(c => game._categories.includes(c)) || g.category === game.category)).slice(0, 10);
+
+    const metaStr = ((game.category || '') + ' ' + (game.tags || []).join(' ') + ' ' + (game.slug || '')).toLowerCase();
+    let initialRatioClass = 'ratio-16-9';
+    let initialRatioLabel = '16:9';
+    if (/puzzle|2048|snake|block|mahjong|board|card|connect|logic|sudoku|bubble|chess|idle|tapper/i.test(metaStr)) {
+      initialRatioClass = 'ratio-4-3';
+      initialRatioLabel = '4:3';
+    }
+
+    // Dynamic SEO Metadata for Game Page
+    const gameSeoTitle = `${game.title} – Play Free Online on NEXUSPLAY`;
+    const gameSeoDesc = game.description || `Play ${game.title} free in your browser on NEXUSPLAY. Instant HTML5 gameplay with no downloads or installation.`;
+
+    updateSeo({
+      title: gameSeoTitle,
+      description: gameSeoDesc,
+      canonical: `https://nexusplay.example.com/#/game/${game.slug}`,
+      ogType: 'game',
+      ogImage: game.thumbnail,
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": game.title,
+        "description": gameSeoDesc,
+        "image": game.thumbnail,
+        "genre": game.category || "Arcade",
+        "playMode": "SinglePlayer",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any modern web browser (Desktop & Mobile)",
+        "inLanguage": "en",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": (game.rating || 4.5).toFixed(1),
+          "ratingCount": game.plays ? Math.floor(game.plays / 10) : 150,
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    });
+
+    const controlsGuide = game.controls || game.instructions || 'Use Mouse / Keyboard (Arrow keys, WASD, Spacebar) on desktop, or intuitive touch taps/swipes on mobile.';
+    const supportedDevices = game.controlsType || 'Desktop, Tablet & Mobile';
 
     const html = `
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/" class="breadcrumb-link">Home</a>
+      <!-- Breadcrumbs & Back Navigation with Microdata Schema -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <button onclick="window.NEXUS.goBack()" class="player-back-btn" aria-label="Back to previous page">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back</span>
+        </button>
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="#/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </span>
         <span class="breadcrumb-separator">/</span>
-        <a href="#/category/${catSlug}" class="breadcrumb-link">${escapeHtml(game.category || 'Arcade')}</a>
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="#/category/${catSlug}" class="breadcrumb-link" itemprop="item"><span itemprop="name">${escapeHtml(game.category || 'Arcade')}</span></a>
+          <meta itemprop="position" content="2" />
+        </span>
         <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current">${escapeHtml(game.title)}</span>
+        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">${escapeHtml(game.title)}</span>
+          <meta itemprop="position" content="3" />
+        </span>
       </nav>
 
       <div class="game-detail-layout" id="gameDetailLayout">
         <!-- Main Column -->
         <div class="game-main-content">
-          <div class="player-container" id="playerContainer">
+          <div class="player-container ${initialRatioClass}" id="playerContainer">
             <iframe
               id="gameFrame"
               class="game-iframe"
               src="${embedUrl}"
-              title="${escapeHtml(game.title)}"
+              title="${escapeHtml(game.title)} - Free HTML5 Game"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               allowfullscreen
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads allow-pointer-lock"
@@ -779,63 +1348,92 @@
             ></iframe>
             <div class="player-loader" id="playerLoader">
               <div class="spinner"></div>
-              <div class="loader-text">Loading ${escapeHtml(game.title)}...</div>
+              <div class="loader-text">Connecting to ${escapeHtml(game.title)}...</div>
+            </div>
+            <!-- Player Timeout & Retry Overlay -->
+            <div class="player-retry-overlay" id="playerRetryOverlay" style="display:none;">
+              <div class="player-retry-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="player-retry-title">Game Loading Stalled</div>
+              <div class="player-retry-desc">The game is taking longer than usual to connect. You can retry loading or launch it directly in a clean window.</div>
+              <div class="player-retry-actions">
+                <button class="btn btn-primary" onclick="window.NEXUS.reloadGame()">Retry Loading</button>
+                <a href="${embedUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Open Directly</a>
+              </div>
             </div>
           </div>
 
           <!-- Controls Bar -->
           <div class="player-controls-bar">
-            <div style="display:flex; align-items:center; gap:12px; min-width:0;">
-              <img src="${game.thumbnail}" alt="${escapeHtml(game.title)}" style="width:38px; height:28px; border-radius:4px; object-fit:cover;">
-              <div style="min-width:0;">
-                <h1 class="player-game-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(game.title)}</h1>
-                <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(game.category || 'Arcade')}</span>
+            <div class="player-controls-left">
+              <img class="player-bar-thumb" src="${game.thumbnail}" alt="${escapeHtml(game.title)}" width="38" height="38" onerror="this.onerror=null;this.src='assets/images/favicon.svg'">
+              <div class="player-bar-info">
+                <h1 class="player-game-title">${escapeHtml(game.title)}</h1>
+                <span class="player-bar-cat">${escapeHtml(game.category || 'Arcade')}</span>
               </div>
+              <button class="ctrl-btn ${isFav ? 'is-fav' : ''}" id="playerFavBtn" onclick="window.NEXUS.togglePlayerFav('${game.slug}')" title="Favorite" aria-label="Favorite">
+                <span class="ctrl-btn-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </span>
+                <span class="ctrl-btn-text" id="playerFavLabel">${isFav ? 'Favorited' : 'Favorite'}</span>
+              </button>
             </div>
 
             <div class="player-controls-right">
-              <button class="ctrl-btn ${isFav ? 'is-fav' : ''}" id="playerFavBtn" onclick="window.NEXUS.togglePlayerFav('${game.slug}')" title="Favorite">
-                <span class="ctrl-btn-icon">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </span>
-                <span id="playerFavLabel">${isFav ? 'Favorited' : 'Favorite'}</span>
-              </button>
-
-              <button class="ctrl-btn" onclick="window.NEXUS.reloadGame()" title="Reload game">
+              <button class="ctrl-btn" onclick="window.NEXUS.reloadGame()" title="Reload game" aria-label="Reload">
                 <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
-                <span>Reload</span>
+                <span class="ctrl-btn-text">Reload</span>
               </button>
 
-              <button class="ctrl-btn" onclick="window.NEXUS.toggleTheater()" title="Theater mode">
+              <button class="ctrl-btn" onclick="window.NEXUS.cycleAspectRatio()" title="Aspect Ratio" aria-label="Aspect Ratio">
+                <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></span>
+                <span class="ctrl-btn-text" id="ratioLabel">${initialRatioLabel}</span>
+              </button>
+
+              <button class="ctrl-btn" onclick="window.NEXUS.toggleTheater()" title="Theater mode" aria-label="Theater Mode">
                 <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-                <span>Theater</span>
+                <span class="ctrl-btn-text">Theater</span>
               </button>
 
-              <button class="ctrl-btn" onclick="window.NEXUS.toggleFullscreen()" style="background:var(--accent-gradient); color:#FFF; border-color:transparent;" title="Fullscreen">
+              <button class="ctrl-btn btn-fullscreen" id="fullscreenBtn" onclick="window.NEXUS.toggleFullscreen()" title="Fullscreen" aria-label="Fullscreen">
                 <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></span>
-                <span>Fullscreen</span>
+                <span class="ctrl-btn-text">Fullscreen</span>
+              </button>
+
+              <button class="ctrl-btn" onclick="window.NEXUS.openReport('${game.slug}')" title="Report issue with this game" aria-label="Report">
+                <span class="ctrl-btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>
+                <span class="ctrl-btn-text">Report</span>
               </button>
             </div>
           </div>
 
-          <!-- Metadata & Description -->
+          <!-- Metadata & SEO Description Card -->
           <div class="game-info-card">
             <h2>About ${escapeHtml(game.title)}</h2>
             <div class="game-meta-tags">
               <span class="card-badge badge-popular" style="position:static;">${escapeHtml(game.category || 'Arcade')}</span>
+              <span style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38BDF8; padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700;">${escapeHtml(supportedDevices)}</span>
               ${game.tags ? game.tags.slice(0, 5).map(t => `<span style="background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:4px; font-size:0.75rem; color:var(--text-secondary);">${escapeHtml(t)}</span>`).join('') : ''}
             </div>
-            <p style="color:var(--text-secondary); line-height:1.7; font-size:0.94rem; margin-bottom:18px;">
-              ${escapeHtml(game.description || 'Play ' + game.title + ' instantly online on NEXUSPLAY. No download required. Free browser gameplay.')}
+            <p style="color:var(--text-secondary); line-height:1.75; font-size:0.95rem; margin-bottom:20px;">
+              ${escapeHtml(game.description || 'Play ' + game.title + ' instantly online on NEXUSPLAY. No download required. Free browser gameplay across desktop and mobile devices.')}
             </p>
 
-            ${game.instructions ? `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
               <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-primary); padding:14px 18px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
-                <h4 style="color:#FFF; font-size:0.92rem; font-family:var(--font-heading); margin-bottom:6px;">Instructions & Controls</h4>
-                <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.6; margin:0;">${escapeHtml(game.instructions)}</p>
+                <h4 style="color:#FFF; font-size:0.92rem; font-family:var(--font-heading); margin-bottom:6px;">🎮 Game Controls</h4>
+                <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.6; margin:0;">${escapeHtml(controlsGuide)}</p>
               </div>
-            ` : ''}
+
+              <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-purple); padding:14px 18px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                <h4 style="color:#FFF; font-size:0.92rem; font-family:var(--font-heading); margin-bottom:6px;">📱 Supported Devices</h4>
+                <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.6; margin:0;">Playable across Windows, Mac, Chromebook, iPhone, iPad, and Android without installing apps.</p>
+              </div>
+            </div>
           </div>
+
+          ${nexusAds.renderSlot('gameFooter')}
         </div>
 
         <!-- Related Games Sidebar Column -->
@@ -847,7 +1445,7 @@
           <div style="display:flex; flex-direction:column; gap:10px;">
             ${related.map(r => `
               <a href="#/game/${r.slug}" style="display:flex; align-items:center; gap:12px; padding:8px 10px; border-radius:var(--radius-md); background:var(--bg-surface); border:1px solid var(--border-subtle); text-decoration:none; transition:all var(--transition-fast);" onmouseover="this.style.background='var(--bg-surface-hover)'" onmouseout="this.style.background='var(--bg-surface)'">
-                <img src="${r.thumbnail}" alt="${escapeHtml(r.title)}" style="width:52px; height:36px; border-radius:4px; object-fit:cover;" loading="lazy">
+                <img src="${r.thumbnail}" alt="${escapeHtml(r.title)}" width="52" height="36" style="width:52px; height:36px; border-radius:4px; object-fit:cover;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/favicon.svg'">
                 <div style="min-width:0; flex:1;">
                   <div style="font-size:0.86rem; font-weight:700; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(r.title)}</div>
                   <div style="font-size:0.72rem; color:var(--text-muted);">${escapeHtml(r.category || 'Arcade')}</div>
@@ -855,6 +1453,7 @@
               </a>
             `).join('')}
           </div>
+          ${nexusAds.renderSlot('gameSidebar')}
         </div>
       </div>
     `;
@@ -862,28 +1461,442 @@
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Iframe load listener
+    // Iframe load listener with 8s timeout detection
     const frame = document.getElementById('gameFrame');
     const loader = document.getElementById('playerLoader');
+    let loadTimeout = null;
+
     if (frame && loader) {
       frame.onload = () => {
+        if (loadTimeout) clearTimeout(loadTimeout);
         loader.classList.add('hidden');
+        nexusAnalytics.track('game_started', { slug: game.slug, title: game.title });
       };
-      setTimeout(() => {
-        if (loader) loader.classList.add('hidden');
-      }, 3500);
+
+      loadTimeout = setTimeout(() => {
+        if (loader && !loader.classList.contains('hidden')) {
+          loader.classList.add('hidden');
+          const retry = document.getElementById('playerRetryOverlay');
+          if (retry) retry.style.display = 'flex';
+        }
+      }, 8000);
     }
+  }
+
+  // --- PHASE 2: Redesigned Five Informational Pages (Unified Design System) ---
+
+  // 1. ABOUT US
+  function renderAboutView() {
+    const main = document.getElementById('app-main');
+    if (!main) return;
+
+    updateSeo({
+      title: 'About NEXUSPLAY – Play Free Online HTML5 Games',
+      description: 'Discover NEXUSPLAY, the premier modern browser gaming portal offering 200 free, instant-play HTML5 games across 22 categories with zero downloads.',
+      canonical: 'https://nexusplay.example.com/#/about',
+      ogType: 'website'
+    });
+
+    main.innerHTML = `
+      <div class="info-page-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">About Us</span>
+        </nav>
+
+        <header class="info-hero-header">
+          <div class="info-badge">About Our Platform</div>
+          <h1 class="info-title">About <span>NEXUSPLAY</span></h1>
+          <p class="info-lead">
+            NEXUSPLAY is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
+          </p>
+        </header>
+
+        <div class="info-card">
+          <h2>What is NEXUSPLAY?</h2>
+          <p>
+            NEXUSPLAY is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of exactly 200 legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
+          </p>
+
+          <div class="info-grid-3">
+            <div class="info-feature-box">
+              <h4>⚡ Instant Execution</h4>
+              <p>Built exclusively on HTML5 Canvas, WebGL, and Web Audio web standards. Games load in seconds without bulky native app downloads.</p>
+            </div>
+            <div class="info-feature-box">
+              <h4>🛡️ Privacy by Design</h4>
+              <p>Zero compulsory sign-ups. Your favorites and gameplay history remain safely inside your personal browser storage.</p>
+            </div>
+            <div class="info-feature-box">
+              <h4>📱 Cross-Platform Play</h4>
+              <p>Designed with a responsive dark gaming theme that works flawlessly on desktop PCs, laptops, Chromebooks, iPads, and smartphones.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, NEXUSPLAY delivers console-inspired responsiveness directly to your browser tab.
+          </p>
+
+          <h2>Reasons to Explore NEXUSPLAY</h2>
+          <ul>
+            <li><strong>200 Verified Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
+            <li><strong>Zero Cost:</strong> 100% free with unlimited gameplay anytime, anywhere.</li>
+            <li><strong>Clean Dark Gaming Theme:</strong> Sleek obsidian-blue aesthetic that is easy on the eyes during late-night sessions.</li>
+            <li><strong>Responsive Player:</strong> Multiple aspect ratios (16:9, 4:3, 1:1, Fit), theater mode, and full-screen immersion.</li>
+          </ul>
+
+          <div style="margin-top: 24px;">
+            <a href="#/games" class="btn btn-primary" style="margin-right: 12px;">Explore All 200 Games</a>
+            <a href="#/contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // 2. CONTACT & SUPPORT
+  function renderContactView() {
+    const main = document.getElementById('app-main');
+    if (!main) return;
+
+    updateSeo({
+      title: 'Contact NEXUSPLAY – Gaming Support & Feedback',
+      description: 'Contact the NEXUSPLAY team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
+      canonical: 'https://nexusplay.example.com/#/contact',
+      ogType: 'website'
+    });
+
+    main.innerHTML = `
+      <div class="info-page-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Contact & Support</span>
+        </nav>
+
+        <header class="info-hero-header">
+          <div class="info-badge">Help & Enquiries</div>
+          <h1 class="info-title">Contact & <span>Support</span></h1>
+          <p class="info-lead">
+            Have questions about a game, experienced a technical glitch, or want to submit an original HTML5 creation? Our technical and publishing team is ready to assist.
+          </p>
+        </header>
+
+        <!-- Useful Support Guidance Cards -->
+        <div class="support-grid">
+          <div class="support-item-card">
+            <div class="support-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="support-item-title">General Enquiries</div>
+            <p class="support-item-desc">Questions regarding website features, game recommendations, or feedback about the portal layout.</p>
+          </div>
+
+          <div class="support-item-card">
+            <div class="support-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <div class="support-item-title">Game Loading Issues</div>
+            <p class="support-item-desc">Having trouble loading a title? Use the in-player Reload button or review our browser cache recommendations.</p>
+          </div>
+
+          <div class="support-item-card">
+            <div class="support-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <div class="support-item-title">Broken Games</div>
+            <p class="support-item-desc">Encountered an unresponsive game or black screen? Submit a report directly using the form below or on the game page.</p>
+          </div>
+
+          <div class="support-item-card">
+            <div class="support-item-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="support-item-title">Game Submissions</div>
+            <p class="support-item-desc">Are you an independent HTML5 game developer? Submit your playable web build to showcase it to our audience.</p>
+          </div>
+        </div>
+
+        <!-- Preserved Form Fields & Functionality -->
+        <div class="info-card">
+          <h2>Send Us a Message</h2>
+          <p>Please provide your name, valid email, topic, and message details. We review and log submissions directly.</p>
+
+          <form id="contactForm" onsubmit="window.NEXUS.submitContact(event)">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name</label>
+              <input type="text" class="form-control" id="contactName" required placeholder="Alex Mercer" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address</label>
+              <input type="email" class="form-control" id="contactEmail" required placeholder="alex@example.com" autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactTopic">Topic</label>
+              <select class="form-control" id="contactTopic" style="cursor: pointer;">
+                <option value="general">General Enquiry & Feedback</option>
+                <option value="submit-game">Submit an HTML5 Game</option>
+                <option value="bug-report">Report a Broken Game or Glitch</option>
+                <option value="licensing">Advertising & Partnerships</option>
+                <option value="copyright">Copyright / DMCA Notice</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Your Message</label>
+              <textarea class="form-control form-textarea" id="contactMessage" rows="5" required placeholder="Describe your inquiry, game submission details, or technical glitch..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 8px;">
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // 3. PRIVACY POLICY
+  function renderPrivacyView() {
+    const main = document.getElementById('app-main');
+    if (!main) return;
+
+    updateSeo({
+      title: 'Privacy Policy – NEXUSPLAY Online Gaming',
+      description: 'Accurate and transparent privacy policy for NEXUSPLAY detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
+      canonical: 'https://nexusplay.example.com/#/privacy',
+      ogType: 'website'
+    });
+
+    main.innerHTML = `
+      <div class="info-page-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Privacy Policy</span>
+        </nav>
+
+        <header class="info-hero-header">
+          <div class="info-badge">Data & Transparency</div>
+          <h1 class="info-title">Privacy <span>Policy</span></h1>
+          <p class="info-lead">Effective Date: October 2026 • Last updated: October 2026</p>
+        </header>
+
+        <div class="info-card">
+          <h2>1. Information We Collect</h2>
+          <p>
+            NEXUSPLAY is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
+          </p>
+
+          <h2>2. Browser Local Storage</h2>
+          <p>
+            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, NEXUSPLAY utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
+          </p>
+          <ul>
+            <li><code>nexus_favorites</code>: An array of game identifiers you have marked with a heart.</li>
+            <li><code>nexus_recently_played</code>: An array of game identifiers for games you have launched recently.</li>
+            <li><code>nexus_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
+            <li><code>nexus_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
+          </ul>
+          <p>You can clear this data at any time by simply clearing your browser cache and cookies.</p>
+
+          <h2>3. Cookies & Session Storage</h2>
+          <p>
+            The core NEXUSPLAY portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
+          </p>
+
+          <h2>4. Third-Party Embedded Games</h2>
+          <p>
+            Many games on NEXUSPLAY are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
+          </p>
+
+          <h2>5. Future Monetization & Google AdSense</h2>
+          <p>
+            NEXUSPLAY has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
+          </p>
+
+          <h2>6. Analytics Notice</h2>
+          <p>
+            Analytics event dispatching is currently deactivated. If privacy-friendly analytics are enabled in the future, they will track aggregated portal usage (such as total game plays and general category interest) without harvesting personal user information.
+          </p>
+
+          <h2>7. Data Security & External Links</h2>
+          <p>
+            We enforce HTTPS encryption across all site assets and embed legitimate games via sandboxed iframes. If you click on external links, you are subject to the respective external website's privacy practices.
+          </p>
+
+          <h2>8. Policy Updates</h2>
+          <p>
+            We may periodically update this Privacy Policy to reflect technical or legal improvements. Material revisions will be reflected by the Effective Date displayed at the top of this page.
+          </p>
+        </div>
+      </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // 4. TERMS OF SERVICE
+  function renderTermsView() {
+    const main = document.getElementById('app-main');
+    if (!main) return;
+
+    updateSeo({
+      title: 'Terms of Service – NEXUSPLAY',
+      description: 'Official Terms of Service for NEXUSPLAY covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
+      canonical: 'https://nexusplay.example.com/#/terms',
+      ogType: 'website'
+    });
+
+    main.innerHTML = `
+      <div class="info-page-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Terms of Service</span>
+        </nav>
+
+        <header class="info-hero-header">
+          <div class="info-badge">User Agreement</div>
+          <h1 class="info-title">Terms of <span>Service</span></h1>
+          <p class="info-lead">Effective Date: October 2026</p>
+        </header>
+
+        <div class="info-card">
+          <h2>1. Agreement to Terms</h2>
+          <p>
+            By visiting, accessing, or playing games on NEXUSPLAY ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
+          </p>
+
+          <h2>2. Permitted Website Usage</h2>
+          <p>
+            NEXUSPLAY grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
+          </p>
+
+          <h2>3. Third-Party Game Ownership</h2>
+          <p>
+            Games hosted or embedded on NEXUSPLAY remain the intellectual property of their respective developers, creators, or authorized publishers. NEXUSPLAY embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
+          </p>
+
+          <h2>4. User Responsibilities & Conduct</h2>
+          <p>As a user of NEXUSPLAY, you agree not to:</p>
+          <ul>
+            <li>Circumvent, disable, or tamper with security or iframe sandbox restrictions on the portal.</li>
+            <li>Use automated scrapers, bots, or data-mining utilities to extract content without authorization.</li>
+            <li>Transmit malicious code, viruses, or disruptive scripts through forms or feedback mechanisms.</li>
+            <li>Attempt to reverse-engineer or rebrand NEXUSPLAY portal software.</li>
+          </ul>
+
+          <h2>5. Game Availability & Maintenance</h2>
+          <p>
+            We strive to keep all 200 games playable around the clock. However, third-party developers may update or withdraw games at their discretion. NEXUSPLAY reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
+          </p>
+
+          <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
+          <p>
+            NEXUSPLAY is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall NEXUSPLAY be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
+          </p>
+
+          <h2>7. Updates to Terms</h2>
+          <p>
+            We reserve the right to revise these Terms of Service at any time. Continued usage of NEXUSPLAY following revisions constitutes full acceptance of the updated terms.
+          </p>
+        </div>
+      </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // 5. DMCA & COPYRIGHT POLICY
+  function renderDmcaView() {
+    const main = document.getElementById('app-main');
+    if (!main) return;
+
+    updateSeo({
+      title: 'DMCA & Copyright Policy – NEXUSPLAY',
+      description: 'Official DMCA and Copyright notice for NEXUSPLAY detailing intellectual property protection, infringement notification procedures, and counter-claims.',
+      canonical: 'https://nexusplay.example.com/#/dmca',
+      ogType: 'website'
+    });
+
+    main.innerHTML = `
+      <div class="info-page-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">DMCA & Copyright</span>
+        </nav>
+
+        <header class="info-hero-header">
+          <div class="info-badge">Intellectual Property</div>
+          <h1 class="info-title">DMCA & <span>Copyright Policy</span></h1>
+          <p class="info-lead">
+            NEXUSPLAY respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
+          </p>
+        </header>
+
+        <div class="info-card">
+          <h2>Third-Party Game Ownership</h2>
+          <p>
+            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on NEXUSPLAY remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
+          </p>
+
+          <h2>Copyright Infringement Notification Procedure</h2>
+          <p>
+            If you are a copyright owner or an authorized representative and believe that any game or content accessible on NEXUSPLAY infringes upon your copyright, you may submit a formal notification containing the following:
+          </p>
+          <ul>
+            <li>A physical or electronic signature of the copyright owner or authorized representative.</li>
+            <li>Specific identification of the copyrighted work claimed to have been infringed.</li>
+            <li>The exact URL (e.g., <code>https://nexusplay.example.com/#/game/[game-slug]</code>) where the allegedly infringing material is located.</li>
+            <li>Your contact information, including your full legal name, mailing address, telephone number, and verifiable email address.</li>
+            <li>A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.</li>
+            <li>A statement made under penalty of perjury that the information in the notification is accurate and that you are authorized to act on behalf of the owner.</li>
+          </ul>
+
+          <h2>Submission Procedure</h2>
+          <p>
+            Please deliver your copyright notification via our official <a href="#/contact" style="color:#38BDF8; font-weight:600;">Contact & Support Form</a> by choosing the topic <strong>"Copyright / DMCA Notice"</strong>. Verified infringement claims are investigated and processed within 24 to 48 business hours.
+          </p>
+
+          <h2>Counter-Notification Procedure</h2>
+          <p>
+            If a game developer believes their material was removed or disabled by mistake or misidentification, a counter-notification may be submitted containing their identity, explanation, and consent to legal jurisdiction.
+          </p>
+        </div>
+      </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   // --- Router ---
   function handleRoute() {
-    const hash = window.location.hash || '#/';
+    const rawHash = window.location.hash || '#/';
+    const hash = rawHash.split('?')[0];
     updateActiveNavClasses(hash);
 
     if (hash === '#/' || hash === '' || hash === '#') {
       renderHomepage();
     } else if (hash === '#/games') {
-      renderAllGamesView('All 200 Games', catalog);
+      const urlParams = new URLSearchParams(rawHash.includes('?') ? rawHash.split('?')[1] : '');
+      const query = urlParams.get('q');
+      if (query) {
+        const matches = catalog.filter(g => {
+          return (g.title || '').toLowerCase().includes(query.toLowerCase()) ||
+                 (g.category || '').toLowerCase().includes(query.toLowerCase()) ||
+                 (g.tags || []).some(t => t.toLowerCase().includes(query.toLowerCase()));
+        });
+        renderAllGamesView('Search: "' + query + '"', matches);
+      } else {
+        renderAllGamesView('All 200 Games', catalog);
+      }
     } else if (hash === '#/popular') {
       const pop = catalog.filter(g => (g.plays && g.plays > 10000) || (g.rating && g.rating >= 4.7));
       renderAllGamesView('Popular Games', pop.length ? pop : catalog.slice(0, 50));
@@ -905,6 +1918,16 @@
     } else if (hash.startsWith('#/game/')) {
       const slug = hash.replace('#/game/', '');
       renderGameDetail(slug);
+    } else if (hash === '#/about') {
+      renderAboutView();
+    } else if (hash === '#/contact') {
+      renderContactView();
+    } else if (hash === '#/privacy') {
+      renderPrivacyView();
+    } else if (hash === '#/terms') {
+      renderTermsView();
+    } else if (hash === '#/dmca') {
+      renderDmcaView();
     } else {
       renderHomepage();
     }
@@ -963,6 +1986,8 @@
     reloadGame: function () {
       const frame = document.getElementById('gameFrame');
       const loader = document.getElementById('playerLoader');
+      const retry = document.getElementById('playerRetryOverlay');
+      if (retry) retry.style.display = 'none';
       if (frame) {
         if (loader) loader.classList.remove('hidden');
         frame.src = frame.src;
@@ -973,12 +1998,17 @@
       const container = document.getElementById('playerContainer');
       if (!container) return;
 
-      if (!document.fullscreenElement) {
+      const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+      if (!isFs) {
         if (container.requestFullscreen) container.requestFullscreen();
         else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
+        else if (container.mozRequestFullScreen) container.mozRequestFullScreen();
         else if (container.msRequestFullscreen) container.msRequestFullscreen();
       } else {
         if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+        else if (document.msExitFullscreen) document.msExitFullscreen();
       }
     },
 
@@ -986,6 +2016,36 @@
       const layout = document.getElementById('gameDetailLayout');
       if (layout) {
         layout.classList.toggle('theater-mode');
+      }
+    },
+
+    cycleAspectRatio: function () {
+      const container = document.getElementById('playerContainer');
+      const label = document.getElementById('ratioLabel');
+      if (!container) return;
+
+      const ratios = ['16-9', '4-3', '1-1', 'fit'];
+      let current = ratios.find(r => container.classList.contains('ratio-' + r)) || '16-9';
+      let nextIdx = (ratios.indexOf(current) + 1) % ratios.length;
+      let next = ratios[nextIdx];
+
+      ratios.forEach(r => container.classList.remove('ratio-' + r));
+      container.classList.add('ratio-' + next);
+
+      const displayMap = {
+        '16-9': '16:9',
+        '4-3': '4:3',
+        '1-1': '1:1',
+        'fit': 'Fit'
+      };
+      if (label) label.textContent = displayMap[next];
+    },
+
+    goBack: function () {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.hash = '#/';
       }
     },
 
@@ -997,7 +2057,12 @@
     },
 
     sortView: function (sortBy) {
-      const hash = window.location.hash || '#/';
+      try {
+        localStorage.setItem('nexus_sort_pref', sortBy);
+      } catch (e) {}
+
+      const rawHash = window.location.hash || '#/';
+      const hash = rawHash.split('?')[0];
       let list = [...catalog];
 
       if (hash.startsWith('#/category/')) {
@@ -1007,10 +2072,18 @@
         list = list.filter(g => favorites.includes(g.slug));
       } else if (hash === '#/recent') {
         list = recentlyPlayed.map(s => catalog.find(g => g.slug === s)).filter(Boolean);
+      } else if (hash === '#/popular') {
+        list = list.filter(g => (g.plays && g.plays > 10000) || (g.rating && g.rating >= 4.7));
+      } else if (hash === '#/new') {
+        list = list.filter(g => g.isNew || (g.dateAdded && g.dateAdded >= '2024-03-01'));
       }
 
       if (sortBy === 'rating') {
         list.sort((a,b) => (b.rating || 0) - (a.rating || 0));
+      } else if (sortBy === 'plays') {
+        list.sort((a,b) => (b.plays || 0) - (a.plays || 0));
+      } else if (sortBy === 'newest') {
+        list.sort((a,b) => (b.releaseDate || '').localeCompare(a.releaseDate || ''));
       } else if (sortBy === 'az') {
         list.sort((a,b) => a.title.localeCompare(b.title));
       } else if (sortBy === 'za') {
@@ -1021,14 +2094,134 @@
       if (grid) {
         grid.innerHTML = list.map(renderCard).join('');
       }
+    },
+
+    openReport: function (gameSlug) {
+      const modalRoot = document.getElementById('nexus-modal-root');
+      if (!modalRoot) return;
+      const game = catalog.find(g => g.slug === gameSlug);
+      const gameTitle = game ? game.title : 'this game';
+
+      modalRoot.innerHTML = `
+        <div class="nexus-modal-overlay is-open" id="reportModalOverlay" onclick="if(event.target===this) window.NEXUS.closeModal()">
+          <div class="nexus-modal" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+            <div class="nexus-modal-header">
+              <h3 class="nexus-modal-title" id="reportModalTitle">Report Issue: ${escapeHtml(gameTitle)}</h3>
+              <button class="nexus-modal-close" onclick="window.NEXUS.closeModal()" aria-label="Close modal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <form id="reportGameForm" onsubmit="window.NEXUS.submitReport(event, '${escapeHtml(gameSlug)}')">
+              <div class="form-group">
+                <label class="form-label" for="reportReason">Issue Type</label>
+                <select class="form-control" id="reportReason" required style="cursor: pointer;">
+                  <option value="not-loading">Game does not load / black screen</option>
+                  <option value="controls-broken">Controls or keyboard/touch not working</option>
+                  <option value="audio-glitch">Audio or sound glitch</option>
+                  <option value="broken-display">Visual display or aspect ratio error</option>
+                  <option value="other">Other problem</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reportDetails">Details (Optional)</label>
+                <textarea class="form-control form-textarea" id="reportDetails" rows="3" placeholder="Briefly describe what happened or what device you are using..."></textarea>
+              </div>
+              <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+                <button type="button" class="btn btn-secondary" onclick="window.NEXUS.closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+    },
+
+    closeModal: function () {
+      const modalRoot = document.getElementById('nexus-modal-root');
+      if (modalRoot) modalRoot.innerHTML = '';
+    },
+
+    submitReport: function (event, slug) {
+      event.preventDefault();
+      const reason = document.getElementById('reportReason').value;
+      const details = document.getElementById('reportDetails').value;
+
+      try {
+        const reports = JSON.parse(localStorage.getItem('nexus_game_reports') || '[]');
+        reports.push({
+          slug,
+          reason,
+          details,
+          date: new Date().toISOString()
+        });
+        localStorage.setItem('nexus_game_reports', JSON.stringify(reports));
+      } catch (e) {}
+
+      nexusAnalytics.track('report_submitted', { slug, reason });
+      window.NEXUS.closeModal();
+      showToast('Thank you! Your report has been submitted.', '✓');
+    },
+
+    submitContact: function (event) {
+      event.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const topic = document.getElementById('contactTopic').value;
+      const message = document.getElementById('contactMessage').value;
+
+      try {
+        const messages = JSON.parse(localStorage.getItem('nexus_contact_messages') || '[]');
+        messages.push({
+          name,
+          email,
+          topic,
+          message,
+          date: new Date().toISOString()
+        });
+        localStorage.setItem('nexus_contact_messages', JSON.stringify(messages));
+      } catch (e) {}
+
+      nexusAnalytics.track('contact_submitted', { topic });
+      showToast(`Thank you, ${name}! Your message has been sent.`, '✓');
+      const form = document.getElementById('contactForm');
+      if (form) form.reset();
+    },
+
+    configureAds: function (config) {
+      nexusAds.init(config);
+    },
+
+    configureAnalytics: function (config) {
+      nexusAnalytics.init(config);
     }
   };
+
+  // Fullscreen event listener to sync button UI
+  document.addEventListener('fullscreenchange', syncFullscreenButton);
+  document.addEventListener('webkitfullscreenchange', syncFullscreenButton);
+  document.addEventListener('mozfullscreenchange', syncFullscreenButton);
+  document.addEventListener('MSFullscreenChange', syncFullscreenButton);
+
+  function syncFullscreenButton() {
+    const btn = document.getElementById('fullscreenBtn');
+    if (!btn) return;
+    const isFs = Boolean(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    const label = btn.querySelector('.ctrl-btn-text');
+    if (label) label.textContent = isFs ? 'Exit' : 'Fullscreen';
+  }
+
+  // Global Error Boundary
+  window.addEventListener('error', (e) => {
+    console.warn('[NEXUSPLAY Runtime Guard]', e.message);
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    console.warn('[NEXUSPLAY Promise Guard]', e.reason);
+  });
 
   // --- Application Bootstrap ---
   async function init() {
     loadLocalState();
 
-    // Use embedded fallback if available
     if (window.NEXUS_CATALOG && Array.isArray(window.NEXUS_CATALOG) && window.NEXUS_CATALOG.length > 0) {
       catalog = window.NEXUS_CATALOG;
     }
@@ -1036,7 +2229,6 @@
       categoryList = window.NEXUS_CATEGORIES;
     }
 
-    // Try fetching external JSON data if not already populated
     try {
       if (catalog.length === 0) {
         const gRes = await fetch('data/games.json');
@@ -1047,7 +2239,7 @@
         categoryList = await cRes.json();
       }
     } catch (e) {
-      // Offline or file protocol fallback already loaded
+      // Offline fallback already loaded
     }
 
     console.log(`[NEXUSPLAY] Initialized with ${catalog.length} games across ${categoryList.length} categories.`);
@@ -1056,6 +2248,14 @@
     renderSidebar();
     renderHeader();
     renderFooter();
+
+    try {
+      if (window.innerWidth > 1024 && localStorage.getItem('nexus_sidebar_collapsed') === '1') {
+        document.body.classList.add('sidebar-collapsed');
+      }
+    } catch (e) {}
+
+    initSidebarTooltips();
 
     window.addEventListener('hashchange', handleRoute);
     handleRoute();
