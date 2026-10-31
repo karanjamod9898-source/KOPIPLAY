@@ -211,36 +211,6 @@
     "isAuthorized": true
   },
   {
-    "id": "arrow-escape-tap-puzzle-01",
-    "title": "Arrow Escape - Tap Puzzle",
-    "slug": "arrow-escape-tap-puzzle",
-    "category": "Adventure",
-    "thumbnail": "https://lupzogames.com/uploads/games/landscap-1786543059984-854678763.webp",
-    "fallbackThumbnail": "https://lupzogames.com/uploads/games/Verrtical-1786543059987-655712358.webp",
-    "description": "Arrow Escape - Tap Puzzle is a fun and challenging online puzzle game where your goal is simple: clear every arrow from the board . But there’s a catch: each arrow can only move in the direction it points.",
-    "gameUrl": "https://arrow-escape-tap-puzzle.vercel.app/",
-    "embedAllowed": true,
-    "controls": "Tap or Click and Drag to play. Supports touchscreens, mouse, and keyboard.",
-    "featured": true,
-    "popular": true,
-    "badge": "TOP",
-    "technology": "HTML5 / WebGL",
-    "controlsType": "Touch & Mouse",
-    "tags": [
-      "Arrow game",
-      "Arrow puzzle",
-      "Arrows",
-      "Arrow escape",
-      "puzzle game",
-      "board game",
-      "Board"
-    ],
-    "developer": "LupzoGames Partner",
-    "instructions": "Arrow Escape - Tap Puzzle is a fun and challenging online puzzle game where your goal is simple: clear every arrow from the board . But there’s a catch: each arrow can only move in the direction it points. Think carefully, choose the right arrows, and plan your moves before tapping. One wrong move c",
-    "releaseDate": "2026-08-12",
-    "isAuthorized": true
-  },
-  {
     "id": "angry-heroes-02",
     "title": "Angry Heroes",
     "slug": "angry-heroes",
@@ -263,31 +233,6 @@
     "developer": "LupzoGames Partner",
     "instructions": "Angry Heroes is an exciting and entertaining physics-based shooting game that challenges your aiming skills, timing, strategy, and problem-solving abilities. If you enjoy online physics games, shooting games, puzzle games, slingshot games, and browser games , Angry Heroes offers a fun gaming experie",
     "releaseDate": "2026-07-31",
-    "isAuthorized": true
-  },
-  {
-    "id": "level-devil-03",
-    "title": "Level Devil",
-    "slug": "level-devil",
-    "category": "Action",
-    "thumbnail": "https://lupzogames.com/uploads/games/landscap-1771590230459-3770848.webp",
-    "fallbackThumbnail": "https://lupzogames.com/uploads/games/Verrtical-1771590230460-297673533.webp",
-    "description": "Welcome to Level Devil , a funny, challenging, and unpredictable 2D platformer game where nothing is ever quite what it seems. If you enjoy platformer games, arcade games, retro games, puzzle games, and challenging online games , Level Devil delivers a unique experience filled with unexpected traps, surprising obstacles, and hilarious moments.",
-    "gameUrl": "https://lolygames.github.io/level-devil/",
-    "embedAllowed": true,
-    "controls": "Tap or Click and Drag to play. Supports touchscreens, mouse, and keyboard.",
-    "featured": true,
-    "popular": true,
-    "badge": "TOP",
-    "technology": "HTML5 / WebGL",
-    "controlsType": "Touch & Mouse",
-    "tags": [
-      "Action",
-      "Free Games"
-    ],
-    "developer": "LupzoGames Partner",
-    "instructions": "Welcome to Level Devil , a funny, challenging, and unpredictable 2D platformer game where nothing is ever quite what it seems. If you enjoy platformer games, arcade games, retro games, puzzle games, and challenging online games , Level Devil delivers a unique experience filled with unexpected traps,",
-    "releaseDate": "2026-02-16",
     "isAuthorized": true
   },
   {
@@ -340,33 +285,6 @@
     "developer": "LupzoGames Partner",
     "instructions": "Bubble Fall is an exciting and addictive bubble shooting puzzle game where your goal is to clear the playing field by matching and popping colorful bubbles. Aim carefully, create groups of matching bubbles, trigger powerful chain reactions, and clear every bubble to complete each level. If you enjoy",
     "releaseDate": "2026-08-04",
-    "isAuthorized": true
-  },
-  {
-    "id": "monster-truck-06",
-    "title": "Monster Truck",
-    "slug": "monster-truck",
-    "category": "Car",
-    "thumbnail": "https://lupzogames.com/uploads/games/landscap-1784717555931-80654098.webp",
-    "fallbackThumbnail": "https://lupzogames.com/uploads/games/Verrtical-1784717555947-471391296.webp",
-    "description": "Get ready for an exciting off-road driving adventure with Monster Truck , a thrilling racing and driving game where you take control of a powerful monster truck and navigate challenging tracks filled with obstacles. Drive over steep hills, rocks, ramps, uneven terrain, and other difficult obstacles while keeping your truck balanced and reaching the finish line safely.",
-    "gameUrl": "https://monstertracks-online.github.io/file/",
-    "embedAllowed": true,
-    "controls": "Tap or Click and Drag to play. Supports touchscreens, mouse, and keyboard.",
-    "featured": true,
-    "popular": true,
-    "badge": "NEW",
-    "technology": "HTML5 / WebGL",
-    "controlsType": "Touch & Mouse",
-    "tags": [
-      "Car",
-      "Monster Truck",
-      "Racing",
-      "Big car"
-    ],
-    "developer": "LupzoGames Partner",
-    "instructions": "Get ready for an exciting off-road driving adventure with Monster Truck , a thrilling racing and driving game where you take control of a powerful monster truck and navigate challenging tracks filled with obstacles. Drive over steep hills, rocks, ramps, uneven terrain, and other difficult obstacles ",
-    "releaseDate": "2026-07-22",
     "isAuthorized": true
   },
   {
@@ -474,31 +392,6 @@
     "isAuthorized": true
   },
   {
-    "id": "subway-winter-vacation-11",
-    "title": "Subway Winter Vacation",
-    "slug": "subway-winter-vacation",
-    "category": "Action",
-    "thumbnail": "https://lupzogames.com/uploads/games/ajrdviummclxosyyis6z-1771236377293-179919321.webp",
-    "fallbackThumbnail": "https://lupzogames.com/uploads/games/iwewk5juqbyyzerlbvt9-1771236377300-106717162.webp",
-    "description": "Subway Winter Vacation is a fun, fast-paced, and exciting endless running game set in a colorful snowy city. Get ready to run through winter-themed subway tracks, avoid trains and obstacles, collect coins, grab useful power-ups, and see how far you can go without crashing.",
-    "gameUrl": "https://lolygames.github.io/subway-surfers-winter-holiday/",
-    "embedAllowed": true,
-    "controls": "Tap or Click and Drag to play. Supports touchscreens, mouse, and keyboard.",
-    "featured": false,
-    "popular": true,
-    "badge": "TOP",
-    "technology": "HTML5 / WebGL",
-    "controlsType": "Touch & Mouse",
-    "tags": [
-      "Action",
-      "Free Games"
-    ],
-    "developer": "LupzoGames Partner",
-    "instructions": "Subway Winter Vacation is a fun, fast-paced, and exciting endless running game set in a colorful snowy city. Get ready to run through winter-themed subway tracks, avoid trains and obstacles, collect coins, grab useful power-ups, and see how far you can go without crashing. If you enjoy endless runne",
-    "releaseDate": "2026-02-16",
-    "isAuthorized": true
-  },
-  {
     "id": "neon-breacks-breaker-12",
     "title": "Neon Breaks Breaker",
     "slug": "neon-breacks-breaker",
@@ -574,31 +467,6 @@
     "developer": "LupzoGames Partner",
     "instructions": "Magic Block Puzzle is a relaxing yet challenging block puzzle game that puts your logical thinking, planning, and problem-solving skills to the test. Place different shaped blocks on the grid, complete full rows or columns, clear them from the board, and create more space for new blocks. The gamepla",
     "releaseDate": "2026-02-05",
-    "isAuthorized": true
-  },
-  {
-    "id": "pool-club-15",
-    "title": "Pool Club",
-    "slug": "pool-club",
-    "category": "Pool",
-    "thumbnail": "https://lupzogames.com/uploads/games/landscap-1770975625287-439145493.webp",
-    "fallbackThumbnail": "https://lupzogames.com/uploads/games/Verrtical-1770975625289-26432954.webp",
-    "description": "Pool Club is an entertaining and engaging online pool game that brings the classic experience of billiards directly to your browser. Take control of the cue stick, carefully aim at the cue ball, adjust your shooting direction, control the power of every shot, and try to pocket the balls with precision.",
-    "gameUrl": "https://lolygames.github.io/pool-club/",
-    "embedAllowed": true,
-    "controls": "Tap or Click and Drag to play. Supports touchscreens, mouse, and keyboard.",
-    "featured": false,
-    "popular": true,
-    "badge": "TOP",
-    "technology": "HTML5 / WebGL",
-    "controlsType": "Touch & Mouse",
-    "tags": [
-      "Pool",
-      "Free Games"
-    ],
-    "developer": "LupzoGames Partner",
-    "instructions": "Pool Club is an entertaining and engaging online pool game that brings the classic experience of billiards directly to your browser. Take control of the cue stick, carefully aim at the cue ball, adjust your shooting direction, control the power of every shot, and try to pocket the balls with precisi",
-    "releaseDate": "2026-02-13",
     "isAuthorized": true
   },
   {

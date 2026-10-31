@@ -598,9 +598,9 @@ const bundleScript = `/**
             <span class="nav-pill-label">My Favorites</span>
             <span class="sidebar-section-count" id="favBadgeCount">\${favorites.length}</span>
           </a>
-          <a href="#/games" class="nav-pill" data-nav="games" data-tooltip="All 200 Games" title="All 200 Games">
+          <a href="#/games" class="nav-pill" data-nav="games" data-tooltip="All Games" title="All Games">
             <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-            <span class="nav-pill-label">All 200 Games</span>
+            <span class="nav-pill-label">All Games</span>
             <span class="sidebar-section-count">\${catalog.length}</span>
           </a>
         </div>
@@ -1034,7 +1034,7 @@ const bundleScript = `/**
         <div class="faq-accordion">
           <details class="faq-item" open>
             <summary class="faq-question">Are all games on KipoPlay really free?</summary>
-            <div class="faq-answer">Yes, 100%. Every single game in our 200-game catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
+            <div class="faq-answer">Yes, 100%. Every single game in our catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">Do I need to download or install any plugins?</summary>
@@ -1092,7 +1092,7 @@ const bundleScript = `/**
       <section class="portal-hero">
         <div class="hero-content">
           <div class="hero-badge">
-            <span class="live-dot"></span> 200 Free Games Live
+            <span class="live-dot"></span> \${catalog.length} Free Games Live
           </div>
           <h1 class="hero-title">
             Play The Best Free Games <span>Online</span>
@@ -1101,13 +1101,13 @@ const bundleScript = `/**
             Play More. Discover More. Enjoy browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile with instant play.
           </p>
           <div class="hero-buttons">
-            <a href="#/games" class="btn btn-primary">Explore All 200 Games</a>
+            <a href="#/games" class="btn btn-primary">Explore All Games</a>
             <a href="#/category/shooting" class="btn btn-secondary">Shooting Action</a>
           </div>
         </div>
         <div class="hero-stats">
           <div class="hero-stat-box">
-            <div class="stat-number">200</div>
+            <div class="stat-number">\${catalog.length}</div>
             <div class="stat-label">Games</div>
           </div>
           <div class="hero-stat-box">
@@ -1327,7 +1327,7 @@ const bundleScript = `/**
         <div class="info-page-container" style="text-align: center; padding: 80px 20px;">
           <h2 style="color: #FFF; font-family: var(--font-heading); margin-bottom: 12px;">Game Not Found</h2>
           <p style="color: var(--text-muted); margin-bottom: 20px;">We couldn't locate the game "\${escapeHtml(slug)}". It may have been renamed or moved.</p>
-          <a href="#/games" class="btn btn-primary">Browse All 200 Games</a>
+          <a href="#/games" class="btn btn-primary">Browse All Games</a>
         </div>
       \`;
       return;
@@ -1625,7 +1625,7 @@ const bundleScript = `/**
 
     updateSeo({
       title: 'About KipoPlay – Play Free Online Games',
-      description: 'Discover KipoPlay, your destination for free online games offering 200 free, instant-play HTML5 games across 22 categories with zero downloads.',
+      description: 'Discover KipoPlay, your destination for free online games offering verified, instant-play HTML5 games across 22 categories with zero downloads.',
       canonical: 'https://kipo.in/#/about',
       ogType: 'website'
     });
@@ -1649,7 +1649,7 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>What is KipoPlay?</h2>
           <p>
-            KipoPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of exactly 200 legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
+            KipoPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of verified legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
           </p>
 
           <div class="info-grid-3">
@@ -1676,7 +1676,7 @@ const bundleScript = `/**
 
           <h2>Reasons to Explore KipoPlay</h2>
           <ul>
-            <li><strong>200 Verified Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
+            <li><strong>Verified HTML5 Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
             <li><strong>Zero Cost:</strong> 100% free with unlimited gameplay anytime, anywhere.</li>
             <li><strong>Clean Dark Gaming Theme:</strong> Sleek obsidian-blue aesthetic that is easy on the eyes during late-night sessions.</li>
             <li><strong>Responsive Player:</strong> Multiple aspect ratios (16:9, 4:3, 1:1, Fit), theater mode, and full-screen immersion.</li>
@@ -1929,7 +1929,7 @@ const bundleScript = `/**
 
           <h2>5. Game Availability & Maintenance</h2>
           <p>
-            We strive to keep all 200 games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KipoPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
+            We strive to keep all games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KipoPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
           </p>
 
           <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
@@ -2028,7 +2028,7 @@ const bundleScript = `/**
         });
         renderAllGamesView('Search: "' + query + '"', matches);
       } else {
-        renderAllGamesView('All 200 Games', catalog);
+        renderAllGamesView('All Games', catalog);
       }
     } else if (hash === '#/popular') {
       const pop = catalog.filter(g => (g.plays && g.plays > 10000) || (g.rating && g.rating >= 4.7));
