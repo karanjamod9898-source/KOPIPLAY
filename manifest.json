@@ -1,0 +1,27 @@
+{
+  "name": "KipoPlay – Play Free Online Games",
+  "short_name": "KipoPlay",
+  "description": "KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0A0D14",
+  "theme_color": "#2563EB",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "64x64 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/logo.svg",
+      "sizes": "240x56",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

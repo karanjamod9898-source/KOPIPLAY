@@ -1,4 +1,4 @@
-# Static web server for NexusPlay
+# Static web server for KipoPlay
 param([int]$port = 8080)
 
 $root = $PSScriptRoot
@@ -70,7 +70,7 @@ try {
 }
 
 if ($httpListener -and $httpListener.IsListening) {
-    Write-Host "NexusPlay Server active on http://127.0.0.1:$port/"
+    Write-Host "KipoPlay Server active on http://127.0.0.1:$port/"
     try {
         while ($httpListener.IsListening) {
             try {
@@ -112,7 +112,7 @@ if ($httpListener -and $httpListener.IsListening) {
     $ip = [System.Net.IPAddress]::Loopback
     $tcpListener = New-Object System.Net.Sockets.TcpListener($ip, $port)
     $tcpListener.Start()
-    Write-Host "NexusPlay Server active on http://127.0.0.1:$port/"
+    Write-Host "KipoPlay Server active on http://127.0.0.1:$port/"
 
     try {
         while ($true) {

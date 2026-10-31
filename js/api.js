@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Data API Layer
+ * KipoPlay - Data API Layer
  * Loads games catalog and categories from JSON and provides query helpers
  */
 

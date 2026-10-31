@@ -1,6 +1,6 @@
-# 🎮 NexusPlay - How to Add & Manage Games Guide
+# 🎮 KipoPlay - How to Add & Manage Games Guide
 
-This guide explains how to easily add, modify, or publish games in your NexusPlay catalog.
+This guide explains how to easily add, modify, or publish games in your KipoPlay catalog.
 
 ---
 

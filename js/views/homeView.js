@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Homepage View
+ * KipoPlay - Homepage View
  * Main landing portal with Hero, Category Pills, Trending, Popular, and Genre sections
  */
 

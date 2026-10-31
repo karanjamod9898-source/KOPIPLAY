@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Hero Section Component
+ * KipoPlay - Hero Section Component
  * Displays the main featured game with genuine technical specs, controls, and play CTA
  */
 

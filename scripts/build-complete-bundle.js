@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const bundleScript = `/**
- * NEXUSPLAY - Complete Modern Gaming Portal Bundle (Production Ready)
+ * KipoPlay - Complete Modern Gaming Portal Bundle (Production Ready)
  * Dark gaming aesthetic, fully static, zero external backend dependencies
  */
 
@@ -84,189 +84,240 @@ const bundleScript = `/**
   // --- Category Rich SEO Metadata Dictionary (Phase 4) ---
   const CATEGORY_SEO_DATA = {
     'shooting': {
-      title: 'Play Free Shooting Games Online – NEXUSPLAY',
-      description: 'Play action-packed free online shooting games on NEXUSPLAY. Aim, fire, and conquer sniper, tactical FPS, and space blaster browser games with no downloads.',
-      intro: 'Welcome to the NEXUSPLAY Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters, or defensive turret warfare, our shooting library delivers fast-paced target acquisition and reflex testing on both desktop and mobile.',
+      title: 'Play Free Shooting Games Online – KipoPlay',
+      description: 'Play action-packed free online shooting games on KipoPlay. Aim, fire, and conquer sniper, tactical FPS, and space blaster browser games with no downloads.',
+      intro: 'Welcome to the KipoPlay Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters, or defensive turret warfare, our shooting library delivers fast-paced target acquisition and reflex testing on both desktop and mobile.',
       faqs: [
-        { q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All NEXUSPLAY shooting games run directly in modern mobile browsers via HTML5 and WebGL.' },
+        { q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All KipoPlay shooting games run directly in modern mobile browsers via HTML5 and WebGL.' },
         { q: 'What controls are used for browser shooting games?', a: 'Desktop games typically use mouse aiming with left-click to fire, alongside WASD/arrow keys for tactical movement. Touchscreens feature intuitive virtual controls.' },
-        { q: 'Are these shooting games completely free?', a: 'Every shooting game on NEXUSPLAY is 100% free with instant, unlimited play.' }
+        { q: 'Are these shooting games completely free?', a: 'Every shooting game on KipoPlay is 100% free with instant, unlimited play.' }
       ]
     },
     'action': {
-      title: 'Play Free Action Games Online – NEXUSPLAY',
-      description: 'Jump into thrilling free online action games on NEXUSPLAY. Experience combat, ninja duels, survival battles, and fast-paced brawlers instantly in your browser.',
-      intro: 'NEXUSPLAY Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Challenge your reflexes across hand-to-hand combat, dodge hazards, and overcome enemy waves.',
+      title: 'Play Free Action Games Online – KipoPlay',
+      description: 'Jump into thrilling free online action games on KipoPlay. Experience combat, ninja duels, survival battles, and fast-paced brawlers instantly in your browser.',
+      intro: 'KipoPlay Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Challenge your reflexes across hand-to-hand combat, dodge hazards, and overcome enemy waves.',
       faqs: [
-        { q: 'What makes action games on NEXUSPLAY unique?', a: 'They load instantly with zero downloads, featuring smooth canvas animations, reactive audio, and full responsiveness.' },
+        { q: 'What makes action games on KipoPlay unique?', a: 'They load instantly with zero downloads, featuring smooth canvas animations, reactive audio, and full responsiveness.' },
         { q: 'Do action games support touch controls?', a: 'Yes, each action title is adapted for touch taps, swipes, and on-screen pads on smartphones and tablets.' },
         { q: 'Can I save my high scores or progress?', a: 'Scores and level progress are safely preserved locally in your browser storage.' }
       ]
     },
     'adventure': {
-      title: 'Play Free Adventure Games Online – NEXUSPLAY',
-      description: 'Embark on epic free online adventure games on NEXUSPLAY. Explore mysterious dungeons, solve quest puzzles, and journey across captivating digital worlds.',
-      intro: 'Step into immersive journeys and mysterious labyrinths with NEXUSPLAY Adventure Games. Uncover secrets, solve ancient mechanisms, and steer brave adventurers through exciting storylines.',
+      title: 'Play Free Adventure Games Online – KipoPlay',
+      description: 'Embark on epic free online adventure games on KipoPlay. Explore mysterious dungeons, solve quest puzzles, and journey across captivating digital worlds.',
+      intro: 'Step into immersive journeys and mysterious labyrinths with KipoPlay Adventure Games. Uncover secrets, solve ancient mechanisms, and steer brave adventurers through exciting storylines.',
       faqs: [
         { q: 'Are adventure games suitable for all ages?', a: 'Our adventure catalog features family-friendly puzzle quests, fantasy explorations, and rich storytelling.' },
         { q: 'Can I play adventure games on tablet or iPad?', a: 'Absolutely. Responsive aspect ratios ensure full viewability on touch tablets and iPads.' }
       ]
     },
     'racing': {
-      title: 'Explore Free Racing Games – NEXUSPLAY',
-      description: 'Race at top speeds with free online racing games on NEXUSPLAY. Drift through city tracks, burn rubber on highways, and master precision vehicle control.',
-      intro: 'Feel the adrenaline of competition in NEXUSPLAY Racing Games. From neon synthwave highways to off-road dirt tracks, accelerate past rivals and clock record lap times.',
+      title: 'Explore Free Racing Games – KipoPlay',
+      description: 'Race at top speeds with free online racing games on KipoPlay. Drift through city tracks, burn rubber on highways, and master precision vehicle control.',
+      intro: 'Feel the adrenaline of competition in KipoPlay Racing Games. From neon synthwave highways to off-road dirt tracks, accelerate past rivals and clock record lap times.',
       faqs: [
         { q: 'Do racing games work with keyboard arrow keys?', a: 'Yes, desktop players can steer with Arrow keys or WASD, with Spacebar for nitro or handbrake.' },
         { q: 'Are there 3D racing games available?', a: 'Yes, multiple titles feature smooth 3D canvas and WebGL simulation engines.' }
       ]
     },
     'car': {
-      title: 'Play Free Car Games Online – NEXUSPLAY',
-      description: 'Enjoy free car games online on NEXUSPLAY. Test your skills with precision parking, highway traffic dodging, stunt driving, and custom supercars.',
-      intro: 'Get behind the wheel in NEXUSPLAY Car Games. Master parking challenges, navigate dense city traffic, or test horsepower across high-octane stunt courses.',
+      title: 'Play Free Car Games Online – KipoPlay',
+      description: 'Enjoy free car games online on KipoPlay. Test your skills with precision parking, highway traffic dodging, stunt driving, and custom supercars.',
+      intro: 'Get behind the wheel in KipoPlay Car Games. Master parking challenges, navigate dense city traffic, or test horsepower across high-octane stunt courses.',
       faqs: [
         { q: 'What types of car games are featured?', a: 'We offer precision parking simulators, highway traffic runners, stunt obstacle courses, and drift arenas.' },
         { q: 'Is there any download or installation required?', a: 'No, all car games run instantly inside your web browser.' }
       ]
     },
     'driving': {
-      title: 'Free Driving Simulators & Road Games – NEXUSPLAY',
-      description: 'Experience realistic free online driving games on NEXUSPLAY. Steer buses, pilot aircraft, navigate traffic highways, and test vehicle handling.',
-      intro: 'Take control of diverse vehicles in NEXUSPLAY Driving Games. From airport flight simulators to city transit navigation, experience satisfying vehicular control.',
+      title: 'Free Driving Simulators & Road Games – KipoPlay',
+      description: 'Experience realistic free online driving games on KipoPlay. Steer buses, pilot aircraft, navigate traffic highways, and test vehicle handling.',
+      intro: 'Take control of diverse vehicles in KipoPlay Driving Games. From airport flight simulators to city transit navigation, experience satisfying vehicular control.',
       faqs: [
         { q: 'Are driving games optimized for mobile devices?', a: 'Yes, on-screen steering controls and touch acceleration pedals are fully integrated.' }
       ]
     },
     'sports': {
-      title: 'Discover Sports Games Free Online – NEXUSPLAY',
-      description: 'Play free online sports games on NEXUSPLAY. Compete in football, basketball, tennis, bowling, and golf with realistic physics and instant gameplay.',
-      intro: 'Step onto the field, court, and green with NEXUSPLAY Sports Games. Score game-winning three-pointers, bend free kicks, and conquer athletic tournaments.',
+      title: 'Discover Sports Games Free Online – KipoPlay',
+      description: 'Play free online sports games on KipoPlay. Compete in football, basketball, tennis, bowling, and golf with realistic physics and instant gameplay.',
+      intro: 'Step onto the field, court, and green with KipoPlay Sports Games. Score game-winning three-pointers, bend free kicks, and conquer athletic tournaments.',
       faqs: [
         { q: 'Are multiplayer sports games supported?', a: 'Yes, select sports titles support local 2-player turn-based or simultaneous competitive matches.' }
       ]
     },
     'football': {
-      title: 'Play Free Football & Soccer Games – NEXUSPLAY',
-      description: 'Score epic goals in free online football games on NEXUSPLAY. Master penalty shootouts, tournament championships, and striker headers.',
-      intro: 'Experience the world’s favorite sport in NEXUSPLAY Football Games. Beat the goalkeeper, execute curving free kicks, and lift tournament trophies.',
+      title: 'Play Free Football & Soccer Games – KipoPlay',
+      description: 'Score epic goals in free online football games on KipoPlay. Master penalty shootouts, tournament championships, and striker headers.',
+      intro: 'Experience the world’s favorite sport in KipoPlay Football Games. Beat the goalkeeper, execute curving free kicks, and lift tournament trophies.',
       faqs: [
         { q: 'How do penalty kick controls work?', a: 'Simply swipe or drag your cursor to aim power and curve directly into the goal corners.' }
       ]
     },
     'puzzle': {
-      title: 'Play Puzzle Games Online Free – NEXUSPLAY',
-      description: 'Challenge your mind with free online puzzle games on NEXUSPLAY. Solve logic grids, sliding tiles, block puzzles, 2048, and match-3 brain teasers.',
-      intro: 'Sharpen your cognitive skills with NEXUSPLAY Puzzle Games. Engage in relaxing block placements, strategic tile-matching, and intricate spatial brain teasers.',
+      title: 'Play Puzzle Games Online Free – KipoPlay',
+      description: 'Challenge your mind with free online puzzle games on KipoPlay. Solve logic grids, sliding tiles, block puzzles, 2048, and match-3 brain teasers.',
+      intro: 'Sharpen your cognitive skills with KipoPlay Puzzle Games. Engage in relaxing block placements, strategic tile-matching, and intricate spatial brain teasers.',
       faqs: [
         { q: 'Are puzzle games good for brain training?', a: 'Yes, games like 2048, Sudoku, and spatial block puzzles exercise logic, memory, and concentration.' }
       ]
     },
     'strategy': {
-      title: 'Free Strategy & Tactical Games – NEXUSPLAY',
-      description: 'Outsmart opponents in free online strategy games on NEXUSPLAY. Command armies, deploy tower defenses, and master tactical board maneuvers.',
-      intro: 'Plan your victory step-by-step with NEXUSPLAY Strategy Games. Defend strongholds against invading waves, allocate resources, and checkmate rivals.',
+      title: 'Free Strategy & Tactical Games – KipoPlay',
+      description: 'Outsmart opponents in free online strategy games on KipoPlay. Command armies, deploy tower defenses, and master tactical board maneuvers.',
+      intro: 'Plan your victory step-by-step with KipoPlay Strategy Games. Defend strongholds against invading waves, allocate resources, and checkmate rivals.',
       faqs: [
         { q: 'Are tower defense games included?', a: 'Yes, our strategy library features tower defense titles with tactical upgrade paths.' }
       ]
     },
     'platform': {
-      title: 'Play Free Platformer Games Online – NEXUSPLAY',
-      description: 'Jump, dash, and run through free online platform games on NEXUSPLAY. Overcome traps, leap across moving platforms, and reach the finish flag.',
-      intro: 'Experience pure timing and agile jumps in NEXUSPLAY Platform Games. Hop over hazards, collect glowing gems, and discover hidden shortcuts.',
+      title: 'Play Free Platformer Games Online – KipoPlay',
+      description: 'Jump, dash, and run through free online platform games on KipoPlay. Overcome traps, leap across moving platforms, and reach the finish flag.',
+      intro: 'Experience pure timing and agile jumps in KipoPlay Platform Games. Hop over hazards, collect glowing gems, and discover hidden shortcuts.',
       faqs: [
         { q: 'Can I play platformers with a keyboard spacebar?', a: 'Yes, Spacebar or Up Arrow performs jumps, with Left/Right keys controlling movement.' }
       ]
     },
     'multiplayer': {
-      title: 'Play Free Multiplayer Games Online – NEXUSPLAY',
-      description: 'Play free online multiplayer and 2-player games on NEXUSPLAY. Challenge friends on the same device or face rivals in arena battles.',
-      intro: 'Gaming is best together! NEXUSPLAY Multiplayer Games offer 2-player shared screen matches, competitive sports duels, and cooperative challenges.',
+      title: 'Play Free Multiplayer Games Online – KipoPlay',
+      description: 'Play free online multiplayer and 2-player games on KipoPlay. Challenge friends on the same device or face rivals in arena battles.',
+      intro: 'Gaming is best together! KipoPlay Multiplayer Games offer 2-player shared screen matches, competitive sports duels, and cooperative challenges.',
       faqs: [
         { q: 'How do 2-player games work on one keyboard?', a: 'Player 1 uses WASD while Player 2 uses the Arrow keys, ensuring seamless simultaneous play.' }
       ]
     },
     'arcade': {
-      title: 'Classic & Modern Arcade Games – NEXUSPLAY',
-      description: 'Relive retro thrills with free online arcade games on NEXUSPLAY. Play Snake, Breakout, high-score runners, and neon reflex games.',
-      intro: 'Step into the neon glow of NEXUSPLAY Arcade Games. Enjoy instant high-score chasing, retro brick deflectors, and endless arcade classics.',
+      title: 'Classic & Modern Arcade Games – KipoPlay',
+      description: 'Relive retro thrills with free online arcade games on KipoPlay. Play Snake, Breakout, high-score runners, and neon reflex games.',
+      intro: 'Step into the neon glow of KipoPlay Arcade Games. Enjoy instant high-score chasing, retro brick deflectors, and endless arcade classics.',
       faqs: [
         { q: 'Do arcade games track local high scores?', a: 'Yes, high scores are stored locally in your browser so you can beat your personal best.' }
       ]
     },
     'simulation': {
-      title: 'Free Simulation Games Online – NEXUSPLAY',
-      description: 'Build, manage, and experience life simulations in free online games on NEXUSPLAY. Run restaurants, manage virtual farms, and pilot crafts.',
-      intro: 'Immerse yourself in virtual systems with NEXUSPLAY Simulation Games. Craft efficient businesses, cultivate digital farms, and test engineering builds.',
+      title: 'Free Simulation Games Online – KipoPlay',
+      description: 'Build, manage, and experience life simulations in free online games on KipoPlay. Run restaurants, manage virtual farms, and pilot crafts.',
+      intro: 'Immerse yourself in virtual systems with KipoPlay Simulation Games. Craft efficient businesses, cultivate digital farms, and test engineering builds.',
       faqs: [
         { q: 'Are simulation games relaxing to play?', a: 'Many simulation games are designed for relaxing, low-pressure creative and management gameplay.' }
       ]
     },
     'casual': {
-      title: 'Play Casual Games Free Online – NEXUSPLAY',
-      description: 'Unwind with fun and relaxing casual games on NEXUSPLAY. Quick, easy-to-learn browser games for satisfying instant entertainment.',
-      intro: 'Take a quick break with NEXUSPLAY Casual Games. Designed with intuitive controls and immediate satisfaction, jump in for two minutes or two hours.',
+      title: 'Play Casual Games Free Online – KipoPlay',
+      description: 'Unwind with fun and relaxing casual games on KipoPlay. Quick, easy-to-learn browser games for satisfying instant entertainment.',
+      intro: 'Take a quick break with KipoPlay Casual Games. Designed with intuitive controls and immediate satisfaction, jump in for two minutes or two hours.',
       faqs: [
         { q: 'Do casual games require tutorials?', a: 'No, every casual game is designed with pick-up-and-play simplicity and zero learning curves.' }
       ]
     },
     'kids-games': {
-      title: 'Fun & Safe Kids Games Online – NEXUSPLAY',
-      description: 'Play safe, kid-friendly free online games on NEXUSPLAY. Enjoy coloring, cute animal adventures, educational puzzles, and gentle fun.',
-      intro: 'Delightful entertainment for younger players! NEXUSPLAY Kids Games feature colorful animation, friendly pets, drawing activities, and gentle puzzles.',
+      title: 'Fun & Safe Kids Games Online – KipoPlay',
+      description: 'Play safe, kid-friendly free online games on KipoPlay. Enjoy coloring, cute animal adventures, educational puzzles, and gentle fun.',
+      intro: 'Delightful entertainment for younger players! KipoPlay Kids Games feature colorful animation, friendly pets, drawing activities, and gentle puzzles.',
       faqs: [
         { q: 'Are kids games safe and family-friendly?', a: 'Yes, games in this category are curated for positive, non-violent, family-friendly fun.' }
       ]
     },
     'beauty': {
-      title: 'Free Dress-Up & Fashion Games – NEXUSPLAY',
-      description: 'Unleash your creativity with free online fashion, makeup, and beauty games on NEXUSPLAY. Style royal outfits and create chic makeovers.',
-      intro: 'Design runway looks and royal styles in NEXUSPLAY Beauty Games. Choose elegant gowns, experiment with makeup palettes, and express fashion creativity.',
+      title: 'Free Dress-Up & Fashion Games – KipoPlay',
+      description: 'Unleash your creativity with free online fashion, makeup, and beauty games on KipoPlay. Style royal outfits and create chic makeovers.',
+      intro: 'Design runway looks and royal styles in KipoPlay Beauty Games. Choose elegant gowns, experiment with makeup palettes, and express fashion creativity.',
       faqs: [
         { q: 'Can I save or take a snapshot of my designs?', a: 'You can easily view full-screen outfits and screenshot your creations on any device.' }
       ]
     },
     'pool': {
-      title: 'Play Free 8-Ball & Billiards Games – NEXUSPLAY',
-      description: 'Sink 8-ball stripes and solids in free online pool games on NEXUSPLAY. Experience accurate cue ball physics and table angles.',
-      intro: 'Chalk your cue in NEXUSPLAY Pool Games. Line up trick shots, calculate cushion rebounds, and master classic 8-Ball and Snooker tables.',
+      title: 'Play Free 8-Ball & Billiards Games – KipoPlay',
+      description: 'Sink 8-ball stripes and solids in free online pool games on KipoPlay. Experience accurate cue ball physics and table angles.',
+      intro: 'Chalk your cue in KipoPlay Pool Games. Line up trick shots, calculate cushion rebounds, and master classic 8-Ball and Snooker tables.',
       faqs: [
         { q: 'How is shot power controlled?', a: 'Click and pull back the cue stick with your mouse or finger, releasing when power reaches your target.' }
       ]
     },
     'board-games': {
-      title: 'Free Classic Board Games Online – NEXUSPLAY',
-      description: 'Play Chess, Checkers, Ludo, and classic board games free on NEXUSPLAY. Challenge computer AI or practice strategic moves.',
-      intro: 'Timeless tabletop strategy awaits in NEXUSPLAY Board Games. Play Chess, Ludo, and Dominoes anytime without needing physical pieces.',
+      title: 'Free Classic Board Games Online – KipoPlay',
+      description: 'Play Chess, Checkers, Ludo, and classic board games free on KipoPlay. Challenge computer AI or practice strategic moves.',
+      intro: 'Timeless tabletop strategy awaits in KipoPlay Board Games. Play Chess, Ludo, and Dominoes anytime without needing physical pieces.',
       faqs: [
         { q: 'Can I play Chess against different AI difficulties?', a: 'Yes, our chess titles feature multiple skill levels to match beginners and masters alike.' }
       ]
     },
     'card-games': {
-      title: 'Free Solitaire & Card Games – NEXUSPLAY',
-      description: 'Play Solitaire, Klondike, Spider, and classic card games free on NEXUSPLAY. Enjoy smooth card deals, hints, and undo moves.',
-      intro: 'Shuffle the deck in NEXUSPLAY Card Games. Relax with classic Klondike Solitaire, test patience in Spider, or clear card pyramids with undo features.',
+      title: 'Free Solitaire & Card Games – KipoPlay',
+      description: 'Play Solitaire, Klondike, Spider, and classic card games free on KipoPlay. Enjoy smooth card deals, hints, and undo moves.',
+      intro: 'Shuffle the deck in KipoPlay Card Games. Relax with classic Klondike Solitaire, test patience in Spider, or clear card pyramids with undo features.',
       faqs: [
         { q: 'Does Solitaire offer unlimited undos?', a: 'Yes, our Solitaire games support free undo moves and helpful card hints.' }
       ]
     },
     'clicker': {
-      title: 'Play Idle & Clicker Games Free – NEXUSPLAY',
-      description: 'Tap, upgrade, and build empires with free online clicker games on NEXUSPLAY. Enjoy exponential progression and satisfying idle unlocks.',
-      intro: 'Watch numbers multiply in NEXUSPLAY Clicker Games. Tap for revenue, purchase automated upgrades, and build thriving idle businesses.',
+      title: 'Play Idle & Clicker Games Free – KipoPlay',
+      description: 'Tap, upgrade, and build empires with free online clicker games on KipoPlay. Enjoy exponential progression and satisfying idle unlocks.',
+      intro: 'Watch numbers multiply in KipoPlay Clicker Games. Tap for revenue, purchase automated upgrades, and build thriving idle businesses.',
       faqs: [
         { q: 'Does idle progress continue when I switch tabs?', a: 'Yes, clicker games store your progression and calculate offline returns upon return.' }
       ]
     },
     'io-games': {
-      title: 'Free .io Games & Arena Battles – NEXUSPLAY',
-      description: 'Survive and dominate competitive battle arenas in free .io games on NEXUSPLAY. Grow your champion, outmaneuver rivals, and lead the scoreboard.',
-      intro: 'Jump into fast-paced survival rings in NEXUSPLAY .io Games. Eat power nodes, grow in size, and outsmart rivals in non-stop browser arenas.',
+      title: 'Free .io Games & Arena Battles – KipoPlay',
+      description: 'Survive and dominate competitive battle arenas in free .io games on KipoPlay. Grow your champion, outmaneuver rivals, and lead the scoreboard.',
+      intro: 'Jump into fast-paced survival rings in KipoPlay .io Games. Eat power nodes, grow in size, and outsmart rivals in non-stop browser arenas.',
       faqs: [
         { q: 'Are .io games fast to join?', a: 'Yes, simply enter and you are instantly spawned into the active arena with zero queues.' }
       ]
     }
   };
+
+
+  // --- Centralized Site Configuration ---
+  const SITE_CONFIG = {
+    brandName: 'KipoPlay',
+    tagline: 'Play More. Discover More.',
+    category: 'Free Online Games',
+    description: 'KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.',
+    homepageTitle: 'KipoPlay – Play Free Online Games',
+    homepageDescription: 'Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
+    productionDomain: 'https://kipo.in'
+  };
+
+  const STORAGE_KEYS = {
+    favorites: 'kipoplay_favorites',
+    recentlyPlayed: 'kipoplay_recent',
+    sortPref: 'kipoplay_sort_pref',
+    sidebarCollapsed: 'kipoplay_sidebar_collapsed',
+    reports: 'kipoplay_game_reports',
+    messages: 'kipoplay_contact_messages',
+    // Legacy keys for safe migration and backward compatibility
+    legacyFavorites: 'nexus_favorites',
+    legacyFavoritesAlt: 'nexusplay_favorites',
+    legacyRecent: 'nexus_recently_played',
+    legacyRecentAlt: 'nexusplay_recent',
+    legacySort: 'nexus_sort_pref',
+    legacySidebar: 'nexus_sidebar_collapsed',
+    legacyReports: 'nexus_game_reports',
+    legacyMessages: 'nexus_contact_messages'
+  };
+
+  function migrateStorage() {
+    try {
+      if (!localStorage.getItem(STORAGE_KEYS.favorites)) {
+        const oldFav = localStorage.getItem(STORAGE_KEYS.legacyFavorites) || localStorage.getItem(STORAGE_KEYS.legacyFavoritesAlt);
+        if (oldFav) localStorage.setItem(STORAGE_KEYS.favorites, oldFav);
+      }
+      if (!localStorage.getItem(STORAGE_KEYS.recentlyPlayed)) {
+        const oldRec = localStorage.getItem(STORAGE_KEYS.legacyRecent) || localStorage.getItem(STORAGE_KEYS.legacyRecentAlt);
+        if (oldRec) localStorage.setItem(STORAGE_KEYS.recentlyPlayed, oldRec);
+      }
+      if (!localStorage.getItem(STORAGE_KEYS.sortPref)) {
+        const oldSort = localStorage.getItem(STORAGE_KEYS.legacySort);
+        if (oldSort) localStorage.setItem(STORAGE_KEYS.sortPref, oldSort);
+      }
+      if (!localStorage.getItem(STORAGE_KEYS.sidebarCollapsed)) {
+        const oldSb = localStorage.getItem(STORAGE_KEYS.legacySidebar);
+        if (oldSb) localStorage.setItem(STORAGE_KEYS.sidebarCollapsed, oldSb);
+      }
+    } catch (e) {}
+  }
 
   // --- Application State ---
   let catalog = [];
@@ -276,9 +327,16 @@ const bundleScript = `/**
   let recentlyPlayed = [];
 
   function loadLocalState() {
+    migrateStorage();
     try {
-      favorites = JSON.parse(localStorage.getItem('nexus_favorites') || '[]');
-      recentlyPlayed = JSON.parse(localStorage.getItem('nexus_recently_played') || '[]');
+      const rawFav = localStorage.getItem(STORAGE_KEYS.favorites) || 
+                     localStorage.getItem(STORAGE_KEYS.legacyFavorites) || 
+                     localStorage.getItem(STORAGE_KEYS.legacyFavoritesAlt) || '[]';
+      favorites = JSON.parse(rawFav);
+      const rawRec = localStorage.getItem(STORAGE_KEYS.recentlyPlayed) || 
+                     localStorage.getItem(STORAGE_KEYS.legacyRecent) || 
+                     localStorage.getItem(STORAGE_KEYS.legacyRecentAlt) || '[]';
+      recentlyPlayed = JSON.parse(rawRec);
     } catch (e) {
       favorites = [];
       recentlyPlayed = [];
@@ -297,7 +355,9 @@ const bundleScript = `/**
       showToast('Removed from Favorites', '♡');
     }
     try {
-      localStorage.setItem('nexus_favorites', JSON.stringify(favorites));
+      localStorage.setItem(STORAGE_KEYS.favorites, JSON.stringify(favorites));
+      localStorage.setItem(STORAGE_KEYS.legacyFavorites, JSON.stringify(favorites));
+      localStorage.setItem(STORAGE_KEYS.legacyFavoritesAlt, JSON.stringify(favorites));
     } catch (e) {}
     updateHeaderAndSidebarBadges();
     return favorites.includes(slug);
@@ -308,7 +368,9 @@ const bundleScript = `/**
     recentlyPlayed.unshift(slug);
     if (recentlyPlayed.length > 30) recentlyPlayed.pop();
     try {
-      localStorage.setItem('nexus_recently_played', JSON.stringify(recentlyPlayed));
+      localStorage.setItem(STORAGE_KEYS.recentlyPlayed, JSON.stringify(recentlyPlayed));
+      localStorage.setItem(STORAGE_KEYS.legacyRecent, JSON.stringify(recentlyPlayed));
+      localStorage.setItem(STORAGE_KEYS.legacyRecentAlt, JSON.stringify(recentlyPlayed));
     } catch (e) {}
     updateHeaderAndSidebarBadges();
   }
@@ -470,7 +532,7 @@ const bundleScript = `/**
       if (ogT) ogT.setAttribute('content', ogType);
     }
     if (schema) {
-      const schemaScript = document.getElementById('nexus-schema');
+      const schemaScript = document.getElementById('kipo-schema') || document.getElementById('nexus-schema');
       if (schemaScript) {
         schemaScript.textContent = JSON.stringify(schema, null, 2);
       }
@@ -504,9 +566,9 @@ const bundleScript = `/**
 
     sidebar.innerHTML = \`
       <div class="sidebar-header">
-        <a href="#/" class="sidebar-brand" aria-label="NexusPlay Home" data-tooltip="NexusPlay Home">
-          <img class="brand-full" src="assets/images/logo.svg" alt="NexusPlay">
-          <img class="brand-icon" src="assets/images/favicon.svg" alt="NexusPlay" title="Click to expand sidebar">
+        <a href="#/" class="sidebar-brand" aria-label="KipoPlay Home" data-tooltip="KipoPlay Home">
+          <img class="brand-full" src="assets/images/logo.svg" alt="KipoPlay">
+          <img class="brand-icon" src="assets/images/favicon.svg" alt="KipoPlay" title="Click to expand sidebar">
         </a>
         <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" aria-label="Toggle Sidebar" title="Collapse sidebar">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -562,7 +624,7 @@ const bundleScript = `/**
         } else {
           const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
           try {
-            localStorage.setItem('nexus_sidebar_collapsed', isCollapsed ? '1' : '0');
+            localStorage.setItem(STORAGE_KEYS.sidebarCollapsed, isCollapsed ? '1' : '0');
           } catch (e) {}
         }
       });
@@ -575,7 +637,7 @@ const bundleScript = `/**
           e.preventDefault();
           document.body.classList.remove('sidebar-collapsed');
           try {
-            localStorage.setItem('nexus_sidebar_collapsed', '0');
+            localStorage.setItem(STORAGE_KEYS.sidebarCollapsed, '0');
           } catch (err) {}
         }
       });
@@ -604,7 +666,7 @@ const bundleScript = `/**
         tooltipEl.classList.remove('visible');
         return;
       }
-      const text = item.getAttribute('data-tooltip') || (item.classList.contains('sidebar-brand') ? 'NexusPlay (Click to expand)' : '');
+      const text = item.getAttribute('data-tooltip') || (item.classList.contains('sidebar-brand') ? 'KipoPlay (Click to expand)' : '');
       if (!text) {
         tooltipEl.classList.remove('visible');
         return;
@@ -669,13 +731,13 @@ const bundleScript = `/**
         <div class="footer-top">
           <!-- Column 1: Brand -->
           <div class="footer-brand">
-            <a href="#/" class="footer-logo" aria-label="NEXUSPLAY Home">
-              <img src="assets/images/logo.svg" alt="NEXUSPLAY" height="38">
+            <a href="#/" class="footer-logo" aria-label="KipoPlay Home">
+              <img src="assets/images/logo.svg" alt="KipoPlay" height="38">
             </a>
-            <p>NEXUSPLAY is a premier dark gaming portal delivering 200 free, instant-play HTML5 and WebGL games across 22 curated categories. Play seamlessly inside your browser on desktop, tablet, and mobile with zero downloads or installations.</p>
+            <p>KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Enjoy seamless instant play on desktop and mobile.</p>
             <div class="footer-experience-badge">
               <span class="pulse-dot"></span>
-              <span>Instant HTML5 Play • Zero Downloads • Desktop & Mobile</span>
+              <span>Play More. Discover More. • Free Online Games</span>
             </div>
           </div>
 
@@ -720,7 +782,7 @@ const bundleScript = `/**
         </div>
 
         <div class="footer-bottom">
-          <div>&copy; 2026 NEXUSPLAY. All rights reserved. Free HTML5 Gaming Portal.</div>
+          <div>&copy; 2026 KipoPlay. All rights reserved. Play More. Discover More.</div>
           <div class="footer-bottom-links">
             <a href="#/about">About</a>
             <a href="#/privacy">Privacy Policy</a>
@@ -945,9 +1007,9 @@ const bundleScript = `/**
   // --- PHASE 3: Homepage SEO Rich Content Section ---
   function renderHomepageSeoSection() {
     return \`
-      <section class="portal-seo-section" aria-label="About NEXUSPLAY Online Gaming">
-        <h2>Play Free Online Games on NEXUSPLAY</h2>
-        <p>NEXUSPLAY is your ultimate destination for high-performance, free browser games. We curate over 200 high-quality HTML5 and WebGL games across 22 diverse categories, delivering seamless entertainment with zero downloads, zero installs, and zero account barriers.</p>
+      <section class="portal-seo-section" aria-label="About KipoPlay Free Online Games">
+        <h2>Play Free Online Games on KipoPlay</h2>
+        <p>KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Play directly in your browser with instant execution and zero downloads.</p>
 
         <div class="seo-highlight-grid">
           <div class="seo-highlight-item">
@@ -971,7 +1033,7 @@ const bundleScript = `/**
         <h3>Frequently Asked Questions</h3>
         <div class="faq-accordion">
           <details class="faq-item" open>
-            <summary class="faq-question">Are all games on NEXUSPLAY really free?</summary>
+            <summary class="faq-question">Are all games on KipoPlay really free?</summary>
             <div class="faq-answer">Yes, 100%. Every single game in our 200-game catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
           </details>
           <details class="faq-item">
@@ -979,8 +1041,8 @@ const bundleScript = `/**
             <div class="faq-answer">No downloads or plugins are required. All games are built on modern web standards (HTML5 Canvas, WebGL, Web Audio) that run natively in Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge.</div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Can I play NEXUSPLAY games on my phone or tablet?</summary>
-            <div class="faq-answer">Yes! NEXUSPLAY is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
+            <summary class="faq-question">Can I play KipoPlay games on my phone or tablet?</summary>
+            <div class="faq-answer">Yes! KipoPlay is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">How are my favorites and game history saved?</summary>
@@ -997,17 +1059,18 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'NEXUSPLAY - Play Free Online HTML5 Games | Instant Browser Gaming',
-      description: 'Play 200+ free online HTML5 games on NEXUSPLAY. Enjoy shooting, action, racing, car, puzzle, sports, and arcade games with instant play and no downloads.',
-      canonical: 'https://nexusplay.example.com/',
+      title: 'KipoPlay – Play Free Online Games',
+      description: 'Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
+      canonical: 'https://kipo.in/',
       ogType: 'website',
       ogImage: 'assets/images/logo.svg',
       schema: {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "NEXUSPLAY",
-        "url": "https://nexusplay.example.com/",
-        "description": "Play 200+ free online HTML5 games on NEXUSPLAY with zero downloads or installs."
+        "name": "KipoPlay",
+        "alternateName": "KipoPlay Online Games",
+        "url": "https://kipo.in/",
+        "description": "KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports."
       }
     });
 
@@ -1035,7 +1098,7 @@ const bundleScript = `/**
             Play The Best Free Games <span>Online</span>
           </h1>
           <p class="hero-subtitle">
-            Instant browser gaming with dark aesthetics. No downloads, no plugins. Play shooting, racing, puzzle, and arcade games anytime.
+            Play More. Discover More. Enjoy browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile with instant play.
           </p>
           <div class="hero-buttons">
             <a href="#/games" class="btn btn-primary">Explore All 200 Games</a>
@@ -1125,11 +1188,11 @@ const bundleScript = `/**
     if (!main) return;
 
     const catSeo = (activeCatSlug && CATEGORY_SEO_DATA[activeCatSlug]) || null;
-    let pageTitle = catSeo ? catSeo.title : \`\${title} – NEXUSPLAY Online Gaming\`;
-    let metaDescription = catSeo ? catSeo.description : \`Browse \${games.length} free HTML5 browser games in our collection on NEXUSPLAY.\`;
+    let pageTitle = catSeo ? catSeo.title : \`\${title} – KipoPlay Online Gaming\`;
+    let metaDescription = catSeo ? catSeo.description : \`Browse \${games.length} free HTML5 browser games in our collection on KipoPlay.\`;
     let introText = catSeo ? catSeo.intro : \`Showing \${games.length} verified instant-play browser games.\`;
 
-    const currentSort = localStorage.getItem('nexus_sort_pref') || 'featured';
+    const currentSort = (localStorage.getItem(STORAGE_KEYS.sortPref) || localStorage.getItem(STORAGE_KEYS.legacySort) || 'featured');
     let sorted = [...games];
     if (currentSort === 'rating') {
       sorted.sort((a,b) => (b.rating || 0) - (a.rating || 0));
@@ -1146,14 +1209,14 @@ const bundleScript = `/**
     updateSeo({
       title: pageTitle,
       description: metaDescription,
-      canonical: activeCatSlug ? \`https://nexusplay.example.com/#/category/\${activeCatSlug}\` : 'https://nexusplay.example.com/#/games',
+      canonical: activeCatSlug ? \`https://kipo.in/#/category/\${activeCatSlug}\` : 'https://kipo.in/#/games',
       ogType: 'website',
       schema: {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": pageTitle,
         "description": metaDescription,
-        "url": activeCatSlug ? \`https://nexusplay.example.com/#/category/\${activeCatSlug}\` : 'https://nexusplay.example.com/#/games'
+        "url": activeCatSlug ? \`https://kipo.in/#/category/\${activeCatSlug}\` : 'https://kipo.in/#/games'
       }
     });
 
@@ -1245,11 +1308,20 @@ const bundleScript = `/**
   }
 
   // --- PHASE 5: Individual Game SEO & Detail Player ---
+  let activePlayerTimeout = null;
+  let activePostMessageCleanup = null;
+
   function renderGameDetail(slug) {
     const main = document.getElementById('app-main');
     if (!main) return;
 
-    const game = catalog.find(g => g.slug === slug || (g.aliases && g.aliases.includes(slug)));
+    const game = catalog.find(g =>
+      g.slug === slug ||
+      g.id === slug ||
+      (g.aliases && g.aliases.includes(slug)) ||
+      (g.slug && g.slug.toLowerCase() === slug.toLowerCase()) ||
+      (g.id && g.id.toLowerCase() === slug.toLowerCase())
+    );
     if (!game) {
       main.innerHTML = \`
         <div class="info-page-container" style="text-align: center; padding: 80px 20px;">
@@ -1265,7 +1337,11 @@ const bundleScript = `/**
     nexusAnalytics.track('game_viewed', { slug: game.slug, title: game.title, category: game.category });
 
     const isFav = favorites.includes(game.slug);
-    const rawEmbedUrl = game.embedUrl || game.gameUrl || game.url;
+    let rawEmbedUrl = game.embedUrl || game.gameUrl || game.url || '';
+    if (rawEmbedUrl.includes('html5.gamedistribution.com') && !rawEmbedUrl.includes('gd_sdk_referrer_url=')) {
+      const sep = rawEmbedUrl.includes('?') ? '&' : '?';
+      rawEmbedUrl = rawEmbedUrl + sep + 'gd_sdk_referrer_url=' + encodeURIComponent(window.location.href);
+    }
     const embedUrl = sanitizeUrl(rawEmbedUrl);
     const catSlug = (game._categories && game._categories[0]) || 'arcade';
     const related = catalog.filter(g => g.slug !== game.slug && (g._categories.some(c => game._categories.includes(c)) || g.category === game.category)).slice(0, 10);
@@ -1279,13 +1355,13 @@ const bundleScript = `/**
     }
 
     // Dynamic SEO Metadata for Game Page
-    const gameSeoTitle = \`\${game.title} – Play Free Online on NEXUSPLAY\`;
-    const gameSeoDesc = game.description || \`Play \${game.title} free in your browser on NEXUSPLAY. Instant HTML5 gameplay with no downloads or installation.\`;
+    const gameSeoTitle = \`\${game.title} – Play Free Online on KipoPlay\`;
+    const gameSeoDesc = game.description || \`Play \${game.title} free in your browser on KipoPlay. Instant HTML5 gameplay with no downloads or installation.\`;
 
     updateSeo({
       title: gameSeoTitle,
       description: gameSeoDesc,
-      canonical: \`https://nexusplay.example.com/#/game/\${game.slug}\`,
+      canonical: \`https://kipo.in/#/game/\${game.slug}\`,
       ogType: 'game',
       ogImage: game.thumbnail,
       schema: {
@@ -1346,7 +1422,8 @@ const bundleScript = `/**
               title="\${escapeHtml(game.title)} - Free HTML5 Game"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               allowfullscreen
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads allow-pointer-lock"
+              referrerpolicy="origin-when-cross-origin"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads allow-pointer-lock allow-modals allow-orientation-lock allow-presentation"
               loading="eager"
             ></iframe>
             <div class="player-loader" id="playerLoader">
@@ -1420,7 +1497,7 @@ const bundleScript = `/**
               \${game.tags ? game.tags.slice(0, 5).map(t => \`<span style="background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:4px; font-size:0.75rem; color:var(--text-secondary);">\${escapeHtml(t)}</span>\`).join('') : ''}
             </div>
             <p style="color:var(--text-secondary); line-height:1.75; font-size:0.95rem; margin-bottom:20px;">
-              \${escapeHtml(game.description || 'Play ' + game.title + ' instantly online on NEXUSPLAY. No download required. Free browser gameplay across desktop and mobile devices.')}
+              \${escapeHtml(game.description || 'Play ' + game.title + ' instantly online on KipoPlay. No download required. Free browser gameplay across desktop and mobile devices.')}
             </p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
@@ -1464,25 +1541,78 @@ const bundleScript = `/**
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Iframe load listener with 8s timeout detection
+    // Dynamic provider-aware timeout & postMessage detection
+    if (activePlayerTimeout) {
+      clearTimeout(activePlayerTimeout);
+      activePlayerTimeout = null;
+    }
+    if (activePostMessageCleanup) {
+      window.removeEventListener('message', activePostMessageCleanup);
+      activePostMessageCleanup = null;
+    }
+
     const frame = document.getElementById('gameFrame');
     const loader = document.getElementById('playerLoader');
-    let loadTimeout = null;
+    const retry = document.getElementById('playerRetryOverlay');
+    if (retry) retry.style.display = 'none';
+
+    // Provider-aware timeout:
+    // Local games load in <6s
+    // HTMLGames CDN loads in <12s
+    // External WebGL / distributor games (GameDistribution, GameMonetize, Famobi) load interstitial ads and large bundles, so 16s
+    let timeoutMs = 16000;
+    if (embedUrl.startsWith('games/')) {
+      timeoutMs = 6000;
+    } else if (embedUrl.includes('cdn.htmlgames.com')) {
+      timeoutMs = 12000;
+    }
+
+    function onGameActive() {
+      if (activePlayerTimeout) {
+        clearTimeout(activePlayerTimeout);
+        activePlayerTimeout = null;
+      }
+      if (loader) loader.classList.add('hidden');
+      nexusAnalytics.track('game_started', { slug: game.slug, title: game.title });
+    }
 
     if (frame && loader) {
-      frame.onload = () => {
-        if (loadTimeout) clearTimeout(loadTimeout);
-        loader.classList.add('hidden');
-        nexusAnalytics.track('game_started', { slug: game.slug, title: game.title });
-      };
+      frame.onload = onGameActive;
 
-      loadTimeout = setTimeout(() => {
+      // Listen for documented game-ready messages with strict origin and source validation
+      activePostMessageCleanup = (event) => {
+        if (!event || !event.data) return;
+        // Validate event source: must originate from the game iframe window
+        if (frame && event.source !== frame.contentWindow) return;
+
+        // Validate trusted provider origins
+        const origin = event.origin || '';
+        const isAllowedOrigin = (
+          origin === window.location.origin ||
+          origin.endsWith('.gamedistribution.com') ||
+          origin.endsWith('.gamemonetize.co') ||
+          origin.endsWith('.gamemonetize.games') ||
+          origin.endsWith('.htmlgames.com') ||
+          origin.endsWith('.famobi.com')
+        );
+        if (!isAllowedOrigin) return;
+
+        const d = event.data;
+        // Documented provider event triggers
+        if (typeof d === 'string' && (d.includes('SDK_GAME_START') || d.includes('LOADER_DATA'))) {
+          onGameActive();
+        } else if (typeof d === 'object' && (d.name === 'SDK_GAME_START' || d.type === 'SDK_GAME_START')) {
+          onGameActive();
+        }
+      };
+      window.addEventListener('message', activePostMessageCleanup);
+
+      activePlayerTimeout = setTimeout(() => {
         if (loader && !loader.classList.contains('hidden')) {
           loader.classList.add('hidden');
-          const retry = document.getElementById('playerRetryOverlay');
           if (retry) retry.style.display = 'flex';
         }
-      }, 8000);
+      }, timeoutMs);
     }
   }
 
@@ -1494,9 +1624,9 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'About NEXUSPLAY – Play Free Online HTML5 Games',
-      description: 'Discover NEXUSPLAY, the premier modern browser gaming portal offering 200 free, instant-play HTML5 games across 22 categories with zero downloads.',
-      canonical: 'https://nexusplay.example.com/#/about',
+      title: 'About KipoPlay – Play Free Online Games',
+      description: 'Discover KipoPlay, your destination for free online games offering 200 free, instant-play HTML5 games across 22 categories with zero downloads.',
+      canonical: 'https://kipo.in/#/about',
       ogType: 'website'
     });
 
@@ -1510,16 +1640,16 @@ const bundleScript = `/**
 
         <header class="info-hero-header">
           <div class="info-badge">About Our Platform</div>
-          <h1 class="info-title">About <span>NEXUSPLAY</span></h1>
+          <h1 class="info-title">About <span>KipoPlay</span></h1>
           <p class="info-lead">
-            NEXUSPLAY is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
+            KipoPlay is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
           </p>
         </header>
 
         <div class="info-card">
-          <h2>What is NEXUSPLAY?</h2>
+          <h2>What is KipoPlay?</h2>
           <p>
-            NEXUSPLAY is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of exactly 200 legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
+            KipoPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of exactly 200 legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
           </p>
 
           <div class="info-grid-3">
@@ -1541,10 +1671,10 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>Our Mission</h2>
           <p>
-            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, NEXUSPLAY delivers console-inspired responsiveness directly to your browser tab.
+            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, KipoPlay delivers console-inspired responsiveness directly to your browser tab.
           </p>
 
-          <h2>Reasons to Explore NEXUSPLAY</h2>
+          <h2>Reasons to Explore KipoPlay</h2>
           <ul>
             <li><strong>200 Verified Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
             <li><strong>Zero Cost:</strong> 100% free with unlimited gameplay anytime, anywhere.</li>
@@ -1568,9 +1698,9 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Contact NEXUSPLAY – Gaming Support & Feedback',
-      description: 'Contact the NEXUSPLAY team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
-      canonical: 'https://nexusplay.example.com/#/contact',
+      title: 'Contact KipoPlay – Gaming Support & Feedback',
+      description: 'Contact the KipoPlay team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
+      canonical: 'https://kipo.in/#/contact',
       ogType: 'website'
     });
 
@@ -1673,9 +1803,9 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Privacy Policy – NEXUSPLAY Online Gaming',
-      description: 'Accurate and transparent privacy policy for NEXUSPLAY detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
-      canonical: 'https://nexusplay.example.com/#/privacy',
+      title: 'Privacy Policy – KipoPlay Online Gaming',
+      description: 'Accurate and transparent privacy policy for KipoPlay detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
+      canonical: 'https://kipo.in/#/privacy',
       ogType: 'website'
     });
 
@@ -1696,34 +1826,34 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>1. Information We Collect</h2>
           <p>
-            NEXUSPLAY is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
+            KipoPlay is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
           </p>
 
           <h2>2. Browser Local Storage</h2>
           <p>
-            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, NEXUSPLAY utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
+            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, KipoPlay utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
           </p>
           <ul>
-            <li><code>nexus_favorites</code>: An array of game identifiers you have marked with a heart.</li>
-            <li><code>nexus_recently_played</code>: An array of game identifiers for games you have launched recently.</li>
-            <li><code>nexus_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
-            <li><code>nexus_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
+            <li><code>kipoplay_favorites</code> (and legacy <code>nexus_favorites</code>): An array of game identifiers you have marked with a heart.</li>
+            <li><code>kipoplay_recent</code> (and legacy <code>nexus_recently_played</code>): An array of game identifiers for games you have launched recently.</li>
+            <li><code>kipoplay_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
+            <li><code>kipoplay_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
           </ul>
           <p>You can clear this data at any time by simply clearing your browser cache and cookies.</p>
 
           <h2>3. Cookies & Session Storage</h2>
           <p>
-            The core NEXUSPLAY portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
+            The core KipoPlay portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
           </p>
 
           <h2>4. Third-Party Embedded Games</h2>
           <p>
-            Many games on NEXUSPLAY are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
+            Many games on KipoPlay are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
           </p>
 
           <h2>5. Future Monetization & Google AdSense</h2>
           <p>
-            NEXUSPLAY has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
+            KipoPlay has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
           </p>
 
           <h2>6. Analytics Notice</h2>
@@ -1752,9 +1882,9 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Terms of Service – NEXUSPLAY',
-      description: 'Official Terms of Service for NEXUSPLAY covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
-      canonical: 'https://nexusplay.example.com/#/terms',
+      title: 'Terms of Service – KipoPlay',
+      description: 'Official Terms of Service for KipoPlay covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
+      canonical: 'https://kipo.in/#/terms',
       ogType: 'website'
     });
 
@@ -1775,41 +1905,41 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>1. Agreement to Terms</h2>
           <p>
-            By visiting, accessing, or playing games on NEXUSPLAY ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
+            By visiting, accessing, or playing games on KipoPlay ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
           </p>
 
           <h2>2. Permitted Website Usage</h2>
           <p>
-            NEXUSPLAY grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
+            KipoPlay grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
           </p>
 
           <h2>3. Third-Party Game Ownership</h2>
           <p>
-            Games hosted or embedded on NEXUSPLAY remain the intellectual property of their respective developers, creators, or authorized publishers. NEXUSPLAY embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
+            Games hosted or embedded on KipoPlay remain the intellectual property of their respective developers, creators, or authorized publishers. KipoPlay embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
           </p>
 
           <h2>4. User Responsibilities & Conduct</h2>
-          <p>As a user of NEXUSPLAY, you agree not to:</p>
+          <p>As a user of KipoPlay, you agree not to:</p>
           <ul>
             <li>Circumvent, disable, or tamper with security or iframe sandbox restrictions on the portal.</li>
             <li>Use automated scrapers, bots, or data-mining utilities to extract content without authorization.</li>
             <li>Transmit malicious code, viruses, or disruptive scripts through forms or feedback mechanisms.</li>
-            <li>Attempt to reverse-engineer or rebrand NEXUSPLAY portal software.</li>
+            <li>Attempt to reverse-engineer or rebrand KipoPlay portal software.</li>
           </ul>
 
           <h2>5. Game Availability & Maintenance</h2>
           <p>
-            We strive to keep all 200 games playable around the clock. However, third-party developers may update or withdraw games at their discretion. NEXUSPLAY reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
+            We strive to keep all 200 games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KipoPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
           </p>
 
           <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
           <p>
-            NEXUSPLAY is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall NEXUSPLAY be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
+            KipoPlay is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall KipoPlay be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
           </p>
 
           <h2>7. Updates to Terms</h2>
           <p>
-            We reserve the right to revise these Terms of Service at any time. Continued usage of NEXUSPLAY following revisions constitutes full acceptance of the updated terms.
+            We reserve the right to revise these Terms of Service at any time. Continued usage of KipoPlay following revisions constitutes full acceptance of the updated terms.
           </p>
         </div>
       </div>
@@ -1823,9 +1953,9 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'DMCA & Copyright Policy – NEXUSPLAY',
-      description: 'Official DMCA and Copyright notice for NEXUSPLAY detailing intellectual property protection, infringement notification procedures, and counter-claims.',
-      canonical: 'https://nexusplay.example.com/#/dmca',
+      title: 'DMCA & Copyright Policy – KipoPlay',
+      description: 'Official DMCA and Copyright notice for KipoPlay detailing intellectual property protection, infringement notification procedures, and counter-claims.',
+      canonical: 'https://kipo.in/#/dmca',
       ogType: 'website'
     });
 
@@ -1841,24 +1971,24 @@ const bundleScript = `/**
           <div class="info-badge">Intellectual Property</div>
           <h1 class="info-title">DMCA & <span>Copyright Policy</span></h1>
           <p class="info-lead">
-            NEXUSPLAY respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
+            KipoPlay respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
           </p>
         </header>
 
         <div class="info-card">
           <h2>Third-Party Game Ownership</h2>
           <p>
-            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on NEXUSPLAY remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
+            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on KipoPlay remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
           </p>
 
           <h2>Copyright Infringement Notification Procedure</h2>
           <p>
-            If you are a copyright owner or an authorized representative and believe that any game or content accessible on NEXUSPLAY infringes upon your copyright, you may submit a formal notification containing the following:
+            If you are a copyright owner or an authorized representative and believe that any game or content accessible on KipoPlay infringes upon your copyright, you may submit a formal notification containing the following:
           </p>
           <ul>
             <li>A physical or electronic signature of the copyright owner or authorized representative.</li>
             <li>Specific identification of the copyrighted work claimed to have been infringed.</li>
-            <li>The exact URL (e.g., <code>https://nexusplay.example.com/#/game/[game-slug]</code>) where the allegedly infringing material is located.</li>
+            <li>The exact URL (e.g., <code>https://kipo.in/#/game/[game-slug]</code>) where the allegedly infringing material is located.</li>
             <li>Your contact information, including your full legal name, mailing address, telephone number, and verifiable email address.</li>
             <li>A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.</li>
             <li>A statement made under penalty of perjury that the information in the notification is accurate and that you are authorized to act on behalf of the owner.</li>
@@ -1957,7 +2087,7 @@ const bundleScript = `/**
   }
 
   // --- Global Window NEXUS Namespace ---
-  window.NEXUS = {
+  window.KIPO = window.NEXUS = {
     toggleFav: function (slug, event) {
       if (event) {
         event.preventDefault();
@@ -1991,9 +2121,22 @@ const bundleScript = `/**
       const loader = document.getElementById('playerLoader');
       const retry = document.getElementById('playerRetryOverlay');
       if (retry) retry.style.display = 'none';
+      if (activePlayerTimeout) {
+        clearTimeout(activePlayerTimeout);
+        activePlayerTimeout = null;
+      }
       if (frame) {
         if (loader) loader.classList.remove('hidden');
         frame.src = frame.src;
+
+        const currentSrc = frame.src || '';
+        const timeoutMs = currentSrc.includes('games/') ? 6000 : (currentSrc.includes('cdn.htmlgames.com') ? 12000 : 16000);
+        activePlayerTimeout = setTimeout(() => {
+          if (loader && !loader.classList.contains('hidden')) {
+            loader.classList.add('hidden');
+            if (retry) retry.style.display = 'flex';
+          }
+        }, timeoutMs);
       }
     },
 
@@ -2061,7 +2204,8 @@ const bundleScript = `/**
 
     sortView: function (sortBy) {
       try {
-        localStorage.setItem('nexus_sort_pref', sortBy);
+        localStorage.setItem(STORAGE_KEYS.sortPref, sortBy);
+        localStorage.setItem(STORAGE_KEYS.legacySort, sortBy);
       } catch (e) {}
 
       const rawHash = window.location.hash || '#/';
@@ -2100,7 +2244,7 @@ const bundleScript = `/**
     },
 
     openReport: function (gameSlug) {
-      const modalRoot = document.getElementById('nexus-modal-root');
+      const modalRoot = (document.getElementById('kipo-modal-root') || document.getElementById('nexus-modal-root'));
       if (!modalRoot) return;
       const game = catalog.find(g => g.slug === gameSlug);
       const gameTitle = game ? game.title : 'this game';
@@ -2140,7 +2284,7 @@ const bundleScript = `/**
     },
 
     closeModal: function () {
-      const modalRoot = document.getElementById('nexus-modal-root');
+      const modalRoot = (document.getElementById('kipo-modal-root') || document.getElementById('nexus-modal-root'));
       if (modalRoot) modalRoot.innerHTML = '';
     },
 
@@ -2150,14 +2294,15 @@ const bundleScript = `/**
       const details = document.getElementById('reportDetails').value;
 
       try {
-        const reports = JSON.parse(localStorage.getItem('nexus_game_reports') || '[]');
+        const reports = JSON.parse((localStorage.getItem(STORAGE_KEYS.reports) || localStorage.getItem(STORAGE_KEYS.legacyReports)) || '[]');
         reports.push({
           slug,
           reason,
           details,
           date: new Date().toISOString()
         });
-        localStorage.setItem('nexus_game_reports', JSON.stringify(reports));
+        localStorage.setItem(STORAGE_KEYS.reports, JSON.stringify(reports));
+        localStorage.setItem(STORAGE_KEYS.legacyReports, JSON.stringify(reports));
       } catch (e) {}
 
       nexusAnalytics.track('report_submitted', { slug, reason });
@@ -2173,7 +2318,7 @@ const bundleScript = `/**
       const message = document.getElementById('contactMessage').value;
 
       try {
-        const messages = JSON.parse(localStorage.getItem('nexus_contact_messages') || '[]');
+        const messages = JSON.parse((localStorage.getItem(STORAGE_KEYS.messages) || localStorage.getItem(STORAGE_KEYS.legacyMessages)) || '[]');
         messages.push({
           name,
           email,
@@ -2181,7 +2326,8 @@ const bundleScript = `/**
           message,
           date: new Date().toISOString()
         });
-        localStorage.setItem('nexus_contact_messages', JSON.stringify(messages));
+        localStorage.setItem(STORAGE_KEYS.messages, JSON.stringify(messages));
+        localStorage.setItem(STORAGE_KEYS.legacyMessages, JSON.stringify(messages));
       } catch (e) {}
 
       nexusAnalytics.track('contact_submitted', { topic });
@@ -2215,21 +2361,23 @@ const bundleScript = `/**
 
   // Global Error Boundary
   window.addEventListener('error', (e) => {
-    console.warn('[NEXUSPLAY Runtime Guard]', e.message);
+    console.warn('[KipoPlay Runtime Guard]', e.message);
   });
   window.addEventListener('unhandledrejection', (e) => {
-    console.warn('[NEXUSPLAY Promise Guard]', e.reason);
+    console.warn('[KipoPlay Promise Guard]', e.reason);
   });
 
   // --- Application Bootstrap ---
   async function init() {
     loadLocalState();
 
-    if (window.NEXUS_CATALOG && Array.isArray(window.NEXUS_CATALOG) && window.NEXUS_CATALOG.length > 0) {
-      catalog = window.NEXUS_CATALOG;
+    const rawCatalog = window.KIPO_CATALOG || window.NEXUS_CATALOG;
+    if (rawCatalog && Array.isArray(rawCatalog) && rawCatalog.length > 0) {
+      catalog = rawCatalog;
     }
-    if (window.NEXUS_CATEGORIES && Array.isArray(window.NEXUS_CATEGORIES) && window.NEXUS_CATEGORIES.length > 0) {
-      categoryList = window.NEXUS_CATEGORIES;
+    const rawCategories = window.KIPO_CATEGORIES || window.NEXUS_CATEGORIES;
+    if (rawCategories && Array.isArray(rawCategories) && rawCategories.length > 0) {
+      categoryList = rawCategories;
     }
 
     try {
@@ -2245,7 +2393,7 @@ const bundleScript = `/**
       // Offline fallback already loaded
     }
 
-    console.log(\`[NEXUSPLAY] Initialized with \${catalog.length} games across \${categoryList.length} categories.\`);
+    console.log(\`[KipoPlay] Initialized with \${catalog.length} games across \${categoryList.length} categories.\`);
 
     computeCategoryCounts();
     renderSidebar();
@@ -2253,7 +2401,7 @@ const bundleScript = `/**
     renderFooter();
 
     try {
-      if (window.innerWidth > 1024 && localStorage.getItem('nexus_sidebar_collapsed') === '1') {
+      if (window.innerWidth > 1024 && (localStorage.getItem(STORAGE_KEYS.sidebarCollapsed) || localStorage.getItem(STORAGE_KEYS.legacySidebar)) === '1') {
         document.body.classList.add('sidebar-collapsed');
       }
     } catch (e) {}

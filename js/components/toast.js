@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Toast Notification Component
+ * KipoPlay - Toast Notification Component
  */
 
 let toastContainer = null;

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexusplay.example.com/sitemap.xml
+Sitemap: https://kipo.in/sitemap.xml

@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Game Card Component
+ * KipoPlay - Game Card Component
  * Renders an attractive, responsive game card with fallback image and favorite toggle
  */
 

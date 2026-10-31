@@ -1,8 +1,8 @@
-# 🎮 NexusPlay - Modern Online Browser Gaming Portal
+# 🎮 KipoPlay - Modern Online Browser Gaming Portal
 
-![NexusPlay Platform](assets/images/logo.svg)
+![KipoPlay Platform](assets/images/logo.svg)
 
-NexusPlay is a complete, modern, responsive online browser gaming platform built with native web technologies. Similar in functionality to CrazyGames and GameDistribution, it features original branding, a cyber-dark glassmorphic UI, real playable HTML5 games, categorized catalog search, and browser-local favorites and history.
+KipoPlay is a complete, modern, responsive online browser gaming platform built with native web technologies. Similar in functionality to CrazyGames and GameDistribution, it features original branding, a cyber-dark glassmorphic UI, real playable HTML5 games, categorized catalog search, and browser-local favorites and history.
 
 ---
 
@@ -95,7 +95,7 @@ c:\online game\
 │   └── categories.json         # Category definitions
 ├── assets/
 │   └── images/
-│       ├── logo.svg            # NexusPlay brand logo
+│       ├── logo.svg            # KipoPlay brand logo
 │       ├── favicon.svg         # Platform favicon
 │       └── games/              # 12+ high-res SVG game thumbnails & fallbacks
 └── games/
@@ -139,20 +139,20 @@ php -S localhost:8000
 
 ## 🚀 Free Static Hosting Deployment Guide
 
-NexusPlay is 100% static and requires **no paid backend services**. You can host it free of charge on any modern static host:
+KipoPlay is 100% static and requires **no paid backend services**. You can host it free of charge on any modern static host:
 
 ### 1. GitHub Pages (Free)
 1. Initialize git and push to a GitHub repository:
    ```bash
    git init
    git add .
-   git commit -m "Initial NexusPlay release"
-   git remote add origin https://github.com/YOUR_USERNAME/nexusplay.git
+   git commit -m "Initial KipoPlay release"
+   git remote add origin https://github.com/YOUR_USERNAME/kipoplay.git
    git push -u origin main
    ```
 2. In your repository on GitHub, go to **Settings** > **Pages**.
 3. Under **Build and deployment**, select **Source: Deploy from a branch** and choose `main` / `/ (root)`.
-4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/nexusplay/`!
+4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/kipoplay/`!
 
 ### 2. Netlify (Free)
 1. Drag and drop the `online game` folder directly into [app.netlify.com/drop](https://app.netlify.com/drop).
@@ -186,6 +186,6 @@ All games bundled in `games/` are self-contained HTML5 applications provided und
 For third-party network games such as **Epic Racing: Descent on Cars**:
 1. Sign up for a free publisher account on [GameDistribution.com](https://gamedistribution.com/publishers).
 2. Go to your **Publisher Dashboard** > **My Websites** > **Add Website**.
-3. Register the production domain where you deploy NexusPlay (e.g. `https://your-domain.com` or `https://username.github.io`).
+3. Register the production domain where you deploy KipoPlay (e.g. `https://your-domain.com` or `https://username.github.io`).
 4. Once verified, GameDistribution authorizes ad delivery and revenue sharing through your registered domain.
 5. In `data/games.json`, you can customize the game entry's `embedUrl` with your publisher zone config parameters if provided by your account manager.

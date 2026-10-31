@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Custom 404 Not Found View
+ * KipoPlay - Custom 404 Not Found View
  */
 
 export function renderNotFoundView() {

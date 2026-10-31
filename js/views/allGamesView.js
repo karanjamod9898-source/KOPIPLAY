@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - All Games View
+ * KipoPlay - All Games View
  * Comprehensive catalog with multi-category filter and sorting
  */
 

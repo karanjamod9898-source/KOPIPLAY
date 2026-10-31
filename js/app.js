@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Main Application Bootstrap & Client-Side Router
+ * KipoPlay - Main Application Bootstrap & Client-Side Router
  */
 
 import { loadCatalog, getGameBySlug, getCategoryBySlug } from './api.js';
@@ -39,7 +39,7 @@ async function router() {
 
   // Route: Home
   if (routePart === '#/' || routePart === '#') {
-    setMeta('NexusPlay - Play Free HTML5 Games Online', 'Discover and play high quality HTML5 browser games for free. No downloads, instant gameplay.');
+    setMeta('KipoPlay – Play Free Online Games', 'Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.');
     appMain.innerHTML = await renderHomeView();
     return;
   }
@@ -49,7 +49,7 @@ async function router() {
     const filter = params.get('filter') || 'all';
     const sort = params.get('sort') || 'popular';
     const category = params.get('category') || 'all';
-    setMeta('All Games - NexusPlay Catalog', 'Browse our complete catalog of free browser action, racing, puzzle, and adventure games.');
+    setMeta('All Games - KipoPlay Catalog', 'Browse our complete catalog of free browser action, racing, puzzle, and adventure games.');
     appMain.innerHTML = await renderAllGamesView(filter, sort, category);
     initAllGamesEvents(filter, sort, category);
     return;
@@ -60,9 +60,9 @@ async function router() {
     const slug = routePart.replace('#/game/', '').trim();
     const game = await getGameBySlug(slug);
     if (game) {
-      setMeta(`${game.title} - Play Free Online on NexusPlay`, game.description);
+      setMeta(`${game.title} - Play Free Online on KipoPlay`, game.description);
     } else {
-      setMeta('Game Not Found - NexusPlay', 'The requested game could not be found.');
+      setMeta('Game Not Found - KipoPlay', 'The requested game could not be found.');
     }
     appMain.innerHTML = await renderGameView(slug);
     initGamePlayerEvents();
@@ -76,7 +76,7 @@ async function router() {
     const sort = params.get('sort') || 'popular';
     const cat = await getCategoryBySlug(slug);
     if (cat) {
-      setMeta(`${cat.name} Games - Play Free on NexusPlay`, cat.description);
+      setMeta(`${cat.name} Games - Play Free on KipoPlay`, cat.description);
     }
     appMain.innerHTML = await renderCategoryView(slug, filter, sort);
     initCategoryEvents(slug, filter);
@@ -85,7 +85,7 @@ async function router() {
 
   // Route: Favorites
   if (routePart === '#/favorites') {
-    setMeta('My Favorite Games - NexusPlay', 'Your personal collection of saved favorite games on NexusPlay.');
+    setMeta('My Favorite Games - KipoPlay', 'Your personal collection of saved favorite games on KipoPlay.');
     appMain.innerHTML = await renderFavoritesView();
     initFavoritesEvents();
     return;
@@ -95,7 +95,7 @@ async function router() {
   if (routePart === '#/search') {
     const query = params.get('q') || '';
     const category = params.get('category') || '';
-    setMeta(`Search Games: ${query || 'All'} - NexusPlay`, 'Search and discover games across all categories on NexusPlay.');
+    setMeta(`Search Games: ${query || 'All'} - KipoPlay`, 'Search and discover games across all categories on KipoPlay.');
     appMain.innerHTML = await renderSearchView(query, category);
     initSearchEvents();
     return;
@@ -103,14 +103,14 @@ async function router() {
 
   // Route: About
   if (routePart === '#/about') {
-    setMeta('About NexusPlay - Browser Gaming Platform', 'Learn about our mission to bring high performance, frictionless HTML5 games to the web.');
+    setMeta('About KipoPlay - Browser Gaming Platform', 'Learn about our mission to bring high performance, frictionless HTML5 games to the web.');
     appMain.innerHTML = renderAboutView();
     return;
   }
 
   // Route: Contact
   if (routePart === '#/contact') {
-    setMeta('Contact & Game Submissions - NexusPlay', 'Get in touch with the NexusPlay team or submit your HTML5 game for publication.');
+    setMeta('Contact & Game Submissions - KipoPlay', 'Get in touch with the KipoPlay team or submit your HTML5 game for publication.');
     appMain.innerHTML = renderContactView();
     initContactEvents();
     return;
@@ -118,20 +118,20 @@ async function router() {
 
   // Route: Privacy
   if (routePart === '#/privacy') {
-    setMeta('Privacy Policy - NexusPlay', 'Review our privacy policy and how your local browser preferences are stored.');
+    setMeta('Privacy Policy - KipoPlay', 'Review our privacy policy and how your local browser preferences are stored.');
     appMain.innerHTML = renderPrivacyView();
     return;
   }
 
   // Route: Terms
   if (routePart === '#/terms') {
-    setMeta('Terms of Use - NexusPlay', 'Terms and conditions for playing games on NexusPlay.');
+    setMeta('Terms of Use - KipoPlay', 'Terms and conditions for playing games on KipoPlay.');
     appMain.innerHTML = renderTermsView();
     return;
   }
 
   // Fallback: 404 Not Found
-  setMeta('404 Page Not Found - NexusPlay', 'The page you requested does not exist.');
+  setMeta('404 Page Not Found - KipoPlay', 'The page you requested does not exist.');
   appMain.innerHTML = renderNotFoundView();
 }
 

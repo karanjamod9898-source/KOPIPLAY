@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Category Page View
+ * KipoPlay - Category Page View
  * Shows games filtered by category with sorting, sub-filters, and metadata
  */
 

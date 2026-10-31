@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Favorites Page View
+ * KipoPlay - Favorites Page View
  * Shows saved bookmarked games from localStorage
  */
 

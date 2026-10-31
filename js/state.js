@@ -1,12 +1,50 @@
 /**
- * NEXUSPLAY - State & Storage Management
- * Handles Favorites and Recently Played via localStorage
+ * KipoPlay - State & Storage Management
+ * Handles Favorites and Recently Played via localStorage with safe migration
  */
 
 const STORAGE_KEYS = {
-  FAVORITES: 'nexusplay_favorites',
-  RECENTLY_PLAYED: 'nexusplay_recent'
+  FAVORITES: 'kipoplay_favorites',
+  RECENTLY_PLAYED: 'kipoplay_recent',
+  SORT_PREF: 'kipoplay_sort_pref',
+  SIDEBAR_COLLAPSED: 'kipoplay_sidebar_collapsed',
+  GAME_REPORTS: 'kipoplay_game_reports',
+  CONTACT_MESSAGES: 'kipoplay_contact_messages',
+  // Legacy backward-compatibility keys
+  LEGACY_FAVORITES: 'nexusplay_favorites',
+  LEGACY_FAVORITES_ALT: 'nexus_favorites',
+  LEGACY_RECENT: 'nexusplay_recent',
+  LEGACY_RECENT_ALT: 'nexus_recently_played',
+  LEGACY_SORT: 'nexus_sort_pref',
+  LEGACY_SIDEBAR: 'nexus_sidebar_collapsed'
 };
+
+// Automatic safe migration from legacy keys
+function migrateLegacyStorage() {
+  try {
+    if (typeof localStorage === 'undefined') return;
+
+    if (!localStorage.getItem(STORAGE_KEYS.FAVORITES)) {
+      const old = localStorage.getItem(STORAGE_KEYS.LEGACY_FAVORITES) || localStorage.getItem(STORAGE_KEYS.LEGACY_FAVORITES_ALT);
+      if (old) localStorage.setItem(STORAGE_KEYS.FAVORITES, old);
+    }
+    if (!localStorage.getItem(STORAGE_KEYS.RECENTLY_PLAYED)) {
+      const old = localStorage.getItem(STORAGE_KEYS.LEGACY_RECENT) || localStorage.getItem(STORAGE_KEYS.LEGACY_RECENT_ALT);
+      if (old) localStorage.setItem(STORAGE_KEYS.RECENTLY_PLAYED, old);
+    }
+    if (!localStorage.getItem(STORAGE_KEYS.SORT_PREF)) {
+      const old = localStorage.getItem(STORAGE_KEYS.LEGACY_SORT);
+      if (old) localStorage.setItem(STORAGE_KEYS.SORT_PREF, old);
+    }
+    if (!localStorage.getItem(STORAGE_KEYS.SIDEBAR_COLLAPSED)) {
+      const old = localStorage.getItem(STORAGE_KEYS.LEGACY_SIDEBAR);
+      if (old) localStorage.setItem(STORAGE_KEYS.SIDEBAR_COLLAPSED, old);
+    }
+  } catch (e) {
+    console.warn('Storage migration notice:', e);
+  }
+}
+migrateLegacyStorage();
 
 const listeners = [];
 
@@ -21,7 +59,9 @@ function notifyState() {
 // Favorites API
 export function getFavorites() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEYS.FAVORITES);
+    const raw = localStorage.getItem(STORAGE_KEYS.FAVORITES) || 
+                localStorage.getItem(STORAGE_KEYS.LEGACY_FAVORITES) || 
+                localStorage.getItem(STORAGE_KEYS.LEGACY_FAVORITES_ALT);
     return raw ? JSON.parse(raw) : [];
   } catch (e) {
     console.error('Failed to read favorites from localStorage', e);
@@ -43,7 +83,10 @@ export function toggleFavorite(gameId) {
     favs.unshift(gameId);
   }
   try {
-    localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(favs));
+    const json = JSON.stringify(favs);
+    localStorage.setItem(STORAGE_KEYS.FAVORITES, json);
+    localStorage.setItem(STORAGE_KEYS.LEGACY_FAVORITES, json);
+    localStorage.setItem(STORAGE_KEYS.LEGACY_FAVORITES_ALT, json);
     notifyState();
   } catch (e) {
     console.error('Failed to save favorites to localStorage', e);
@@ -52,14 +95,20 @@ export function toggleFavorite(gameId) {
 }
 
 export function clearFavorites() {
-  localStorage.removeItem(STORAGE_KEYS.FAVORITES);
+  try {
+    localStorage.removeItem(STORAGE_KEYS.FAVORITES);
+    localStorage.removeItem(STORAGE_KEYS.LEGACY_FAVORITES);
+    localStorage.removeItem(STORAGE_KEYS.LEGACY_FAVORITES_ALT);
+  } catch (e) {}
   notifyState();
 }
 
 // Recently Played API
 export function getRecentlyPlayed() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEYS.RECENTLY_PLAYED);
+    const raw = localStorage.getItem(STORAGE_KEYS.RECENTLY_PLAYED) || 
+                localStorage.getItem(STORAGE_KEYS.LEGACY_RECENT) || 
+                localStorage.getItem(STORAGE_KEYS.LEGACY_RECENT_ALT);
     return raw ? JSON.parse(raw) : [];
   } catch (e) {
     console.error('Failed to read recently played from localStorage', e);
@@ -74,7 +123,10 @@ export function addRecentlyPlayed(gameId) {
   // Keep max 12 recent games
   if (list.length > 12) list = list.slice(0, 12);
   try {
-    localStorage.setItem(STORAGE_KEYS.RECENTLY_PLAYED, JSON.stringify(list));
+    const json = JSON.stringify(list);
+    localStorage.setItem(STORAGE_KEYS.RECENTLY_PLAYED, json);
+    localStorage.setItem(STORAGE_KEYS.LEGACY_RECENT, json);
+    localStorage.setItem(STORAGE_KEYS.LEGACY_RECENT_ALT, json);
     notifyState();
   } catch (e) {
     console.error('Failed to save recently played', e);

@@ -1,6 +1,6 @@
 /* ==========================================================================
-   NEXUSPLAY - Professional Dark Gaming Portal Design System
-   Inspired by Modern Gaming Platforms with Original NexusPlay Blue & Purple Accents
+   KipoPlay - Professional Dark Gaming Portal Design System
+   Inspired by Modern Gaming Platforms with Original KipoPlay Blue & Purple Accents
    ========================================================================== */
 
 :root {
@@ -21,7 +21,7 @@
   --bg-input: #151A24;
   --bg-input-focus: #1A212E;
   
-  /* NexusPlay Brand Accents (Vibrant Electric Blue & Cyber Violet) */
+  /* KipoPlay Brand Accents (Vibrant Electric Blue & Cyber Violet) */
   --accent-primary: #2563EB;
   --accent-primary-hover: #3B82F6;
   --accent-primary-glow: rgba(37, 99, 235, 0.35);

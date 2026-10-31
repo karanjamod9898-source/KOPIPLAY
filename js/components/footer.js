@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Site Footer Component
+ * KipoPlay - Site Footer Component
  */
 
 import { getCategories } from '../api.js';
@@ -16,9 +16,9 @@ export async function renderFooter() {
       <div class="container">
         <div class="footer-top">
           <div class="footer-col footer-brand">
-            <img src="assets/images/logo.svg" alt="NexusPlay" style="height: 36px;" />
+            <img src="assets/images/logo.svg" alt="KipoPlay" style="height: 36px;" />
             <p>
-              NexusPlay is your premier destination for high-speed, instant HTML5 browser games. No downloads, no installations, just pure gaming directly in your web browser.
+              KipoPlay is your premier destination for high-speed, instant HTML5 browser games. No downloads, no installations, just pure gaming directly in your web browser.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export async function renderFooter() {
           <div class="footer-col">
             <h4>Platform & Legal</h4>
             <ul class="footer-links">
-              <li><a href="#/about" class="footer-link">About NexusPlay</a></li>
+              <li><a href="#/about" class="footer-link">About KipoPlay</a></li>
               <li><a href="#/contact" class="footer-link">Developer & Contact</a></li>
               <li><a href="#/privacy" class="footer-link">Privacy Policy</a></li>
               <li><a href="#/terms" class="footer-link">Terms of Service</a></li>
@@ -53,10 +53,10 @@ export async function renderFooter() {
 
         <div class="footer-bottom">
           <div class="footer-disclaimer">
-            &copy; 2026 NexusPlay Portal. All rights reserved. Games featured on this portal are licensed, self-hosted, or public domain HTML5 web applications.
+            &copy; 2026 KipoPlay Portal. All rights reserved. Games featured on this portal are licensed, self-hosted, or public domain HTML5 web applications.
           </div>
           <div>
-            Built with modern web standards • Powered by NexusPlay Engine
+            Play More. Discover More. • Powered by KipoPlay Engine
           </div>
         </div>
       </div>

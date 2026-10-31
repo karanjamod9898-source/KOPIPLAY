@@ -1,5 +1,5 @@
 /**
- * NEXUSPLAY - Header Navigation & Global Search Component
+ * KipoPlay - Header Navigation & Global Search Component
  */
 
 import { getCategories, searchGames } from '../api.js';
@@ -27,8 +27,8 @@ export async function renderHeader() {
     <header class="site-header">
       <div class="container header-inner">
         <div class="header-left">
-          <a href="#/" class="brand-logo" aria-label="NexusPlay Home">
-            <img src="assets/images/logo.svg" alt="NexusPlay" />
+          <a href="#/" class="brand-logo" aria-label="KipoPlay Home">
+            <img src="assets/images/logo.svg" alt="KipoPlay" />
           </a>
 
           <nav class="nav-links" aria-label="Main Navigation">
@@ -92,7 +92,7 @@ export async function renderHeader() {
     <div class="mobile-drawer-overlay" id="mobile-drawer-overlay">
       <div class="mobile-drawer">
         <div class="drawer-header">
-          <img src="assets/images/logo.svg" alt="NexusPlay" style="height: 32px;" />
+          <img src="assets/images/logo.svg" alt="KipoPlay" style="height: 32px;" />
           <button class="drawer-close-btn" id="drawer-close-btn">✕</button>
         </div>
 
