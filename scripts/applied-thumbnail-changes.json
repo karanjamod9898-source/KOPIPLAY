@@ -1,0 +1,551 @@
+[
+  {
+    "id": "angry-heroes-02",
+    "title": "Angry Heroes",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1785505145177-91770557.webp",
+    "newThumb": "https://img.gamedistribution.com/d628d0c891494139b9f04f556caf23b0-512x512.jpeg",
+    "newFallback": "https://img.gamedistribution.com/d628d0c891494139b9f04f556caf23b0-512x384.jpeg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "rise-up-air-balloon-04",
+    "title": "Rise Up Air Balloon",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1786591337262-693595561.webp",
+    "newThumb": "assets/images/games/rise-up.svg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Original Local Vector Design (KipoPlay)",
+    "licenseEvidence": "Original custom SVG vector artwork created in-house matching game theme; replaces unverified LupzoGames hotlink"
+  },
+  {
+    "id": "bubble-fall-05",
+    "title": "Bubble Fall",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1785503864280-384289029.webp",
+    "newThumb": "https://img.gamedistribution.com/82c9d9ae7f6d4ca6b00b36025870d17a-512x512.jpeg",
+    "newFallback": "https://img.gamedistribution.com/82c9d9ae7f6d4ca6b00b36025870d17a-512x384.jpeg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "hand-feight-07",
+    "title": "Hand Fight",
+    "oldThumb": "https://lupzogames.com/uploads/games/gewpym4ock7fbqj5z6tr-1770954235711-595808181.webp",
+    "newThumb": "https://img.gamemonetize.com/485gqzfrbzass7ig99juwrcb73d0286z/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "home-island-08",
+    "title": "Home Island",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955500620-86718700.webp",
+    "newThumb": "https://img.gamedistribution.com/da1111d4369f4cb08525d593fe515fa4-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/da1111d4369f4cb08525d593fe515fa4-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "dream-restaurant-3d-09",
+    "title": "Dream Restaurant 3D",
+    "oldThumb": "https://lupzogames.com/uploads/games/l0z1f76w546zequlmovx-1770954287896-980508149.webp",
+    "newThumb": "https://img.gamemonetize.com/0lmv5h0j5tuk9gi94xd8crb2dwfmkqn3/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "counter-war-10",
+    "title": "Counter War",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1787123904968-52220234.webp",
+    "newThumb": "assets/images/games/count-war.svg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Original Local Vector Design (KipoPlay)",
+    "licenseEvidence": "Original custom SVG vector artwork created in-house matching game theme; replaces unverified LupzoGames hotlink"
+  },
+  {
+    "id": "neon-breacks-breaker-12",
+    "title": "Neon Breaks Breaker",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955549699-281341622.webp",
+    "newThumb": "https://img.gamemonetize.com/4qlzvoyo94nx261mosc65dif1zzearma/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "helicopter-battle-13",
+    "title": "Helicopter Battle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955575557-640075480.webp",
+    "newThumb": "https://img.gamemonetize.com/zlpj0cuc8qtjtptpl8o7t5jqtes478wz/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "magic-block-puzzle-14",
+    "title": "Magic Block Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/tafy1busokfcppl4jd4u-1770954311568-822295225.webp",
+    "newThumb": "https://img.gamemonetize.com/3nin4ln4pjt0ae72rcoxq07kekbedyn7/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "ludo-kingdom-16",
+    "title": "Ludo Kingdom",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955975964-685882900.webp",
+    "newThumb": "https://img.gamedistribution.com/320b65ea8ce34cb7a4537ff63576d976-512x512.jpeg",
+    "newFallback": "https://img.gamedistribution.com/320b65ea8ce34cb7a4537ff63576d976-512x384.jpeg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "word-connect-17",
+    "title": "Word Connect",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955995369-850203714.webp",
+    "newThumb": "https://img.gamemonetize.com/vwtlu5q0rwupfhmjg6cd700sasyucxzm/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "daily-sudoku-18",
+    "title": "Daily Sudoku",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956010991-434144605.webp",
+    "newThumb": "https://img.gamedistribution.com/dd9701cd84da40699cdc404645f29c1f-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/dd9701cd84da40699cdc404645f29c1f-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "tic-tac-toe-immanitas-19",
+    "title": "Tic Tac Toe Immanitas",
+    "oldThumb": "https://lupzogames.com/uploads/games/mcnrfl6nis5flrbefeoo-1770956029242-802724615.webp",
+    "newThumb": "https://img.gamemonetize.com/fourvv1oev39x7013ybw5a1pvrd6af0o/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "wood-screw-puzzle-20",
+    "title": "Wood & Screw Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956196318-360462475.webp",
+    "newThumb": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "3d-fashion-princess-dress-up-21",
+    "title": "3D Fashion Princess - Dress Up",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956212446-281000299.webp",
+    "newThumb": "https://img.gamedistribution.com/b4addeae4bfe422f8a324ab5474ca7b5-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/b4addeae4bfe422f8a324ab5474ca7b5-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "bomber-plane-22",
+    "title": "Bomber Plane",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956243176-458316935.webp",
+    "newThumb": "https://img.gamedistribution.com/9da40c9b342846f99339b7c4c8a428b7-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/9da40c9b342846f99339b7c4c8a428b7-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "crazy-traffic-racer-24",
+    "title": "Crazy Traffic Racer",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956298687-821741499.webp",
+    "newThumb": "https://img.gamedistribution.com/d0b8e5ba257d4f888738a7ec722443f1-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/d0b8e5ba257d4f888738a7ec722443f1-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "tank-wars-2-26",
+    "title": "Tank Wars 2",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1787134473115-783028416.webp",
+    "newThumb": "https://img.gamedistribution.com/659090e00bfc4650899550d63f8a130d-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/659090e00bfc4650899550d63f8a130d-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "mahjong-garden-28",
+    "title": "Mahjong Garden",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956375480-150888695.webp",
+    "newThumb": "https://img.gamedistribution.com/bf59a11ee422478a82cb29ea23caaa20-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/bf59a11ee422478a82cb29ea23caaa20-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "snake-master-29",
+    "title": "Snake Master",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956396028-886832311.webp",
+    "newThumb": "https://img.gamedistribution.com/8d477a23de1743198aca29f1893c6be6-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/8d477a23de1743198aca29f1893c6be6-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "ludo-world-30",
+    "title": "Ludo World",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956412141-957327600.webp",
+    "newThumb": "https://img.gamedistribution.com/d0046c8fd4eb4d4fb2492ba8013909f0-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/d0046c8fd4eb4d4fb2492ba8013909f0-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "farm-merge-harvest-31",
+    "title": "Farm: Merge Harvest",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956439350-303319342.webp",
+    "newThumb": "https://img.gamedistribution.com/01b4c5438e0c4f17b046a0d1ca94fdae-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/01b4c5438e0c4f17b046a0d1ca94fdae-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "fruit-jam-32",
+    "title": "Fruit Jam",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956459638-18087828.webp",
+    "newThumb": "https://img.gamemonetize.com/a4rwq4sv7v4yg9atrojx1vj26hwcshud/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "mega-shark-33",
+    "title": "Mega Shark",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956476387-781120818.webp",
+    "newThumb": "https://img.gamedistribution.com/9ff4c1c62da64af98d32fe1a1b44ac0a-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/9ff4c1c62da64af98d32fe1a1b44ac0a-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "the-zombie-house-35",
+    "title": "The Zombie House",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956514388-889614010.webp",
+    "newThumb": "https://img.gamedistribution.com/ddc202e7d252451f8d1344f9f0e455ef-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/ddc202e7d252451f8d1344f9f0e455ef-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "dino-idle-park-36",
+    "title": "Dino Idle Park",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956534659-476269559.webp",
+    "newThumb": "https://img.gamedistribution.com/e60b6dcfbc1e4027a11abc8dc3959669-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/e60b6dcfbc1e4027a11abc8dc3959669-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "marble-blast-37",
+    "title": "Marble Blast",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956548465-878300016.webp",
+    "newThumb": "https://img.gamedistribution.com/685ccaa7326c42be8aa2076801e82acd-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/685ccaa7326c42be8aa2076801e82acd-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "pool-diamond-challenge-38",
+    "title": "Pool Diamond Challenge",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956571047-413762952.webp",
+    "newThumb": "https://img.gamedistribution.com/d915f03f46804091933c3be8d17273be-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/d915f03f46804091933c3be8d17273be-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "fast-rescue-save-human-39",
+    "title": "Fast Rescue - Save Human",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956589123-552503865.webp",
+    "newThumb": "https://img.gamemonetize.com/0cf1k8jt1nfk5jy5disal21panmlv6un/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "dart-jam-2-40",
+    "title": "Dart Jam 2",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956618447-746949161.webp",
+    "newThumb": "https://img.gamedistribution.com/9addb82d5ce74fb5b2eab726f8524cac-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/9addb82d5ce74fb5b2eab726f8524cac-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "coffee-cup-fill-blocks-41",
+    "title": "Coffee Cup - Fill Blocks",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956645791-402919249.webp",
+    "newThumb": "https://img.gamedistribution.com/0904d5fb5d0044fe9fddf1cd5834cff2-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/0904d5fb5d0044fe9fddf1cd5834cff2-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "ellie-and-ben-christmas-eve-42",
+    "title": "Ellie and Ben Christmas Eve",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956662527-294703672.webp",
+    "newThumb": "https://img.gamedistribution.com/d3b2230575e14473823dcb3db1029329-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/d3b2230575e14473823dcb3db1029329-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "halloween-fruit-slice-43",
+    "title": "Halloween Fruit Slice",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956677733-146431657.webp",
+    "newThumb": "https://img.gamedistribution.com/754a3153c5964afe918325052fa17419-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/754a3153c5964afe918325052fa17419-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "epic-racing-descent-on-cars-44",
+    "title": "Epic Racing - Descent on Cars",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956706060-766912937.webp",
+    "newThumb": "https://img.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "bubble-shooter-wild-west-45",
+    "title": "Bubble Shooter Wild West",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956731870-528347598.webp",
+    "newThumb": "https://img.gamedistribution.com/0b18452cd7844e308b726bf05034fac2-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/0b18452cd7844e308b726bf05034fac2-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "ludo-classic-46",
+    "title": "Ludo Classic",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956751445-567744364.webp",
+    "newThumb": "https://img.gamedistribution.com/72b97cf38278422b8b9ab83eba0ffa3a-512x512.jpeg",
+    "newFallback": "https://img.gamedistribution.com/72b97cf38278422b8b9ab83eba0ffa3a-512x384.jpeg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "merge-haven-47",
+    "title": "Merge Haven",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770956769260-505840384.webp",
+    "newThumb": "https://img.gamedistribution.com/6d02d2d9f4164009827dd094824853b3-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/6d02d2d9f4164009827dd094824853b3-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "chain-puzzle-48",
+    "title": "Chain Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957039663-155028954.webp",
+    "newThumb": "https://img.gamedistribution.com/40ec584436da4841b9b80e9d649112e2-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/40ec584436da4841b9b80e9d649112e2-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "two-stunt-racers-49",
+    "title": "Two Stunt Racers",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957094657-314832659.webp",
+    "newThumb": "https://img.gamedistribution.com/bb65344d29f74da1bd1f41500d8b1dc2-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/bb65344d29f74da1bd1f41500d8b1dc2-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "blast-cube-50",
+    "title": "Blast Cube",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957109101-896417534.webp",
+    "newThumb": "https://img.gamedistribution.com/eb75ff08712148498a298d9a8e0defb0-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/eb75ff08712148498a298d9a8e0defb0-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "marble-run-ultimate-race-51",
+    "title": "Marble Run - Ultimate Race!",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957125340-978092169.webp",
+    "newThumb": "https://img.gamedistribution.com/ae42ea5c4e0b4ff4b9eddf47fbd2cc5e-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/ae42ea5c4e0b4ff4b9eddf47fbd2cc5e-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "3d-super-rolling-ball-race-53",
+    "title": "3D Super Rolling Ball Race",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957174778-462285857.webp",
+    "newThumb": "https://img.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "association-connect-word-54",
+    "title": "Association - Connect Word",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957632817-245017662.webp",
+    "newThumb": "https://img.gamedistribution.com/4857071352d449b383886bcf8627a231-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/4857071352d449b383886bcf8627a231-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "bubble-pop-fairyland-55",
+    "title": "Bubble Pop Fairyland",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770957761706-148260883.webp",
+    "newThumb": "https://img.gamedistribution.com/fc84a63fc1db4ebabc334521c2cb3c68-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/fc84a63fc1db4ebabc334521c2cb3c68-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "nut-color-sort-puzzle-56",
+    "title": "Nut Color Sort Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770967882517-295449817.webp",
+    "newThumb": "https://img.gamemonetize.com/bqo62nz1cpec68bw0mb8z8deln9yrq5a/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "search-the-word-57",
+    "title": "Search the Word",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770959841981-423915772.webp",
+    "newThumb": "https://img.gamedistribution.com/c13ee9c06edc4f0a8d7f6f291a7c13d8-512x512.jpeg",
+    "newFallback": "https://img.gamedistribution.com/c13ee9c06edc4f0a8d7f6f291a7c13d8-512x384.jpeg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "fighter-jet-airplane-rush-58",
+    "title": "Fighter Jet Airplane Rush",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770958137774-134401891.webp",
+    "newThumb": "https://img.gamedistribution.com/d033df5e52e74348951516eecf4c2ff7-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/d033df5e52e74348951516eecf4c2ff7-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "pool-master-59",
+    "title": "Pool Master",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770959474206-15116434.webp",
+    "newThumb": "https://img.gamedistribution.com/cfe752f3ab0742bbaa481bd558591c48-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/cfe752f3ab0742bbaa481bd558591c48-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "celebrity-e-girl-vibes-60",
+    "title": "Celebrity E-Girl Vibes",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770964642270-96931242.webp",
+    "newThumb": "https://img.gamedistribution.com/80ddf44c832b44d69d72392d9453ca00-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/80ddf44c832b44d69d72392d9453ca00-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "celebrity-thanksgiving-prep-61",
+    "title": "Celebrity Thanksgiving Prep",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770964733791-746560673.webp",
+    "newThumb": "https://img.gamedistribution.com/e5dcd09e91004a5c8d1b7d473a572bcf-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/e5dcd09e91004a5c8d1b7d473a572bcf-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "crazy-stunts-3d-62",
+    "title": "Crazy Stunts 3D",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770964822677-202031216.webp",
+    "newThumb": "https://img.gamedistribution.com/7003f00653b24b0686c8d448eca7083b-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/7003f00653b24b0686c8d448eca7083b-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "screw-puzzle-63",
+    "title": "Screw Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770966680973-325059593.webp",
+    "newThumb": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "word-search-universe-64",
+    "title": "Word Search Universe",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770966871055-927901883.webp",
+    "newThumb": "https://img.gamedistribution.com/b660d10d6c124922babb5d9e7bf29133-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/b660d10d6c124922babb5d9e7bf29133-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "celebrities-get-ready-for-christmas-65",
+    "title": "Celebrities Get Ready For Christmas",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1771590114569-787082481.webp",
+    "newThumb": "https://img.gamedistribution.com/a60b670196384d8db35fab193cc80297-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/a60b670196384d8db35fab193cc80297-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "hill-racing-egg-drop-66",
+    "title": "Hill Racing - Egg drop!",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770967775633-869893798.webp",
+    "newThumb": "https://img.gamedistribution.com/7b5a23ec82874487868deee0b7afbbfa-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/7b5a23ec82874487868deee0b7afbbfa-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "air-force-space-shooter-67",
+    "title": "Air Force Space Shooter",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770958017489-597092745.webp",
+    "newThumb": "https://img.gamedistribution.com/38ab3871c30c48a3a6a4b1e3e2ce802c-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/38ab3871c30c48a3a6a4b1e3e2ce802c-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "pool-maniya-68",
+    "title": "Pool Maniya",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770955607796-576536803.webp",
+    "newThumb": "https://img.gamemonetize.com/6h3a9smok88omcg38xx6os9ghd5avu45/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "sort-puzzle-nuts-and-bolts-69",
+    "title": "Sort Puzzle - Nuts and Bolts",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770975894684-115107469.webp",
+    "newThumb": "https://img.gamedistribution.com/1181e80fccb44318a69756c736bfbda7-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/1181e80fccb44318a69756c736bfbda7-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  },
+  {
+    "id": "cross-word-puzzle-71",
+    "title": "Cross Word Puzzle",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1770979606989-142924617.webp",
+    "newThumb": "https://img.gamemonetize.com/bhs9ves88nta7s59d4ms7o9bhc49dss2/512x384.jpg",
+    "newFallback": "assets/images/games/default-game.svg",
+    "source": "Official GameMonetize CDN",
+    "licenseEvidence": "GameMonetize Publisher RSS/Syndication CDN (verified 200 OK on img.gamemonetize.com)"
+  },
+  {
+    "id": "royal-garden-match-2-72",
+    "title": "Royal Garden Match 2",
+    "oldThumb": "https://lupzogames.com/uploads/games/landscap-1771590041412-434633647.webp",
+    "newThumb": "https://img.gamedistribution.com/6416456afd5147b489069f061ea00699-512x512.jpg",
+    "newFallback": "https://img.gamedistribution.com/6416456afd5147b489069f061ea00699-512x384.jpg",
+    "source": "Official GameDistribution CDN",
+    "licenseEvidence": "GameDistribution Publisher Syndication Assets (verified 200 OK on img.gamedistribution.com)"
+  }
+]

@@ -1,0 +1,329 @@
+[
+  {
+    "id": "angry-heroes-02",
+    "title": "Angry Heroes",
+    "guid": "d628d0c891494139b9f04f556caf23b0",
+    "officialImg": "https://img.gamedistribution.com/d628d0c891494139b9f04f556caf23b0-512x512.jpeg",
+    "pageStatus": 200
+  },
+  {
+    "id": "bubble-fall-05",
+    "title": "Bubble Fall",
+    "guid": "82c9d9ae7f6d4ca6b00b36025870d17a",
+    "officialImg": "https://img.gamedistribution.com/82c9d9ae7f6d4ca6b00b36025870d17a-512x512.jpeg",
+    "pageStatus": 200
+  },
+  {
+    "id": "home-island-08",
+    "title": "Home Island",
+    "guid": "da1111d4369f4cb08525d593fe515fa4",
+    "officialImg": "https://img.gamedistribution.com/da1111d4369f4cb08525d593fe515fa4-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "ludo-kingdom-16",
+    "title": "Ludo Kingdom",
+    "guid": "320b65ea8ce34cb7a4537ff63576d976",
+    "officialImg": "https://img.gamedistribution.com/320b65ea8ce34cb7a4537ff63576d976-512x512.jpeg",
+    "pageStatus": 200
+  },
+  {
+    "id": "daily-sudoku-18",
+    "title": "Daily Sudoku",
+    "guid": "dd9701cd84da40699cdc404645f29c1f",
+    "officialImg": "https://img.gamedistribution.com/dd9701cd84da40699cdc404645f29c1f-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "wood-screw-puzzle-20",
+    "title": "Wood & Screw Puzzle",
+    "guid": "eef2c852d9784065a22a21d51cfdc9fd",
+    "officialImg": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "3d-fashion-princess-dress-up-21",
+    "title": "3D Fashion Princess - Dress Up",
+    "guid": "b4addeae4bfe422f8a324ab5474ca7b5",
+    "officialImg": "https://img.gamedistribution.com/b4addeae4bfe422f8a324ab5474ca7b5-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "bomber-plane-22",
+    "title": "Bomber Plane",
+    "guid": "9da40c9b342846f99339b7c4c8a428b7",
+    "officialImg": "https://img.gamedistribution.com/9da40c9b342846f99339b7c4c8a428b7-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "crazy-traffic-racer-24",
+    "title": "Crazy Traffic Racer",
+    "guid": "d0b8e5ba257d4f888738a7ec722443f1",
+    "officialImg": "https://img.gamedistribution.com/d0b8e5ba257d4f888738a7ec722443f1-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "tank-wars-2-26",
+    "title": "Tank Wars 2",
+    "guid": "659090e00bfc4650899550d63f8a130d",
+    "officialImg": "https://img.gamedistribution.com/659090e00bfc4650899550d63f8a130d-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "mahjong-garden-28",
+    "title": "Mahjong Garden",
+    "guid": "bf59a11ee422478a82cb29ea23caaa20",
+    "officialImg": "https://img.gamedistribution.com/bf59a11ee422478a82cb29ea23caaa20-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "snake-master-29",
+    "title": "Snake Master",
+    "guid": "8d477a23de1743198aca29f1893c6be6",
+    "officialImg": "https://img.gamedistribution.com/8d477a23de1743198aca29f1893c6be6-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "ludo-world-30",
+    "title": "Ludo World",
+    "guid": "d0046c8fd4eb4d4fb2492ba8013909f0",
+    "officialImg": "https://img.gamedistribution.com/d0046c8fd4eb4d4fb2492ba8013909f0-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "farm-merge-harvest-31",
+    "title": "Farm: Merge Harvest",
+    "guid": "01b4c5438e0c4f17b046a0d1ca94fdae",
+    "officialImg": "https://img.gamedistribution.com/01b4c5438e0c4f17b046a0d1ca94fdae-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "mega-shark-33",
+    "title": "Mega Shark",
+    "guid": "9ff4c1c62da64af98d32fe1a1b44ac0a",
+    "officialImg": "https://img.gamedistribution.com/9ff4c1c62da64af98d32fe1a1b44ac0a-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "the-zombie-house-35",
+    "title": "The Zombie House",
+    "guid": "ddc202e7d252451f8d1344f9f0e455ef",
+    "officialImg": "https://img.gamedistribution.com/ddc202e7d252451f8d1344f9f0e455ef-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "dino-idle-park-36",
+    "title": "Dino Idle Park",
+    "guid": "e60b6dcfbc1e4027a11abc8dc3959669",
+    "officialImg": "https://img.gamedistribution.com/e60b6dcfbc1e4027a11abc8dc3959669-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "marble-blast-37",
+    "title": "Marble Blast",
+    "guid": "685ccaa7326c42be8aa2076801e82acd",
+    "officialImg": "https://img.gamedistribution.com/685ccaa7326c42be8aa2076801e82acd-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "pool-diamond-challenge-38",
+    "title": "Pool Diamond Challenge",
+    "guid": "d915f03f46804091933c3be8d17273be",
+    "officialImg": "https://img.gamedistribution.com/d915f03f46804091933c3be8d17273be-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "dart-jam-2-40",
+    "title": "Dart Jam 2",
+    "guid": "9addb82d5ce74fb5b2eab726f8524cac",
+    "officialImg": "https://img.gamedistribution.com/9addb82d5ce74fb5b2eab726f8524cac-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "coffee-cup-fill-blocks-41",
+    "title": "Coffee Cup - Fill Blocks",
+    "guid": "0904d5fb5d0044fe9fddf1cd5834cff2",
+    "officialImg": "https://img.gamedistribution.com/0904d5fb5d0044fe9fddf1cd5834cff2-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "ellie-and-ben-christmas-eve-42",
+    "title": "Ellie and Ben Christmas Eve",
+    "guid": "d3b2230575e14473823dcb3db1029329",
+    "officialImg": "https://img.gamedistribution.com/d3b2230575e14473823dcb3db1029329-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "halloween-fruit-slice-43",
+    "title": "Halloween Fruit Slice",
+    "guid": "754a3153c5964afe918325052fa17419",
+    "officialImg": "https://img.gamedistribution.com/754a3153c5964afe918325052fa17419-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "epic-racing-descent-on-cars-44",
+    "title": "Epic Racing - Descent on Cars",
+    "guid": "2541c94a787f4c58b94636a38c3aa060",
+    "officialImg": "https://img.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "bubble-shooter-wild-west-45",
+    "title": "Bubble Shooter Wild West",
+    "guid": "0b18452cd7844e308b726bf05034fac2",
+    "officialImg": "https://img.gamedistribution.com/0b18452cd7844e308b726bf05034fac2-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "ludo-classic-46",
+    "title": "Ludo Classic",
+    "guid": "72b97cf38278422b8b9ab83eba0ffa3a",
+    "officialImg": "https://img.gamedistribution.com/72b97cf38278422b8b9ab83eba0ffa3a-512x512.jpeg",
+    "pageStatus": 200
+  },
+  {
+    "id": "merge-haven-47",
+    "title": "Merge Haven",
+    "status": "NO_GUID"
+  },
+  {
+    "id": "chain-puzzle-48",
+    "title": "Chain Puzzle",
+    "guid": "40ec584436da4841b9b80e9d649112e2",
+    "officialImg": "https://img.gamedistribution.com/40ec584436da4841b9b80e9d649112e2-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "two-stunt-racers-49",
+    "title": "Two Stunt Racers",
+    "guid": "bb65344d29f74da1bd1f41500d8b1dc2",
+    "officialImg": "https://img.gamedistribution.com/bb65344d29f74da1bd1f41500d8b1dc2-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "blast-cube-50",
+    "title": "Blast Cube",
+    "guid": "eb75ff08712148498a298d9a8e0defb0",
+    "officialImg": "https://img.gamedistribution.com/eb75ff08712148498a298d9a8e0defb0-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "marble-run-ultimate-race-51",
+    "title": "Marble Run - Ultimate Race!",
+    "guid": "ae42ea5c4e0b4ff4b9eddf47fbd2cc5e",
+    "officialImg": "https://img.gamedistribution.com/ae42ea5c4e0b4ff4b9eddf47fbd2cc5e-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "3d-super-rolling-ball-race-53",
+    "title": "3D Super Rolling Ball Race",
+    "guid": "c77c8b1ffef242609915d126535b0ca9",
+    "officialImg": "https://img.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "association-connect-word-54",
+    "title": "Association - Connect Word",
+    "guid": "4857071352d449b383886bcf8627a231",
+    "officialImg": "https://img.gamedistribution.com/4857071352d449b383886bcf8627a231-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "bubble-pop-fairyland-55",
+    "title": "Bubble Pop Fairyland",
+    "guid": "fc84a63fc1db4ebabc334521c2cb3c68",
+    "officialImg": "https://img.gamedistribution.com/fc84a63fc1db4ebabc334521c2cb3c68-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "search-the-word-57",
+    "title": "Search the Word",
+    "guid": "c13ee9c06edc4f0a8d7f6f291a7c13d8",
+    "officialImg": "https://img.gamedistribution.com/c13ee9c06edc4f0a8d7f6f291a7c13d8-512x512.jpeg",
+    "pageStatus": 200
+  },
+  {
+    "id": "fighter-jet-airplane-rush-58",
+    "title": "Fighter Jet Airplane Rush",
+    "guid": "d033df5e52e74348951516eecf4c2ff7",
+    "officialImg": "https://img.gamedistribution.com/d033df5e52e74348951516eecf4c2ff7-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "pool-master-59",
+    "title": "Pool Master",
+    "guid": "cfe752f3ab0742bbaa481bd558591c48",
+    "officialImg": "https://img.gamedistribution.com/cfe752f3ab0742bbaa481bd558591c48-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "celebrity-e-girl-vibes-60",
+    "title": "Celebrity E-Girl Vibes",
+    "guid": "80ddf44c832b44d69d72392d9453ca00",
+    "officialImg": "https://img.gamedistribution.com/80ddf44c832b44d69d72392d9453ca00-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "celebrity-thanksgiving-prep-61",
+    "title": "Celebrity Thanksgiving Prep",
+    "guid": "e5dcd09e91004a5c8d1b7d473a572bcf",
+    "officialImg": "https://img.gamedistribution.com/e5dcd09e91004a5c8d1b7d473a572bcf-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "crazy-stunts-3d-62",
+    "title": "Crazy Stunts 3D",
+    "guid": "7003f00653b24b0686c8d448eca7083b",
+    "officialImg": "https://img.gamedistribution.com/7003f00653b24b0686c8d448eca7083b-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "screw-puzzle-63",
+    "title": "Screw Puzzle",
+    "guid": "eef2c852d9784065a22a21d51cfdc9fd",
+    "officialImg": "https://img.gamedistribution.com/eef2c852d9784065a22a21d51cfdc9fd-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "word-search-universe-64",
+    "title": "Word Search Universe",
+    "guid": "b660d10d6c124922babb5d9e7bf29133",
+    "officialImg": "https://img.gamedistribution.com/b660d10d6c124922babb5d9e7bf29133-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "celebrities-get-ready-for-christmas-65",
+    "title": "Celebrities Get Ready For Christmas",
+    "guid": "a60b670196384d8db35fab193cc80297",
+    "officialImg": "https://img.gamedistribution.com/a60b670196384d8db35fab193cc80297-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "hill-racing-egg-drop-66",
+    "title": "Hill Racing - Egg drop!",
+    "guid": "7b5a23ec82874487868deee0b7afbbfa",
+    "officialImg": "https://img.gamedistribution.com/7b5a23ec82874487868deee0b7afbbfa-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "air-force-space-shooter-67",
+    "title": "Air Force Space Shooter",
+    "guid": "38ab3871c30c48a3a6a4b1e3e2ce802c",
+    "officialImg": "https://img.gamedistribution.com/38ab3871c30c48a3a6a4b1e3e2ce802c-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "sort-puzzle-nuts-and-bolts-69",
+    "title": "Sort Puzzle - Nuts and Bolts",
+    "guid": "1181e80fccb44318a69756c736bfbda7",
+    "officialImg": "https://img.gamedistribution.com/1181e80fccb44318a69756c736bfbda7-512x512.jpg",
+    "pageStatus": 200
+  },
+  {
+    "id": "royal-garden-match-2-72",
+    "title": "Royal Garden Match 2",
+    "guid": "6416456afd5147b489069f061ea00699",
+    "officialImg": "https://img.gamedistribution.com/6416456afd5147b489069f061ea00699-512x512.jpg",
+    "pageStatus": 200
+  }
+]
