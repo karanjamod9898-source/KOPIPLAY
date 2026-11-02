@@ -1,0 +1,132 @@
+{
+  "testResults": {
+    "homeStats": {
+      "totalCatalog": 187,
+      "mixedCards": 52,
+      "largeCards": 7,
+      "categoryCards": 12,
+      "exploreCards": 135,
+      "totalRenderedCards": 187,
+      "hasAnchorHrefs": true,
+      "footerColumns": 4,
+      "seoSectionPresent": true,
+      "faqCount": 4
+    },
+    "detailStats": {
+      "currentHash": "#/game/neon-racer",
+      "pageTitle": "Play Neon Horizon: Cyber Racer Online Free – KopiPlay",
+      "hasPlayerStage": true,
+      "hasIframe": true,
+      "iframeSrc": "games/neon-racer/index.html",
+      "hasFullscreenBtn": true,
+      "hasPlayNowBtn": true,
+      "hasBackBtn": true,
+      "relatedCardsCount": 10,
+      "allRelatedAreAnchors": true
+    },
+    "backResult": {
+      "success": true,
+      "backBtnFound": true
+    },
+    "providers": [
+      {
+        "provider": "First-Party Neon Breaker DX",
+        "slug": "neon-breakout",
+        "title": "Play Neon Breaker DX Online Free – KopiPlay",
+        "iframeLoaded": true,
+        "iframeSrc": "games/neon-breakout/index.html"
+      },
+      {
+        "provider": "GameDistribution Bubble Fall",
+        "slug": "bubble-fall",
+        "title": "Play Bubble Fall Online Free – KopiPlay",
+        "iframeLoaded": true,
+        "iframeSrc": "https://html5.gamedistribution.com/82c9d9ae7f6d4ca6b00b36025870d17a/?gd_sdk_referrer_url=http%3A%2F%2F127.0.0.1%3A8080%2F%23%2Fgame%2Fbubble-fall"
+      },
+      {
+        "provider": "HTMLGames Minesweeper",
+        "slug": "minesweeper",
+        "title": "Play Minesweeper Online Free – KopiPlay",
+        "iframeLoaded": true,
+        "iframeSrc": "https://cdn.htmlgames.com/Minesweeper/index.html"
+      },
+      {
+        "provider": "GameMonetize Angry Heroes",
+        "slug": "angry-heroes",
+        "title": "Play Angry Heroes Online Free – KopiPlay",
+        "iframeLoaded": true,
+        "iframeSrc": "https://html5.gamedistribution.com/d628d0c891494139b9f04f556caf23b0/?gd_sdk_referrer_url=http%3A%2F%2F127.0.0.1%3A8080%2F%23%2Fgame%2Fangry-heroes"
+      },
+      {
+        "provider": "Cyber Snake",
+        "slug": "cyber-snake",
+        "title": "Play Cyber Snake: Neon Overdrive Online Free – KopiPlay",
+        "iframeLoaded": true,
+        "iframeSrc": "games/cyber-snake/index.html"
+      }
+    ],
+    "searchStats": {
+      "suggestionsCount": 8,
+      "firstSuggestion": "Pulse 2048: Cyber Edition",
+      "clearBtnVisible": true
+    },
+    "catStats": {
+      "activeCategoryPill": "Racing (16)",
+      "totalRacingGames": 16,
+      "allAreClickableAnchors": true
+    },
+    "favResult": {
+      "beforeHash": "#/category/racing",
+      "afterHash": "#/category/racing",
+      "preventedNavigation": true,
+      "badgeCount": "1"
+    },
+    "notFoundStats": {
+      "hasEmptyCard": true,
+      "title": "Game Not Found",
+      "hasBrowseBtn": true
+    },
+    "footerStats": {
+      "hasContainer": true,
+      "gridColumns": 4,
+      "col1BrandTitle": "KopiPlay",
+      "col2PopularLinks": 7,
+      "col3NavLinks": 6,
+      "col4LegalLinks": 5,
+      "hasCopyright": true,
+      "legalBottomLinks": 4
+    },
+    "viewports": [
+      {
+        "viewport": "Desktop 1366x768",
+        "docWidth": 1359,
+        "winWidth": 1366,
+        "scrollWidth": 1359,
+        "hasHorizontalOverflow": false
+      },
+      {
+        "viewport": "Tablet 768x1024",
+        "docWidth": 761,
+        "winWidth": 768,
+        "scrollWidth": 761,
+        "hasHorizontalOverflow": false
+      },
+      {
+        "viewport": "Mobile 390x844",
+        "docWidth": 390,
+        "winWidth": 390,
+        "scrollWidth": 390,
+        "hasHorizontalOverflow": false
+      },
+      {
+        "viewport": "Mobile 375x667",
+        "docWidth": 375,
+        "winWidth": 375,
+        "scrollWidth": 375,
+        "hasHorizontalOverflow": false
+      }
+    ],
+    "finalCatalogCount": 187
+  },
+  "consoleErrors": []
+}

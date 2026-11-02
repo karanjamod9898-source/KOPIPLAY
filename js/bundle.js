@@ -746,26 +746,45 @@
     initSearchEvents();
   }
 
-  function renderFooter() {
+    function renderFooter() {
     const footer = document.getElementById('app-footer');
     if (!footer) return;
 
     footer.innerHTML = `
-      <div class="container">
+      <div class="footer-container">
         <div class="footer-top">
-          <!-- Column 1: Brand -->
+          <!-- Column 1: KopiPlay Brand -->
           <div class="footer-brand">
             <a href="#/" class="footer-logo" aria-label="KopiPlay Home">
-              <img src="assets/images/logo.svg" alt="KopiPlay" height="38">
+              <svg class="footer-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="6" y1="12" x2="10" y2="12"></line>
+                <line x1="8" y1="10" x2="8" y2="14"></line>
+                <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+              </svg>
+              <span class="footer-logo-text">KopiPlay</span>
             </a>
-            <p>KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Enjoy seamless instant play on desktop and mobile.</p>
-            <div class="footer-experience-badge">
+            <p>KopiPlay is an online gaming portal where players discover and enjoy free, high-performance browser-based games. Instant play on desktop, tablet, and mobile with zero downloads.</p>
+            <div class="footer-brand-badge">
               <span class="pulse-dot"></span>
-              <span>Play More. Discover More. • Free Online Games</span>
+              <span>${catalog.length} Free Games &bull; Instant Play</span>
             </div>
           </div>
 
-          <!-- Column 2: Popular Categories -->
+          <!-- Column 2: Explore Games -->
+          <div class="footer-col">
+            <h4>Explore Games</h4>
+            <ul class="footer-links">
+              <li><a href="#/games" class="footer-link">All Games (${catalog.length})</a></li>
+              <li><a href="#/popular" class="footer-link">Popular Games</a></li>
+              <li><a href="#/new" class="footer-link">New Releases</a></li>
+              <li><a href="#/recent" class="footer-link">Recently Played</a></li>
+              <li><a href="#/favorites" class="footer-link">Favorites</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Popular Categories -->
           <div class="footer-col">
             <h4>Popular Categories</h4>
             <ul class="footer-links">
@@ -773,22 +792,9 @@
               <li><a href="#/category/action" class="footer-link">Action Games</a></li>
               <li><a href="#/category/adventure" class="footer-link">Adventure Games</a></li>
               <li><a href="#/category/racing" class="footer-link">Racing Games</a></li>
-              <li><a href="#/category/car" class="footer-link">Car Games</a></li>
               <li><a href="#/category/puzzle" class="footer-link">Puzzle Games</a></li>
               <li><a href="#/category/sports" class="footer-link">Sports Games</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Portal Navigation -->
-          <div class="footer-col">
-            <h4>Portal Navigation</h4>
-            <ul class="footer-links">
-              <li><a href="#/" class="footer-link">Home</a></li>
-              <li><a href="#/games" class="footer-link">All Games</a></li>
-              <li><a href="#/popular" class="footer-link">Popular Games</a></li>
-              <li><a href="#/new" class="footer-link">New Games</a></li>
-              <li><a href="#/recent" class="footer-link">Recently Played</a></li>
-              <li><a href="#/favorites" class="footer-link">My Favorites</a></li>
+              <li><a href="#/category/arcade" class="footer-link">Arcade Games</a></li>
             </ul>
           </div>
 
@@ -806,20 +812,25 @@
         </div>
 
         <div class="footer-bottom">
-          <div>&copy; 2026 KopiPlay. All rights reserved. Play More. Discover More.</div>
-          <div class="footer-bottom-links">
-            <a href="#/about">About</a>
-            <a href="#/privacy">Privacy Policy</a>
-            <a href="#/terms">Terms of Service</a>
-            <a href="#/dmca">DMCA Policy</a>
-            <a href="#/contact">Support</a>
+          <div class="footer-copyright">
+            &copy; 2026 KopiPlay. All rights reserved. Free Browser Gaming Platform.
+          </div>
+          <div class="footer-legal-links">
+            <a href="#/about" class="footer-bottom-link">About Us</a>
+            <span class="footer-bottom-sep">&bull;</span>
+            <a href="#/privacy" class="footer-bottom-link">Privacy Policy</a>
+            <span class="footer-bottom-sep">&bull;</span>
+            <a href="#/terms" class="footer-bottom-link">Terms of Service</a>
+            <span class="footer-bottom-sep">&bull;</span>
+            <a href="#/dmca" class="footer-bottom-link">DMCA</a>
+            <span class="footer-bottom-sep">&bull;</span>
+            <a href="#/contact" class="footer-bottom-link">Contact</a>
           </div>
         </div>
       </div>
     `;
   }
 
-  // --- Search & Drawer Listeners ---
   function initSearchEvents() {
     const input = document.getElementById('globalSearchInput');
     const suggestions = document.getElementById('searchSuggestions');
@@ -966,7 +977,7 @@
     }
 
     return `
-      <div class="game-card card-normal" data-slug="${game.slug}">
+      <a href="#/game/${game.slug}" class="game-card card-normal" data-slug="${game.slug}" aria-label="Play ${escapeHtml(game.title)}">
         <div class="card-media">
           <img class="card-thumb"
                src="${game.thumbnail}"
@@ -982,7 +993,7 @@
             <span class="card-overlay-title">${escapeHtml(game.title)}</span>
           </div>
         </div>
-      </div>
+      </a>
     `;
   }
 
@@ -998,7 +1009,7 @@
     }
 
     return `
-      <div class="game-card ${sizeClass}" data-slug="${game.slug}">
+      <a href="#/game/${game.slug}" class="game-card ${sizeClass}" data-slug="${game.slug}" aria-label="Play ${escapeHtml(game.title)}">
         <div class="card-media">
           <img class="card-thumb"
                src="${game.thumbnail}"
@@ -1014,7 +1025,7 @@
             <span class="card-overlay-title">${escapeHtml(game.title)}</span>
           </div>
         </div>
-      </div>
+      </a>
     `;
   }
 
@@ -1089,12 +1100,12 @@
     return `
       <section class="portal-seo-section" aria-label="About KopiPlay Free Online Games">
         <h2>Play Free Online Games on KopiPlay</h2>
-        <p>KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Play directly in your browser with instant execution and zero downloads.</p>
+        <p>KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting, and Sports. Play directly in your browser with instant execution, zero downloads, and smooth responsive controls.</p>
 
         <div class="seo-highlight-grid">
           <div class="seo-highlight-item">
             <h4>Explore Free Online Games</h4>
-            <p>From quick 2-minute casual puzzles to immersive 3D racing simulators, every game runs smoothly in modern web browsers.</p>
+            <p>From quick 2-minute casual puzzles to immersive 3D racing simulators, every game runs smoothly in modern desktop and mobile web browsers.</p>
           </div>
           <div class="seo-highlight-item">
             <h4>Popular Gaming Categories</h4>
@@ -1102,38 +1113,33 @@
           </div>
           <div class="seo-highlight-item">
             <h4>Discover New Browser Games</h4>
-            <p>Our library is regularly updated with handpicked, legitimate HTML5 creations from verified game developers worldwide.</p>
-          </div>
-          <div class="seo-highlight-item">
-            <h4>Play on Desktop and Mobile</h4>
-            <p>Responsive design adapts seamlessly whether you are on a high-resolution desktop PC, laptop, iPad, tablet, or smartphone.</p>
+            <p>Our library of ${catalog.length} games is regularly curated with handpicked HTML5 creations from verified providers and original developers worldwide.</p>
           </div>
         </div>
 
-        <h3>Frequently Asked Questions</h3>
+        <h3 class="faq-section-title">Frequently Asked Questions</h3>
         <div class="faq-accordion">
           <details class="faq-item" open>
-            <summary class="faq-question">Are all games on KopiPlay really free?</summary>
+            <summary class="faq-question">Are all games on KopiPlay really free? <span class="faq-chevron">&#9660;</span></summary>
             <div class="faq-answer">Yes, 100%. Every single game in our catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Do I need to download or install any plugins?</summary>
-            <div class="faq-answer">No downloads or plugins are required. All games are built on modern web standards (HTML5 Canvas, WebGL, Web Audio) that run natively in Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge.</div>
+            <summary class="faq-question">Do I need to download or install any plugins? <span class="faq-chevron">&#9660;</span></summary>
+            <div class="faq-answer">No downloads or installations are required. All games run natively via modern HTML5, WebGL, and JavaScript technologies in any standard browser.</div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Can I play KopiPlay games on my phone or tablet?</summary>
-            <div class="faq-answer">Yes! KopiPlay is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
+            <summary class="faq-question">Can I play KopiPlay games on my phone or tablet? <span class="faq-chevron">&#9660;</span></summary>
+            <div class="faq-answer">Yes! KopiPlay is designed mobile-first. The user interface, touch controls, and responsive layouts adapt seamlessly to iPhone, iPad, Android, and tablets.</div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">How are my favorites and game history saved?</summary>
-            <div class="faq-answer">Your starred favorites and recently played games are saved securely on your local device using your browser's private localStorage. No personal tracking or account registration is needed.</div>
+            <summary class="faq-question">How are my favorites and game history saved? <span class="faq-chevron">&#9660;</span></summary>
+            <div class="faq-answer">Your favorites and recently played titles are saved locally in your browser storage so you can easily access them whenever you return.</div>
           </details>
         </div>
       </section>
     `;
   }
 
-  // --- View: Homepage (All 11 Sections + SEO Rich Content) ---
   function renderHomepage() {
     const main = document.getElementById('app-main');
     if (!main) return;
@@ -1350,6 +1356,57 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
+  
+  // --- Monetization & Reusable Ad Slot Component ---
+  /**
+   * Reusable Ad Slot Component
+   * Renders a reserved, compliant advertisement container for authorized ad networks.
+   *
+   * @param {string} placementId - Unique ad slot placement identifier (e.g. 'game-detail-sidebar')
+   * @param {Object} options - Configuration options { size: '300x250', label: 'ADVERTISEMENT' }
+   * @returns {string} HTML markup string
+   *
+   * TO INTEGRATE AN AUTHORIZED AD PROVIDER (Google AdSense, Google Ad Manager, Playwire, etc.):
+   * 1. Replace the inner .ad-slot-frame placeholder markup with your provider's tag:
+   *    e.g. For Google AdSense:
+   *      <ins class="adsbygoogle"
+   *           style="display:inline-block;width:300px;height:250px"
+   *           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+   *           data-ad-slot="XXXXXXXXXX"></ins>
+   *      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+   * 2. Or initialize via window.googletag / provider API targeting placementId.
+   */
+  function renderAdSlot(placementId = 'game-detail-sidebar', options = {}) {
+    const size = options.size || '300x250';
+    const label = options.label || 'ADVERTISEMENT';
+    const is300x250 = size === '300x250';
+
+    return `
+      <!-- Advertisement Container (${placementId}) -->
+      <aside class="game-ad-container" data-ad-placement="${placementId}" aria-label="Advertisement">
+        <div class="ad-disclaimer-label">${label}</div>
+        <div class="ad-slot-frame ${is300x250 ? 'ad-slot-300x250' : 'ad-slot-responsive'}" id="ad-unit-${placementId}">
+          <!-- ========================================================================= -->
+          <!-- AUTHORIZED AD PROVIDER CODE INJECTION POINT (e.g. AdSense / GAM / Playwire) -->
+          <!-- When active ad provider is configured, inject provider ad tag here.       -->
+          <!-- ========================================================================= -->
+          <div class="ad-placeholder-content" unselectable="on" aria-hidden="true">
+            <div class="ad-placeholder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="ad-placeholder-title">Advertisement Space</div>
+            <div class="ad-placeholder-size">300 &times; 250 px</div>
+          </div>
+          <!-- END AD INJECTION POINT -->
+        </div>
+      </aside>
+    `;
+  }
+
   // --- PHASE 5: Individual Game SEO & Detail Player ---
   let activePlayerTimeout = null;
   let activePostMessageCleanup = null;
@@ -1427,18 +1484,28 @@
     });
 
     const html = `
-      <!-- Breadcrumbs -->
+      <!-- Breadcrumbs & Navigation Bar -->
       <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back to catalog">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back</span>
+        </button>
         <a href="#/" class="breadcrumb-link">Home</a>
         <span class="breadcrumb-sep">&gt;</span>
         <a href="#/category/${catSlug}" class="breadcrumb-link">${escapeHtml(game.category || 'Action')}</a>
         <span class="breadcrumb-sep">&gt;</span>
         <span class="breadcrumb-current">${escapeHtml(game.title)}</span>
+
+        <!-- Relocated Favorite Button (Preserves user favorites functionality) -->
+        <button class="player-fav-btn ${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('${game.slug}', event)" title="Favorite" aria-label="Favorite">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span id="detailFavText">${isFav ? 'Favorited' : 'Favorite'}</span>
+        </button>
       </nav>
 
-      <!-- Main Game Detail Layout (Matches Top-Right Panel of Reference) -->
+      <!-- Main Game Detail Layout: 16:9 Cinematic Player on Left, Professional Ad Container on Right -->
       <div class="game-detail-layout">
-        <!-- 16:9 Cinematic Player Container -->
+        <!-- 16:9 Cinematic Player Container (Unchanged) -->
         <div class="player-stage-card" id="playerStageCard">
           <iframe id="gameIframe"
                   src="${embedUrl}"
@@ -1453,44 +1520,8 @@
           </button>
         </div>
 
-        <!-- Right Action Card (Matches Reference Image Sidebar Card) -->
-        <div class="game-action-card">
-          <div class="action-card-header">
-            <img class="action-card-thumb" src="${game.thumbnail}" alt="${escapeHtml(game.title)}" onerror="this.onerror=null;this.src='assets/images/games/default-game.svg'">
-            <div class="action-card-info">
-              <h1 class="action-card-title">${escapeHtml(game.title)}</h1>
-              <div class="action-card-tags">
-                <a href="#/category/${catSlug}" class="tag-pill">${escapeHtml(game.category || 'Action')}</a>
-                <span class="tag-pill">Instant Play</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Big Purple Play Now Button -->
-          <button class="btn-play-now" id="btnPlayNow" onclick="window.NEXUS.focusGame()">
-            <span>Play Now</span>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
-          </button>
-
-          <!-- Secondary Favorites Button -->
-          <button class="btn-fav-action ${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('${game.slug}', event)">
-            <svg viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span id="detailFavText">${isFav ? 'Favorited' : 'Add to Favorites'}</span>
-          </button>
-
-          <!-- Game Description -->
-          <div class="action-card-description">
-            ${escapeHtml(game.description || 'Enjoy this fast-paced free online browser game on KopiPlay with instant loading and smooth cross-device controls.')}
-          </div>
-
-          <!-- Controls Keycaps -->
-          <div class="game-controls-info">
-            <span class="controls-label">Controls</span>
-            <div class="controls-keys">
-              ${controlsHtml}
-            </div>
-          </div>
-        </div>
+        <!-- Right Advertisement Container (Replaces duplicate game info card) -->
+        ${renderAdSlot('game-detail-sidebar')}
       </div>
 
       <!-- Related Games Strip (Matches Bottom of Reference Player Panel) -->
@@ -1509,75 +1540,95 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // --- PHASE 2: Redesigned Five Informational Pages (Unified Design System) ---
+    // --- PHASE 2: Redesigned Five Informational & Legal Pages ---
 
-  // 1. ABOUT US
+  // 1. ABOUT US VIEW
   function renderAboutView() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     updateSeo({
-      title: 'About KopiPlay – Play Free Online Games',
-      description: 'Discover KopiPlay, your destination for free online games offering verified, instant-play HTML5 games across 22 categories with zero downloads.',
+      title: 'About KopiPlay - Free Online Gaming Platform',
+      description: 'Discover KopiPlay, your home for verified HTML5 browser games. Instant play on PC, tablet, and mobile with zero downloads.',
       canonical: 'https://kipo.in/#/about',
       ogType: 'website'
     });
 
     main.innerHTML = `
-      <div class="info-page-container">
+      <div class="legal-page-wrapper">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Back</span>
+          </button>
           <a href="#/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-sep">&gt;</span>
           <span class="breadcrumb-current">About Us</span>
         </nav>
 
-        <header class="info-hero-header">
-          <div class="info-badge">About Our Platform</div>
-          <h1 class="info-title">About <span>KopiPlay</span></h1>
-          <p class="info-lead">
-            KopiPlay is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
+        <header class="legal-page-header">
+          <div class="legal-badge">About KopiPlay</div>
+          <h1 class="legal-title">Play Instantly. <span class="gradient-text">Discover More.</span></h1>
+          <p class="legal-lead">
+            KopiPlay is an independent online gaming portal built to deliver verified, high-performance browser games directly to your screen—no software downloads, no paywalls, and zero friction.
           </p>
         </header>
 
-        <div class="info-card">
-          <h2>What is KopiPlay?</h2>
-          <p>
-            KopiPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of verified legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
-          </p>
+        <!-- Feature Grid (4 Visual Highlights) -->
+        <div class="about-feature-grid">
+          <div class="about-feature-card">
+            <div class="about-feature-icon" style="color: #8B5CF6;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h4>Instant Execution</h4>
+            <p>Built purely on HTML5 Canvas, WebGL, and Web Audio web standards. Games load in seconds in your browser tab without native client installs.</p>
+          </div>
 
-          <div class="info-grid-3">
-            <div class="info-feature-box">
-              <h4>⚡ Instant Execution</h4>
-              <p>Built exclusively on HTML5 Canvas, WebGL, and Web Audio web standards. Games load in seconds without bulky native app downloads.</p>
+          <div class="about-feature-card">
+            <div class="about-feature-icon" style="color: #3B82F6;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div class="info-feature-box">
-              <h4>🛡️ Privacy by Design</h4>
-              <p>Zero compulsory sign-ups. Your favorites and gameplay history remain safely inside your personal browser storage.</p>
+            <h4>Privacy First</h4>
+            <p>Zero mandatory accounts or intrusive tracking. Your favorite titles and gameplay history are stored safely in your own browser's local storage.</p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-feature-icon" style="color: #10B981;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="6"/><circle cx="8" cy="12" r="2"/><line x1="14" y1="12" x2="18" y2="12"/><line x1="16" y1="10" x2="16" y2="14"/></svg>
             </div>
-            <div class="info-feature-box">
-              <h4>📱 Cross-Platform Play</h4>
-              <p>Designed with a responsive dark gaming theme that works flawlessly on desktop PCs, laptops, Chromebooks, iPads, and smartphones.</p>
+            <h4>Handpicked Library</h4>
+            <p>A catalog of ${catalog.length} verified titles across 22 categories, from high-speed 3D racers and tactical shooters to relaxing puzzles.</p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-feature-icon" style="color: #F59E0B;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
+            <h4>Cross-Device Freedom</h4>
+            <p>Responsive dark gaming interface engineered to run smoothly across high-end desktop rigs, laptops, Chromebooks, iPads, and smartphones.</p>
           </div>
         </div>
 
-        <div class="info-card">
-          <h2>Our Mission</h2>
+        <!-- Story & Purpose Card -->
+        <div class="legal-card">
+          <h2>The KopiPlay Experience</h2>
           <p>
-            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, KopiPlay delivers console-inspired responsiveness directly to your browser tab.
+            We believe digital entertainment should be straightforward and enjoyable. Too many gaming sites burden players with mandatory user registrations, excessive loading screens, and heavy background downloads. KopiPlay strips away those barriers by curating legitimate HTML5 titles from verified game studios worldwide and presenting them in a fast, organized, dark-themed portal.
           </p>
+          <p>
+            Whether you have two minutes for a quick casual puzzle on your mobile commute or an hour for a 3D driving simulator on your PC, KopiPlay delivers instant fun directly inside any modern web browser.
+          </p>
+        </div>
 
-          <h2>Reasons to Explore KopiPlay</h2>
-          <ul>
-            <li><strong>Verified HTML5 Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
-            <li><strong>Zero Cost:</strong> 100% free with unlimited gameplay anytime, anywhere.</li>
-            <li><strong>Clean Dark Gaming Theme:</strong> Sleek obsidian-blue aesthetic that is easy on the eyes during late-night sessions.</li>
-            <li><strong>Responsive Player:</strong> Multiple aspect ratios (16:9, 4:3, 1:1, Fit), theater mode, and full-screen immersion.</li>
-          </ul>
-
-          <div style="margin-top: 24px;">
-            <a href="#/games" class="btn btn-primary" style="margin-right: 12px;">Explore All 200 Games</a>
-            <a href="#/contact" class="btn btn-secondary">Get in Touch</a>
+        <!-- Call to Action Banner -->
+        <div class="about-cta-banner">
+          <div class="about-cta-content">
+            <h3>Ready to Jump Into the Action?</h3>
+            <p>Explore all ${catalog.length} free games with zero downloads or account requirements.</p>
+          </div>
+          <div class="about-cta-actions">
+            <a href="#/games" class="btn btn-primary">Browse All Games</a>
+            <a href="#/contact" class="btn btn-secondary">Contact Our Team</a>
           </div>
         </div>
       </div>
@@ -1585,317 +1636,385 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // 2. CONTACT & SUPPORT
+  // 2. CONTACT & SUPPORT VIEW
   function renderContactView() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     updateSeo({
-      title: 'Contact KopiPlay – Gaming Support & Feedback',
-      description: 'Contact the KopiPlay team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
+      title: 'Contact & Support - KopiPlay Gaming Portal',
+      description: 'Contact KopiPlay support for assistance with games, bug reports, publisher inquiries, or general feedback.',
       canonical: 'https://kipo.in/#/contact',
       ogType: 'website'
     });
 
     main.innerHTML = `
-      <div class="info-page-container">
+      <div class="legal-page-wrapper">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Back</span>
+          </button>
           <a href="#/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-sep">&gt;</span>
           <span class="breadcrumb-current">Contact & Support</span>
         </nav>
 
-        <header class="info-hero-header">
-          <div class="info-badge">Help & Enquiries</div>
-          <h1 class="info-title">Contact & <span>Support</span></h1>
-          <p class="info-lead">
-            Have questions about a game, experienced a technical glitch, or want to submit an original HTML5 creation? Our technical and publishing team is ready to assist.
+        <header class="legal-page-header">
+          <div class="legal-badge">Help & Enquiries</div>
+          <h1 class="legal-title">Contact & <span class="gradient-text">Support</span></h1>
+          <p class="legal-lead">
+            Have questions about a game, experienced a technical glitch, or have an HTML5 game you would like to showcase? Reach out to us below.
           </p>
         </header>
 
-        <!-- Useful Support Guidance Cards -->
-        <div class="support-grid">
-          <div class="support-item-card">
-            <div class="support-item-icon">
+        <!-- 4 Quick Support Channels -->
+        <div class="contact-support-grid">
+          <div class="contact-support-card">
+            <div class="contact-support-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-            <div class="support-item-title">General Enquiries</div>
-            <p class="support-item-desc">Questions regarding website features, game recommendations, or feedback about the portal layout.</p>
+            <div class="contact-support-info">
+              <h4>General Inquiries</h4>
+              <p>Platform questions, portal suggestions, or general gameplay feedback.</p>
+            </div>
           </div>
 
-          <div class="support-item-card">
-            <div class="support-item-icon">
+          <div class="contact-support-card">
+            <div class="contact-support-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
             </div>
-            <div class="support-item-title">Game Loading Issues</div>
-            <p class="support-item-desc">Having trouble loading a title? Use the in-player Reload button or review our browser cache recommendations.</p>
-          </div>
-
-          <div class="support-item-card">
-            <div class="support-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <div class="contact-support-info">
+              <h4>Technical Glitches</h4>
+              <p>Black screens, audio issues, or games that fail to load in your browser.</p>
             </div>
-            <div class="support-item-title">Broken Games</div>
-            <p class="support-item-desc">Encountered an unresponsive game or black screen? Submit a report directly using the form below or on the game page.</p>
           </div>
 
-          <div class="support-item-card">
-            <div class="support-item-icon">
+          <div class="contact-support-card">
+            <div class="contact-support-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <div class="support-item-title">Game Submissions</div>
-            <p class="support-item-desc">Are you an independent HTML5 game developer? Submit your playable web build to showcase it to our audience.</p>
+            <div class="contact-support-info">
+              <h4>Game Submissions</h4>
+              <p>Are you an HTML5 developer? Submit your playable web game to our catalog.</p>
+            </div>
+          </div>
+
+          <div class="contact-support-card">
+            <div class="contact-support-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="contact-support-info">
+              <h4>DMCA & Copyright</h4>
+              <p>Submit formal copyright notifications and intellectual property inquiries.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Preserved Form Fields & Functionality -->
-        <div class="info-card">
+        <!-- Contact Form Card -->
+        <div class="legal-card">
           <h2>Send Us a Message</h2>
-          <p>Please provide your name, valid email, topic, and message details. We review and log submissions directly.</p>
+          <p>Fill out the fields below and we will log your inquiry directly into the portal records.</p>
 
-          <form id="contactForm" onsubmit="window.NEXUS.submitContact(event)">
-            <div class="form-group">
-              <label class="form-label" for="contactName">Your Name</label>
-              <input type="text" class="form-control" id="contactName" required placeholder="Alex Mercer" autocomplete="name">
+          <form id="contactForm" class="contact-form-layout" onsubmit="window.NEXUS.submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" class="form-control" id="contactName" required placeholder="Alex Mercer" autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Email Address *</label>
+                <input type="email" class="form-control" id="contactEmail" required placeholder="alex@example.com" autocomplete="email">
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contactEmail">Email Address</label>
-              <input type="email" class="form-control" id="contactEmail" required placeholder="alex@example.com" autocomplete="email">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactTopic">Topic</label>
+              <label class="form-label" for="contactTopic">Inquiry Topic</label>
               <select class="form-control" id="contactTopic" style="cursor: pointer;">
-                <option value="general">General Enquiry & Feedback</option>
-                <option value="submit-game">Submit an HTML5 Game</option>
+                <option value="general">General Inquiry & Feedback</option>
                 <option value="bug-report">Report a Broken Game or Glitch</option>
-                <option value="licensing">Advertising & Partnerships</option>
+                <option value="submit-game">Submit an HTML5 Game Creation</option>
+                <option value="licensing">Business & Monetization Inquiries</option>
                 <option value="copyright">Copyright / DMCA Notice</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contactMessage">Your Message</label>
-              <textarea class="form-control form-textarea" id="contactMessage" rows="5" required placeholder="Describe your inquiry, game submission details, or technical glitch..."></textarea>
+              <label class="form-label" for="contactMessage">Message Details *</label>
+              <textarea class="form-control form-textarea" id="contactMessage" rows="5" required placeholder="Describe your inquiry, game feedback, or technical issue..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="margin-top: 8px;">
+            <button type="submit" class="btn-submit-contact">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               <span>Send Message</span>
             </button>
           </form>
+
+          <!-- Form Architecture Notice for Website Operator -->
+          <div class="legal-notice-box notice-purple" style="margin-top: 24px;">
+            <div class="legal-notice-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <div class="legal-notice-content">
+              <strong>Technical Implementation Notice:</strong> This client-side form currently stores submitted inquiries in your browser's local storage (<code>kopiplay_messages</code>). To route inquiries to a live email inbox or ticketing system upon domain handover, configure a form endpoint (e.g. Formspree, EmailJS, or an API backend).
+            </div>
+          </div>
         </div>
       </div>
     `;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // 3. PRIVACY POLICY
+  // 3. PRIVACY POLICY VIEW
   function renderPrivacyView() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     updateSeo({
-      title: 'Privacy Policy – KopiPlay Online Gaming',
+      title: 'Privacy Policy - KopiPlay Online Gaming',
       description: 'Accurate and transparent privacy policy for KopiPlay detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
       canonical: 'https://kipo.in/#/privacy',
       ogType: 'website'
     });
 
     main.innerHTML = `
-      <div class="info-page-container">
+      <div class="legal-page-wrapper">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Back</span>
+          </button>
           <a href="#/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-sep">&gt;</span>
           <span class="breadcrumb-current">Privacy Policy</span>
         </nav>
 
-        <header class="info-hero-header">
-          <div class="info-badge">Data & Transparency</div>
-          <h1 class="info-title">Privacy <span>Policy</span></h1>
-          <p class="info-lead">Effective Date: October 2026 • Last updated: October 2026</p>
+        <header class="legal-page-header">
+          <div class="legal-badge">Legal & Compliance</div>
+          <h1 class="legal-title">Privacy <span class="gradient-text">Policy</span></h1>
+          <p class="legal-lead">Effective Date: October 2026 &bull; Last updated: October 2026</p>
         </header>
 
-        <div class="info-card">
+        <!-- Quick Navigation Bar -->
+        <div class="legal-toc-bar">
+          <span class="legal-toc-title">Jump to:</span>
+          <a href="#/privacy#sec-collection" class="legal-toc-pill">1. Data Collection</a>
+          <a href="#/privacy#sec-storage" class="legal-toc-pill">2. Local Storage</a>
+          <a href="#/privacy#sec-cookies" class="legal-toc-pill">3. Cookies</a>
+          <a href="#/privacy#sec-embeds" class="legal-toc-pill">4. Third-Party Embeds</a>
+          <a href="#/privacy#sec-ads" class="legal-toc-pill">5. Advertising</a>
+          <a href="#/privacy#sec-rights" class="legal-toc-pill">6. Your Rights</a>
+        </div>
+
+        <div class="legal-card" id="sec-collection">
           <h2>1. Information We Collect</h2>
           <p>
-            KopiPlay is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
+            KopiPlay operates as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide identity verification to play games. We collect zero personally identifiable information (PII) during your standard gaming sessions.
           </p>
 
-          <h2>2. Browser Local Storage</h2>
+          <h2 id="sec-storage">2. Browser Local Storage</h2>
           <p>
-            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, KopiPlay utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
+            To deliver an enjoyable, personalized gaming experience without maintaining server-side user databases, KopiPlay utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your own device:
           </p>
           <ul>
-            <li><code>kopiplay_favorites</code> (and legacy <code>nexus_favorites</code>): An array of game identifiers you have marked with a heart.</li>
-            <li><code>kopiplay_recent</code> (and legacy <code>nexus_recently_played</code>): An array of game identifiers for games you have launched recently.</li>
+            <li><code>kopiplay_favorites</code>: An array of game identifiers you have favorited.</li>
+            <li><code>kopiplay_recent</code>: An array of game identifiers you have launched recently.</li>
             <li><code>kopiplay_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
-            <li><code>kopiplay_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
+            <li><code>kopiplay_messages</code>: Inquiries you submit through the contact form, stored locally for demonstration.</li>
           </ul>
-          <p>You can clear this data at any time by simply clearing your browser cache and cookies.</p>
+          <p>You can clear this data at any time by clearing your browser cache and local storage.</p>
 
-          <h2>3. Cookies & Session Storage</h2>
+          <h2 id="sec-cookies">3. Cookies & Tracking Technologies</h2>
           <p>
-            The core KopiPlay portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
+            The core KopiPlay portal does not set proprietary tracking cookies. Temporary session identifiers may be created by your browser to maintain active tab states.
           </p>
 
-          <h2>4. Third-Party Embedded Games</h2>
+          <h2 id="sec-embeds">4. Third-Party Embedded Games & CDNs</h2>
           <p>
-            Many games on KopiPlay are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
+            Games on KopiPlay are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames, GameDistribution, and GameMonetize). When you load an external game iframe, the provider's servers may process standard HTTP request headers (including IP address and browser user-agent) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
           </p>
 
-          <h2>5. Future Monetization & Google AdSense</h2>
+          <h2 id="sec-ads">5. Future Advertising & Monetization</h2>
           <p>
-            KopiPlay has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
+            KopiPlay includes reserved advertisement containers (such as the 300 &times; 250 px sidebar on game detail pages) for future integration with authorized ad networks such as Google AdSense. <strong>Please note:</strong> Live third-party ad network scripts are not currently active. When an ad provider is configured, advertising will comply with applicable privacy regulations (including GDPR, CCPA, and COPPA frameworks).
           </p>
 
-          <h2>6. Analytics Notice</h2>
+          <h2 id="sec-rights">6. Your Data Rights & Contact</h2>
           <p>
-            Analytics event dispatching is currently deactivated. If privacy-friendly analytics are enabled in the future, they will track aggregated portal usage (such as total game plays and general category interest) without harvesting personal user information.
+            Because we do not maintain personal user accounts or server databases, you have full direct control over your data directly within your web browser. If you have questions about our privacy practices, contact us via the <a href="#/contact" style="color:#8B5CF6; font-weight:600;">Contact Form</a>.
           </p>
 
-          <h2>7. Data Security & External Links</h2>
-          <p>
-            We enforce HTTPS encryption across all site assets and embed legitimate games via sandboxed iframes. If you click on external links, you are subject to the respective external website's privacy practices.
-          </p>
-
-          <h2>8. Policy Updates</h2>
-          <p>
-            We may periodically update this Privacy Policy to reflect technical or legal improvements. Material revisions will be reflected by the Effective Date displayed at the top of this page.
-          </p>
+          <!-- Operator Review Box -->
+          <div class="legal-notice-box notice-warning">
+            <div class="legal-notice-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="legal-notice-content">
+              <strong>Website Owner Review Required:</strong> Prior to publishing under a production domain, review this privacy policy with your legal counsel and insert your registered business entity name, legal jurisdiction, and cookie consent management setup.
+            </div>
+          </div>
         </div>
       </div>
     `;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // 4. TERMS OF SERVICE
+  // 4. TERMS OF SERVICE VIEW
   function renderTermsView() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     updateSeo({
-      title: 'Terms of Service – KopiPlay',
+      title: 'Terms of Service - KopiPlay',
       description: 'Official Terms of Service for KopiPlay covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
       canonical: 'https://kipo.in/#/terms',
       ogType: 'website'
     });
 
     main.innerHTML = `
-      <div class="info-page-container">
+      <div class="legal-page-wrapper">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Back</span>
+          </button>
           <a href="#/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-sep">&gt;</span>
           <span class="breadcrumb-current">Terms of Service</span>
         </nav>
 
-        <header class="info-hero-header">
-          <div class="info-badge">User Agreement</div>
-          <h1 class="info-title">Terms of <span>Service</span></h1>
-          <p class="info-lead">Effective Date: October 2026</p>
+        <header class="legal-page-header">
+          <div class="legal-badge">User Agreement</div>
+          <h1 class="legal-title">Terms of <span class="gradient-text">Service</span></h1>
+          <p class="legal-lead">Effective Date: October 2026 &bull; Governs your access to KopiPlay</p>
         </header>
 
-        <div class="info-card">
+        <div class="legal-card">
           <h2>1. Agreement to Terms</h2>
           <p>
             By visiting, accessing, or playing games on KopiPlay ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
           </p>
 
-          <h2>2. Permitted Website Usage</h2>
+          <h2>2. Permitted Website Usage & Entertainment License</h2>
           <p>
             KopiPlay grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
           </p>
 
-          <h2>3. Third-Party Game Ownership</h2>
+          <h2>3. Third-Party Game Ownership & Attribution</h2>
           <p>
-            Games hosted or embedded on KopiPlay remain the intellectual property of their respective developers, creators, or authorized publishers. KopiPlay embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
+            Games hosted or embedded on KopiPlay remain the intellectual property of their respective creators, developers, or authorized distribution networks. KopiPlay embeds games in accordance with permitted distribution terms, preserving all original developer credits, branding, and links.
           </p>
 
-          <h2>4. User Responsibilities & Conduct</h2>
+          <h2>4. User Responsibilities & Prohibited Conduct</h2>
           <p>As a user of KopiPlay, you agree not to:</p>
           <ul>
-            <li>Circumvent, disable, or tamper with security or iframe sandbox restrictions on the portal.</li>
-            <li>Use automated scrapers, bots, or data-mining utilities to extract content without authorization.</li>
+            <li>Circumvent, disable, or tamper with security measures or iframe sandbox restrictions on the portal.</li>
+            <li>Use automated scrapers, bots, or data-mining scripts to extract content without authorization.</li>
             <li>Transmit malicious code, viruses, or disruptive scripts through forms or feedback mechanisms.</li>
-            <li>Attempt to reverse-engineer or rebrand KopiPlay portal software.</li>
+            <li>Attempt to reverse-engineer or redistribute the KopiPlay portal software without permission.</li>
           </ul>
 
-          <h2>5. Game Availability & Maintenance</h2>
+          <h2>5. Game Availability & Catalog Management</h2>
           <p>
-            We strive to keep all games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KopiPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
+            We strive to keep games playable around the clock. However, third-party developers and distribution partners may update, modify, or withdraw titles at their discretion. KopiPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
           </p>
 
           <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
           <p>
-            KopiPlay is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall KopiPlay be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
+            KopiPlay is provided on an "as-is" and "as-available" basis without warranties of any kind. In no event shall KopiPlay be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
           </p>
 
           <h2>7. Updates to Terms</h2>
           <p>
             We reserve the right to revise these Terms of Service at any time. Continued usage of KopiPlay following revisions constitutes full acceptance of the updated terms.
           </p>
+
+          <!-- Operator Review Box -->
+          <div class="legal-notice-box notice-warning">
+            <div class="legal-notice-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="legal-notice-content">
+              <strong>Website Owner Review Required:</strong> When transferring this site to your new domain, review Section 6 and Section 7 with your legal advisor to insert your governing jurisdiction and dispute resolution location.
+            </div>
+          </div>
         </div>
       </div>
     `;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // 5. DMCA & COPYRIGHT POLICY
+  // 5. DMCA & COPYRIGHT POLICY VIEW
   function renderDmcaView() {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     updateSeo({
-      title: 'DMCA & Copyright Policy – KopiPlay',
+      title: 'DMCA & Copyright Policy - KopiPlay',
       description: 'Official DMCA and Copyright notice for KopiPlay detailing intellectual property protection, infringement notification procedures, and counter-claims.',
       canonical: 'https://kipo.in/#/dmca',
       ogType: 'website'
     });
 
     main.innerHTML = `
-      <div class="info-page-container">
+      <div class="legal-page-wrapper">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <button class="player-back-btn" onclick="if(window.history.length>1){window.history.back();}else{window.location.hash='#/';}" aria-label="Back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Back</span>
+          </button>
           <a href="#/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-sep">&gt;</span>
           <span class="breadcrumb-current">DMCA & Copyright</span>
         </nav>
 
-        <header class="info-hero-header">
-          <div class="info-badge">Intellectual Property</div>
-          <h1 class="info-title">DMCA & <span>Copyright Policy</span></h1>
-          <p class="info-lead">
-            KopiPlay respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
+        <header class="legal-page-header">
+          <div class="legal-badge">Intellectual Property</div>
+          <h1 class="legal-title">DMCA & <span class="gradient-text">Copyright Policy</span></h1>
+          <p class="legal-lead">
+            KopiPlay respects creator intellectual property rights and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
           </p>
         </header>
 
-        <div class="info-card">
-          <h2>Third-Party Game Ownership</h2>
+        <div class="legal-card">
+          <h2>1. Third-Party Game Ownership & Attribution</h2>
           <p>
-            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on KopiPlay remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
+            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on KopiPlay remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames, GameDistribution, and GameMonetize), preserving required developer branding and credits.
           </p>
 
-          <h2>Copyright Infringement Notification Procedure</h2>
+          <h2>2. Copyright Infringement Notification Procedure</h2>
           <p>
             If you are a copyright owner or an authorized representative and believe that any game or content accessible on KopiPlay infringes upon your copyright, you may submit a formal notification containing the following:
           </p>
-          <ul>
-            <li>A physical or electronic signature of the copyright owner or authorized representative.</li>
+          <ol>
+            <li>A physical or electronic signature of the copyright owner or person authorized to act on their behalf.</li>
             <li>Specific identification of the copyrighted work claimed to have been infringed.</li>
-            <li>The exact URL (e.g., <code>https://kipo.in/#/game/[game-slug]</code>) where the allegedly infringing material is located.</li>
+            <li>The exact URL (e.g., <code>https://kipo.in/#/game/[game-slug]</code>) where the allegedly infringing material is located on KopiPlay.</li>
             <li>Your contact information, including your full legal name, mailing address, telephone number, and verifiable email address.</li>
             <li>A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.</li>
             <li>A statement made under penalty of perjury that the information in the notification is accurate and that you are authorized to act on behalf of the owner.</li>
-          </ul>
+          </ol>
 
-          <h2>Submission Procedure</h2>
+          <h2>3. Submission Method</h2>
           <p>
-            Please deliver your copyright notification via our official <a href="#/contact" style="color:#38BDF8; font-weight:600;">Contact & Support Form</a> by choosing the topic <strong>"Copyright / DMCA Notice"</strong>. Verified infringement claims are investigated and processed within 24 to 48 business hours.
+            Please deliver your copyright notification via our official <a href="#/contact" style="color:#8B5CF6; font-weight:600;">Contact & Support Form</a> by choosing the topic <strong>"Copyright / DMCA Notice"</strong>. Verified infringement claims are investigated and processed within 24 to 48 business hours.
           </p>
 
-          <h2>Counter-Notification Procedure</h2>
+          <h2>4. Counter-Notification Procedure</h2>
           <p>
-            If a game developer believes their material was removed or disabled by mistake or misidentification, a counter-notification may be submitted containing their identity, explanation, and consent to legal jurisdiction.
+            If a game developer believes their material was removed or disabled by mistake or misidentification, a counter-notification may be submitted containing their identity, explanation, and consent to legal jurisdiction under 17 U.S.C. § 512(g).
           </p>
+
+          <!-- Action Required by Website Owner -->
+          <div class="legal-notice-box notice-warning">
+            <div class="legal-notice-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="legal-notice-content">
+              <strong>Website Owner Action Required:</strong> To qualify for DMCA statutory Safe Harbor protections under 17 U.S.C. § 512(c)(2), register a Designated Agent with the U.S. Copyright Office Directory of Service Provider Agents and update this page with your agent's full legal name, physical postal address, telephone, and designated DMCA email.
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -2036,7 +2155,7 @@
         const svg = detailBtn.querySelector('svg');
         if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
         const txt = document.getElementById('detailFavText');
-        if (txt) txt.textContent = isFav ? 'Favorited' : 'Add to Favorites';
+        if (txt) txt.textContent = isFav ? 'Favorited' : 'Favorite';
       }
       const headerBadge = document.getElementById('headerFavBadge');
       if (headerBadge) {
@@ -2278,6 +2397,18 @@
     } catch (e) {}
 
     initMobileNavEvents();
+
+    // Delegated Card Click Handler (Guarantees card clicks always open games)
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.card-fav-btn') || e.target.closest('button') || e.target.closest('input') || e.target.closest('select')) return;
+      const card = e.target.closest('.game-card');
+      if (card) {
+        const slug = card.getAttribute('data-slug');
+        if (slug) {
+          window.location.hash = '#/game/' + slug;
+        }
+      }
+    });
 
     window.addEventListener('hashchange', handleRoute);
     handleRoute();

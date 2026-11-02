@@ -1,9 +1,8 @@
-
 /* ==========================================================================
-   KopiPlay - Responsive Styles (Matches Mobile Mockups in Reference)
+   KopiPlay - Responsive Breakpoint System
+   Breakpoints: Mobile (375px, 390px), Tablet (768px), Desktop (1024px, 1366px+)
    ========================================================================== */
 
-/* Tablet & Mobile Breakpoints */
 @media (max-width: 1024px) {
   .site-header {
     padding: 0 20px;
@@ -13,6 +12,20 @@
   }
   .game-detail-layout {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .game-ad-container {
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .about-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -39,7 +52,6 @@
     gap: 10px !important;
   }
 
-  /* In 2-column mobile grid, large cards span both columns */
   .mixed-game-grid .game-card.card-large {
     grid-column: span 2 !important;
     grid-row: span 2 !important;
@@ -65,25 +77,86 @@
     padding: 16px 10px;
   }
 
-  /* Mobile Player (Phone 2 Mockup in Reference): Stacked Full-Width CTA */
+  /* Mobile Player: Stacked, Player First, Ad Slot Below, Related Games Below */
+  .game-detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
   .player-stage-card {
-    min-height: 240px;
+    min-height: 220px;
+    border-radius: 14px;
+    width: 100%;
+  }
+
+  .game-ad-container {
+    max-width: 340px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 16px 12px;
     border-radius: 14px;
   }
 
-  .game-action-card {
-    padding: 18px;
+  .ad-slot-frame.ad-slot-300x250 {
+    width: 300px;
+    height: 250px;
+    max-width: 100%;
+  }
+
+  .portal-seo-section {
+    padding: 24px 20px;
+  }
+
+  .seo-highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Legal & Information Pages Mobile Adjustments */
+  .legal-page-wrapper {
+    margin-bottom: 40px;
+  }
+  .legal-card {
+    padding: 22px 18px;
     border-radius: 14px;
   }
-
-  .btn-play-now {
-    padding: 14px;
-    font-size: 1rem;
+  .legal-title {
+    font-size: 1.65rem;
+  }
+  .about-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .about-cta-banner {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+  .contact-support-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .footer-grid {
+  /* Mobile Footer: Clean Single Column Stack with no overflow */
+  .site-footer {
+    padding: 40px 18px 24px;
+    margin-top: 48px;
+  }
+
+  .footer-top {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 

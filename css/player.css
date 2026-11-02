@@ -1,10 +1,9 @@
-
 /* ==========================================================================
-   KopiPlay - Game Detail & Player Styles (Matches Top-Right Panel in Reference)
-   16:9 Cinematic Container, Fullscreen Toggle, Action Card, Related Games Strip
+   KopiPlay - Game Detail & Player Styles (Matches Reference Layout)
+   16:9 Cinematic Container, Fullscreen Toggle, Ad Container, Related Games Strip
    ========================================================================== */
 
-/* Breadcrumbs */
+/* Breadcrumbs & Navigation Bar */
 .breadcrumbs {
   display: flex;
   align-items: center;
@@ -13,6 +12,34 @@
   color: #A7B0C0;
   margin-bottom: 20px;
   flex-wrap: wrap;
+}
+
+.player-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  color: #F8FAFC;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: all 0.18s ease;
+}
+
+.player-back-btn:hover {
+  background: #222E44;
+  border-color: #3B82F6;
+  transform: translateX(-2px);
+}
+
+.player-back-btn svg {
+  width: 14px;
+  height: 14px;
 }
 
 .breadcrumb-link {
@@ -36,16 +63,60 @@
   font-weight: 700;
 }
 
-/* Two-Column Detail Layout */
+/* Breadcrumb Favorite Toggle Button (Relocated from duplicate sidebar card) */
+.player-fav-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  color: #F8FAFC;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.player-fav-btn:hover {
+  background: #222E44;
+  border-color: #FF4757;
+  color: #FF4757;
+  transform: translateY(-1px);
+}
+
+.player-fav-btn.is-fav {
+  border-color: #FF4757;
+  color: #FF4757;
+  background: rgba(255, 71, 87, 0.12);
+}
+
+.player-fav-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.player-fav-btn:active svg {
+  transform: scale(1.2);
+}
+
+/* Two-Column Detail Layout: 1fr player on left, 340px ad container on right */
 .game-detail-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 340px;
   gap: 24px;
   margin-bottom: 40px;
   width: 100%;
+  align-items: start;
 }
 
-/* 16:9 Cinematic Player Container */
+/* 16:9 Cinematic Player Container (Unchanged) */
 .player-stage-card {
   position: relative;
   background: #0B0E14;
@@ -102,188 +173,108 @@
   height: 18px;
 }
 
-/* Right Action Card (Matches Reference Sidebar Card) */
-.game-action-card {
+/* ==========================================================================
+   Professional Advertisement Container (Placement: game-detail-sidebar)
+   300x250 Standard Display Slot, Dark Theme, Reserved Monetization Space
+   ========================================================================== */
+
+.game-ad-container {
   background: #1B2435;
   border: 1.5px solid #2B3548;
   border-radius: 18px;
-  padding: 24px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  height: fit-content;
-}
-
-.action-card-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.action-card-thumb {
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
-  object-fit: cover;
-  border: 1.5px solid #2B3548;
-  flex-shrink: 0;
-}
-
-.action-card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 0;
-}
-
-.action-card-title {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #F8FAFC;
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.action-card-tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.tag-pill {
-  background: #151D2C;
-  border: 1px solid #2B3548;
-  color: #A7B0C0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: all 0.15s ease;
-}
-
-.tag-pill:hover {
-  border-color: #8B5CF6;
-  color: #F8FAFC;
-}
-
-/* Big Purple Play Now CTA Button (Matches Reference) */
-.btn-play-now {
-  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.05rem;
-  padding: 14px 20px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45);
-  transition: all 0.2s ease;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.btn-play-now:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(139, 92, 246, 0.6);
-  background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
-}
-
-.btn-play-now svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Secondary Favorites Button */
-.btn-fav-action {
-  background: #151D2C;
-  border: 1.5px solid #2B3548;
-  color: #F8FAFC;
+/* Discreet Uppercase ADVERTISEMENT Label */
+.ad-disclaimer-label {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.92rem;
-  padding: 11px 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-  width: 100%;
-}
-
-.btn-fav-action:hover {
-  border-color: #FF4757;
-  color: #FF4757;
-  background: rgba(255, 71, 87, 0.08);
-}
-
-.btn-fav-action.is-fav {
-  border-color: #FF4757;
-  color: #FF4757;
-  background: rgba(255, 71, 87, 0.12);
-}
-
-.btn-fav-action svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Game Description */
-.action-card-description {
-  font-size: 0.88rem;
-  color: #A7B0C0;
-  line-height: 1.55;
-  border-top: 1px solid #2B3548;
-  padding-top: 14px;
-}
-
-/* Keycap Controls */
-.game-controls-info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid #2B3548;
-  padding-top: 14px;
-}
-
-.controls-label {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #A7B0C0;
+  color: #7A869E;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.controls-keys {
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.keycap {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
+  gap: 6px;
+  user-select: none;
+}
+
+/* 300x250 Display Ad Slot Frame */
+.ad-slot-frame {
+  position: relative;
+  border-radius: 12px;
   background: #151D2C;
+  border: 1.5px dashed #2B3548;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ad-slot-frame.ad-slot-300x250 {
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+}
+
+/* Neutral, Unclickable Placeholder when no active ad script is loaded */
+.ad-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 16px;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.ad-placeholder-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #1B2435;
   border: 1px solid #2B3548;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.78rem;
+  color: #3B82F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.ad-placeholder-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ad-placeholder-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
   font-weight: 700;
-  color: #F8FAFC;
-  box-shadow: 0 2px 0 #1A2436;
+  color: #A7B0C0;
+  letter-spacing: 0.3px;
+}
+
+.ad-placeholder-size {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7A869E;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.4px;
 }
 
 /* Related Games Section & Strip (Matches Reference Bottom of Detail) */
