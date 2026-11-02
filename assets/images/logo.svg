@@ -1,19 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
   <defs>
     <!-- Vibrant Blue-to-Purple Gradient -->
-    <linearGradient id="nexus-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="kopi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8" />
       <stop offset="35%" stop-color="#3B82F6" />
       <stop offset="70%" stop-color="#8B5CF6" />
       <stop offset="100%" stop-color="#A855F7" />
     </linearGradient>
-    <linearGradient id="kipo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="35%" stop-color="#3B82F6" />
-      <stop offset="70%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#A855F7" />
-    </linearGradient>
-    <linearGradient id="nexus-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="kopi-accent" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8" />
       <stop offset="100%" stop-color="#3B82F6" />
     </linearGradient>
@@ -25,7 +19,7 @@
   <!-- Modern Gaming Emblem Icon -->
   <g transform="translate(6, 6)" filter="url(#subtle-shadow)">
     <!-- Base Rounded Shield -->
-    <rect x="0" y="0" width="44" height="44" rx="13" fill="url(#nexus-grad)" />
+    <rect x="0" y="0" width="44" height="44" rx="13" fill="url(#kopi-grad)" />
     
     <!-- Dynamic Play Triangle -->
     <path d="M 18 14 L 33 22 L 18 30 Z" fill="#FFFFFF" />
@@ -39,9 +33,9 @@
     <path d="M 6 12 Q 22 2 38 12" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1.5" fill="none" stroke-linecap="round" />
   </g>
 
-  <!-- Brand Typography: KIPO in bright white, PLAY in vibrant blue-purple gradient -->
+  <!-- Brand Typography: KOPI in bright white, PLAY in vibrant blue-purple gradient -->
   <text x="60" y="34" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">
-    <tspan fill="#FFFFFF">KIPO</tspan><tspan fill="url(#nexus-grad)">PLAY</tspan>
+    <tspan fill="#FFFFFF">KOPI</tspan><tspan fill="url(#kopi-grad)">PLAY</tspan>
   </text>
   
   <!-- Subtitle Tag -->

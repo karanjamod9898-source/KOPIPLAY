@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Favorites Page View
+ * KopiPlay - Favorites Page View
  * Shows saved bookmarked games from localStorage
  */
 

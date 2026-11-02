@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Individual Game Page View & Player Controller
+ * KopiPlay - Individual Game Page View & Player Controller
  * Handles iframe embedding, loading spinner, error fallback, fullscreen, theater mode,
  * controls guide, metadata, and related games
  */
@@ -199,7 +199,7 @@ export async function renderGameView(slug) {
               <strong>Publisher & Licensing Notice:</strong> 
               ${game.id === 'epic-racing-01' ? 
                 'Officially distributed via authorized GameDistribution HTML5 WebGL integration. Developed by Mirra Games. All advertising, game distribution SDK behaviors, and original copyrights are preserved in accordance with provider licensing.' : 
-                'Self-hosted native HTML5 game application developed for the KipoPlay portal platform.'}
+                'Self-hosted native HTML5 game application developed for the KopiPlay portal platform.'}
             </div>
 
             <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 14px;">

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const bundleScript = `/**
- * KipoPlay - Complete Modern Gaming Portal Bundle (Production Ready)
+ * KopiPlay - Complete Modern Gaming Portal Bundle (Production Ready)
  * Dark gaming aesthetic, fully static, zero external backend dependencies
  */
 
@@ -66,7 +66,7 @@ const bundleScript = `/**
     if (/board|chess|checkers|domino|backgammon|ludo|scrabble/i.test(text)) matched.push('board-games');
     if (/card|solitaire|poker|blackjack|spades|hearts|klondike|uno/i.test(text)) matched.push('card-games');
     if (/clicker|idle|tap|tapper|tycoon|incremental|upgrade/i.test(text)) matched.push('clicker');
-    if (/\\.io\\b|io game|worm|slither|agar|arena/i.test(text)) matched.push('io-games');
+    if (/\.io\b|io game|worm|slither|agar|arena/i.test(text)) matched.push('io-games');
 
     if (matched.length === 0) {
       const cat = (game.category || '').toLowerCase();
@@ -84,184 +84,184 @@ const bundleScript = `/**
   // --- Category Rich SEO Metadata Dictionary (Phase 4) ---
   const CATEGORY_SEO_DATA = {
     'shooting': {
-      title: 'Play Free Shooting Games Online – KipoPlay',
-      description: 'Play action-packed free online shooting games on KipoPlay. Aim, fire, and conquer sniper, tactical FPS, and space blaster browser games with no downloads.',
-      intro: 'Welcome to the KipoPlay Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters, or defensive turret warfare, our shooting library delivers fast-paced target acquisition and reflex testing on both desktop and mobile.',
+      title: 'Play Free Shooting Games Online – KopiPlay',
+      description: 'Play action-packed free online shooting games on KopiPlay. Aim, fire, and conquer sniper, tactical FPS, and space blaster browser games with no downloads.',
+      intro: 'Welcome to the KopiPlay Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters, or defensive turret warfare, our shooting library delivers fast-paced target acquisition and reflex testing on both desktop and mobile.',
       faqs: [
-        { q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All KipoPlay shooting games run directly in modern mobile browsers via HTML5 and WebGL.' },
+        { q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All KopiPlay shooting games run directly in modern mobile browsers via HTML5 and WebGL.' },
         { q: 'What controls are used for browser shooting games?', a: 'Desktop games typically use mouse aiming with left-click to fire, alongside WASD/arrow keys for tactical movement. Touchscreens feature intuitive virtual controls.' },
-        { q: 'Are these shooting games completely free?', a: 'Every shooting game on KipoPlay is 100% free with instant, unlimited play.' }
+        { q: 'Are these shooting games completely free?', a: 'Every shooting game on KopiPlay is 100% free with instant, unlimited play.' }
       ]
     },
     'action': {
-      title: 'Play Free Action Games Online – KipoPlay',
-      description: 'Jump into thrilling free online action games on KipoPlay. Experience combat, ninja duels, survival battles, and fast-paced brawlers instantly in your browser.',
-      intro: 'KipoPlay Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Challenge your reflexes across hand-to-hand combat, dodge hazards, and overcome enemy waves.',
+      title: 'Play Free Action Games Online – KopiPlay',
+      description: 'Jump into thrilling free online action games on KopiPlay. Experience combat, ninja duels, survival battles, and fast-paced brawlers instantly in your browser.',
+      intro: 'KopiPlay Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Challenge your reflexes across hand-to-hand combat, dodge hazards, and overcome enemy waves.',
       faqs: [
-        { q: 'What makes action games on KipoPlay unique?', a: 'They load instantly with zero downloads, featuring smooth canvas animations, reactive audio, and full responsiveness.' },
+        { q: 'What makes action games on KopiPlay unique?', a: 'They load instantly with zero downloads, featuring smooth canvas animations, reactive audio, and full responsiveness.' },
         { q: 'Do action games support touch controls?', a: 'Yes, each action title is adapted for touch taps, swipes, and on-screen pads on smartphones and tablets.' },
         { q: 'Can I save my high scores or progress?', a: 'Scores and level progress are safely preserved locally in your browser storage.' }
       ]
     },
     'adventure': {
-      title: 'Play Free Adventure Games Online – KipoPlay',
-      description: 'Embark on epic free online adventure games on KipoPlay. Explore mysterious dungeons, solve quest puzzles, and journey across captivating digital worlds.',
-      intro: 'Step into immersive journeys and mysterious labyrinths with KipoPlay Adventure Games. Uncover secrets, solve ancient mechanisms, and steer brave adventurers through exciting storylines.',
+      title: 'Play Free Adventure Games Online – KopiPlay',
+      description: 'Embark on epic free online adventure games on KopiPlay. Explore mysterious dungeons, solve quest puzzles, and journey across captivating digital worlds.',
+      intro: 'Step into immersive journeys and mysterious labyrinths with KopiPlay Adventure Games. Uncover secrets, solve ancient mechanisms, and steer brave adventurers through exciting storylines.',
       faqs: [
         { q: 'Are adventure games suitable for all ages?', a: 'Our adventure catalog features family-friendly puzzle quests, fantasy explorations, and rich storytelling.' },
         { q: 'Can I play adventure games on tablet or iPad?', a: 'Absolutely. Responsive aspect ratios ensure full viewability on touch tablets and iPads.' }
       ]
     },
     'racing': {
-      title: 'Explore Free Racing Games – KipoPlay',
-      description: 'Race at top speeds with free online racing games on KipoPlay. Drift through city tracks, burn rubber on highways, and master precision vehicle control.',
-      intro: 'Feel the adrenaline of competition in KipoPlay Racing Games. From neon synthwave highways to off-road dirt tracks, accelerate past rivals and clock record lap times.',
+      title: 'Explore Free Racing Games – KopiPlay',
+      description: 'Race at top speeds with free online racing games on KopiPlay. Drift through city tracks, burn rubber on highways, and master precision vehicle control.',
+      intro: 'Feel the adrenaline of competition in KopiPlay Racing Games. From neon synthwave highways to off-road dirt tracks, accelerate past rivals and clock record lap times.',
       faqs: [
         { q: 'Do racing games work with keyboard arrow keys?', a: 'Yes, desktop players can steer with Arrow keys or WASD, with Spacebar for nitro or handbrake.' },
         { q: 'Are there 3D racing games available?', a: 'Yes, multiple titles feature smooth 3D canvas and WebGL simulation engines.' }
       ]
     },
     'car': {
-      title: 'Play Free Car Games Online – KipoPlay',
-      description: 'Enjoy free car games online on KipoPlay. Test your skills with precision parking, highway traffic dodging, stunt driving, and custom supercars.',
-      intro: 'Get behind the wheel in KipoPlay Car Games. Master parking challenges, navigate dense city traffic, or test horsepower across high-octane stunt courses.',
+      title: 'Play Free Car Games Online – KopiPlay',
+      description: 'Enjoy free car games online on KopiPlay. Test your skills with precision parking, highway traffic dodging, stunt driving, and custom supercars.',
+      intro: 'Get behind the wheel in KopiPlay Car Games. Master parking challenges, navigate dense city traffic, or test horsepower across high-octane stunt courses.',
       faqs: [
         { q: 'What types of car games are featured?', a: 'We offer precision parking simulators, highway traffic runners, stunt obstacle courses, and drift arenas.' },
         { q: 'Is there any download or installation required?', a: 'No, all car games run instantly inside your web browser.' }
       ]
     },
     'driving': {
-      title: 'Free Driving Simulators & Road Games – KipoPlay',
-      description: 'Experience realistic free online driving games on KipoPlay. Steer buses, pilot aircraft, navigate traffic highways, and test vehicle handling.',
-      intro: 'Take control of diverse vehicles in KipoPlay Driving Games. From airport flight simulators to city transit navigation, experience satisfying vehicular control.',
+      title: 'Free Driving Simulators & Road Games – KopiPlay',
+      description: 'Experience realistic free online driving games on KopiPlay. Steer buses, pilot aircraft, navigate traffic highways, and test vehicle handling.',
+      intro: 'Take control of diverse vehicles in KopiPlay Driving Games. From airport flight simulators to city transit navigation, experience satisfying vehicular control.',
       faqs: [
         { q: 'Are driving games optimized for mobile devices?', a: 'Yes, on-screen steering controls and touch acceleration pedals are fully integrated.' }
       ]
     },
     'sports': {
-      title: 'Discover Sports Games Free Online – KipoPlay',
-      description: 'Play free online sports games on KipoPlay. Compete in football, basketball, tennis, bowling, and golf with realistic physics and instant gameplay.',
-      intro: 'Step onto the field, court, and green with KipoPlay Sports Games. Score game-winning three-pointers, bend free kicks, and conquer athletic tournaments.',
+      title: 'Discover Sports Games Free Online – KopiPlay',
+      description: 'Play free online sports games on KopiPlay. Compete in football, basketball, tennis, bowling, and golf with realistic physics and instant gameplay.',
+      intro: 'Step onto the field, court, and green with KopiPlay Sports Games. Score game-winning three-pointers, bend free kicks, and conquer athletic tournaments.',
       faqs: [
         { q: 'Are multiplayer sports games supported?', a: 'Yes, select sports titles support local 2-player turn-based or simultaneous competitive matches.' }
       ]
     },
     'football': {
-      title: 'Play Free Football & Soccer Games – KipoPlay',
-      description: 'Score epic goals in free online football games on KipoPlay. Master penalty shootouts, tournament championships, and striker headers.',
-      intro: 'Experience the world’s favorite sport in KipoPlay Football Games. Beat the goalkeeper, execute curving free kicks, and lift tournament trophies.',
+      title: 'Play Free Football & Soccer Games – KopiPlay',
+      description: 'Score epic goals in free online football games on KopiPlay. Master penalty shootouts, tournament championships, and striker headers.',
+      intro: 'Experience the world’s favorite sport in KopiPlay Football Games. Beat the goalkeeper, execute curving free kicks, and lift tournament trophies.',
       faqs: [
         { q: 'How do penalty kick controls work?', a: 'Simply swipe or drag your cursor to aim power and curve directly into the goal corners.' }
       ]
     },
     'puzzle': {
-      title: 'Play Puzzle Games Online Free – KipoPlay',
-      description: 'Challenge your mind with free online puzzle games on KipoPlay. Solve logic grids, sliding tiles, block puzzles, 2048, and match-3 brain teasers.',
-      intro: 'Sharpen your cognitive skills with KipoPlay Puzzle Games. Engage in relaxing block placements, strategic tile-matching, and intricate spatial brain teasers.',
+      title: 'Play Puzzle Games Online Free – KopiPlay',
+      description: 'Challenge your mind with free online puzzle games on KopiPlay. Solve logic grids, sliding tiles, block puzzles, 2048, and match-3 brain teasers.',
+      intro: 'Sharpen your cognitive skills with KopiPlay Puzzle Games. Engage in relaxing block placements, strategic tile-matching, and intricate spatial brain teasers.',
       faqs: [
         { q: 'Are puzzle games good for brain training?', a: 'Yes, games like 2048, Sudoku, and spatial block puzzles exercise logic, memory, and concentration.' }
       ]
     },
     'strategy': {
-      title: 'Free Strategy & Tactical Games – KipoPlay',
-      description: 'Outsmart opponents in free online strategy games on KipoPlay. Command armies, deploy tower defenses, and master tactical board maneuvers.',
-      intro: 'Plan your victory step-by-step with KipoPlay Strategy Games. Defend strongholds against invading waves, allocate resources, and checkmate rivals.',
+      title: 'Free Strategy & Tactical Games – KopiPlay',
+      description: 'Outsmart opponents in free online strategy games on KopiPlay. Command armies, deploy tower defenses, and master tactical board maneuvers.',
+      intro: 'Plan your victory step-by-step with KopiPlay Strategy Games. Defend strongholds against invading waves, allocate resources, and checkmate rivals.',
       faqs: [
         { q: 'Are tower defense games included?', a: 'Yes, our strategy library features tower defense titles with tactical upgrade paths.' }
       ]
     },
     'platform': {
-      title: 'Play Free Platformer Games Online – KipoPlay',
-      description: 'Jump, dash, and run through free online platform games on KipoPlay. Overcome traps, leap across moving platforms, and reach the finish flag.',
-      intro: 'Experience pure timing and agile jumps in KipoPlay Platform Games. Hop over hazards, collect glowing gems, and discover hidden shortcuts.',
+      title: 'Play Free Platformer Games Online – KopiPlay',
+      description: 'Jump, dash, and run through free online platform games on KopiPlay. Overcome traps, leap across moving platforms, and reach the finish flag.',
+      intro: 'Experience pure timing and agile jumps in KopiPlay Platform Games. Hop over hazards, collect glowing gems, and discover hidden shortcuts.',
       faqs: [
         { q: 'Can I play platformers with a keyboard spacebar?', a: 'Yes, Spacebar or Up Arrow performs jumps, with Left/Right keys controlling movement.' }
       ]
     },
     'multiplayer': {
-      title: 'Play Free Multiplayer Games Online – KipoPlay',
-      description: 'Play free online multiplayer and 2-player games on KipoPlay. Challenge friends on the same device or face rivals in arena battles.',
-      intro: 'Gaming is best together! KipoPlay Multiplayer Games offer 2-player shared screen matches, competitive sports duels, and cooperative challenges.',
+      title: 'Play Free Multiplayer Games Online – KopiPlay',
+      description: 'Play free online multiplayer and 2-player games on KopiPlay. Challenge friends on the same device or face rivals in arena battles.',
+      intro: 'Gaming is best together! KopiPlay Multiplayer Games offer 2-player shared screen matches, competitive sports duels, and cooperative challenges.',
       faqs: [
         { q: 'How do 2-player games work on one keyboard?', a: 'Player 1 uses WASD while Player 2 uses the Arrow keys, ensuring seamless simultaneous play.' }
       ]
     },
     'arcade': {
-      title: 'Classic & Modern Arcade Games – KipoPlay',
-      description: 'Relive retro thrills with free online arcade games on KipoPlay. Play Snake, Breakout, high-score runners, and neon reflex games.',
-      intro: 'Step into the neon glow of KipoPlay Arcade Games. Enjoy instant high-score chasing, retro brick deflectors, and endless arcade classics.',
+      title: 'Classic & Modern Arcade Games – KopiPlay',
+      description: 'Relive retro thrills with free online arcade games on KopiPlay. Play Snake, Breakout, high-score runners, and neon reflex games.',
+      intro: 'Step into the neon glow of KopiPlay Arcade Games. Enjoy instant high-score chasing, retro brick deflectors, and endless arcade classics.',
       faqs: [
         { q: 'Do arcade games track local high scores?', a: 'Yes, high scores are stored locally in your browser so you can beat your personal best.' }
       ]
     },
     'simulation': {
-      title: 'Free Simulation Games Online – KipoPlay',
-      description: 'Build, manage, and experience life simulations in free online games on KipoPlay. Run restaurants, manage virtual farms, and pilot crafts.',
-      intro: 'Immerse yourself in virtual systems with KipoPlay Simulation Games. Craft efficient businesses, cultivate digital farms, and test engineering builds.',
+      title: 'Free Simulation Games Online – KopiPlay',
+      description: 'Build, manage, and experience life simulations in free online games on KopiPlay. Run restaurants, manage virtual farms, and pilot crafts.',
+      intro: 'Immerse yourself in virtual systems with KopiPlay Simulation Games. Craft efficient businesses, cultivate digital farms, and test engineering builds.',
       faqs: [
         { q: 'Are simulation games relaxing to play?', a: 'Many simulation games are designed for relaxing, low-pressure creative and management gameplay.' }
       ]
     },
     'casual': {
-      title: 'Play Casual Games Free Online – KipoPlay',
-      description: 'Unwind with fun and relaxing casual games on KipoPlay. Quick, easy-to-learn browser games for satisfying instant entertainment.',
-      intro: 'Take a quick break with KipoPlay Casual Games. Designed with intuitive controls and immediate satisfaction, jump in for two minutes or two hours.',
+      title: 'Play Casual Games Free Online – KopiPlay',
+      description: 'Unwind with fun and relaxing casual games on KopiPlay. Quick, easy-to-learn browser games for satisfying instant entertainment.',
+      intro: 'Take a quick break with KopiPlay Casual Games. Designed with intuitive controls and immediate satisfaction, jump in for two minutes or two hours.',
       faqs: [
         { q: 'Do casual games require tutorials?', a: 'No, every casual game is designed with pick-up-and-play simplicity and zero learning curves.' }
       ]
     },
     'kids-games': {
-      title: 'Fun & Safe Kids Games Online – KipoPlay',
-      description: 'Play safe, kid-friendly free online games on KipoPlay. Enjoy coloring, cute animal adventures, educational puzzles, and gentle fun.',
-      intro: 'Delightful entertainment for younger players! KipoPlay Kids Games feature colorful animation, friendly pets, drawing activities, and gentle puzzles.',
+      title: 'Fun & Safe Kids Games Online – KopiPlay',
+      description: 'Play safe, kid-friendly free online games on KopiPlay. Enjoy coloring, cute animal adventures, educational puzzles, and gentle fun.',
+      intro: 'Delightful entertainment for younger players! KopiPlay Kids Games feature colorful animation, friendly pets, drawing activities, and gentle puzzles.',
       faqs: [
         { q: 'Are kids games safe and family-friendly?', a: 'Yes, games in this category are curated for positive, non-violent, family-friendly fun.' }
       ]
     },
     'beauty': {
-      title: 'Free Dress-Up & Fashion Games – KipoPlay',
-      description: 'Unleash your creativity with free online fashion, makeup, and beauty games on KipoPlay. Style royal outfits and create chic makeovers.',
-      intro: 'Design runway looks and royal styles in KipoPlay Beauty Games. Choose elegant gowns, experiment with makeup palettes, and express fashion creativity.',
+      title: 'Free Dress-Up & Fashion Games – KopiPlay',
+      description: 'Unleash your creativity with free online fashion, makeup, and beauty games on KopiPlay. Style royal outfits and create chic makeovers.',
+      intro: 'Design runway looks and royal styles in KopiPlay Beauty Games. Choose elegant gowns, experiment with makeup palettes, and express fashion creativity.',
       faqs: [
         { q: 'Can I save or take a snapshot of my designs?', a: 'You can easily view full-screen outfits and screenshot your creations on any device.' }
       ]
     },
     'pool': {
-      title: 'Play Free 8-Ball & Billiards Games – KipoPlay',
-      description: 'Sink 8-ball stripes and solids in free online pool games on KipoPlay. Experience accurate cue ball physics and table angles.',
-      intro: 'Chalk your cue in KipoPlay Pool Games. Line up trick shots, calculate cushion rebounds, and master classic 8-Ball and Snooker tables.',
+      title: 'Play Free 8-Ball & Billiards Games – KopiPlay',
+      description: 'Sink 8-ball stripes and solids in free online pool games on KopiPlay. Experience accurate cue ball physics and table angles.',
+      intro: 'Chalk your cue in KopiPlay Pool Games. Line up trick shots, calculate cushion rebounds, and master classic 8-Ball and Snooker tables.',
       faqs: [
         { q: 'How is shot power controlled?', a: 'Click and pull back the cue stick with your mouse or finger, releasing when power reaches your target.' }
       ]
     },
     'board-games': {
-      title: 'Free Classic Board Games Online – KipoPlay',
-      description: 'Play Chess, Checkers, Ludo, and classic board games free on KipoPlay. Challenge computer AI or practice strategic moves.',
-      intro: 'Timeless tabletop strategy awaits in KipoPlay Board Games. Play Chess, Ludo, and Dominoes anytime without needing physical pieces.',
+      title: 'Free Classic Board Games Online – KopiPlay',
+      description: 'Play Chess, Checkers, Ludo, and classic board games free on KopiPlay. Challenge computer AI or practice strategic moves.',
+      intro: 'Timeless tabletop strategy awaits in KopiPlay Board Games. Play Chess, Ludo, and Dominoes anytime without needing physical pieces.',
       faqs: [
         { q: 'Can I play Chess against different AI difficulties?', a: 'Yes, our chess titles feature multiple skill levels to match beginners and masters alike.' }
       ]
     },
     'card-games': {
-      title: 'Free Solitaire & Card Games – KipoPlay',
-      description: 'Play Solitaire, Klondike, Spider, and classic card games free on KipoPlay. Enjoy smooth card deals, hints, and undo moves.',
-      intro: 'Shuffle the deck in KipoPlay Card Games. Relax with classic Klondike Solitaire, test patience in Spider, or clear card pyramids with undo features.',
+      title: 'Free Solitaire & Card Games – KopiPlay',
+      description: 'Play Solitaire, Klondike, Spider, and classic card games free on KopiPlay. Enjoy smooth card deals, hints, and undo moves.',
+      intro: 'Shuffle the deck in KopiPlay Card Games. Relax with classic Klondike Solitaire, test patience in Spider, or clear card pyramids with undo features.',
       faqs: [
         { q: 'Does Solitaire offer unlimited undos?', a: 'Yes, our Solitaire games support free undo moves and helpful card hints.' }
       ]
     },
     'clicker': {
-      title: 'Play Idle & Clicker Games Free – KipoPlay',
-      description: 'Tap, upgrade, and build empires with free online clicker games on KipoPlay. Enjoy exponential progression and satisfying idle unlocks.',
-      intro: 'Watch numbers multiply in KipoPlay Clicker Games. Tap for revenue, purchase automated upgrades, and build thriving idle businesses.',
+      title: 'Play Idle & Clicker Games Free – KopiPlay',
+      description: 'Tap, upgrade, and build empires with free online clicker games on KopiPlay. Enjoy exponential progression and satisfying idle unlocks.',
+      intro: 'Watch numbers multiply in KopiPlay Clicker Games. Tap for revenue, purchase automated upgrades, and build thriving idle businesses.',
       faqs: [
         { q: 'Does idle progress continue when I switch tabs?', a: 'Yes, clicker games store your progression and calculate offline returns upon return.' }
       ]
     },
     'io-games': {
-      title: 'Free .io Games & Arena Battles – KipoPlay',
-      description: 'Survive and dominate competitive battle arenas in free .io games on KipoPlay. Grow your champion, outmaneuver rivals, and lead the scoreboard.',
-      intro: 'Jump into fast-paced survival rings in KipoPlay .io Games. Eat power nodes, grow in size, and outsmart rivals in non-stop browser arenas.',
+      title: 'Free .io Games & Arena Battles – KopiPlay',
+      description: 'Survive and dominate competitive battle arenas in free .io games on KopiPlay. Grow your champion, outmaneuver rivals, and lead the scoreboard.',
+      intro: 'Jump into fast-paced survival rings in KopiPlay .io Games. Eat power nodes, grow in size, and outsmart rivals in non-stop browser arenas.',
       faqs: [
         { q: 'Are .io games fast to join?', a: 'Yes, simply enter and you are instantly spawned into the active arena with zero queues.' }
       ]
@@ -271,22 +271,22 @@ const bundleScript = `/**
 
   // --- Centralized Site Configuration ---
   const SITE_CONFIG = {
-    brandName: 'KipoPlay',
+    brandName: 'KopiPlay',
     tagline: 'Play More. Discover More.',
     category: 'Free Online Games',
-    description: 'KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.',
-    homepageTitle: 'KipoPlay – Play Free Online Games',
-    homepageDescription: 'Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
+    description: 'KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.',
+    homepageTitle: 'KopiPlay – Play Free Online Games',
+    homepageDescription: 'Discover KopiPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
     productionDomain: 'https://kipo.in'
   };
 
   const STORAGE_KEYS = {
-    favorites: 'kipoplay_favorites',
-    recentlyPlayed: 'kipoplay_recent',
-    sortPref: 'kipoplay_sort_pref',
-    sidebarCollapsed: 'kipoplay_sidebar_collapsed',
-    reports: 'kipoplay_game_reports',
-    messages: 'kipoplay_contact_messages',
+    favorites: 'kopiplay_favorites',
+    recentlyPlayed: 'kopiplay_recent',
+    sortPref: 'kopiplay_sort_pref',
+    sidebarCollapsed: 'kopiplay_sidebar_collapsed',
+    reports: 'kopiplay_game_reports',
+    messages: 'kopiplay_contact_messages',
     // Legacy keys for safe migration and backward compatibility
     legacyFavorites: 'nexus_favorites',
     legacyFavoritesAlt: 'nexusplay_favorites',
@@ -434,6 +434,45 @@ const bundleScript = `/**
     }, 3200);
   }
 
+  // --- Tactile 3D Keycap Formatter & Category Quick Bar ---
+  function formatControlsKeycaps(text) {
+    if (!text) return '';
+    return escapeHtml(text)
+      .replace(/\bWASD\b/g, '<kbd class="keycap">W</kbd><kbd class="keycap">A</kbd><kbd class="keycap">S</kbd><kbd class="keycap">D</kbd>')
+      .replace(/\bArrow Keys\b/gi, '<kbd class="keycap">↑</kbd><kbd class="keycap">↓</kbd><kbd class="keycap">←</kbd><kbd class="keycap">→</kbd>')
+      .replace(/\bSpacebar\b/gi, '<kbd class="keycap">Space</kbd>')
+      .replace(/\bSpace\b/g, '<kbd class="keycap">Space</kbd>')
+      .replace(/\bMouse\b/gi, '<kbd class="keycap">Mouse</kbd>')
+      .replace(/\bEnter\b/gi, '<kbd class="keycap">Enter</kbd>')
+      .replace(/\bShift\b/gi, '<kbd class="keycap">Shift</kbd>');
+  }
+
+  function renderCategoryQuickBar(activeSlug = null) {
+    const quickCategories = [
+      { slug: 'popular', name: 'Popular', icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3 4 5 4 9a6 6 0 1 1-12 0c0-2.5 1-4.5 3-6 0 2.5 1.5 4.5 3 4.5s2-2 2-7.5z"/></svg>', href: '#/popular' },
+      { slug: 'shooting', name: 'Shooting', icon: SVG_ICONS['shooting'] || '', href: '#/category/shooting' },
+      { slug: 'racing', name: 'Racing', icon: SVG_ICONS['racing'] || '', href: '#/category/racing' },
+      { slug: 'puzzle', name: 'Puzzle', icon: SVG_ICONS['puzzle'] || '', href: '#/category/puzzle' },
+      { slug: 'action', name: 'Action', icon: SVG_ICONS['action'] || '', href: '#/category/action' },
+      { slug: 'sports', name: 'Sports', icon: SVG_ICONS['sports'] || '', href: '#/category/sports' },
+      { slug: 'multiplayer', name: 'Multiplayer', icon: SVG_ICONS['multiplayer'] || '', href: '#/category/multiplayer' },
+      { slug: 'arcade', name: 'Arcade', icon: SVG_ICONS['arcade'] || '', href: '#/category/arcade' },
+      { slug: 'car', name: 'Cars', icon: SVG_ICONS['car'] || '', href: '#/category/car' },
+      { slug: 'adventure', name: 'Adventure', icon: SVG_ICONS['adventure'] || '', href: '#/category/adventure' }
+    ];
+
+    return \`
+      <div class="category-quick-bar" aria-label="Quick Category Filter">
+        \${quickCategories.map(c => \`
+          <a href="\${c.href}" class="category-quick-pill \${activeSlug === c.slug ? 'active' : ''}">
+            <span>\${c.icon}</span>
+            <span>\${c.name}</span>
+          </a>
+        \`).join('')}
+      </div>
+    \`;
+  }
+
   // --- Google AdSense Engine (Prepared, Inactive by Default) ---
   const ADS_CONFIG = {
     enabled: false,
@@ -532,7 +571,7 @@ const bundleScript = `/**
       if (ogT) ogT.setAttribute('content', ogType);
     }
     if (schema) {
-      const schemaScript = document.getElementById('kipo-schema') || document.getElementById('nexus-schema');
+      const schemaScript = document.getElementById('kopi-schema') || document.getElementById('nexus-schema');
       if (schemaScript) {
         schemaScript.textContent = JSON.stringify(schema, null, 2);
       }
@@ -544,150 +583,102 @@ const bundleScript = `/**
     const sidebar = document.getElementById('app-sidebar');
     if (!sidebar) return;
 
-    let catListHtml = '';
-    let visibleCategoryCount = 0;
-
-    categoryList.forEach(cat => {
-      const count = categoryCounts[cat.slug] || 0;
-      if (count === 0) return;
-      visibleCategoryCount++;
-
-      const iconSvg = getCategoryIcon(cat.slug);
-      catListHtml += \`
-        <a href="#/category/\${cat.slug}" class="category-nav-item" data-category="\${cat.slug}" data-tooltip="\${cat.name}" title="\${cat.name}">
-          <div class="category-nav-left">
-            <span class="category-nav-icon">\${iconSvg}</span>
-            <span class="category-nav-name">\${cat.name}</span>
-          </div>
-          <span class="category-nav-count">\${count}</span>
-        </a>
-      \`;
-    });
-
     sidebar.innerHTML = \`
       <div class="sidebar-header">
-        <a href="#/" class="sidebar-brand" aria-label="KipoPlay Home" data-tooltip="KipoPlay Home">
-          <img class="brand-full" src="assets/images/logo.svg" alt="KipoPlay">
-          <img class="brand-icon" src="assets/images/favicon.svg" alt="KipoPlay" title="Click to expand sidebar">
+        <a href="#/" class="sidebar-brand" aria-label="KopiPlay Home">
+          <svg class="gamepad-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="12" x2="10" y2="12"></line>
+            <line x1="8" y1="10" x2="8" y2="14"></line>
+            <line x1="15" y1="13" x2="15.01" y2="13"></line>
+            <line x1="18" y1="11" x2="18.01" y2="11"></line>
+            <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+          </svg>
+          <span class="brand-text">KopiPlay</span>
         </a>
-        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" aria-label="Toggle Sidebar" title="Collapse sidebar">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
+
       <div class="sidebar-content">
-        <div class="sidebar-nav-group">
-          <a href="#/" class="nav-pill" data-nav="home" data-tooltip="Home" title="Home">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-            <span class="nav-pill-label">Home</span>
-          </a>
-          <a href="#/popular" class="nav-pill" data-nav="popular" data-tooltip="Popular Games" title="Popular Games">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3 4 5 4 9a6 6 0 1 1-12 0c0-2.5 1-4.5 3-6 0 2.5 1.5 4.5 3 4.5s2-2 2-7.5z"/></svg></span>
-            <span class="nav-pill-label">Popular Games</span>
-          </a>
-          <a href="#/new" class="nav-pill" data-nav="new" data-tooltip="New Games" title="New Games">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg></span>
-            <span class="nav-pill-label">New Games</span>
-          </a>
-          <a href="#/recent" class="nav-pill" data-nav="recent" data-tooltip="Recently Played" title="Recently Played">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-            <span class="nav-pill-label">Recently Played</span>
-            <span class="sidebar-section-count" id="recentBadgeCount">\${recentlyPlayed.length}</span>
-          </a>
-          <a href="#/favorites" class="nav-pill" data-nav="favorites" data-tooltip="My Favorites" title="My Favorites">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
-            <span class="nav-pill-label">My Favorites</span>
-            <span class="sidebar-section-count" id="favBadgeCount">\${favorites.length}</span>
-          </a>
-          <a href="#/games" class="nav-pill" data-nav="games" data-tooltip="All Games" title="All Games">
-            <span class="nav-icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-            <span class="nav-pill-label">All Games</span>
-            <span class="sidebar-section-count">\${catalog.length}</span>
-          </a>
-        </div>
+        <a href="#/" class="drawer-nav-item active-pill" data-route="home">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home</span>
+          </div>
+        </a>
 
-        <div class="sidebar-section-header">
-          <span>Categories</span>
-          <span class="sidebar-section-count" id="sidebarCategoryCount">\${visibleCategoryCount}</span>
-        </div>
+        <a href="#/games" class="drawer-nav-item" data-route="games">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>All Games</span>
+          </div>
+          <span class="category-nav-count">\${catalog.length}</span>
+        </a>
 
-        <div class="category-nav-list" id="categoryNavList">
-          \${catListHtml}
-        </div>
+        <a href="#/games" class="drawer-nav-item" data-route="categories">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span>Categories</span>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="#/favorites" class="drawer-nav-item" data-route="favorites">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Favorites</span>
+          </div>
+          <span class="category-nav-count">\${favorites.length}</span>
+        </a>
+
+        <a href="#/recent" class="drawer-nav-item" data-route="recent">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Recently Played</span>
+          </div>
+        </a>
+
+        <hr class="drawer-divider">
+
+        <a href="#/about" class="drawer-nav-item">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>About Us</span>
+          </div>
+        </a>
+
+        <a href="#/contact" class="drawer-nav-item">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Contact</span>
+          </div>
+        </a>
+
+        <a href="#/privacy" class="drawer-nav-item">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Privacy Policy</span>
+          </div>
+        </a>
+
+        <a href="#/terms" class="drawer-nav-item">
+          <div class="drawer-nav-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Terms of Use</span>
+          </div>
+        </a>
       </div>
     \`;
 
-    const collapseBtn = document.getElementById('sidebarCollapseBtn');
-    if (collapseBtn) {
-      collapseBtn.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-          document.body.classList.remove('mobile-sidebar-open');
-        } else {
-          const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
-          try {
-            localStorage.setItem(STORAGE_KEYS.sidebarCollapsed, isCollapsed ? '1' : '0');
-          } catch (e) {}
-        }
-      });
-    }
-
-    const brandIcon = sidebar.querySelector('.brand-icon');
-    if (brandIcon) {
-      brandIcon.addEventListener('click', (e) => {
-        if (document.body.classList.contains('sidebar-collapsed')) {
-          e.preventDefault();
-          document.body.classList.remove('sidebar-collapsed');
-          try {
-            localStorage.setItem(STORAGE_KEYS.sidebarCollapsed, '0');
-          } catch (err) {}
-        }
+    const closeBtn = document.getElementById('sidebarCloseBtn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        document.body.classList.remove('mobile-sidebar-open');
       });
     }
   }
 
-  function initSidebarTooltips() {
-    let tooltipEl = document.getElementById('sidebar-floating-tooltip');
-    if (!tooltipEl) {
-      tooltipEl = document.createElement('div');
-      tooltipEl.id = 'sidebar-floating-tooltip';
-      tooltipEl.className = 'sidebar-floating-tooltip';
-      document.body.appendChild(tooltipEl);
-    }
-
-    const sidebar = document.getElementById('app-sidebar');
-    if (!sidebar) return;
-
-    sidebar.addEventListener('mouseover', (e) => {
-      if (!document.body.classList.contains('sidebar-collapsed') || window.innerWidth <= 1024) {
-        tooltipEl.classList.remove('visible');
-        return;
-      }
-      const item = e.target.closest('.nav-pill, .category-nav-item, .sidebar-brand');
-      if (!item) {
-        tooltipEl.classList.remove('visible');
-        return;
-      }
-      const text = item.getAttribute('data-tooltip') || (item.classList.contains('sidebar-brand') ? 'KipoPlay (Click to expand)' : '');
-      if (!text) {
-        tooltipEl.classList.remove('visible');
-        return;
-      }
-      const rect = item.getBoundingClientRect();
-      tooltipEl.textContent = text;
-      tooltipEl.style.top = \`\${rect.top + rect.height / 2}px\`;
-      tooltipEl.style.left = \`\${rect.right + 10}px\`;
-      tooltipEl.classList.add('visible');
-    });
-
-    sidebar.addEventListener('mouseleave', () => {
-      tooltipEl.classList.remove('visible');
-    });
-
-    window.addEventListener('scroll', () => {
-      tooltipEl.classList.remove('visible');
-    }, { passive: true });
-  }
-
-  // --- Render Header ---
   function renderHeader() {
     const header = document.getElementById('app-header');
     if (!header) return;
@@ -695,33 +686,69 @@ const bundleScript = `/**
     header.innerHTML = \`
       <div class="header-inner">
         <div class="header-left">
-          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          </button>
-          <div class="search-wrapper">
-            <div class="search-input-box">
-              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" class="search-input" id="globalSearchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games catalog">
-              <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-            </div>
-            <div class="search-suggestions" id="searchSuggestions" role="listbox"></div>
-          </div>
-        </div>
-        <div class="header-right">
-          <a href="#/favorites" class="btn-header-fav" id="headerFavLink" title="View Favorites" aria-label="Favorites">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span class="header-fav-text">Favorites</span>
-            <span class="header-fav-count" id="headerFavCount">\${favorites.length}</span>
+          <a href="#/" class="header-logo" aria-label="KopiPlay Home">
+            <svg class="header-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="12" x2="10" y2="12"></line>
+              <line x1="8" y1="10" x2="8" y2="14"></line>
+              <line x1="15" y1="13" x2="15.01" y2="13"></line>
+              <line x1="18" y1="11" x2="18.01" y2="11"></line>
+              <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+            </svg>
+            <span class="header-logo-text">KopiPlay</span>
           </a>
+          <nav class="header-nav" aria-label="Primary Navigation">
+            <a href="#/" class="nav-pill active" id="navHomePill">Home</a>
+            <a href="#/games" class="nav-link">All Games</a>
+            <div class="header-dropdown">
+              <a href="#/games" class="nav-link">
+                Categories
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </a>
+              <div class="dropdown-menu">
+                <a href="#/category/action" class="dropdown-item">Action</a>
+                <a href="#/category/racing" class="dropdown-item">Racing</a>
+                <a href="#/category/puzzle" class="dropdown-item">Puzzle</a>
+                <a href="#/category/shooting" class="dropdown-item">Shooting</a>
+                <a href="#/category/sports" class="dropdown-item">Sports</a>
+                <a href="#/category/arcade" class="dropdown-item">Arcade</a>
+                <a href="#/category/adventure" class="dropdown-item">Adventure</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="header-search">
+          <div class="search-input-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" id="globalSearchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games">
+            <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+
+        <div class="header-right">
+          <button class="mobile-search-toggle" id="mobileSearchToggle" aria-label="Open Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="#/favorites" class="header-action-btn" title="Favorites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="action-text">Favorites</span>
+            <span class="header-badge" id="headerFavBadge" style="\${favorites.length > 0 ? '' : 'display:none;'}">\${favorites.length}</span>
+          </a>
+          <a href="#/recent" class="header-action-btn" title="Recent Games">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="action-text">Recent</span>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
         </div>
       </div>
     \`;
 
     initSearchEvents();
-    initMobileNavEvents();
   }
 
-  // --- PHASE 1: Professional 4-Column Gaming Portal Footer ---
   function renderFooter() {
     const footer = document.getElementById('app-footer');
     if (!footer) return;
@@ -731,10 +758,10 @@ const bundleScript = `/**
         <div class="footer-top">
           <!-- Column 1: Brand -->
           <div class="footer-brand">
-            <a href="#/" class="footer-logo" aria-label="KipoPlay Home">
-              <img src="assets/images/logo.svg" alt="KipoPlay" height="38">
+            <a href="#/" class="footer-logo" aria-label="KopiPlay Home">
+              <img src="assets/images/logo.svg" alt="KopiPlay" height="38">
             </a>
-            <p>KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Enjoy seamless instant play on desktop and mobile.</p>
+            <p>KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Enjoy seamless instant play on desktop and mobile.</p>
             <div class="footer-experience-badge">
               <span class="pulse-dot"></span>
               <span>Play More. Discover More. • Free Online Games</span>
@@ -782,7 +809,7 @@ const bundleScript = `/**
         </div>
 
         <div class="footer-bottom">
-          <div>&copy; 2026 KipoPlay. All rights reserved. Play More. Discover More.</div>
+          <div>&copy; 2026 KopiPlay. All rights reserved. Play More. Discover More.</div>
           <div class="footer-bottom-links">
             <a href="#/about">About</a>
             <a href="#/privacy">Privacy Policy</a>
@@ -862,6 +889,15 @@ const bundleScript = `/**
       }
     });
 
+    // Global keyboard shortcut '/' to focus search
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== input && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        input.focus();
+        input.select();
+      }
+    });
+
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.search-wrapper')) {
         suggestions.classList.remove('active');
@@ -923,9 +959,6 @@ const bundleScript = `/**
   // --- Game Card Renderer (CLS Optimized) ---
   function renderCard(game) {
     const isFav = favorites.includes(game.slug);
-    const catName = game.category || 'Arcade';
-    const rating = game.rating ? game.rating.toFixed(1) : '4.5';
-
     let badgeHtml = '';
     if (game.rating && game.rating >= 4.8) {
       badgeHtml = '<span class="card-badge badge-top">TOP</span>';
@@ -936,41 +969,91 @@ const bundleScript = `/**
     }
 
     return \`
-      <div class="game-card" data-slug="\${game.slug}">
+      <div class="game-card card-normal" data-slug="\${game.slug}">
         <div class="card-media">
           <img class="card-thumb"
                src="\${game.thumbnail}"
-               alt="\${escapeHtml(game.title)} free HTML5 game"
+               alt="\${escapeHtml(game.title)}"
                loading="lazy"
                decoding="async"
-               width="280"
-               height="158"
                onerror="this.onerror=null;this.src='assets/images/games/default-game.svg'">
           \${badgeHtml}
-          <button class="card-fav-btn \${isFav ? 'is-fav' : ''}" onclick="window.NEXUS.toggleFav('\${game.slug}', event)" title="\${isFav ? 'Remove from favorites' : 'Add to favorites'}" aria-label="Toggle favorite">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <button class="card-fav-btn \${isFav ? 'is-fav' : ''}" onclick="window.NEXUS.toggleFav('\${game.slug}', event)" title="Favorite" aria-label="Favorite">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
-          <a href="#/game/\${game.slug}" class="card-play-overlay" aria-label="Play \${escapeHtml(game.title)}">
-            <div class="card-play-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 19 12 8 19 8 5"/></svg>
-            </div>
-          </a>
-        </div>
-        <div class="card-details">
-          <a href="#/game/\${game.slug}" class="card-title" title="\${escapeHtml(game.title)}">\${escapeHtml(game.title)}</a>
-          <div class="card-meta-row">
-            <span class="card-category-pill">\${escapeHtml(catName)}</span>
-            <span class="card-rating-pill" style="display:inline-flex; align-items:center; gap:3px; color:#F59E0B; font-weight:700;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              \${rating}
-            </span>
+          <div class="card-overlay-info">
+            <span class="card-overlay-title">\${escapeHtml(game.title)}</span>
           </div>
         </div>
       </div>
     \`;
   }
 
-  // --- Scroll Row Shelf ---
+  function renderMixedGridCard(game, sizeClass = 'card-normal') {
+    const isFav = favorites.includes(game.slug);
+    let badgeHtml = '';
+    if (game.rating && game.rating >= 4.8) {
+      badgeHtml = '<span class="card-badge badge-top">TOP</span>';
+    } else if (game.isNew || (game.dateAdded && game.dateAdded >= '2024-03-01')) {
+      badgeHtml = '<span class="card-badge badge-new">NEW</span>';
+    } else if (game.plays && game.plays > 15000) {
+      badgeHtml = '<span class="card-badge badge-hot">HOT</span>';
+    }
+
+    return \`
+      <div class="game-card \${sizeClass}" data-slug="\${game.slug}">
+        <div class="card-media">
+          <img class="card-thumb"
+               src="\${game.thumbnail}"
+               alt="\${escapeHtml(game.title)}"
+               loading="lazy"
+               decoding="async"
+               onerror="this.onerror=null;this.src='assets/images/games/default-game.svg'">
+          \${badgeHtml}
+          <button class="card-fav-btn \${isFav ? 'is-fav' : ''}" onclick="window.NEXUS.toggleFav('\${game.slug}', event)" title="Favorite" aria-label="Favorite">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <div class="card-overlay-info">
+            <span class="card-overlay-title">\${escapeHtml(game.title)}</span>
+          </div>
+        </div>
+      </div>
+    \`;
+  }
+
+  function renderCategoryShowcase() {
+    const categories = [
+      { name: 'Action', slug: 'action', iconClass: 'cat-icon-action', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>' },
+      { name: 'Racing', slug: 'racing', iconClass: 'cat-icon-racing', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>' },
+      { name: 'Puzzle', slug: 'puzzle', iconClass: 'cat-icon-puzzle', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v4a2 2 0 0 0 4 0V3"/><path d="M17 3v4a2 2 0 0 0 4 0V3"/></svg>' },
+      { name: 'Arcade', slug: 'arcade', iconClass: 'cat-icon-arcade', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 18 3 21 21 3 21 6 3"/><circle cx="12" cy="12" r="3"/></svg>' },
+      { name: 'Sports', slug: 'sports', iconClass: 'cat-icon-sports', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>' },
+      { name: 'Shooting', slug: 'shooting', iconClass: 'cat-icon-shooting', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>' },
+      { name: 'Adventure', slug: 'adventure', iconClass: 'cat-icon-adventure', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 19 21 12 17 5 21 12 2"/></svg>' },
+      { name: '.io Games', slug: 'multiplayer', iconClass: 'cat-icon-io', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
+      { name: 'Girls', slug: 'casual', iconClass: 'cat-icon-girls', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14v2H5z"/></svg>' },
+      { name: 'Cooking', slug: 'casual', iconClass: 'cat-icon-cooking', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg>' },
+      { name: 'Multiplayer', slug: 'multiplayer', iconClass: 'cat-icon-multiplayer', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>' },
+      { name: 'More', slug: 'all', iconClass: 'cat-icon-more', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>' }
+    ];
+
+    return \`
+      <section class="game-categories-section">
+        <div class="section-header-clean">
+          <h2 class="section-title-clean">Game Categories</h2>
+        </div>
+        <div class="category-showcase-grid">
+          \${categories.map(cat => \`
+            <a href="\${cat.slug === 'all' ? '#/games' : '#/category/' + cat.slug}" class="category-showcase-card" data-cat="\${cat.slug}">
+              <div class="cat-card-icon \${cat.iconClass}">\${cat.icon}</div>
+              <span class="cat-card-label">\${cat.name}</span>
+            </a>
+          \`).join('')}
+        </div>
+      </section>
+    \`;
+  }
+
   function renderShelf(title, iconSvg, seeAllHref, games, rowId) {
     if (!games || games.length === 0) return '';
     const cardsHtml = games.map(renderCard).join('');
@@ -1007,9 +1090,9 @@ const bundleScript = `/**
   // --- PHASE 3: Homepage SEO Rich Content Section ---
   function renderHomepageSeoSection() {
     return \`
-      <section class="portal-seo-section" aria-label="About KipoPlay Free Online Games">
-        <h2>Play Free Online Games on KipoPlay</h2>
-        <p>KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Play directly in your browser with instant execution and zero downloads.</p>
+      <section class="portal-seo-section" aria-label="About KopiPlay Free Online Games">
+        <h2>Play Free Online Games on KopiPlay</h2>
+        <p>KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Play directly in your browser with instant execution and zero downloads.</p>
 
         <div class="seo-highlight-grid">
           <div class="seo-highlight-item">
@@ -1033,7 +1116,7 @@ const bundleScript = `/**
         <h3>Frequently Asked Questions</h3>
         <div class="faq-accordion">
           <details class="faq-item" open>
-            <summary class="faq-question">Are all games on KipoPlay really free?</summary>
+            <summary class="faq-question">Are all games on KopiPlay really free?</summary>
             <div class="faq-answer">Yes, 100%. Every single game in our catalog is completely free to play directly in your web browser with no hidden paywalls or subscription requirements.</div>
           </details>
           <details class="faq-item">
@@ -1041,8 +1124,8 @@ const bundleScript = `/**
             <div class="faq-answer">No downloads or plugins are required. All games are built on modern web standards (HTML5 Canvas, WebGL, Web Audio) that run natively in Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge.</div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Can I play KipoPlay games on my phone or tablet?</summary>
-            <div class="faq-answer">Yes! KipoPlay is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
+            <summary class="faq-question">Can I play KopiPlay games on my phone or tablet?</summary>
+            <div class="faq-answer">Yes! KopiPlay is fully responsive. Mobile touchscreen controls, virtual thumbsticks, and adaptive aspect ratios are provided for smooth handheld gameplay.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">How are my favorites and game history saved?</summary>
@@ -1059,122 +1142,60 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'KipoPlay – Play Free Online Games',
-      description: 'Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
+      title: 'KopiPlay – Play Free Online Games',
+      description: 'Discover KopiPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile.',
       canonical: 'https://kipo.in/',
       ogType: 'website',
       ogImage: 'assets/images/logo.svg',
       schema: {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "KipoPlay",
-        "alternateName": "KipoPlay Online Games",
+        "name": "KopiPlay",
+        "alternateName": "KopiPlay Online Games",
         "url": "https://kipo.in/",
-        "description": "KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports."
+        "description": "KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports."
       }
     });
 
-    const topPicks = [...catalog].sort((a,b) => (b.rating || 4.5) - (a.rating || 4.5)).slice(0, 16);
-    const featured = catalog.filter(g => g.featured || (g.tags && g.tags.includes('featured'))).slice(0, 16);
-    const featuredList = featured.length >= 8 ? featured : catalog.slice(0, 16);
-    const popular = catalog.filter(g => (g.plays && g.plays > 10000) || (g.rating && g.rating >= 4.7)).slice(0, 16);
-    const shooting = catalog.filter(g => g._categories && g._categories.includes('shooting')).slice(0, 16);
-    const racing = catalog.filter(g => g._categories && (g._categories.includes('racing') || g._categories.includes('car'))).slice(0, 16);
-    const actionAdv = catalog.filter(g => g._categories && (g._categories.includes('action') || g._categories.includes('adventure'))).slice(0, 16);
-    const puzzle = catalog.filter(g => g._categories && g._categories.includes('puzzle')).slice(0, 16);
-    const sports = catalog.filter(g => g._categories && (g._categories.includes('sports') || g._categories.includes('football'))).slice(0, 16);
-    const multiplayer = catalog.filter(g => g._categories && (g._categories.includes('multiplayer') || (g.features && g.features.includes('multiplayer')))).slice(0, 16);
-    const newGames = catalog.filter(g => g.isNew || (g.dateAdded && g.dateAdded >= '2024-03-01')).slice(0, 16);
-    const exploreGames = catalog.slice(0, 48);
+    // Curate Mixed Grid Spans (Matching Reference Image Layout)
+    const featured2x2 = ['neon-racer', 'subway-winter-vacation', 'bubble-fall', 'cyber-snake', 'magic-block-puzzle', 'merge-haven', 'neon-breakout', 'tank-wars-2'];
+    const wide2x1 = ['space-defender', 'slam-dunk', 'helicopter-battle', 'angry-heroes', 'dream-restaurant-3d'];
+    const tall1x2 = ['hand-feight', 'wood-screw-puzzle', 'home-island', 'pulse-2048'];
+
+    // Homepage Dense Mixed-Size Grid: First 52 games arranged densely
+    const mixedGames = catalog.slice(0, 52);
+    const mixedGridHtml = mixedGames.map(game => {
+      let size = 'card-normal';
+      if (featured2x2.includes(game.slug)) size = 'card-large';
+      else if (wide2x1.includes(game.slug)) size = 'card-wide';
+      else if (tall1x2.includes(game.slug)) size = 'card-tall';
+      return renderMixedGridCard(game, size);
+    }).join('');
+
+    // Remaining Explore Games: Complete catalog coverage
+    const exploreGames = catalog.slice(52);
 
     const html = \`
-      <!-- Hero Banner -->
-      <section class="portal-hero">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="live-dot"></span> \${catalog.length} Free Games Live
-          </div>
-          <h1 class="hero-title">
-            Play The Best Free Games <span>Online</span>
-          </h1>
-          <p class="hero-subtitle">
-            Play More. Discover More. Enjoy browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile with instant play.
-          </p>
-          <div class="hero-buttons">
-            <a href="#/games" class="btn btn-primary">Explore All Games</a>
-            <a href="#/category/shooting" class="btn btn-secondary">Shooting Action</a>
-          </div>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat-box">
-            <div class="stat-number">\${catalog.length}</div>
-            <div class="stat-label">Games</div>
-          </div>
-          <div class="hero-stat-box">
-            <div class="stat-number">22</div>
-            <div class="stat-label">Categories</div>
-          </div>
-          <div class="hero-stat-box">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Free</div>
-          </div>
-        </div>
+      <!-- Dense Image-First Mixed-Size Game Grid (Matches Left Panel of Reference) -->
+      <section class="mixed-game-grid" aria-label="Featured Free Online Games">
+        \${mixedGridHtml}
       </section>
 
-      \${nexusAds.renderSlot('homeLeaderboard')}
+      <!-- Game Categories Showcase Section (Matches Middle-Right Panel of Reference) -->
+      \${renderCategoryShowcase()}
 
-      <!-- 1. Top Picks for You -->
-      \${renderShelf('Top Picks for You', '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>', '#/popular', topPicks, 'row-top-picks')}
-
-      <!-- 2. Featured Games -->
-      \${renderShelf('Featured Games', '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>', '#/games', featuredList, 'row-featured')}
-
-      <!-- 3. Popular Games -->
-      \${renderShelf('Popular Games', '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3 4 5 4 9a6 6 0 1 1-12 0c0-2.5 1-4.5 3-6 0 2.5 1.5 4.5 3 4.5s2-2 2-7.5z"/></svg>', '#/popular', popular, 'row-popular')}
-
-      <!-- 4. Shooting Games -->
-      \${renderShelf('Shooting Games', getCategoryIcon('shooting'), '#/category/shooting', shooting, 'row-shooting')}
-
-      <!-- 5. Racing Games -->
-      \${renderShelf('Racing & Car Games', getCategoryIcon('racing'), '#/category/racing', racing, 'row-racing')}
-
-      <!-- 6. Action & Adventure -->
-      \${renderShelf('Action & Adventure', getCategoryIcon('action'), '#/category/action', actionAdv, 'row-action')}
-
-      <!-- 7. Puzzle & Brain Games -->
-      \${renderShelf('Puzzle & Brain Games', getCategoryIcon('puzzle'), '#/category/puzzle', puzzle, 'row-puzzle')}
-
-      <!-- 8. Sports Games -->
-      \${renderShelf('Sports & Football', getCategoryIcon('sports'), '#/category/sports', sports, 'row-sports')}
-
-      <!-- 9. Multiplayer Games -->
-      \${multiplayer.length > 0 ? renderShelf('Multiplayer Games', getCategoryIcon('multiplayer'), '#/category/multiplayer', multiplayer, 'row-multiplayer') : ''}
-
-      <!-- 10. New Games -->
-      \${renderShelf('New Games', '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>', '#/new', newGames, 'row-new')}
-
-      <!-- 11. Explore All Games -->
-      <section class="explore-all-section" style="margin-top: 10px; margin-bottom: 30px;">
-        <div class="section-shelf-header">
-          <div class="section-shelf-title-wrap">
-            <span class="section-badge-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-            <h2 class="section-shelf-title">Explore All Games</h2>
-            <span class="sidebar-section-count">\${catalog.length}</span>
-          </div>
-          <a href="#/games" class="see-all-link">View Full Library (\${catalog.length})</a>
+      <!-- Complete Explore Games Library -->
+      <section class="explore-all-section" style="margin-top: 20px; margin-bottom: 40px;">
+        <div class="section-header-clean">
+          <h2 class="section-title-clean">Explore More Games (\${catalog.length})</h2>
+          <a href="#/games" class="related-view-all">View All (\${catalog.length})</a>
         </div>
         <div class="games-grid">
           \${exploreGames.map(renderCard).join('')}
         </div>
-        <div style="margin-top: 24px; text-align: center;">
-          <a href="#/games" class="btn btn-primary" style="padding: 12px 30px; font-weight: 700; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 8px;">
-            <span>Browse Complete Library (\${catalog.length} Games)</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
       </section>
 
-      <!-- PHASE 3: Rich Homepage SEO Content -->
+      <!-- Rich Homepage SEO Content Section -->
       \${renderHomepageSeoSection()}
     \`;
 
@@ -1182,14 +1203,13 @@ const bundleScript = `/**
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // --- View: All Games / Category / Filtered View (With Phase 4 Category SEO) ---
   function renderAllGamesView(title = 'All Games', games = catalog, activeCatSlug = null) {
     const main = document.getElementById('app-main');
     if (!main) return;
 
     const catSeo = (activeCatSlug && CATEGORY_SEO_DATA[activeCatSlug]) || null;
-    let pageTitle = catSeo ? catSeo.title : \`\${title} – KipoPlay Online Gaming\`;
-    let metaDescription = catSeo ? catSeo.description : \`Browse \${games.length} free HTML5 browser games in our collection on KipoPlay.\`;
+    let pageTitle = catSeo ? catSeo.title : \`\${title} – KopiPlay Online Gaming\`;
+    let metaDescription = catSeo ? catSeo.description : \`Browse \${games.length} free HTML5 browser games in our collection on KopiPlay.\`;
     let introText = catSeo ? catSeo.intro : \`Showing \${games.length} verified instant-play browser games.\`;
 
     const currentSort = (localStorage.getItem(STORAGE_KEYS.sortPref) || localStorage.getItem(STORAGE_KEYS.legacySort) || 'featured');
@@ -1220,18 +1240,43 @@ const bundleScript = `/**
       }
     });
 
-    const cardsHtml = sorted.length > 0
-      ? sorted.map(renderCard).join('')
-      : \`
-        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
-          <div style="width: 54px; height: 54px; margin: 0 auto 16px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    let emptyStateHtml = '';
+    if (title === 'My Favorites') {
+      emptyStateHtml = \`
+        <div style="grid-column: 1 / -1; text-align: center; padding: 72px 24px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); max-width: 600px; margin: 30px auto; box-shadow: 0 12px 36px rgba(0,0,0,0.4);">
+          <div style="width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: rgba(255, 71, 87, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-coral); box-shadow: 0 0 24px var(--accent-coral-glow);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <h3 style="color:#FFF; font-family:var(--font-heading); margin-bottom:8px;">No Games Found</h3>
-          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">We couldn't find games matching your criteria. Try another category or search term!</p>
-          <a href="#/games" class="btn btn-primary">Browse All Games</a>
+          <h3 style="color:#FFF; font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:10px;">No Favorite Games Yet</h3>
+          <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; margin-bottom:24px;">Click the heart icon on any game card to add it to your personal favorites for instant 1-click access!</p>
+          <a href="#/games" class="btn btn-primary" style="display:inline-flex;">Browse Complete Catalog</a>
         </div>
       \`;
+    } else if (title === 'Recently Played') {
+      emptyStateHtml = \`
+        <div style="grid-column: 1 / -1; text-align: center; padding: 72px 24px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); max-width: 600px; margin: 30px auto; box-shadow: 0 12px 36px rgba(0,0,0,0.4);">
+          <div style="width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: rgba(0, 210, 255, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-primary); box-shadow: 0 0 24px rgba(0, 210, 255, 0.25);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="color:#FFF; font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:10px;">No Recently Played Games</h3>
+          <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; margin-bottom:24px;">Games you play will automatically appear here so you can easily jump straight back into the action!</p>
+          <a href="#/games" class="btn btn-primary" style="display:inline-flex;">Discover Games</a>
+        </div>
+      \`;
+    } else {
+      emptyStateHtml = \`
+        <div style="grid-column: 1 / -1; text-align: center; padding: 72px 24px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); max-width: 600px; margin: 30px auto; box-shadow: 0 12px 36px rgba(0,0,0,0.4);">
+          <div style="width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3 style="color:#FFF; font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:10px;">No Games Found</h3>
+          <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; margin-bottom:24px;">We couldn't find any games matching this view or search term. Try another category or explore all games!</p>
+          <a href="#/games" class="btn btn-primary" style="display:inline-flex;">Browse All Games</a>
+        </div>
+      \`;
+    }
+
+    const cardsHtml = sorted.length > 0 ? sorted.map(renderCard).join('') : emptyStateHtml;
 
     const iconSvg = activeCatSlug ? getCategoryIcon(activeCatSlug) : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>';
 
@@ -1277,17 +1322,18 @@ const bundleScript = `/**
         </div>
 
         <!-- Category Shortcuts Bar -->
-        <div style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; scrollbar-width: none;">
-          <a href="#/games" style="white-space: nowrap; padding: 6px 12px; border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 600; text-decoration: none; border: 1px solid \${!activeCatSlug ? 'var(--accent-primary)' : 'var(--border-subtle)'}; background: \${!activeCatSlug ? 'rgba(37,99,235,0.2)' : 'var(--bg-card)'}; color: \${!activeCatSlug ? '#38BDF8' : 'var(--text-secondary)'};">
-            All (\${catalog.length})
+        <div class="category-quick-bar" style="margin-bottom: 20px;">
+          <a href="#/games" class="category-quick-pill \${!activeCatSlug ? 'active' : ''}">
+            <span>All (\${catalog.length})</span>
           </a>
           \${categoryList.map(c => {
             const count = categoryCounts[c.slug] || 0;
             if (count === 0) return '';
             const isActive = activeCatSlug === c.slug;
             return \`
-              <a href="#/category/\${c.slug}" style="white-space: nowrap; padding: 6px 12px; border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 600; text-decoration: none; border: 1px solid \${isActive ? 'var(--accent-primary)' : 'var(--border-subtle)'}; background: \${isActive ? 'rgba(37,99,235,0.2)' : 'var(--bg-card)'}; color: \${isActive ? '#38BDF8' : 'var(--text-secondary)'};">
-                \${c.name} (\${count})
+              <a href="#/category/\${c.slug}" class="category-quick-pill \${isActive ? 'active' : ''}">
+                <span>\${getCategoryIcon(c.slug)}</span>
+                <span>\${c.name} (\${count})</span>
               </a>
             \`;
           }).join('')}
@@ -1324,9 +1370,12 @@ const bundleScript = `/**
     );
     if (!game) {
       main.innerHTML = \`
-        <div class="info-page-container" style="text-align: center; padding: 80px 20px;">
-          <h2 style="color: #FFF; font-family: var(--font-heading); margin-bottom: 12px;">Game Not Found</h2>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">We couldn't locate the game "\${escapeHtml(slug)}". It may have been renamed or moved.</p>
+        <div class="empty-state-card">
+          <div class="empty-state-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h2 class="empty-state-title">Game Not Found</h2>
+          <p class="empty-state-text">We couldn't locate the game "\${escapeHtml(slug)}". It may have been renamed or moved.</p>
           <a href="#/games" class="btn btn-primary">Browse All Games</a>
         </div>
       \`;
@@ -1343,277 +1392,124 @@ const bundleScript = `/**
       rawEmbedUrl = rawEmbedUrl + sep + 'gd_sdk_referrer_url=' + encodeURIComponent(window.location.href);
     }
     const embedUrl = sanitizeUrl(rawEmbedUrl);
-    const catSlug = (game._categories && game._categories[0]) || 'arcade';
-    const related = catalog.filter(g => g.slug !== game.slug && (g._categories.some(c => game._categories.includes(c)) || g.category === game.category)).slice(0, 10);
+    const catSlug = (game.category || 'arcade').toLowerCase();
 
-    const metaStr = ((game.category || '') + ' ' + (game.tags || []).join(' ') + ' ' + (game.slug || '')).toLowerCase();
-    let initialRatioClass = 'ratio-16-9';
-    let initialRatioLabel = '16:9';
-    if (/puzzle|2048|snake|block|mahjong|board|card|connect|logic|sudoku|bubble|chess|idle|tapper/i.test(metaStr)) {
-      initialRatioClass = 'ratio-4-3';
-      initialRatioLabel = '4:3';
-    }
+    // Related Games: 10 games from same category or random
+    const related = catalog.filter(g => g.slug !== game.slug && (g.category === game.category || (g._categories && g._categories.includes(catSlug)))).slice(0, 10);
+    const relatedGames = related.length >= 6 ? related : catalog.filter(g => g.slug !== game.slug).slice(0, 10);
 
-    // Dynamic SEO Metadata for Game Page
-    const gameSeoTitle = \`\${game.title} – Play Free Online on KipoPlay\`;
-    const gameSeoDesc = game.description || \`Play \${game.title} free in your browser on KipoPlay. Instant HTML5 gameplay with no downloads or installation.\`;
+    // Controls Parser
+    const controlsHtml = (function() {
+      const desc = (game.instructions || game.description || 'Mouse, Arrow Keys, WASD, Space').toUpperCase();
+      const keys = [];
+      if (desc.includes('WASD')) keys.push('WASD');
+      if (desc.includes('ARROW') || desc.includes('KEYS')) keys.push('Arrow Keys');
+      if (desc.includes('SPACE')) keys.push('Space');
+      if (desc.includes('MOUSE') || desc.includes('CLICK')) keys.push('Mouse');
+      if (desc.includes('TOUCH')) keys.push('Touch');
+      if (keys.length === 0) keys.push('Mouse', 'Arrow Keys');
+      return keys.map(k => \`<span class="keycap">\${k}</span>\`).join('');
+    })();
 
     updateSeo({
-      title: gameSeoTitle,
-      description: gameSeoDesc,
-      canonical: \`https://kipo.in/#/game/\${game.slug}\`,
+      title: \`Play \${game.title} Online Free – KopiPlay\`,
+      description: game.description || \`Play \${game.title} instantly in your browser on KopiPlay. Free online game with zero downloads.\`,
+      canonical: 'https://kipo.in/#/game/' + game.slug,
       ogType: 'game',
       ogImage: game.thumbnail,
       schema: {
         "@context": "https://schema.org",
         "@type": "VideoGame",
         "name": game.title,
-        "description": gameSeoDesc,
-        "image": game.thumbnail,
-        "genre": game.category || "Arcade",
+        "description": game.description,
+        "genre": [game.category || 'Arcade'],
         "playMode": "SinglePlayer",
         "applicationCategory": "Game",
-        "operatingSystem": "Any modern web browser (Desktop & Mobile)",
-        "inLanguage": "en",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": (game.rating || 4.5).toFixed(1),
-          "ratingCount": game.plays ? Math.floor(game.plays / 10) : 150,
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+        "operatingSystem": "Any"
       }
     });
 
-    const controlsGuide = game.controls || game.instructions || 'Use Mouse / Keyboard (Arrow keys, WASD, Spacebar) on desktop, or intuitive touch taps/swipes on mobile.';
-    const supportedDevices = game.controlsType || 'Desktop, Tablet & Mobile';
-
     const html = \`
-      <!-- Breadcrumbs & Back Navigation with Microdata Schema -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <button onclick="window.NEXUS.goBack()" class="player-back-btn" aria-label="Back to previous page">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-          <span>Back</span>
-        </button>
-        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="#/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </span>
-        <span class="breadcrumb-separator">/</span>
-        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="#/category/\${catSlug}" class="breadcrumb-link" itemprop="item"><span itemprop="name">\${escapeHtml(game.category || 'Arcade')}</span></a>
-          <meta itemprop="position" content="2" />
-        </span>
-        <span class="breadcrumb-separator">/</span>
-        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <span class="breadcrumb-current" itemprop="name">\${escapeHtml(game.title)}</span>
-          <meta itemprop="position" content="3" />
-        </span>
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="#/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <a href="#/category/\${catSlug}" class="breadcrumb-link">\${escapeHtml(game.category || 'Action')}</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="breadcrumb-current">\${escapeHtml(game.title)}</span>
       </nav>
 
-      <div class="game-detail-layout" id="gameDetailLayout">
-        <!-- Main Column -->
-        <div class="game-main-content">
-          <div class="player-container \${initialRatioClass}" id="playerContainer">
-            <iframe
-              id="gameFrame"
-              class="game-iframe"
-              src="\${embedUrl}"
-              title="\${escapeHtml(game.title)} - Free HTML5 Game"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowfullscreen
-              referrerpolicy="origin-when-cross-origin"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads allow-pointer-lock allow-modals allow-orientation-lock allow-presentation"
-              loading="eager"
-            ></iframe>
-            <div class="player-loader" id="playerLoader">
-              <div class="spinner"></div>
-              <div class="loader-text">Connecting to \${escapeHtml(game.title)}...</div>
-            </div>
-            <!-- Player Timeout & Retry Overlay -->
-            <div class="player-retry-overlay" id="playerRetryOverlay" style="display:none;">
-              <div class="player-retry-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              </div>
-              <div class="player-retry-title">Game Loading Stalled</div>
-              <div class="player-retry-desc">The game is taking longer than usual to connect. You can retry loading or launch it directly in a clean window.</div>
-              <div class="player-retry-actions">
-                <button class="btn btn-primary" onclick="window.NEXUS.reloadGame()">Retry Loading</button>
-                <a href="\${embedUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Open Directly</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls Bar -->
-          <div class="player-controls-bar">
-            <div class="player-controls-left">
-              <img class="player-bar-thumb" src="\${game.thumbnail}" alt="\${escapeHtml(game.title)}" width="38" height="38" onerror="this.onerror=null;this.src='assets/images/favicon.svg'">
-              <div class="player-bar-info">
-                <h1 class="player-game-title">\${escapeHtml(game.title)}</h1>
-                <span class="player-bar-cat">\${escapeHtml(game.category || 'Arcade')}</span>
-              </div>
-              <button class="ctrl-btn \${isFav ? 'is-fav' : ''}" id="playerFavBtn" onclick="window.NEXUS.togglePlayerFav('\${game.slug}')" title="Favorite" aria-label="Favorite">
-                <span class="ctrl-btn-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </span>
-                <span class="ctrl-btn-text" id="playerFavLabel">\${isFav ? 'Favorited' : 'Favorite'}</span>
-              </button>
-            </div>
-
-            <div class="player-controls-right">
-              <button class="ctrl-btn" onclick="window.NEXUS.reloadGame()" title="Reload game" aria-label="Reload">
-                <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
-                <span class="ctrl-btn-text">Reload</span>
-              </button>
-
-              <button class="ctrl-btn" onclick="window.NEXUS.cycleAspectRatio()" title="Aspect Ratio" aria-label="Aspect Ratio">
-                <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></span>
-                <span class="ctrl-btn-text" id="ratioLabel">\${initialRatioLabel}</span>
-              </button>
-
-              <button class="ctrl-btn" onclick="window.NEXUS.toggleTheater()" title="Theater mode" aria-label="Theater Mode">
-                <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-                <span class="ctrl-btn-text">Theater</span>
-              </button>
-
-              <button class="ctrl-btn btn-fullscreen" id="fullscreenBtn" onclick="window.NEXUS.toggleFullscreen()" title="Fullscreen" aria-label="Fullscreen">
-                <span class="ctrl-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></span>
-                <span class="ctrl-btn-text">Fullscreen</span>
-              </button>
-
-              <button class="ctrl-btn" onclick="window.NEXUS.openReport('\${game.slug}')" title="Report issue with this game" aria-label="Report">
-                <span class="ctrl-btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>
-                <span class="ctrl-btn-text">Report</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Metadata & SEO Description Card -->
-          <div class="game-info-card">
-            <h2>About \${escapeHtml(game.title)}</h2>
-            <div class="game-meta-tags">
-              <span class="card-badge badge-popular" style="position:static;">\${escapeHtml(game.category || 'Arcade')}</span>
-              <span style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38BDF8; padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700;">\${escapeHtml(supportedDevices)}</span>
-              \${game.tags ? game.tags.slice(0, 5).map(t => \`<span style="background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:4px; font-size:0.75rem; color:var(--text-secondary);">\${escapeHtml(t)}</span>\`).join('') : ''}
-            </div>
-            <p style="color:var(--text-secondary); line-height:1.75; font-size:0.95rem; margin-bottom:20px;">
-              \${escapeHtml(game.description || 'Play ' + game.title + ' instantly online on KipoPlay. No download required. Free browser gameplay across desktop and mobile devices.')}
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
-              <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-primary); padding:14px 18px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
-                <h4 style="color:#FFF; font-size:0.92rem; font-family:var(--font-heading); margin-bottom:6px;">🎮 Game Controls</h4>
-                <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.6; margin:0;">\${escapeHtml(controlsGuide)}</p>
-              </div>
-
-              <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-purple); padding:14px 18px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
-                <h4 style="color:#FFF; font-size:0.92rem; font-family:var(--font-heading); margin-bottom:6px;">📱 Supported Devices</h4>
-                <p style="color:var(--text-muted); font-size:0.88rem; line-height:1.6; margin:0;">Playable across Windows, Mac, Chromebook, iPhone, iPad, and Android without installing apps.</p>
-              </div>
-            </div>
-          </div>
-
-          \${nexusAds.renderSlot('gameFooter')}
+      <!-- Main Game Detail Layout (Matches Top-Right Panel of Reference) -->
+      <div class="game-detail-layout">
+        <!-- 16:9 Cinematic Player Container -->
+        <div class="player-stage-card" id="playerStageCard">
+          <iframe id="gameIframe"
+                  src="\${embedUrl}"
+                  title="\${escapeHtml(game.title)}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowfullscreen
+                  loading="eager"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+          </iframe>
+          <button class="player-overlay-fullscreen-btn" id="playerOverlayFullscreenBtn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen" onclick="window.NEXUS.toggleFullscreen()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          </button>
         </div>
 
-        <!-- Related Games Sidebar Column -->
-        <div class="game-sidebar">
-          <h3 style="font-family:var(--font-heading); font-size:1.05rem; font-weight:800; color:#FFF; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-            Related Games
-          </h3>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            \${related.map(r => \`
-              <a href="#/game/\${r.slug}" style="display:flex; align-items:center; gap:12px; padding:8px 10px; border-radius:var(--radius-md); background:var(--bg-surface); border:1px solid var(--border-subtle); text-decoration:none; transition:all var(--transition-fast);" onmouseover="this.style.background='var(--bg-surface-hover)'" onmouseout="this.style.background='var(--bg-surface)'">
-                <img src="\${r.thumbnail}" alt="\${escapeHtml(r.title)}" width="52" height="36" style="width:52px; height:36px; border-radius:4px; object-fit:cover;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/favicon.svg'">
-                <div style="min-width:0; flex:1;">
-                  <div style="font-size:0.86rem; font-weight:700; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">\${escapeHtml(r.title)}</div>
-                  <div style="font-size:0.72rem; color:var(--text-muted);">\${escapeHtml(r.category || 'Arcade')}</div>
-                </div>
-              </a>
-            \`).join('')}
+        <!-- Right Action Card (Matches Reference Image Sidebar Card) -->
+        <div class="game-action-card">
+          <div class="action-card-header">
+            <img class="action-card-thumb" src="\${game.thumbnail}" alt="\${escapeHtml(game.title)}" onerror="this.onerror=null;this.src='assets/images/games/default-game.svg'">
+            <div class="action-card-info">
+              <h1 class="action-card-title">\${escapeHtml(game.title)}</h1>
+              <div class="action-card-tags">
+                <a href="#/category/\${catSlug}" class="tag-pill">\${escapeHtml(game.category || 'Action')}</a>
+                <span class="tag-pill">Instant Play</span>
+              </div>
+            </div>
           </div>
-          \${nexusAds.renderSlot('gameSidebar')}
+
+          <!-- Big Purple Play Now Button -->
+          <button class="btn-play-now" id="btnPlayNow" onclick="window.NEXUS.focusGame()">
+            <span>Play Now</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+          </button>
+
+          <!-- Secondary Favorites Button -->
+          <button class="btn-fav-action \${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('\${game.slug}', event)">
+            <svg viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span id="detailFavText">\${isFav ? 'Favorited' : 'Add to Favorites'}</span>
+          </button>
+
+          <!-- Game Description -->
+          <div class="action-card-description">
+            \${escapeHtml(game.description || 'Enjoy this fast-paced free online browser game on KopiPlay with instant loading and smooth cross-device controls.')}
+          </div>
+
+          <!-- Controls Keycaps -->
+          <div class="game-controls-info">
+            <span class="controls-label">Controls</span>
+            <div class="controls-keys">
+              \${controlsHtml}
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Related Games Strip (Matches Bottom of Reference Player Panel) -->
+      <section class="related-games-section">
+        <div class="related-games-header">
+          <h3>Related Games</h3>
+          <a href="#/games" class="related-view-all">View All</a>
+        </div>
+        <div class="related-games-strip">
+          \${relatedGames.map(renderCard).join('')}
+        </div>
+      </section>
     \`;
 
     main.innerHTML = html;
-    window.scrollTo({ top: 0, behavior: 'instant' });
-
-    // Dynamic provider-aware timeout & postMessage detection
-    if (activePlayerTimeout) {
-      clearTimeout(activePlayerTimeout);
-      activePlayerTimeout = null;
-    }
-    if (activePostMessageCleanup) {
-      window.removeEventListener('message', activePostMessageCleanup);
-      activePostMessageCleanup = null;
-    }
-
-    const frame = document.getElementById('gameFrame');
-    const loader = document.getElementById('playerLoader');
-    const retry = document.getElementById('playerRetryOverlay');
-    if (retry) retry.style.display = 'none';
-
-    // Provider-aware timeout:
-    // Local games load in <6s
-    // HTMLGames CDN loads in <12s
-    // External WebGL / distributor games (GameDistribution, GameMonetize, Famobi) load interstitial ads and large bundles, so 16s
-    let timeoutMs = 16000;
-    if (embedUrl.startsWith('games/')) {
-      timeoutMs = 6000;
-    } else if (embedUrl.includes('cdn.htmlgames.com')) {
-      timeoutMs = 12000;
-    }
-
-    function onGameActive() {
-      if (activePlayerTimeout) {
-        clearTimeout(activePlayerTimeout);
-        activePlayerTimeout = null;
-      }
-      if (loader) loader.classList.add('hidden');
-      nexusAnalytics.track('game_started', { slug: game.slug, title: game.title });
-    }
-
-    if (frame && loader) {
-      frame.onload = onGameActive;
-
-      // Listen for documented game-ready messages with strict origin and source validation
-      activePostMessageCleanup = (event) => {
-        if (!event || !event.data) return;
-        // Validate event source: must originate from the game iframe window
-        if (frame && event.source !== frame.contentWindow) return;
-
-        // Validate trusted provider origins
-        const origin = event.origin || '';
-        const isAllowedOrigin = (
-          origin === window.location.origin ||
-          origin.endsWith('.gamedistribution.com') ||
-          origin.endsWith('.gamemonetize.co') ||
-          origin.endsWith('.gamemonetize.games') ||
-          origin.endsWith('.htmlgames.com') ||
-          origin.endsWith('.famobi.com')
-        );
-        if (!isAllowedOrigin) return;
-
-        const d = event.data;
-        // Documented provider event triggers
-        if (typeof d === 'string' && (d.includes('SDK_GAME_START') || d.includes('LOADER_DATA'))) {
-          onGameActive();
-        } else if (typeof d === 'object' && (d.name === 'SDK_GAME_START' || d.type === 'SDK_GAME_START')) {
-          onGameActive();
-        }
-      };
-      window.addEventListener('message', activePostMessageCleanup);
-
-      activePlayerTimeout = setTimeout(() => {
-        if (loader && !loader.classList.contains('hidden')) {
-          loader.classList.add('hidden');
-          if (retry) retry.style.display = 'flex';
-        }
-      }, timeoutMs);
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // --- PHASE 2: Redesigned Five Informational Pages (Unified Design System) ---
@@ -1624,8 +1520,8 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'About KipoPlay – Play Free Online Games',
-      description: 'Discover KipoPlay, your destination for free online games offering verified, instant-play HTML5 games across 22 categories with zero downloads.',
+      title: 'About KopiPlay – Play Free Online Games',
+      description: 'Discover KopiPlay, your destination for free online games offering verified, instant-play HTML5 games across 22 categories with zero downloads.',
       canonical: 'https://kipo.in/#/about',
       ogType: 'website'
     });
@@ -1640,16 +1536,16 @@ const bundleScript = `/**
 
         <header class="info-hero-header">
           <div class="info-badge">About Our Platform</div>
-          <h1 class="info-title">About <span>KipoPlay</span></h1>
+          <h1 class="info-title">About <span>KopiPlay</span></h1>
           <p class="info-lead">
-            KipoPlay is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
+            KopiPlay is a dedicated online gaming destination built for players who want immediate, high-octane fun without the barriers of software downloads, heavy installations, or forced accounts.
           </p>
         </header>
 
         <div class="info-card">
-          <h2>What is KipoPlay?</h2>
+          <h2>What is KopiPlay?</h2>
           <p>
-            KipoPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of verified legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
+            KopiPlay is a modern, lightweight, high-performance web gaming portal engineered from the ground up for seamless browser play. We bring together a hand-curated collection of verified legitimate HTML5 games spanning 22 distinct categories—from pulse-pounding 3D racers and tactical shooters to relaxing block puzzles and classic card tables.
           </p>
 
           <div class="info-grid-3">
@@ -1671,10 +1567,10 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>Our Mission</h2>
           <p>
-            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, KipoPlay delivers console-inspired responsiveness directly to your browser tab.
+            Our mission is simple: to make digital play instantly accessible, safe, and engaging for gaming fans everywhere. We believe quality gaming should not require expensive hardware, app store permissions, or endless loading bars. By leveraging pure client-side web technology, KopiPlay delivers console-inspired responsiveness directly to your browser tab.
           </p>
 
-          <h2>Reasons to Explore KipoPlay</h2>
+          <h2>Reasons to Explore KopiPlay</h2>
           <ul>
             <li><strong>Verified HTML5 Games:</strong> Handpicked titles across action, racing, puzzle, sports, platformers, and casual genres.</li>
             <li><strong>Zero Cost:</strong> 100% free with unlimited gameplay anytime, anywhere.</li>
@@ -1698,8 +1594,8 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Contact KipoPlay – Gaming Support & Feedback',
-      description: 'Contact the KipoPlay team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
+      title: 'Contact KopiPlay – Gaming Support & Feedback',
+      description: 'Contact the KopiPlay team for technical support, game suggestions, developer partnerships, bug reports, or general inquiries.',
       canonical: 'https://kipo.in/#/contact',
       ogType: 'website'
     });
@@ -1803,8 +1699,8 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Privacy Policy – KipoPlay Online Gaming',
-      description: 'Accurate and transparent privacy policy for KipoPlay detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
+      title: 'Privacy Policy – KopiPlay Online Gaming',
+      description: 'Accurate and transparent privacy policy for KopiPlay detailing client-side storage, cookie usage, third-party embeds, and data protection practices.',
       canonical: 'https://kipo.in/#/privacy',
       ogType: 'website'
     });
@@ -1826,34 +1722,34 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>1. Information We Collect</h2>
           <p>
-            KipoPlay is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
+            KopiPlay is operated as a client-side static web gaming portal. We do not require users to create personal accounts, register with an email address, or provide personal identity details to access any game on the platform. We collect zero personally identifiable information (PII) during your standard gaming sessions.
           </p>
 
           <h2>2. Browser Local Storage</h2>
           <p>
-            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, KipoPlay utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
+            To deliver an engaging and personalized gaming experience without maintaining server-side user databases, KopiPlay utilizes your browser's client-side <code>localStorage</code> API. The following keys are stored exclusively on your device:
           </p>
           <ul>
-            <li><code>kipoplay_favorites</code> (and legacy <code>nexus_favorites</code>): An array of game identifiers you have marked with a heart.</li>
-            <li><code>kipoplay_recent</code> (and legacy <code>nexus_recently_played</code>): An array of game identifiers for games you have launched recently.</li>
-            <li><code>kipoplay_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
-            <li><code>kipoplay_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
+            <li><code>kopiplay_favorites</code> (and legacy <code>nexus_favorites</code>): An array of game identifiers you have marked with a heart.</li>
+            <li><code>kopiplay_recent</code> (and legacy <code>nexus_recently_played</code>): An array of game identifiers for games you have launched recently.</li>
+            <li><code>kopiplay_sort_pref</code>: Your chosen sort ordering in the game library (e.g. Featured, Rating, Newest).</li>
+            <li><code>kopiplay_sidebar_collapsed</code>: Your desktop preference for keeping the sidebar expanded or compact.</li>
           </ul>
           <p>You can clear this data at any time by simply clearing your browser cache and cookies.</p>
 
           <h2>3. Cookies & Session Storage</h2>
           <p>
-            The core KipoPlay portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
+            The core KopiPlay portal does not set tracking cookies. However, temporary session identifiers may be created by your browser to maintain active tab states.
           </p>
 
           <h2>4. Third-Party Embedded Games</h2>
           <p>
-            Many games on KipoPlay are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
+            Many games on KopiPlay are delivered via authorized embedding mechanisms from legitimate third-party game distribution networks (such as HTMLGames). When you load an external game iframe, that game provider's servers may process standard network request headers (including IP address and user-agent string) solely to transmit the game files. These third-party services operate under their own independent privacy policies.
           </p>
 
           <h2>5. Future Monetization & Google AdSense</h2>
           <p>
-            KipoPlay has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
+            KopiPlay has prepared architectural containers for future non-intrusive advertisement integration with approved partners such as Google AdSense. <strong>Please note:</strong> Real advertising scripts and tracking cookies are currently disabled. When advertising is eventually enabled, it will comply with Google AdSense privacy policies, standard cookie consent regulations, and COPPA/GDPR/CCPA frameworks.
           </p>
 
           <h2>6. Analytics Notice</h2>
@@ -1882,8 +1778,8 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'Terms of Service – KipoPlay',
-      description: 'Official Terms of Service for KipoPlay covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
+      title: 'Terms of Service – KopiPlay',
+      description: 'Official Terms of Service for KopiPlay covering website usage, third-party games, intellectual property, user responsibilities, and service conditions.',
       canonical: 'https://kipo.in/#/terms',
       ogType: 'website'
     });
@@ -1905,41 +1801,41 @@ const bundleScript = `/**
         <div class="info-card">
           <h2>1. Agreement to Terms</h2>
           <p>
-            By visiting, accessing, or playing games on KipoPlay ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
+            By visiting, accessing, or playing games on KopiPlay ("the Website"), you agree to abide by these Terms of Service. If you do not agree with any part of these terms, please discontinue using the portal.
           </p>
 
           <h2>2. Permitted Website Usage</h2>
           <p>
-            KipoPlay grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
+            KopiPlay grants you a personal, non-exclusive, non-transferable, revocable license to access and play HTML5 games through our portal interface strictly for personal, non-commercial entertainment.
           </p>
 
           <h2>3. Third-Party Game Ownership</h2>
           <p>
-            Games hosted or embedded on KipoPlay remain the intellectual property of their respective developers, creators, or authorized publishers. KipoPlay embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
+            Games hosted or embedded on KopiPlay remain the intellectual property of their respective developers, creators, or authorized publishers. KopiPlay embeds games in accordance with permitted distribution terms, preserving all original branding, credits, and links provided by each game developer.
           </p>
 
           <h2>4. User Responsibilities & Conduct</h2>
-          <p>As a user of KipoPlay, you agree not to:</p>
+          <p>As a user of KopiPlay, you agree not to:</p>
           <ul>
             <li>Circumvent, disable, or tamper with security or iframe sandbox restrictions on the portal.</li>
             <li>Use automated scrapers, bots, or data-mining utilities to extract content without authorization.</li>
             <li>Transmit malicious code, viruses, or disruptive scripts through forms or feedback mechanisms.</li>
-            <li>Attempt to reverse-engineer or rebrand KipoPlay portal software.</li>
+            <li>Attempt to reverse-engineer or rebrand KopiPlay portal software.</li>
           </ul>
 
           <h2>5. Game Availability & Maintenance</h2>
           <p>
-            We strive to keep all games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KipoPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
+            We strive to keep all games playable around the clock. However, third-party developers may update or withdraw games at their discretion. KopiPlay reserves the right to modify, replace, or discontinue games or portal features without prior notice for maintenance or performance enhancements.
           </p>
 
           <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
           <p>
-            KipoPlay is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall KipoPlay be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
+            KopiPlay is provided on an "as-is" and "as-available" basis without representations or warranties of any kind. In no event shall KopiPlay be liable for any indirect, incidental, or consequential damages resulting from your use or inability to use the platform.
           </p>
 
           <h2>7. Updates to Terms</h2>
           <p>
-            We reserve the right to revise these Terms of Service at any time. Continued usage of KipoPlay following revisions constitutes full acceptance of the updated terms.
+            We reserve the right to revise these Terms of Service at any time. Continued usage of KopiPlay following revisions constitutes full acceptance of the updated terms.
           </p>
         </div>
       </div>
@@ -1953,8 +1849,8 @@ const bundleScript = `/**
     if (!main) return;
 
     updateSeo({
-      title: 'DMCA & Copyright Policy – KipoPlay',
-      description: 'Official DMCA and Copyright notice for KipoPlay detailing intellectual property protection, infringement notification procedures, and counter-claims.',
+      title: 'DMCA & Copyright Policy – KopiPlay',
+      description: 'Official DMCA and Copyright notice for KopiPlay detailing intellectual property protection, infringement notification procedures, and counter-claims.',
       canonical: 'https://kipo.in/#/dmca',
       ogType: 'website'
     });
@@ -1971,19 +1867,19 @@ const bundleScript = `/**
           <div class="info-badge">Intellectual Property</div>
           <h1 class="info-title">DMCA & <span>Copyright Policy</span></h1>
           <p class="info-lead">
-            KipoPlay respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
+            KopiPlay respects the intellectual property rights of creators and adheres to the provisions of the Digital Millennium Copyright Act (17 U.S.C. § 512).
           </p>
         </header>
 
         <div class="info-card">
           <h2>Third-Party Game Ownership</h2>
           <p>
-            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on KipoPlay remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
+            All third-party video games, game characters, audio assets, trademarks, and associated intellectual property featured on KopiPlay remain the sole property of their respective copyright holders. We host and embed games through authorized embedding licenses and developer distribution catalogs (such as HTMLGames), strictly preserving required developer branding and links.
           </p>
 
           <h2>Copyright Infringement Notification Procedure</h2>
           <p>
-            If you are a copyright owner or an authorized representative and believe that any game or content accessible on KipoPlay infringes upon your copyright, you may submit a formal notification containing the following:
+            If you are a copyright owner or an authorized representative and believe that any game or content accessible on KopiPlay infringes upon your copyright, you may submit a formal notification containing the following:
           </p>
           <ul>
             <li>A physical or electronic signature of the copyright owner or authorized representative.</li>
@@ -2087,61 +1983,28 @@ const bundleScript = `/**
   }
 
   // --- Global Window NEXUS Namespace ---
-  window.KIPO = window.NEXUS = {
-    toggleFav: function (slug, event) {
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      const isFav = toggleFavorite(slug);
-      const btn = event ? event.currentTarget : null;
-      if (btn) {
-        btn.classList.toggle('is-fav', isFav);
-        const svg = btn.querySelector('svg');
-        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
-      }
+  window.KOPI = window.KIPO = window.NEXUS = {
+    playRandomGame: function () {
+      if (!catalog || catalog.length === 0) return;
+      const randomIndex = Math.floor(Math.random() * catalog.length);
+      const randomGame = catalog[randomIndex];
+      showToast('Launching ' + randomGame.title + '...', '🎲');
+      window.location.hash = '#/game/' + randomGame.slug;
     },
 
-    togglePlayerFav: function (slug) {
-      const isFav = toggleFavorite(slug);
-      const btn = document.getElementById('playerFavBtn');
-      const label = document.getElementById('playerFavLabel');
-      if (btn) {
-        btn.classList.toggle('is-fav', isFav);
-        const svg = btn.querySelector('svg');
-        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
-      }
-      if (label) {
-        label.textContent = isFav ? 'Favorited' : 'Favorite';
-      }
-    },
-
-    reloadGame: function () {
-      const frame = document.getElementById('gameFrame');
-      const loader = document.getElementById('playerLoader');
-      const retry = document.getElementById('playerRetryOverlay');
-      if (retry) retry.style.display = 'none';
-      if (activePlayerTimeout) {
-        clearTimeout(activePlayerTimeout);
-        activePlayerTimeout = null;
-      }
-      if (frame) {
-        if (loader) loader.classList.remove('hidden');
-        frame.src = frame.src;
-
-        const currentSrc = frame.src || '';
-        const timeoutMs = currentSrc.includes('games/') ? 6000 : (currentSrc.includes('cdn.htmlgames.com') ? 12000 : 16000);
-        activePlayerTimeout = setTimeout(() => {
-          if (loader && !loader.classList.contains('hidden')) {
-            loader.classList.add('hidden');
-            if (retry) retry.style.display = 'flex';
-          }
-        }, timeoutMs);
+    focusGame: function () {
+      const stage = document.getElementById('playerStageCard') || document.getElementById('playerContainer');
+      if (stage) {
+        stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const iframe = stage.querySelector('iframe');
+        if (iframe) {
+          setTimeout(() => { iframe.focus(); }, 350);
+        }
       }
     },
 
     toggleFullscreen: function () {
-      const container = document.getElementById('playerContainer');
+      const container = document.getElementById('playerStageCard') || document.getElementById('playerContainer');
       if (!container) return;
 
       const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
@@ -2158,33 +2021,44 @@ const bundleScript = `/**
       }
     },
 
-    toggleTheater: function () {
-      const layout = document.getElementById('gameDetailLayout');
-      if (layout) {
-        layout.classList.toggle('theater-mode');
+    toggleFav: function (slug, event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const isFav = toggleFavorite(slug);
+      const btn = event ? event.currentTarget : null;
+      if (btn) {
+        btn.classList.toggle('is-fav', isFav);
+        const svg = btn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
+      }
+      const detailBtn = document.getElementById('detailFavBtn');
+      if (detailBtn) {
+        detailBtn.classList.toggle('is-fav', isFav);
+        const svg = detailBtn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', isFav ? 'currentColor' : 'none');
+        const txt = document.getElementById('detailFavText');
+        if (txt) txt.textContent = isFav ? 'Favorited' : 'Add to Favorites';
+      }
+      const headerBadge = document.getElementById('headerFavBadge');
+      if (headerBadge) {
+        headerBadge.textContent = favorites.length;
+        headerBadge.style.display = favorites.length > 0 ? '' : 'none';
       }
     },
 
-    cycleAspectRatio: function () {
-      const container = document.getElementById('playerContainer');
-      const label = document.getElementById('ratioLabel');
-      if (!container) return;
-
-      const ratios = ['16-9', '4-3', '1-1', 'fit'];
-      let current = ratios.find(r => container.classList.contains('ratio-' + r)) || '16-9';
-      let nextIdx = (ratios.indexOf(current) + 1) % ratios.length;
-      let next = ratios[nextIdx];
-
-      ratios.forEach(r => container.classList.remove('ratio-' + r));
-      container.classList.add('ratio-' + next);
-
-      const displayMap = {
-        '16-9': '16:9',
-        '4-3': '4:3',
-        '1-1': '1:1',
-        'fit': 'Fit'
-      };
-      if (label) label.textContent = displayMap[next];
+    shareGame: function (slug, title) {
+      const url = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('Game link copied to clipboard!', '🔗');
+        }).catch(() => {
+          showToast('Game URL: ' + url, '🔗');
+        });
+      } else {
+        showToast('Game URL: ' + url, '🔗');
+      }
     },
 
     goBack: function () {
@@ -2244,7 +2118,7 @@ const bundleScript = `/**
     },
 
     openReport: function (gameSlug) {
-      const modalRoot = (document.getElementById('kipo-modal-root') || document.getElementById('nexus-modal-root'));
+      const modalRoot = (document.getElementById('kopi-modal-root') || document.getElementById('nexus-modal-root'));
       if (!modalRoot) return;
       const game = catalog.find(g => g.slug === gameSlug);
       const gameTitle = game ? game.title : 'this game';
@@ -2284,7 +2158,7 @@ const bundleScript = `/**
     },
 
     closeModal: function () {
-      const modalRoot = (document.getElementById('kipo-modal-root') || document.getElementById('nexus-modal-root'));
+      const modalRoot = (document.getElementById('kopi-modal-root') || document.getElementById('nexus-modal-root'));
       if (modalRoot) modalRoot.innerHTML = '';
     },
 
@@ -2361,10 +2235,10 @@ const bundleScript = `/**
 
   // Global Error Boundary
   window.addEventListener('error', (e) => {
-    console.warn('[KipoPlay Runtime Guard]', e.message);
+    console.warn('[KopiPlay Runtime Guard]', e.message);
   });
   window.addEventListener('unhandledrejection', (e) => {
-    console.warn('[KipoPlay Promise Guard]', e.reason);
+    console.warn('[KopiPlay Promise Guard]', e.reason);
   });
 
   // --- Application Bootstrap ---
@@ -2393,7 +2267,7 @@ const bundleScript = `/**
       // Offline fallback already loaded
     }
 
-    console.log(\`[KipoPlay] Initialized with \${catalog.length} games across \${categoryList.length} categories.\`);
+    console.log(\`[KopiPlay] Initialized with \${catalog.length} games across \${categoryList.length} categories.\`);
 
     computeCategoryCounts();
     renderSidebar();
@@ -2406,7 +2280,7 @@ const bundleScript = `/**
       }
     } catch (e) {}
 
-    initSidebarTooltips();
+    initMobileNavEvents();
 
     window.addEventListener('hashchange', handleRoute);
     handleRoute();

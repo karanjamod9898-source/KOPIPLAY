@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Toast Notification Component
+ * KopiPlay - Toast Notification Component
  */
 
 let toastContainer = null;

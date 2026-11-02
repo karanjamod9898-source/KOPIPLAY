@@ -1,84 +1,81 @@
 /* ==========================================================================
-   KipoPlay - Professional Dark Gaming Portal Design System
-   Inspired by Modern Gaming Platforms with Original KipoPlay Blue & Purple Accents
+   KopiPlay - Premium Gaming Portal Design System
+   Exact Reference Palette: #101522 Background, #1B2435 Panels, #3B82F6 & #A855F7 Accents
    ========================================================================== */
 
 :root {
   /* Layout Dimensions */
-  --sidebar-width: 250px;
-  --sidebar-collapsed-width: 72px;
   --header-height: 64px;
-  --max-content-width: 1720px;
+  --max-content-width: 1680px;
 
-  /* Color Palette - Deep Navy / Dark Obsidian Gaming Theme */
-  --bg-page: #0A0D14;
-  --bg-page-secondary: #0D111A;
-  --bg-surface: #121620;
-  --bg-surface-hover: #181F2E;
-  --bg-surface-active: #20293D;
-  --bg-card: #151A24;
-  --bg-card-hover: #1D2433;
-  --bg-input: #151A24;
-  --bg-input-focus: #1A212E;
-  
-  /* KipoPlay Brand Accents (Vibrant Electric Blue & Cyber Violet) */
-  --accent-primary: #2563EB;
-  --accent-primary-hover: #3B82F6;
-  --accent-primary-glow: rgba(37, 99, 235, 0.35);
+  /* Color Palette - User Reference Image Specification */
+  --bg-page: #101522;
+  --bg-card: #1B2435;
+  --bg-surface: #1B2435;
+  --bg-surface-hover: #222E44;
+  --bg-surface-active: #2A3854;
+  --bg-input: #151D2C;
+  --bg-input-focus: #1A2436;
+
+  /* Accents */
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #60A5FA;
+  --accent-primary-glow: rgba(59, 130, 246, 0.35);
+
+  --accent-secondary: #A855F7;
+  --accent-secondary-hover: #C084FC;
   --accent-purple: #8B5CF6;
-  --accent-purple-hover: #A78BFA;
-  --accent-purple-glow: rgba(139, 92, 246, 0.35);
-  
-  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
-  --accent-gradient-warm: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
-  --accent-gradient-green: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  --accent-purple-glow: rgba(139, 92, 246, 0.4);
 
-  /* Status & Category Tag Accents */
-  --accent-green: #10B981;
-  --accent-red: #EF4444;
-  --accent-orange: #F97316;
+  --accent-coral: #FF4757;
   --accent-amber: #F59E0B;
+  --accent-green: #10B981;
   --accent-cyan: #06B6D4;
-  --accent-pink: #EC4899;
+
+  /* Gradients */
+  --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+  --purple-gradient: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+  --purple-gradient-hover: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+  --card-overlay-gradient: linear-gradient(180deg, rgba(16, 21, 34, 0) 40%, rgba(16, 21, 34, 0.88) 100%);
 
   /* Typography Colors */
   --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-light: #475569;
+  --text-secondary: #A7B0C0;
+  --text-muted: #7A869E;
+  --text-light: #4E5970;
   --text-on-accent: #FFFFFF;
 
   /* Borders & Dividers */
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-card: rgba(255, 255, 255, 0.08);
-  --border-card-hover: rgba(37, 99, 235, 0.5);
+  --border-subtle: #2B3548;
+  --border-card: #2B3548;
+  --border-card-hover: #8B5CF6;
   --border-focus: #3B82F6;
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Shadows - Ambient & Dark Elevation */
+  /* Shadows - Reference Portal Elevation */
   --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-sm: 0 3px 8px rgba(0, 0, 0, 0.45);
   --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.35);
-  --shadow-card-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(37, 99, 235, 0.25);
-  --shadow-dropdown: 0 18px 40px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.3);
+  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.55), 0 0 16px rgba(139, 92, 246, 0.25);
+  --shadow-dropdown: 0 18px 45px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 24px rgba(139, 92, 246, 0.35);
 
-  /* Border Radii */
+  /* Border Radii - Rounded Gaming Aesthetic */
   --radius-xs: 6px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
   --radius-full: 9999px;
-  
+
   /* Transitions */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Base Reset */
@@ -98,11 +95,6 @@ html {
 
 body {
   background-color: var(--bg-page);
-  background-image: 
-    radial-gradient(ellipse at 15% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 10%, rgba(139, 92, 246, 0.07) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
-  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -137,10 +129,10 @@ img {
   display: block;
 }
 
-/* Custom Dark Scrollbar */
+/* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -148,23 +140,16 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F2839;
+  background: #2B3548;
   border-radius: var(--radius-full);
-  border: 2px solid var(--bg-page);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #3B82F6;
 }
 
-/* Prevent horizontal overflow & lock scroll when mobile drawer is open */
-html {
-  overflow-x: hidden;
-  max-width: 100vw;
-  width: 100%;
-}
-
-body {
+/* Prevent horizontal overflow */
+html, body {
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
@@ -176,40 +161,105 @@ body.mobile-sidebar-open {
   touch-action: none;
 }
 
-/* App Layout Grid / Flex */
+/* Full-Width App Layout Matching Reference */
 .app-layout {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  position: relative;
 }
 
 .app-main-wrapper {
   flex: 1;
-  min-width: 0;
   width: 100%;
   max-width: 100vw;
-  margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  transition: margin-left var(--transition-smooth);
-}
-
-.sidebar-collapsed .app-main-wrapper {
-  margin-left: var(--sidebar-collapsed-width);
+  margin-left: 0 !important;
 }
 
 .main-content {
   flex: 1;
   width: 100%;
-  max-width: 100vw;
-  min-width: 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
   padding: 24px 28px 60px;
+  box-sizing: border-box;
+}
+
+/* Modern Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-purple {
+  background: var(--purple-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px var(--accent-purple-glow);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-purple:hover {
+  background: var(--purple-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.6);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--accent-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Tactile 3D Keycap */
+.keycap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  border-bottom: 3px solid #0F1624;
+  border-radius: 6px;
+  user-select: none;
+  text-transform: uppercase;
+  margin: 0 2px;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

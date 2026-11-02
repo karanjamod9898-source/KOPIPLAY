@@ -4,7 +4,7 @@ const path = require('path');
 global.window = global;
 eval(fs.readFileSync(path.join(__dirname, '../data/catalogData.js'), 'utf8'));
 
-const games = window.KIPO_CATALOG || window.NEXUS_CATALOG || [];
+const games = window.KOPI_CATALOG || window.KIPO_CATALOG || window.NEXUS_CATALOG || [];
 
 const categorySlugs = [
   'shooting', 'action', 'adventure', 'racing', 'car', 'driving', 'sports',

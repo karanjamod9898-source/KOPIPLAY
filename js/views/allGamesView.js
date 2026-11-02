@@ -1,5 +1,5 @@
 /**
- * KipoPlay - All Games View
+ * KopiPlay - All Games View
  * Comprehensive catalog with multi-category filter and sorting
  */
 

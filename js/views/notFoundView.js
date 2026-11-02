@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Custom 404 Not Found View
+ * KopiPlay - Custom 404 Not Found View
  */
 
 export function renderNotFoundView() {

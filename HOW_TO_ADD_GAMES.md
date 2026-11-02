@@ -1,6 +1,6 @@
-# 🎮 KipoPlay - How to Add & Manage Games Guide
+# 🎮 KopiPlay - How to Add & Manage Games Guide
 
-This guide explains how to easily add, modify, or publish games in your KipoPlay catalog.
+This guide explains how to easily add, modify, or publish games in your KopiPlay catalog.
 
 ---
 

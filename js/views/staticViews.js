@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Static Pages (About, Contact, Privacy, Terms)
+ * KopiPlay - Static Pages (About, Contact, Privacy, Terms)
  */
 
 import { showToast } from '../components/toast.js';
@@ -14,10 +14,10 @@ export function renderAboutView() {
       </nav>
 
       <div class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 16px;">About <span class="gradient-text">KipoPlay</span></h1>
+        <h1 style="font-size: 2.5rem; margin-bottom: 16px;">About <span class="gradient-text">KopiPlay</span></h1>
         
         <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px;">
-          KipoPlay is a modern, lightweight, high-performance HTML5 browser gaming platform. Our mission is to make high quality casual and arcade games instantly accessible to anyone, anywhere in the world—with zero downloads, zero account requirements, and zero friction.
+          KopiPlay is a modern, lightweight, high-performance HTML5 browser gaming platform. Our mission is to make high quality casual and arcade games instantly accessible to anyone, anywhere in the world—with zero downloads, zero account requirements, and zero friction.
         </p>
 
         <h2 style="font-size: 1.5rem; margin-top: 32px; margin-bottom: 12px;">Our Core Principles</h2>
@@ -47,7 +47,7 @@ export function renderAboutView() {
 
         <h2 style="font-size: 1.5rem; margin-top: 32px; margin-bottom: 12px;">Game Developer Licensing & Submissions</h2>
         <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
-          Are you an HTML5 game developer or publisher? We welcome original web games, open-source projects, and licensed titles. Contact our developer team to showcase your games on KipoPlay.
+          Are you an HTML5 game developer or publisher? We welcome original web games, open-source projects, and licensed titles. Contact our developer team to showcase your games on KopiPlay.
         </p>
         <a href="#/contact" class="btn btn-primary" style="margin-top: 10px;">Contact Publishing Team</a>
       </div>
@@ -67,7 +67,7 @@ export function renderContactView() {
       <div class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
         <h1 style="font-size: 2.4rem; margin-bottom: 12px;">Get in Touch</h1>
         <p style="color: var(--text-secondary); margin-bottom: 28px;">
-          Have questions, feedback, or want to submit an HTML5 game to KipoPlay? Fill out the form below and our team will get back to you promptly.
+          Have questions, feedback, or want to submit an HTML5 game to KopiPlay? Fill out the form below and our team will get back to you promptly.
         </p>
 
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
@@ -133,12 +133,12 @@ export function renderPrivacyView() {
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">1. Information We Collect</h2>
         <p style="color: var(--text-secondary);">
-          KipoPlay is committed to safeguarding visitor privacy. We do not require users to create an account or provide personal information to enjoy our browser gaming portal.
+          KopiPlay is committed to safeguarding visitor privacy. We do not require users to create an account or provide personal information to enjoy our browser gaming portal.
         </p>
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">2. Local Storage Usage</h2>
         <p style="color: var(--text-secondary);">
-          To enhance your experience, KipoPlay utilizes your browser's local storage to save your game favorites and recently played games. This information is saved solely on your local client device and is never uploaded to our servers.
+          To enhance your experience, KopiPlay utilizes your browser's local storage to save your game favorites and recently played games. This information is saved solely on your local client device and is never uploaded to our servers.
         </p>
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">3. Third-Party Game Embeds & Analytics</h2>
@@ -170,17 +170,17 @@ export function renderTermsView() {
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">1. Acceptance of Terms</h2>
         <p style="color: var(--text-secondary);">
-          By accessing or playing games on KipoPlay, you agree to comply with and be bound by these Terms of Use.
+          By accessing or playing games on KopiPlay, you agree to comply with and be bound by these Terms of Use.
         </p>
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">2. Intellectual Property Rights</h2>
         <p style="color: var(--text-secondary);">
-          All portal graphics, brand logos, custom UI components, and software code are the intellectual property of KipoPlay. Games featured on the website are licensed, developed internally, or made available under appropriate developer authorizations.
+          All portal graphics, brand logos, custom UI components, and software code are the intellectual property of KopiPlay. Games featured on the website are licensed, developed internally, or made available under appropriate developer authorizations.
         </p>
 
         <h2 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 8px;">3. Permitted Usage</h2>
         <p style="color: var(--text-secondary);">
-          You may use KipoPlay for personal, non-commercial entertainment purposes. You agree not to disrupt, bypass iframe security protections, scrape, or reverse engineer platform services.
+          You may use KopiPlay for personal, non-commercial entertainment purposes. You agree not to disrupt, bypass iframe security protections, scrape, or reverse engineer platform services.
         </p>
       </div>
     </div>

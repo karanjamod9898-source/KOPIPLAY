@@ -25,7 +25,7 @@
       "Cyberpunk",
       "Highway"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Avoid colliding with oncoming traffic. Collect glowing blue energy cells to recharge your nitro meter. Boost past 240 km/h for maximum score multiplier.",
     "releaseDate": "2026-10-25",
     "isAuthorized": true
@@ -55,7 +55,7 @@
       "Retro",
       "Shooter"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Clear out alien drone formations before they breach perimeter defense lines. Collect blue power-up orbs to unlock dual-spread cannons.",
     "releaseDate": "2026-10-26",
     "isAuthorized": true
@@ -85,7 +85,7 @@
       "Strategy",
       "Math"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Tiles with identical numbers merge when sliding into each other. Strategically anchor your highest value tile in one corner to maximize available moves.",
     "releaseDate": "2026-10-27",
     "isAuthorized": true
@@ -115,14 +115,14 @@
       "Snake",
       "Fast-Paced"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Eat glowing energy nodes to grow. Game velocity increases progressively as your score climbs.",
     "releaseDate": "2026-10-28",
     "isAuthorized": true
   },
   {
     "id": "neon-breakout-06",
-    "title": "Neon Breakout DX",
+    "title": "Neon Breaker DX",
     "slug": "neon-breakout",
     "aliases": [
       "neon-breakout-dx"
@@ -145,7 +145,7 @@
       "Physics",
       "Retro"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Strike bricks to score points. Deflecting near the edges of the paddle alters the rebound angle for tricky shots.",
     "releaseDate": "2026-10-28",
     "isAuthorized": true
@@ -175,7 +175,7 @@
       "Physics",
       "Arcade"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Sink baskets before the 60-second buzzer sounds. Clean swishes build your streak multiplier for extra points.",
     "releaseDate": "2026-10-29",
     "isAuthorized": true
@@ -205,7 +205,7 @@
       "Labyrinth",
       "Quest"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Locate all 4 crystals on each floor, grab the golden key, and step onto the blue portal to ascend.",
     "releaseDate": "2026-10-29",
     "isAuthorized": true

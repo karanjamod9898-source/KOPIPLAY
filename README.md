@@ -1,23 +1,47 @@
-# 🎮 KipoPlay - Modern Online Browser Gaming Portal
+# 🎮 KopiPlay - Modern Online Browser Gaming Portal
 
-![KipoPlay Platform](assets/images/logo.svg)
+![KopiPlay Platform](assets/images/logo.svg)
 
-KipoPlay is a complete, modern, responsive online browser gaming platform built with native web technologies. Similar in functionality to CrazyGames and GameDistribution, it features original branding, a cyber-dark glassmorphic UI, real playable HTML5 games, categorized catalog search, and browser-local favorites and history.
+KopiPlay is a complete, modern, responsive online browser gaming platform built with native web technologies. Similar in functionality to CrazyGames and GameDistribution, it features original branding, a cyber-dark glassmorphic UI, real playable HTML5 games, categorized catalog search, and browser-local favorites and history.
 
 ---
 
 ## ✨ Features & Architecture
 
-### 🕹️ 1. Real Playable Games Catalog (Zero Fake Cards)
-Includes 8 genuinely playable games across all 6 core categories with zero fake cards:
-- **Epic Racing: Descent on Cars** (Racing): Official GameDistribution 3D WebGL downhill destruction racer by Mirra Games.
-- **Neon Horizon: Cyber Racer** (Racing): Synthwave 3D highway racer with traffic, nitro boost, speedometers, and Web Audio SFX.
-- **Space Nebula Defender** (Action): Classic retro space shooter with alien formations, boss waves, powerups, and particle blasters.
-- **Pulse 2048: Cyber Edition** (Puzzle): Sliding number puzzle with kinetic physics, swipe gesture support, and score saving.
-- **Cyber Snake: Neon Overdrive** (Arcade): Particle serpent score-chaser with time-warp mechanics and energy nodes.
-- **Neon Breakout DX** (Arcade): Holographic brick-breaker with multi-ball physics and paddle deflection.
-- **Hyper Hoops: Street Dunk** (Sports): Pure physics timing basketball game with combo streaks and net swish effects.
-- **Chrono Dungeon: Crystal Quest** (Adventure): Top-down procedural dungeon crawler with room doors, crystal collection, and combat.
+### 🕹️ 1. Active 187-Game Catalog (Zero Fake Cards)
+The platform includes **187 verified, playable games** across 22 categories:
+- **7 First-Party In-House Games (Proprietary IP):**
+  - **Neon Horizon: Cyber Racer** (`neon-racer-02` / Car): 3D Synthwave highway racer with particle traffic, nitro turbo, and procedural Web Audio SFX.
+  - **Space Nebula Defender** (`space-def-03` / Action): Retro arcade space shooter with alien formations, boss waves, and blasters.
+  - **Pulse 2048: Cyber Edition** (`pulse-2048-04` / Puzzle): Kinetic sliding number puzzle with swipe gestures and score saving.
+  - **Cyber Snake: Neon Overdrive** (`cyber-snake-05` / Arcade): Particle serpent score-chaser with time-warp mechanics.
+  - **Neon Breaker DX** (`neon-breakout-06` / Arcade): Holographic brick-breaker with multi-ball physics and paddle deflection.
+  - **Hyper Hoops: Street Dunk** (`hyper-hoops-07` / Sports): Physics timing basketball game with combo streaks and net swish effects.
+  - **Chrono Dungeon: Crystal Quest** (`dungeon-quest-08` / Adventure): Procedural top-down dungeon crawler with crystal collection and combat.
+- **180 Third-Party Syndicated Embeds:**
+  - **121 Games via HTMLGames (Zygomatic B.V.):** Puzzles, card games, mahjong, and solitaire under official webmaster syndication.
+  - **47 Games via GameDistribution (Azerion B.V.):** High-production 3D action, racing, and casual games via official GUID players.
+  - **12 Games via GameMonetize Inc.:** WebGL driving, casual, and puzzle games via official HTML5 players.
+
+---
+
+## ⚖️ Commercial Sale, Licensing & Handover Disclosure
+
+> [!IMPORTANT]
+> **LEGAL NOTICE FOR WEBSITE ACQUISITION & HANDOVER:**
+> 1. **What is Included in the Sale:**
+>    - 100% full ownership of the website platform software, frontend source code, client-side router, and responsive design system.
+>    - 100% full intellectual property ownership and source code of the **7 proprietary in-house games** in `games/`.
+>    - Configuration and integration data for all 187 catalog games.
+> 2. **What is Excluded from the Sale:**
+>    - Intellectual property, copyrights, and trademarks of the 180 third-party syndicated games (owned by their respective developers and distribution networks).
+>    - The seller's personal advertising and publisher monetization accounts.
+> 3. **Mandatory Buyer Setup After Purchase:**
+>    - **Custom Domain:** Connect your own domain and rebuild the sitemap (`SITE_URL=https://yourdomain.com node scripts/build-sitemap.js`).
+>    - **Publisher Accounts:** Register your own publisher accounts at [GameDistribution](https://publisher.gamedistribution.com) and [GameMonetize](https://gamemonetize.com) to receive ad revenue.
+>    - **Domain Whitelisting:** Submit your domain for approval in GameDistribution and GameMonetize dashboards.
+>    - **Root ads.txt:** Deploy your consolidated `ads.txt` containing Zygomatic, GameDistribution, and GameMonetize publisher entries.
+>    - **GDPR / CMP:** Deploy an IAB TCF 2.2 compliant Consent Management Platform for European visitors.
 
 ### 🎨 2. Premium Cyber Dark Aesthetics & Genuine Metadata
 - Removed all artificial demo ratings (e.g., fake 4.9 stars) and fake play counts (e.g., 1.4M plays).
@@ -95,7 +119,7 @@ c:\online game\
 │   └── categories.json         # Category definitions
 ├── assets/
 │   └── images/
-│       ├── logo.svg            # KipoPlay brand logo
+│       ├── logo.svg            # KopiPlay brand logo
 │       ├── favicon.svg         # Platform favicon
 │       └── games/              # 12+ high-res SVG game thumbnails & fallbacks
 └── games/
@@ -139,20 +163,20 @@ php -S localhost:8000
 
 ## 🚀 Free Static Hosting Deployment Guide
 
-KipoPlay is 100% static and requires **no paid backend services**. You can host it free of charge on any modern static host:
+KopiPlay is 100% static and requires **no paid backend services**. You can host it free of charge on any modern static host:
 
 ### 1. GitHub Pages (Free)
 1. Initialize git and push to a GitHub repository:
    ```bash
    git init
    git add .
-   git commit -m "Initial KipoPlay release"
-   git remote add origin https://github.com/YOUR_USERNAME/kipoplay.git
+   git commit -m "Initial KopiPlay release"
+   git remote add origin https://github.com/YOUR_USERNAME/kopiplay.git
    git push -u origin main
    ```
 2. In your repository on GitHub, go to **Settings** > **Pages**.
 3. Under **Build and deployment**, select **Source: Deploy from a branch** and choose `main` / `/ (root)`.
-4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/kipoplay/`!
+4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/kopiplay/`!
 
 ### 2. Netlify (Free)
 1. Drag and drop the `online game` folder directly into [app.netlify.com/drop](https://app.netlify.com/drop).
@@ -186,6 +210,6 @@ All games bundled in `games/` are self-contained HTML5 applications provided und
 For third-party network games such as **Epic Racing: Descent on Cars**:
 1. Sign up for a free publisher account on [GameDistribution.com](https://gamedistribution.com/publishers).
 2. Go to your **Publisher Dashboard** > **My Websites** > **Add Website**.
-3. Register the production domain where you deploy KipoPlay (e.g. `https://your-domain.com` or `https://username.github.io`).
+3. Register the production domain where you deploy KopiPlay (e.g. `https://your-domain.com` or `https://username.github.io`).
 4. Once verified, GameDistribution authorizes ad delivery and revenue sharing through your registered domain.
 5. In `data/games.json`, you can customize the game entry's `embedUrl` with your publisher zone config parameters if provided by your account manager.

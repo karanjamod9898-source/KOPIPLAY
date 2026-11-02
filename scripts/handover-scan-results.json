@@ -1,0 +1,978 @@
+{
+  "brandNames": [
+    {
+      "file": "404.html",
+      "count": 2,
+      "samples": [
+        {
+          "line": 6,
+          "match": "KipoPlay",
+          "snippet": "<title>KipoPlay - Redirecting...</title>"
+        },
+        {
+          "line": 70,
+          "match": "KipoPlay",
+          "snippet": "<a href=\"./\">Return to KipoPlay</a>"
+        }
+      ]
+    },
+    {
+      "file": "assets/images/games/default-game.svg",
+      "count": 1,
+      "samples": [
+        {
+          "line": 36,
+          "match": "KIPOPLAY",
+          "snippet": "<text x=\"200\" y=\"185\" fill=\"#94a3b8\" font-family=\"'Segoe UI', sans-serif\" font-size=\"14\" font-weight=\"700\" text-anchor=\""
+        }
+      ]
+    },
+    {
+      "file": "assets/images/logo.svg",
+      "count": 3,
+      "samples": [
+        {
+          "line": 10,
+          "match": "kipo",
+          "snippet": "<linearGradient id=\"kipo-grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">"
+        },
+        {
+          "line": 42,
+          "match": "KIPO",
+          "snippet": "<!-- Brand Typography: KIPO in bright white, PLAY in vibrant blue-purple gradient -->"
+        },
+        {
+          "line": 44,
+          "match": "KIPO",
+          "snippet": "<tspan fill=\"#FFFFFF\">KIPO</tspan><tspan fill=\"url(#nexus-grad)\">PLAY</tspan>"
+        }
+      ]
+    },
+    {
+      "file": "css/components.css",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay - UI Components Styles (Dark Gaming Theme)"
+        }
+      ]
+    },
+    {
+      "file": "css/main.css",
+      "count": 3,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay - Professional Dark Gaming Portal Design System"
+        },
+        {
+          "line": 3,
+          "match": "KipoPlay",
+          "snippet": "Inspired by Modern Gaming Platforms with Original KipoPlay Blue & Purple Accents"
+        },
+        {
+          "line": 24,
+          "match": "KipoPlay",
+          "snippet": "/* KipoPlay Brand Accents (Vibrant Electric Blue & Cyber Violet) */"
+        }
+      ]
+    },
+    {
+      "file": "css/player.css",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay - Game Detail & Player Styles (Dark Gaming Design)"
+        }
+      ]
+    },
+    {
+      "file": "css/responsive.css",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay - Comprehensive Mobile-First Responsive Styles"
+        }
+      ]
+    },
+    {
+      "file": "data/catalogData.js",
+      "count": 10,
+      "samples": [
+        {
+          "line": 1,
+          "match": "KipoPlay",
+          "snippet": "// KipoPlay Game Catalog - Auto-generated and verified"
+        },
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "// Brand: KipoPlay (https://kipo.in)"
+        },
+        {
+          "line": 2,
+          "match": "kipo",
+          "snippet": "// Brand: KipoPlay (https://kipo.in)"
+        },
+        {
+          "line": 30,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 60,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 90,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 120,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 150,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 180,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 210,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        }
+      ]
+    },
+    {
+      "file": "data/games.json",
+      "count": 7,
+      "samples": [
+        {
+          "line": 28,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 58,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 88,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 118,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 148,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 178,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        },
+        {
+          "line": 208,
+          "match": "KipoPlay",
+          "snippet": "\"developer\": \"KipoPlay Arcade\","
+        }
+      ]
+    },
+    {
+      "file": "HOW_TO_ADD_GAMES.md",
+      "count": 2,
+      "samples": [
+        {
+          "line": 1,
+          "match": "KipoPlay",
+          "snippet": "# 🎮 KipoPlay - How to Add & Manage Games Guide"
+        },
+        {
+          "line": 3,
+          "match": "KipoPlay",
+          "snippet": "This guide explains how to easily add, modify, or publish games in your KipoPlay catalog."
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "count": 19,
+      "samples": [
+        {
+          "line": 9,
+          "match": "KipoPlay",
+          "snippet": "<title>KipoPlay – Play Free Online Games</title>"
+        },
+        {
+          "line": 10,
+          "match": "KipoPlay",
+          "snippet": "<meta name=\"title\" content=\"KipoPlay – Play Free Online Games\">"
+        },
+        {
+          "line": 12,
+          "match": "KipoPlay",
+          "snippet": "content=\"Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure"
+        },
+        {
+          "line": 14,
+          "match": "kipoplay",
+          "snippet": "content=\"online games, browser games, free games, kipoplay, kipo games, html5 games, car games, puzzle games, shooting g"
+        },
+        {
+          "line": 14,
+          "match": "kipo",
+          "snippet": "content=\"online games, browser games, free games, kipoplay, kipo games, html5 games, car games, puzzle games, shooting g"
+        },
+        {
+          "line": 15,
+          "match": "KipoPlay",
+          "snippet": "<meta name=\"author\" content=\"KipoPlay\">"
+        },
+        {
+          "line": 17,
+          "match": "kipo",
+          "snippet": "<link rel=\"canonical\" href=\"https://kipo.in/\">"
+        },
+        {
+          "line": 25,
+          "match": "kipo",
+          "snippet": "<meta property=\"og:url\" content=\"https://kipo.in/\">"
+        },
+        {
+          "line": 26,
+          "match": "KipoPlay",
+          "snippet": "<meta property=\"og:title\" content=\"KipoPlay – Play Free Online Games\">"
+        },
+        {
+          "line": 28,
+          "match": "KipoPlay",
+          "snippet": "content=\"Discover KipoPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure"
+        }
+      ]
+    },
+    {
+      "file": "js/api.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Data API Layer"
+        }
+      ]
+    },
+    {
+      "file": "js/app.js",
+      "count": 18,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Main Application Bootstrap & Client-Side Router"
+        },
+        {
+          "line": 42,
+          "match": "KipoPlay",
+          "snippet": "setMeta('KipoPlay – Play Free Online Games', 'Discover KipoPlay, your destination for free online games. Play browser-ba"
+        },
+        {
+          "line": 42,
+          "match": "KipoPlay",
+          "snippet": "setMeta('KipoPlay – Play Free Online Games', 'Discover KipoPlay, your destination for free online games. Play browser-ba"
+        },
+        {
+          "line": 52,
+          "match": "KipoPlay",
+          "snippet": "setMeta('All Games - KipoPlay Catalog', 'Browse our complete catalog of free browser action, racing, puzzle, and adventu"
+        },
+        {
+          "line": 63,
+          "match": "KipoPlay",
+          "snippet": "setMeta(`${game.title} - Play Free Online on KipoPlay`, game.description);"
+        },
+        {
+          "line": 65,
+          "match": "KipoPlay",
+          "snippet": "setMeta('Game Not Found - KipoPlay', 'The requested game could not be found.');"
+        },
+        {
+          "line": 79,
+          "match": "KipoPlay",
+          "snippet": "setMeta(`${cat.name} Games - Play Free on KipoPlay`, cat.description);"
+        },
+        {
+          "line": 88,
+          "match": "KipoPlay",
+          "snippet": "setMeta('My Favorite Games - KipoPlay', 'Your personal collection of saved favorite games on KipoPlay.');"
+        },
+        {
+          "line": 88,
+          "match": "KipoPlay",
+          "snippet": "setMeta('My Favorite Games - KipoPlay', 'Your personal collection of saved favorite games on KipoPlay.');"
+        },
+        {
+          "line": 98,
+          "match": "KipoPlay",
+          "snippet": "setMeta(`Search Games: ${query || 'All'} - KipoPlay`, 'Search and discover games across all categories on KipoPlay.');"
+        }
+      ]
+    },
+    {
+      "file": "js/bundle.js",
+      "count": 154,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Complete Modern Gaming Portal Bundle (Production Ready)"
+        },
+        {
+          "line": 84,
+          "match": "KipoPlay",
+          "snippet": "title: 'Play Free Shooting Games Online – KipoPlay',"
+        },
+        {
+          "line": 85,
+          "match": "KipoPlay",
+          "snippet": "description: 'Play action-packed free online shooting games on KipoPlay. Aim, fire, and conquer sniper, tactical FPS, an"
+        },
+        {
+          "line": 86,
+          "match": "KipoPlay",
+          "snippet": "intro: 'Welcome to the KipoPlay Shooting Games arena. Whether you favor precision sniper rifles, tactical space blasters"
+        },
+        {
+          "line": 88,
+          "match": "KipoPlay",
+          "snippet": "{ q: 'Can I play shooting games on mobile without downloading an app?', a: 'Yes! All KipoPlay shooting games run directl"
+        },
+        {
+          "line": 90,
+          "match": "KipoPlay",
+          "snippet": "{ q: 'Are these shooting games completely free?', a: 'Every shooting game on KipoPlay is 100% free with instant, unlimit"
+        },
+        {
+          "line": 94,
+          "match": "KipoPlay",
+          "snippet": "title: 'Play Free Action Games Online – KipoPlay',"
+        },
+        {
+          "line": 95,
+          "match": "KipoPlay",
+          "snippet": "description: 'Jump into thrilling free online action games on KipoPlay. Experience combat, ninja duels, survival battles"
+        },
+        {
+          "line": 96,
+          "match": "KipoPlay",
+          "snippet": "intro: 'KipoPlay Action Games bring heart-pounding combat, hero quests, and survival arenas straight to your screen. Cha"
+        },
+        {
+          "line": 98,
+          "match": "KipoPlay",
+          "snippet": "{ q: 'What makes action games on KipoPlay unique?', a: 'They load instantly with zero downloads, featuring smooth canvas"
+        }
+      ]
+    },
+    {
+      "file": "js/components/adSlot.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Monetization & Advertising Slot Component"
+        }
+      ]
+    },
+    {
+      "file": "js/components/footer.js",
+      "count": 6,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Site Footer Component"
+        },
+        {
+          "line": 19,
+          "match": "KipoPlay",
+          "snippet": "<img src=\"assets/images/logo.svg\" alt=\"KipoPlay\" style=\"height: 36px;\" />"
+        },
+        {
+          "line": 21,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay is your premier destination for high-speed, instant HTML5 browser games. No downloads, no installations, just p"
+        },
+        {
+          "line": 46,
+          "match": "KipoPlay",
+          "snippet": "<li><a href=\"#/about\" class=\"footer-link\">About KipoPlay</a></li>"
+        },
+        {
+          "line": 56,
+          "match": "KipoPlay",
+          "snippet": "&copy; 2026 KipoPlay Portal. All rights reserved. Games featured on this portal are licensed, self-hosted, or public dom"
+        },
+        {
+          "line": 59,
+          "match": "KipoPlay",
+          "snippet": "Play More. Discover More. • Powered by KipoPlay Engine"
+        }
+      ]
+    },
+    {
+      "file": "js/components/gameCard.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Game Card Component"
+        }
+      ]
+    },
+    {
+      "file": "js/components/header.js",
+      "count": 4,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Header Navigation & Global Search Component"
+        },
+        {
+          "line": 30,
+          "match": "KipoPlay",
+          "snippet": "<a href=\"#/\" class=\"brand-logo\" aria-label=\"KipoPlay Home\">"
+        },
+        {
+          "line": 31,
+          "match": "KipoPlay",
+          "snippet": "<img src=\"assets/images/logo.svg\" alt=\"KipoPlay\" />"
+        },
+        {
+          "line": 95,
+          "match": "KipoPlay",
+          "snippet": "<img src=\"assets/images/logo.svg\" alt=\"KipoPlay\" style=\"height: 32px;\" />"
+        }
+      ]
+    },
+    {
+      "file": "js/components/hero.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Hero Section Component"
+        }
+      ]
+    },
+    {
+      "file": "js/components/toast.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Toast Notification Component"
+        }
+      ]
+    },
+    {
+      "file": "js/state.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - State & Storage Management"
+        }
+      ]
+    },
+    {
+      "file": "js/views/allGamesView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - All Games View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/categoryView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Category Page View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/favoritesView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Favorites Page View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/gameView.js",
+      "count": 3,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Individual Game Page View & Player Controller"
+        },
+        {
+          "line": 202,
+          "match": "KipoPlay",
+          "snippet": "'Self-hosted native HTML5 game application developed for the KipoPlay portal platform.'}"
+        },
+        {
+          "line": 206,
+          "match": "Kipo",
+          "snippet": "Developer: <strong>${game.developer || 'Kipo Certified Developer'}</strong>"
+        }
+      ]
+    },
+    {
+      "file": "js/views/homeView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Homepage View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/notFoundView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Custom 404 Not Found View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/searchView.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Search Results View"
+        }
+      ]
+    },
+    {
+      "file": "js/views/staticViews.js",
+      "count": 10,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "* KipoPlay - Static Pages (About, Contact, Privacy, Terms)"
+        },
+        {
+          "line": 17,
+          "match": "KipoPlay",
+          "snippet": "<h1 style=\"font-size: 2.5rem; margin-bottom: 16px;\">About <span class=\"gradient-text\">KipoPlay</span></h1>"
+        },
+        {
+          "line": 20,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay is a modern, lightweight, high-performance HTML5 browser gaming platform. Our mission is to make high quality c"
+        },
+        {
+          "line": 50,
+          "match": "KipoPlay",
+          "snippet": "Are you an HTML5 game developer or publisher? We welcome original web games, open-source projects, and licensed titles. "
+        },
+        {
+          "line": 70,
+          "match": "KipoPlay",
+          "snippet": "Have questions, feedback, or want to submit an HTML5 game to KipoPlay? Fill out the form below and our team will get bac"
+        },
+        {
+          "line": 136,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay is committed to safeguarding visitor privacy. We do not require users to create an account or provide personal "
+        },
+        {
+          "line": 141,
+          "match": "KipoPlay",
+          "snippet": "To enhance your experience, KipoPlay utilizes your browser's local storage to save your game favorites and recently play"
+        },
+        {
+          "line": 173,
+          "match": "KipoPlay",
+          "snippet": "By accessing or playing games on KipoPlay, you agree to comply with and be bound by these Terms of Use."
+        },
+        {
+          "line": 178,
+          "match": "KipoPlay",
+          "snippet": "All portal graphics, brand logos, custom UI components, and software code are the intellectual property of KipoPlay. Gam"
+        },
+        {
+          "line": 183,
+          "match": "KipoPlay",
+          "snippet": "You may use KipoPlay for personal, non-commercial entertainment purposes. You agree not to disrupt, bypass iframe securi"
+        }
+      ]
+    },
+    {
+      "file": "manifest.json",
+      "count": 3,
+      "samples": [
+        {
+          "line": 2,
+          "match": "KipoPlay",
+          "snippet": "\"name\": \"KipoPlay – Play Free Online Games\","
+        },
+        {
+          "line": 3,
+          "match": "KipoPlay",
+          "snippet": "\"short_name\": \"KipoPlay\","
+        },
+        {
+          "line": 4,
+          "match": "KipoPlay",
+          "snippet": "\"description\": \"KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across mu"
+        }
+      ]
+    },
+    {
+      "file": "README.md",
+      "count": 9,
+      "samples": [
+        {
+          "line": 1,
+          "match": "KipoPlay",
+          "snippet": "# 🎮 KipoPlay - Modern Online Browser Gaming Portal"
+        },
+        {
+          "line": 3,
+          "match": "KipoPlay",
+          "snippet": "![KipoPlay Platform](assets/images/logo.svg)"
+        },
+        {
+          "line": 5,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay is a complete, modern, responsive online browser gaming platform built with native web technologies. Similar in"
+        },
+        {
+          "line": 98,
+          "match": "KipoPlay",
+          "snippet": "│       ├── logo.svg            # KipoPlay brand logo"
+        },
+        {
+          "line": 142,
+          "match": "KipoPlay",
+          "snippet": "KipoPlay is 100% static and requires **no paid backend services**. You can host it free of charge on any modern static h"
+        },
+        {
+          "line": 149,
+          "match": "KipoPlay",
+          "snippet": "git commit -m \"Initial KipoPlay release\""
+        },
+        {
+          "line": 150,
+          "match": "kipoplay",
+          "snippet": "git remote add origin https://github.com/YOUR_USERNAME/kipoplay.git"
+        },
+        {
+          "line": 155,
+          "match": "kipoplay",
+          "snippet": "4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/kipoplay/`!"
+        },
+        {
+          "line": 189,
+          "match": "KipoPlay",
+          "snippet": "3. Register the production domain where you deploy KipoPlay (e.g. `https://your-domain.com` or `https://username.github."
+        }
+      ]
+    },
+    {
+      "file": "robots.txt",
+      "count": 1,
+      "samples": [
+        {
+          "line": 4,
+          "match": "kipo",
+          "snippet": "Sitemap: https://kipo.in/sitemap.xml"
+        }
+      ]
+    },
+    {
+      "file": "sitemap.xml",
+      "count": 220,
+      "samples": [
+        {
+          "line": 3,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>"
+        },
+        {
+          "line": 4,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/games</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 5,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/popular</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 6,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/new</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 7,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/favorites</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 8,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/recent</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 9,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>"
+        },
+        {
+          "line": 10,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>"
+        },
+        {
+          "line": 11,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/privacy</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 12,
+          "match": "kipo",
+          "snippet": "<url><loc>https://kipo.in/#/terms</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>"
+        }
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "file": "data/catalogData.js",
+      "count": 1,
+      "samples": [
+        {
+          "line": 2,
+          "domain": "https://kipo.in)",
+          "snippet": "// Brand: KipoPlay (https://kipo.in)"
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "count": 4,
+      "samples": [
+        {
+          "line": 17,
+          "domain": "https://kipo.in/",
+          "snippet": "<link rel=\"canonical\" href=\"https://kipo.in/\">"
+        },
+        {
+          "line": 25,
+          "domain": "https://kipo.in/",
+          "snippet": "<meta property=\"og:url\" content=\"https://kipo.in/\">"
+        },
+        {
+          "line": 33,
+          "domain": "https://kipo.in/",
+          "snippet": "<meta property=\"twitter:url\" content=\"https://kipo.in/\">"
+        },
+        {
+          "line": 59,
+          "domain": "https://kipo.in/",
+          "snippet": "\"url\": \"https://kipo.in/\","
+        }
+      ]
+    },
+    {
+      "file": "js/bundle.js",
+      "count": 14,
+      "samples": [
+        {
+          "line": 277,
+          "domain": "https://kipo.in",
+          "snippet": "productionDomain: 'https://kipo.in'"
+        },
+        {
+          "line": 1061,
+          "domain": "https://kipo.in/",
+          "snippet": "canonical: 'https://kipo.in/',"
+        },
+        {
+          "line": 1069,
+          "domain": "https://kipo.in/",
+          "snippet": "\"url\": \"https://kipo.in/\","
+        },
+        {
+          "line": 1209,
+          "domain": "https://kipo.in/#/category/${activeCatSlug}",
+          "snippet": "canonical: activeCatSlug ? `https://kipo.in/#/category/${activeCatSlug}` : 'https://kipo.in/#/games',"
+        },
+        {
+          "line": 1209,
+          "domain": "https://kipo.in/#/games",
+          "snippet": "canonical: activeCatSlug ? `https://kipo.in/#/category/${activeCatSlug}` : 'https://kipo.in/#/games',"
+        },
+        {
+          "line": 1216,
+          "domain": "https://kipo.in/#/category/${activeCatSlug}",
+          "snippet": "\"url\": activeCatSlug ? `https://kipo.in/#/category/${activeCatSlug}` : 'https://kipo.in/#/games'"
+        },
+        {
+          "line": 1216,
+          "domain": "https://kipo.in/#/games",
+          "snippet": "\"url\": activeCatSlug ? `https://kipo.in/#/category/${activeCatSlug}` : 'https://kipo.in/#/games'"
+        },
+        {
+          "line": 1361,
+          "domain": "https://kipo.in/#/game/${game.slug}",
+          "snippet": "canonical: `https://kipo.in/#/game/${game.slug}`,"
+        },
+        {
+          "line": 1626,
+          "domain": "https://kipo.in/#/about",
+          "snippet": "canonical: 'https://kipo.in/#/about',"
+        },
+        {
+          "line": 1700,
+          "domain": "https://kipo.in/#/contact",
+          "snippet": "canonical: 'https://kipo.in/#/contact',"
+        }
+      ]
+    },
+    {
+      "file": "README.md",
+      "count": 2,
+      "samples": [
+        {
+          "line": 155,
+          "domain": "https://YOUR_USERNAME.github.io/kipoplay/",
+          "snippet": "4. Click **Save**. Your site is live at `https://YOUR_USERNAME.github.io/kipoplay/`!"
+        },
+        {
+          "line": 189,
+          "domain": "https://username.github.io",
+          "snippet": "3. Register the production domain where you deploy KipoPlay (e.g. `https://your-domain.com` or `https://username.github."
+        }
+      ]
+    },
+    {
+      "file": "robots.txt",
+      "count": 1,
+      "samples": [
+        {
+          "line": 4,
+          "domain": "https://kipo.in/sitemap.xml",
+          "snippet": "Sitemap: https://kipo.in/sitemap.xml"
+        }
+      ]
+    },
+    {
+      "file": "sitemap.xml",
+      "count": 220,
+      "samples": [
+        {
+          "line": 3,
+          "domain": "https://kipo.in/",
+          "snippet": "<url><loc>https://kipo.in/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>"
+        },
+        {
+          "line": 4,
+          "domain": "https://kipo.in/#/games",
+          "snippet": "<url><loc>https://kipo.in/#/games</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 5,
+          "domain": "https://kipo.in/#/popular",
+          "snippet": "<url><loc>https://kipo.in/#/popular</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 6,
+          "domain": "https://kipo.in/#/new",
+          "snippet": "<url><loc>https://kipo.in/#/new</loc><changefreq>daily</changefreq><priority>0.9</priority></url>"
+        },
+        {
+          "line": 7,
+          "domain": "https://kipo.in/#/favorites",
+          "snippet": "<url><loc>https://kipo.in/#/favorites</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 8,
+          "domain": "https://kipo.in/#/recent",
+          "snippet": "<url><loc>https://kipo.in/#/recent</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 9,
+          "domain": "https://kipo.in/#/about",
+          "snippet": "<url><loc>https://kipo.in/#/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>"
+        },
+        {
+          "line": 10,
+          "domain": "https://kipo.in/#/contact",
+          "snippet": "<url><loc>https://kipo.in/#/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>"
+        },
+        {
+          "line": 11,
+          "domain": "https://kipo.in/#/privacy",
+          "snippet": "<url><loc>https://kipo.in/#/privacy</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>"
+        },
+        {
+          "line": 12,
+          "domain": "https://kipo.in/#/terms",
+          "snippet": "<url><loc>https://kipo.in/#/terms</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>"
+        }
+      ]
+    }
+  ],
+  "seoAndMeta": [],
+  "potentialSecrets": [],
+  "deploymentSettings": []
+}

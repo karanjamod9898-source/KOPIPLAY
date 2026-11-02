@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Search Results View
+ * KopiPlay - Search Results View
  * Dedicated search results page with filter pills and query refinement
  */
 

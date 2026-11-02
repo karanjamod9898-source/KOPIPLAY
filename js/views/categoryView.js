@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Category Page View
+ * KopiPlay - Category Page View
  * Shows games filtered by category with sorting, sub-filters, and metadata
  */
 

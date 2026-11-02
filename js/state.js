@@ -1,15 +1,15 @@
 /**
- * KipoPlay - State & Storage Management
+ * KopiPlay - State & Storage Management
  * Handles Favorites and Recently Played via localStorage with safe migration
  */
 
 const STORAGE_KEYS = {
-  FAVORITES: 'kipoplay_favorites',
-  RECENTLY_PLAYED: 'kipoplay_recent',
-  SORT_PREF: 'kipoplay_sort_pref',
-  SIDEBAR_COLLAPSED: 'kipoplay_sidebar_collapsed',
-  GAME_REPORTS: 'kipoplay_game_reports',
-  CONTACT_MESSAGES: 'kipoplay_contact_messages',
+  FAVORITES: 'kopiplay_favorites',
+  RECENTLY_PLAYED: 'kopiplay_recent',
+  SORT_PREF: 'kopiplay_sort_pref',
+  SIDEBAR_COLLAPSED: 'kopiplay_sidebar_collapsed',
+  GAME_REPORTS: 'kopiplay_game_reports',
+  CONTACT_MESSAGES: 'kopiplay_contact_messages',
   // Legacy backward-compatibility keys
   LEGACY_FAVORITES: 'nexusplay_favorites',
   LEGACY_FAVORITES_ALT: 'nexus_favorites',

@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Site Footer Component
+ * KopiPlay - Site Footer Component
  */
 
 import { getCategories } from '../api.js';
@@ -16,9 +16,9 @@ export async function renderFooter() {
       <div class="container">
         <div class="footer-top">
           <div class="footer-col footer-brand">
-            <img src="assets/images/logo.svg" alt="KipoPlay" style="height: 36px;" />
+            <img src="assets/images/logo.svg" alt="KopiPlay" style="height: 36px;" />
             <p>
-              KipoPlay is your premier destination for high-speed, instant HTML5 browser games. No downloads, no installations, just pure gaming directly in your web browser.
+              KopiPlay is your premier destination for high-speed, instant HTML5 browser games. No downloads, no installations, just pure gaming directly in your web browser.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export async function renderFooter() {
           <div class="footer-col">
             <h4>Platform & Legal</h4>
             <ul class="footer-links">
-              <li><a href="#/about" class="footer-link">About KipoPlay</a></li>
+              <li><a href="#/about" class="footer-link">About KopiPlay</a></li>
               <li><a href="#/contact" class="footer-link">Developer & Contact</a></li>
               <li><a href="#/privacy" class="footer-link">Privacy Policy</a></li>
               <li><a href="#/terms" class="footer-link">Terms of Service</a></li>
@@ -53,10 +53,10 @@ export async function renderFooter() {
 
         <div class="footer-bottom">
           <div class="footer-disclaimer">
-            &copy; 2026 KipoPlay Portal. All rights reserved. Games featured on this portal are licensed, self-hosted, or public domain HTML5 web applications.
+            &copy; 2026 KopiPlay Portal. All rights reserved. Games featured on this portal are licensed, self-hosted, or public domain HTML5 web applications.
           </div>
           <div>
-            Play More. Discover More. • Powered by KipoPlay Engine
+            Play More. Discover More. • Powered by KopiPlay Engine
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-// KipoPlay Game Catalog - Auto-generated and verified
-// Brand: KipoPlay (https://kipo.in)
-window.KIPO_CATALOG = window.NEXUS_CATALOG = [
+// KopiPlay Game Catalog - Auto-generated and verified
+// Brand: KopiPlay
+window.KOPI_CATALOG = window.KIPO_CATALOG = window.NEXUS_CATALOG = [
   {
     "id": "neon-racer-02",
     "title": "Neon Horizon: Cyber Racer",
@@ -27,7 +27,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Cyberpunk",
       "Highway"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Avoid colliding with oncoming traffic. Collect glowing blue energy cells to recharge your nitro meter. Boost past 240 km/h for maximum score multiplier.",
     "releaseDate": "2026-10-25",
     "isAuthorized": true
@@ -57,7 +57,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Retro",
       "Shooter"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Clear out alien drone formations before they breach perimeter defense lines. Collect blue power-up orbs to unlock dual-spread cannons.",
     "releaseDate": "2026-10-26",
     "isAuthorized": true
@@ -87,7 +87,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Strategy",
       "Math"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Tiles with identical numbers merge when sliding into each other. Strategically anchor your highest value tile in one corner to maximize available moves.",
     "releaseDate": "2026-10-27",
     "isAuthorized": true
@@ -117,14 +117,14 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Snake",
       "Fast-Paced"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Eat glowing energy nodes to grow. Game velocity increases progressively as your score climbs.",
     "releaseDate": "2026-10-28",
     "isAuthorized": true
   },
   {
     "id": "neon-breakout-06",
-    "title": "Neon Breakout DX",
+    "title": "Neon Breaker DX",
     "slug": "neon-breakout",
     "aliases": [
       "neon-breakout-dx"
@@ -147,7 +147,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Physics",
       "Retro"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Strike bricks to score points. Deflecting near the edges of the paddle alters the rebound angle for tricky shots.",
     "releaseDate": "2026-10-28",
     "isAuthorized": true
@@ -177,7 +177,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Physics",
       "Arcade"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Sink baskets before the 60-second buzzer sounds. Clean swishes build your streak multiplier for extra points.",
     "releaseDate": "2026-10-29",
     "isAuthorized": true
@@ -207,7 +207,7 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
       "Labyrinth",
       "Quest"
     ],
-    "developer": "KipoPlay Arcade",
+    "developer": "KopiPlay Arcade",
     "instructions": "Locate all 4 crystals on each floor, grab the golden key, and step onto the blue portal to ascend.",
     "releaseDate": "2026-10-29",
     "isAuthorized": true
@@ -4955,5 +4955,184 @@ window.KIPO_CATALOG = window.NEXUS_CATALOG = [
     "instructions": "Shoot up bubbles and match 3 or more of the same bubbles.",
     "releaseDate": "2026-04-29",
     "isAuthorized": true
+  }
+];
+
+window.KOPI_CATEGORIES = window.KIPO_CATEGORIES = window.NEXUS_CATEGORIES = [
+  {
+    "id": "shooting",
+    "name": "Shooting",
+    "slug": "shooting",
+    "icon": "crosshair",
+    "description": "Adrenaline-fueled target shootouts, space combat, and alien battles.",
+    "color": "#ef4444"
+  },
+  {
+    "id": "action",
+    "name": "Action",
+    "slug": "action",
+    "icon": "sword",
+    "description": "Fast-paced reflex action, martial arts combat, and explosive missions.",
+    "color": "#f97316"
+  },
+  {
+    "id": "adventure",
+    "name": "Adventure",
+    "slug": "adventure",
+    "icon": "compass",
+    "description": "Labyrinth dungeon quests, crystal collection, and mystery escapes.",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "racing",
+    "name": "Racing",
+    "slug": "racing",
+    "icon": "flag",
+    "description": "High-speed competitive racing, mega-ramp descents, and drift tracks.",
+    "color": "#3b82f6"
+  },
+  {
+    "id": "car",
+    "name": "Car",
+    "slug": "car",
+    "icon": "car",
+    "description": "Highway cruisers, monster trucks, sports cars, and city driving.",
+    "color": "#2563eb"
+  },
+  {
+    "id": "driving",
+    "name": "Driving",
+    "slug": "driving",
+    "icon": "steering",
+    "description": "Realistic vehicular driving, parking challenges, and traffic survival.",
+    "color": "#6366f1"
+  },
+  {
+    "id": "sports",
+    "name": "Sports",
+    "slug": "sports",
+    "icon": "basketball",
+    "description": "Arcade basketball shootouts, tennis cups, and athletic challenges.",
+    "color": "#10b981"
+  },
+  {
+    "id": "football",
+    "name": "Football",
+    "slug": "football",
+    "icon": "soccer",
+    "description": "Penalty shootouts, free kicks, stadium tournaments, and soccer fun.",
+    "color": "#059669"
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "slug": "puzzle",
+    "icon": "puzzle",
+    "description": "Mind-bending logic puzzles, sliding blocks, match-3, and brain teasers.",
+    "color": "#8b5cf6"
+  },
+  {
+    "id": "strategy",
+    "name": "Strategy",
+    "slug": "strategy",
+    "icon": "shield",
+    "description": "Tower defense tactics, fortress sieges, and strategic board battles.",
+    "color": "#a855f7"
+  },
+  {
+    "id": "platform",
+    "name": "Platform",
+    "slug": "platform",
+    "icon": "layers",
+    "description": "Precision platform jumping, retro obstacle runners, and vertical climbs.",
+    "color": "#ec4899"
+  },
+  {
+    "id": "multiplayer",
+    "name": "Multiplayer",
+    "slug": "multiplayer",
+    "icon": "users",
+    "description": "Competitive head-to-head showdowns, 2-player battles, and arena fun.",
+    "color": "#06b6d4"
+  },
+  {
+    "id": "arcade",
+    "name": "Arcade",
+    "slug": "arcade",
+    "icon": "gamepad",
+    "description": "Golden age retro arcade machines, neon brick breakers, and snake runners.",
+    "color": "#14b8a6"
+  },
+  {
+    "id": "simulation",
+    "name": "Simulation",
+    "slug": "simulation",
+    "icon": "cpu",
+    "description": "Kitchen chef management, farm simulators, and hands-on scenarios.",
+    "color": "#eab308"
+  },
+  {
+    "id": "casual",
+    "name": "Casual",
+    "slug": "casual",
+    "icon": "smile",
+    "description": "Instant-play stress-free games designed for quick pick-up-and-play fun.",
+    "color": "#0ea5e9"
+  },
+  {
+    "id": "kids-games",
+    "name": "Kids Games",
+    "slug": "kids-games",
+    "icon": "heart",
+    "description": "Family-friendly colorful adventures, cute pets, and creative puzzles.",
+    "color": "#f43f5e"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty",
+    "slug": "beauty",
+    "icon": "sparkles",
+    "description": "Princess makeovers, high-fashion dress up, and runway styling.",
+    "color": "#d946ef"
+  },
+  {
+    "id": "pool",
+    "name": "Pool",
+    "slug": "pool",
+    "icon": "circle-dot",
+    "description": "8-ball billiards, snooker trick shots, and classic carrom table boards.",
+    "color": "#10b981"
+  },
+  {
+    "id": "board-games",
+    "name": "Board Games",
+    "slug": "board-games",
+    "icon": "grid",
+    "description": "Classic tabletop ludo, dominoes, chess, and ancient mahjong solitaire.",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "card-games",
+    "name": "Card Games",
+    "slug": "card-games",
+    "icon": "cards",
+    "description": "Klondike, spider solitaire, freecell, pyramid, and trick-taking cards.",
+    "color": "#6366f1"
+  },
+  {
+    "id": "clicker",
+    "name": "Clicker",
+    "slug": "clicker",
+    "icon": "mouse-pointer",
+    "description": "Satisfying tap-and-click incremental progression and rapid-reaction games.",
+    "color": "#f97316"
+  },
+  {
+    "id": "io-games",
+    "name": ".io Games",
+    "slug": "io-games",
+    "icon": "globe",
+    "description": "Arena survival score-chasers and fast-paced multiplayer-style action.",
+    "color": "#06b6d4"
   }
 ];

@@ -1,7 +1,7 @@
 {
-  "name": "KipoPlay – Play Free Online Games",
-  "short_name": "KipoPlay",
-  "description": "KipoPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.",
+  "name": "KopiPlay – Play Free Online Games",
+  "short_name": "KopiPlay",
+  "description": "KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

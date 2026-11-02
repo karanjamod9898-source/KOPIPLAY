@@ -1,0 +1,83 @@
+{
+  "homepage": {
+    "title": "KopiPlay – Play Free Online Games",
+    "brandInLogo": "",
+    "logoImgSrc": "",
+    "totalCards": 166,
+    "featuredHeroTitle": "Play The Best Free Games Online",
+    "categoriesInNav": 0,
+    "footerBrand": "KopiPlay is an online gaming platform where players can discover and enjoy browser-based games across multiple categories, including Action, Adventure, Racing, Puzzle, Shooting and Sports. Enjoy seamless instant play on desktop and mobile.\n\nPlay More. Discover More. • Free Online Games",
+    "catalogLength": 187
+  },
+  "categories": {
+    "totalChecked": 22,
+    "allHaveCards": true,
+    "allHaveKopiPlay": true,
+    "sample": [
+      {
+        "slug": "shooting",
+        "title": "Play Free Shooting Games Online – KopiPlay",
+        "cards": 43,
+        "hasKopiPlay": true
+      },
+      {
+        "slug": "action",
+        "title": "Play Free Action Games Online – KopiPlay",
+        "cards": 35,
+        "hasKopiPlay": true
+      },
+      {
+        "slug": "adventure",
+        "title": "Play Free Adventure Games Online – KopiPlay",
+        "cards": 23,
+        "hasKopiPlay": true
+      }
+    ]
+  },
+  "search": {
+    "title": "Search: \"racer\" – KopiPlay Online Gaming",
+    "queryCards": 5,
+    "firstCardTitle": ""
+  },
+  "favorites": {
+    "favStorage": [
+      "neon-racer-02",
+      "pulse-2048-04"
+    ],
+    "recStorage": [
+      "space-def-03"
+    ],
+    "title": "My Favorites – KopiPlay Online Gaming",
+    "favCards": 0
+  },
+  "gameDetail": {
+    "title": "Neon Horizon: Cyber Racer – Play Free Online on KopiPlay",
+    "hasFrame": true,
+    "iframeSrc": "http://127.0.0.1:8080/games/neon-racer/index.html",
+    "gameTitle": "",
+    "hasBreadcrumbs": true,
+    "hasFullscreenBtn": true
+  },
+  "backNav": {
+    "hash": "#/favorites",
+    "title": "My Favorites – KopiPlay Online Gaming"
+  },
+  "notFound": {
+    "title": "My Favorites – KopiPlay Online Gaming",
+    "notFoundHeading": "Game Not Found",
+    "hasBackToHome": true
+  },
+  "mobile": {
+    "viewportWidth": 375,
+    "headerVisible": true,
+    "cardsRendered": 166,
+    "hasHorizontalOverflow": false
+  },
+  "tablet": {
+    "viewportWidth": 768,
+    "cardsRendered": 166,
+    "hasHorizontalOverflow": false
+  },
+  "consoleErrors": [],
+  "networkErrors": []
+}

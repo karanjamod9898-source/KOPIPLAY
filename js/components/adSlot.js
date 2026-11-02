@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Monetization & Advertising Slot Component
+ * KopiPlay - Monetization & Advertising Slot Component
  * Clean, separated reserved space for future authorized ad networks (e.g. Google AdSense, GameDistribution)
  */
 

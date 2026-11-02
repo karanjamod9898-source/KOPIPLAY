@@ -1,5 +1,5 @@
 /**
- * KipoPlay - Data API Layer
+ * KopiPlay - Data API Layer
  * Loads games catalog and categories from JSON and provides query helpers
  */
 
