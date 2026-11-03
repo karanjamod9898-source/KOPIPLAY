@@ -1,0 +1,234 @@
+  // =========================================================================
+  // CENTRAL ADVERTISING CONFIGURATION SWITCH
+  // =========================================================================
+  // Set to true when ready to enable advertisements across the website.
+  // Set to false during development or before ad network approval.
+  const ADS_ENABLED = false;
+
+  // --- Centralized Advertising Management Engine (KopiPlay Ads System) ---
+  const KOPI_ADS_CONFIG = {
+    // Master Switch: Controls whether advertising containers are rendered
+    enabled: ADS_ENABLED,
+
+    // Google AdSense Configuration (Populate when publisher credentials are ready)
+    adsense: {
+      enabled: false,           // Set to true once publisher ID and slot IDs are configured
+      client: '',               // e.g., 'ca-pub-XXXXXXXXXXXXXXXX'
+      scriptUrl: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    },
+
+    // Custom Network Configuration (for Playwire, NitroPay, Venatus, etc.)
+    customNetwork: {
+      enabled: false,
+      headerSnippet: ''
+    },
+
+    // Registered Ad Placements (All 9 Standardized Positions preserved for future activation)
+    placements: {
+      homepage_top: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_categories: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_sidebar_left: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_sidebar_right: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_games_inline: {
+        enabled: true,
+        size: '728x90',
+        label: 'SPONSORED',
+        slotId: '',
+        customCode: ''
+      },
+      game_sidebar_left: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      game_sidebar_right: {
+        enabled: true,
+        size: '300x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      game_below_player: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      footer_ad: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      }
+    }
+  };
+
+  const kopiAds = {
+    config: KOPI_ADS_CONFIG,
+
+    // Helper to query if advertisements are globally enabled
+    isEnabled: function () {
+      return Boolean(KOPI_ADS_CONFIG.enabled);
+    },
+
+    // Runtime Configuration Method (allows dynamic toggling e.g. window.kopiAds.configure({ enabled: true }))
+    configure: function (userConfig) {
+      if (!userConfig || typeof userConfig !== 'object') return;
+      if (typeof userConfig.enabled === 'boolean') {
+        KOPI_ADS_CONFIG.enabled = userConfig.enabled;
+      }
+      if (userConfig.adsense) {
+        Object.assign(KOPI_ADS_CONFIG.adsense, userConfig.adsense);
+      }
+      if (userConfig.customNetwork) {
+        Object.assign(KOPI_ADS_CONFIG.customNetwork, userConfig.customNetwork);
+      }
+      if (userConfig.placements) {
+        for (const [key, val] of Object.entries(userConfig.placements)) {
+          if (KOPI_ADS_CONFIG.placements[key]) {
+            Object.assign(KOPI_ADS_CONFIG.placements[key], val);
+          } else {
+            KOPI_ADS_CONFIG.placements[key] = val;
+          }
+        }
+      }
+    },
+
+    // Script Loader Guard (Ensures external ad SDK loads once only when enabled)
+    loadAdSenseScript: function () {
+      if (!this.isEnabled() || !KOPI_ADS_CONFIG.adsense.enabled || !KOPI_ADS_CONFIG.adsense.client) return;
+      if (document.getElementById('kopi-adsense-script')) return;
+      const script = document.createElement('script');
+      script.id = 'kopi-adsense-script';
+      script.async = true;
+      script.src = `${KOPI_ADS_CONFIG.adsense.scriptUrl}?client=${encodeURIComponent(KOPI_ADS_CONFIG.adsense.client)}`;
+      script.crossOrigin = 'anonymous';
+      document.head.appendChild(script);
+    },
+
+    // Reusable Ad Slot HTML Generator (Returns empty string when ADS_ENABLED is false)
+    render: function (placementId, overrides = {}) {
+      if (!this.isEnabled()) return '';
+
+      const placement = KOPI_ADS_CONFIG.placements[placementId];
+      if (placement && placement.enabled === false) return '';
+
+      const size = overrides.size || (placement ? placement.size : '728x90');
+      const label = overrides.label || (placement ? placement.label : 'ADVERTISEMENT');
+      const slotId = (placement && placement.slotId) || '';
+      const customCode = (placement && placement.customCode) || '';
+
+      // Dimensions mapping
+      let frameClass = 'ad-frame-responsive';
+      let sizeText = 'Responsive';
+      let minHeight = '90px';
+
+      if (size === '728x90') {
+        frameClass = 'ad-frame-728x90';
+        sizeText = '728 &times; 90 px';
+        minHeight = '90px';
+      } else if (size === '300x250') {
+        frameClass = 'ad-frame-300x250';
+        sizeText = '300 &times; 250 px';
+        minHeight = '250px';
+      } else if (size === '160x600') {
+        frameClass = 'ad-frame-160x600';
+        sizeText = '160 &times; 600 px';
+        minHeight = '600px';
+      } else if (size === '300x600') {
+        frameClass = 'ad-frame-300x600';
+        sizeText = '300 &times; 600 px';
+        minHeight = '600px';
+      }
+
+      // 1. Google AdSense Active State
+      if (KOPI_ADS_CONFIG.adsense.enabled && KOPI_ADS_CONFIG.adsense.client && slotId) {
+        kopiAds.loadAdSenseScript();
+        return `
+          <div class="kopi-ad-container kopi-ad-${escapeHtml(placementId)}" data-ad-placement="${escapeHtml(placementId)}" style="min-height:${minHeight};">
+            <div class="kopi-ad-label">${escapeHtml(label)}</div>
+            <div class="kopi-ad-frame ${frameClass}">
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="${escapeHtml(KOPI_ADS_CONFIG.adsense.client)}"
+                   data-ad-slot="${escapeHtml(slotId)}"
+                   data-ad-format="${size === '160x600' || size === '300x600' ? 'vertical' : 'auto'}"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+        `;
+      }
+
+      // 2. Custom Ad Network Snippet
+      if (customCode) {
+        return `
+          <div class="kopi-ad-container kopi-ad-${escapeHtml(placementId)}" data-ad-placement="${escapeHtml(placementId)}" style="min-height:${minHeight};">
+            <div class="kopi-ad-label">${escapeHtml(label)}</div>
+            <div class="kopi-ad-frame ${frameClass}">
+              ${customCode}
+            </div>
+          </div>
+        `;
+      }
+
+      // 3. Compliant Dark-Theme Monetization Placeholder (Default when enabled)
+      return `
+        <!-- Monetization Ad Slot: ${escapeHtml(placementId)} -->
+        <aside class="kopi-ad-container kopi-ad-${escapeHtml(placementId)}" data-ad-placement="${escapeHtml(placementId)}" aria-label="${escapeHtml(label)}" style="min-height:${minHeight};">
+          <div class="kopi-ad-label">${escapeHtml(label)}</div>
+          <div class="kopi-ad-frame ${frameClass}">
+            <div class="kopi-ad-placeholder">
+              <div class="kopi-ad-placeholder-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div class="kopi-ad-placeholder-text">Advertisement Space</div>
+              <div class="kopi-ad-placeholder-size">${sizeText}</div>
+              <div class="kopi-ad-placeholder-id">Placement: <code>${escapeHtml(placementId)}</code></div>
+            </div>
+          </div>
+        </aside>
+      `;
+    }
+  };
+
+  // Backwards compatibility alias for nexusAds
+  const nexusAds = {
+    init: function (config) {
+      kopiAds.configure(config);
+    },
+    renderSlot: function (slotName) {
+      return kopiAds.render(slotName);
+    }
+  };

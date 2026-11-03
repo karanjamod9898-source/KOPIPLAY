@@ -1,0 +1,459 @@
+{
+  "timestamp": "2026-11-03T08:45:43.372Z",
+  "sections": {
+    "Catalog Integrity": [
+      {
+        "testName": "Exact 187 Catalog Games Present",
+        "passed": true,
+        "details": {
+          "count": 187
+        }
+      },
+      {
+        "testName": "Zero Duplicate Game Slugs",
+        "passed": true,
+        "details": {
+          "duplicateSlugs": 0
+        }
+      },
+      {
+        "testName": "All Thumbnails Defined",
+        "passed": true,
+        "details": {
+          "missingThumb": 0
+        }
+      },
+      {
+        "testName": "All Embed Endpoints Defined",
+        "passed": true,
+        "details": {
+          "missingEmbed": 0
+        }
+      },
+      {
+        "testName": "All Titles Defined",
+        "passed": true,
+        "details": {
+          "missingTitle": 0
+        }
+      }
+    ],
+    "Homepage Functionality": [
+      {
+        "testName": "Mixed Game Grid Rendered (52 games)",
+        "passed": true,
+        "details": {
+          "count": 52
+        }
+      },
+      {
+        "testName": "Category Showcase Rendered (12 categories)",
+        "passed": true,
+        "details": {
+          "count": 12
+        }
+      },
+      {
+        "testName": "Explore More Games Rendered (135 games)",
+        "passed": true,
+        "details": {
+          "count": 135
+        }
+      },
+      {
+        "testName": "Total 187 Games Rendered on Homepage",
+        "passed": true,
+        "details": {
+          "totalCards": 187
+        }
+      },
+      {
+        "testName": "Header Logo & Search Input Present",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "FAQ Accordion Items Present",
+        "passed": true,
+        "details": {
+          "count": 4
+        }
+      },
+      {
+        "testName": "Footer Navigation Links Present",
+        "passed": true,
+        "details": {
+          "count": 17
+        }
+      },
+      {
+        "testName": "Zero Horizontal Overflow on Desktop",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Game Card Click Navigates to Game Page",
+        "passed": true,
+        "details": {
+          "postClickHash": "#/game/neon-racer"
+        }
+      }
+    ],
+    "Advertisement Deactivation": [
+      {
+        "testName": "ADS_ENABLED is explicitly false",
+        "passed": true,
+        "details": {
+          "adsEnabled": false
+        }
+      },
+      {
+        "testName": "Zero .kopi-ad-container Elements on Homepage",
+        "passed": true,
+        "details": {
+          "count": 0
+        }
+      },
+      {
+        "testName": "Zero .ad-section-container Elements on Homepage",
+        "passed": true,
+        "details": {
+          "count": 0
+        }
+      },
+      {
+        "testName": "Zero .homepage-side-ad Elements on Homepage",
+        "passed": true,
+        "details": {
+          "count": 0
+        }
+      },
+      {
+        "testName": "AdSense Script Tag Not Injected",
+        "passed": true,
+        "details": {}
+      }
+    ],
+    "Search & Autocomplete": [
+      {
+        "testName": "Live Search Dropdown Displays Suggestions",
+        "passed": true,
+        "details": {
+          "count": 8
+        }
+      },
+      {
+        "testName": "Route #/games?q=neon Filters Matching Game Cards",
+        "passed": true,
+        "details": {
+          "count": 10
+        }
+      },
+      {
+        "testName": "Unmatched Search Renders Clean Empty State",
+        "passed": true,
+        "details": {
+          "heading": "No Games Found"
+        }
+      }
+    ],
+    "Category Navigation": [
+      {
+        "testName": "All 23 Category Pills Rendered (All + 22)",
+        "passed": true,
+        "details": {
+          "count": 23
+        }
+      },
+      {
+        "testName": "Navigation Arrows Present",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Clicking Platform Games Navigates Cleanly",
+        "passed": true,
+        "details": {
+          "h1": "Platform Games"
+        }
+      },
+      {
+        "testName": "Title Normalization Verified (.io Games not duplicated)",
+        "passed": true,
+        "details": {
+          "h1": ".io Games"
+        }
+      }
+    ],
+    "Individual Game Pages": [
+      {
+        "testName": "Clean Distraction-Free Stage (.game-stage-clean)",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Zero Side Ad Columns on Game Page",
+        "passed": true,
+        "details": {
+          "count": 0
+        }
+      },
+      {
+        "testName": "Zero Below-Player Ad Container",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "16:9 Player Iframe Loaded with HTTPS Source",
+        "passed": true,
+        "details": {
+          "src": "https://html5.gamedistribution.com/659090e00bfc4650899550d63f8a130d/?gd_sdk_referrer_url=http%3A%2F%2F127.0.0.1%3A8080%2F%23%2Fgame%2Ftank-wars-2"
+        }
+      },
+      {
+        "testName": "Player Overlay Fullscreen Button Present",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Game Metadata Card with Title & Tags Present",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Game Control Keycaps Rendered",
+        "passed": true,
+        "details": {
+          "count": 2
+        }
+      },
+      {
+        "testName": "Favorite & Share Action Buttons Present",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Related Games Strip Rendered (10 games)",
+        "passed": true,
+        "details": {
+          "count": 10
+        }
+      },
+      {
+        "testName": "Zero Horizontal Overflow on Game Page",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "First-Party Game Loads Correctly (Neon Breaker DX)",
+        "passed": true,
+        "details": {}
+      }
+    ],
+    "Favorites & History": [
+      {
+        "testName": "Empty Favorites Shows Friendly Recovery State",
+        "passed": true,
+        "details": {
+          "title": "No Favorite Games Yet"
+        }
+      },
+      {
+        "testName": "Toggling Favorite Updates kopiplay_favorites Storage",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "Favorites Grid Correctly Displays Favorited Game",
+        "passed": true,
+        "details": {
+          "titles": [
+            "Tank Wars 2"
+          ]
+        }
+      },
+      {
+        "testName": "Recently Played Route Functional",
+        "passed": true,
+        "details": {
+          "heading": "Recently Played"
+        }
+      }
+    ],
+    "Responsive Viewports": [
+      {
+        "testName": "Viewport Mobile Mini (320px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 320,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport Mobile Standard (375px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 375,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport iPhone 14 (390px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 390,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport iPhone 14 Pro Max (430px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 430,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport iPad Portrait (768px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 768,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport iPad Landscape (1024px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 1024,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport Laptop (1280px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 1280,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport HD Desktop (1366px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 1366,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport MacBook Pro (1440px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 1440,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      },
+      {
+        "testName": "Viewport Full HD Desktop (1920px): Zero Overflow & Zero Side Ads",
+        "passed": true,
+        "details": {
+          "width": 1920,
+          "overflow": false,
+          "sideAdPresent": false
+        }
+      }
+    ],
+    "Ad Network Requests": [
+      {
+        "testName": "Zero Third-Party Ad Network Requests Made",
+        "passed": true,
+        "details": {
+          "requests": []
+        }
+      }
+    ],
+    "Console & Asset Health": [
+      {
+        "testName": "Zero Uncaught JavaScript Console Errors",
+        "passed": true,
+        "details": {
+          "errors": []
+        }
+      },
+      {
+        "testName": "Zero Broken Local Network Assets (HTTP 4xx/5xx)",
+        "passed": true,
+        "details": {
+          "errors": []
+        }
+      }
+    ],
+    "Technical SEO": [
+      {
+        "testName": "Valid Document Title Present",
+        "passed": true,
+        "details": {
+          "title": "KopiPlay – Play Free Online Games"
+        }
+      },
+      {
+        "testName": "Valid Meta Description Present",
+        "passed": true,
+        "details": {
+          "desc": "Discover KopiPlay, your destination for free online games. Play browser-based action, racing, puzzle, adventure, shooting and sports games on desktop and mobile."
+        }
+      },
+      {
+        "testName": "Canonical URL Points to https://kipo.in/",
+        "passed": true,
+        "details": {
+          "canonical": "https://kipo.in/"
+        }
+      },
+      {
+        "testName": "Schema.org JSON-LD Structured Data Valid",
+        "passed": true,
+        "details": {}
+      },
+      {
+        "testName": "HTTP robots.txt Accessible (200 OK)",
+        "passed": true,
+        "details": {
+          "status": 200,
+          "length": 61
+        }
+      },
+      {
+        "testName": "HTTP sitemap.xml Accessible (200 OK)",
+        "passed": true,
+        "details": {
+          "status": 200,
+          "length": 31352
+        }
+      },
+      {
+        "testName": "HTTP ads.txt Accessible (200 OK, Ready for Future)",
+        "passed": true,
+        "details": {
+          "status": 200,
+          "length": 1043
+        }
+      }
+    ]
+  },
+  "passedTotal": 61,
+  "failedTotal": 0,
+  "consoleErrors": [],
+  "networkErrors": [],
+  "adNetworkRequests": [],
+  "all187GamesHealthy": true
+}

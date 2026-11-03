@@ -1,0 +1,25 @@
+# ==============================================================================
+# KopiPlay - ads.txt (Authorized Digital Sellers)
+# Domain: kipo.in
+# Standard: IAB Tech Lab ads.txt Specification v1.1
+# ==============================================================================
+# 
+# INSTRUCTIONS FOR WEBSITE OWNER / BUYER:
+# When your Google AdSense or advertising network account is approved,
+# replace the placeholder below with your authorized seller record:
+#
+# Format: <Field #1: Exchange Domain>, <Field #2: Publisher Account ID>, <Field #3: Account Type>, <Field #4: Certification Authority ID>
+#
+# GOOGLE ADSENSE EXAMPLE:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# GOOGLE AD MANAGER (GAM) RESELLER EXAMPLE:
+# google.com, pub-XXXXXXXXXXXXXXXX, RESELLER, f08c47fec0942fa0
+#
+# OTHER MAJOR NETWORKS:
+# playwire.com, XXXXX, DIRECT
+# nitropay.com, XXXXX, DIRECT
+# ==============================================================================
+
+# [Pending Publisher Setup - Insert Authorized Sellers Records Below]
+

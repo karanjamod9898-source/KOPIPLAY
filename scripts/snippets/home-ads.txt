@@ -1,0 +1,96 @@
+    // Remaining Explore Games: Complete catalog coverage
+    const showAds = kopiAds.isEnabled();
+    const exploreGames = catalog.slice(52);
+    const exploreBatch1 = showAds ? exploreGames.slice(0, 24) : [];
+    const exploreBatch2 = showAds ? exploreGames.slice(24) : [];
+
+    const html = showAds ? `
+      <div class="homepage-with-sidebars">
+        <!-- Left Desktop Skyscraper Ad (Visible on Large Screens >= 1560px) -->
+        <aside class="homepage-side-ad homepage-side-ad-left" aria-label="Left Skyscraper Ad">
+          ${kopiAds.render('homepage_sidebar_left', { size: '160x600' })}
+        </aside>
+
+        <!-- Main Central Column -->
+        <div class="homepage-main-column">
+          <!-- 1. Top Banner Advertisement (Below Main Nav, Above Featured Games) -->
+          <div class="ad-section-container ad-section-top">
+            ${kopiAds.render('homepage_top', { size: '728x90' })}
+          </div>
+
+          <!-- Dense Image-First Mixed-Size Game Grid (Featured Section) -->
+          <section class="mixed-game-grid" aria-label="Featured Free Online Games">
+            ${mixedGridHtml}
+          </section>
+
+          <!-- Game Categories Showcase Section -->
+          ${renderCategoryShowcase()}
+
+          <!-- 2. Advertisement Between Categories and Explore More Games -->
+          <div class="ad-section-container ad-section-mid">
+            ${kopiAds.render('homepage_categories', { size: '728x90' })}
+          </div>
+
+          <!-- 3. Complete Explore Games Library with Inline Ad Break -->
+          <section class="explore-all-section" style="margin-top: 20px; margin-bottom: 40px;">
+            <div class="section-header-clean">
+              <h2 class="section-title-clean">Explore More Games (${catalog.length})</h2>
+              <a href="#/games" class="related-view-all">View All (${catalog.length})</a>
+            </div>
+
+            <!-- First Group of Game Rows -->
+            <div class="games-grid">
+              ${exploreBatch1.map(renderCard).join('')}
+            </div>
+
+            <!-- 4. Inline Advertisement Between Game Rows -->
+            <div class="ad-section-container ad-section-inline" style="margin: 28px 0;">
+              ${kopiAds.render('homepage_games_inline', { size: '728x90', label: 'SPONSORED' })}
+            </div>
+
+            <!-- Second Group of Game Rows -->
+            <div class="games-grid">
+              ${exploreBatch2.map(renderCard).join('')}
+            </div>
+          </section>
+
+          <!-- Rich Homepage SEO Content Section -->
+          ${renderHomepageSeoSection()}
+
+          <!-- 5. Footer Leaderboard Advertisement -->
+          <div class="ad-section-container ad-section-bottom" style="margin: 32px 0 16px 0;">
+            ${kopiAds.render('footer_ad', { size: '728x90' })}
+          </div>
+        </div>
+
+        <!-- Right Desktop Skyscraper Ad (Visible on Large Screens >= 1560px) -->
+        <aside class="homepage-side-ad homepage-side-ad-right" aria-label="Right Skyscraper Ad">
+          ${kopiAds.render('homepage_sidebar_right', { size: '160x600' })}
+        </aside>
+      </div>
+    ` : `
+      <div class="homepage-main-column" style="width: 100%; max-width: var(--container-max); margin: 0 auto;">
+        <!-- Dense Image-First Mixed-Size Game Grid (Featured Section) -->
+        <section class="mixed-game-grid" aria-label="Featured Free Online Games">
+          ${mixedGridHtml}
+        </section>
+
+        <!-- Game Categories Showcase Section -->
+        ${renderCategoryShowcase()}
+
+        <!-- Complete Explore Games Library (Continuous Grid, Zero Ad Gaps) -->
+        <section class="explore-all-section" style="margin-top: 28px; margin-bottom: 40px;">
+          <div class="section-header-clean">
+            <h2 class="section-title-clean">Explore More Games (${catalog.length})</h2>
+            <a href="#/games" class="related-view-all">View All (${catalog.length})</a>
+          </div>
+
+          <div class="games-grid">
+            ${exploreGames.map(renderCard).join('')}
+          </div>
+        </section>
+
+        <!-- Rich Homepage SEO Content Section -->
+        ${renderHomepageSeoSection()}
+      </div>
+    `;

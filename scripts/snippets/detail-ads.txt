@@ -1,0 +1,127 @@
+      ${kopiAds.isEnabled() ? `
+      <!-- 3-Column Playing Stage: Left Vertical Ad, Center Player & Details, Right Vertical Ad -->
+      <div class="game-stage-3col">
+        <!-- 1. Left Vertical Ad (160x600 Skyscraper on Desktop >= 1480px) -->
+        <aside class="game-stage-side-ad game-stage-side-ad-left" aria-label="Left Vertical Advertisement">
+          ${kopiAds.render('game_sidebar_left', { size: '160x600' })}
+        </aside>
+
+        <!-- 2. Center Main Column: 16:9 Player, Fullscreen, Title, Details, Controls & Below-Player Ad -->
+        <div class="game-stage-center">
+          <!-- 16:9 Cinematic Player Container (Unchanged) -->
+          <div class="player-stage-card" id="playerStageCard">
+            <iframe id="gameIframe"
+                    src="${embedUrl}"
+                    title="${escapeHtml(game.title)}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowfullscreen
+                    loading="eager"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+            </iframe>
+            <button class="player-overlay-fullscreen-btn" id="playerOverlayFullscreenBtn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen" onclick="window.NEXUS.toggleFullscreen()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+          </div>
+
+          <!-- Game Details & Meta Card: Title, Badges, Actions, Description, Controls -->
+          <div class="game-details-meta-card">
+            <div class="game-details-header">
+              <div class="game-details-title-wrap">
+                <h1 class="game-details-title">${escapeHtml(game.title)}</h1>
+                <div class="game-details-tags">
+                  <span class="game-tag-badge">${escapeHtml(game.category || 'Arcade')}</span>
+                  <span class="game-tag-badge">Free Instant Play</span>
+                  ${game.rating ? ('<span class="game-tag-rating">★ ' + escapeHtml(String(game.rating)) + '</span>') : ''}
+                  ${game.plays ? ('<span class="game-tag-plays">▶ ' + Number(game.plays).toLocaleString() + ' Plays</span>') : ''}
+                </div>
+              </div>
+              <div class="game-details-actions">
+                <button class="player-fav-btn ${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('${game.slug}', event)" title="Favorite" aria-label="Favorite">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <span id="detailFavText">${isFav ? 'Favorited' : 'Add to Favorites'}</span>
+                </button>
+                <button class="player-share-btn" onclick="window.NEXUS.shareGame()" title="Share Game">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                  <span>Share</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="game-details-body">
+              <div class="game-details-desc">
+                <h4>About ${escapeHtml(game.title)}</h4>
+                <p>${escapeHtml(game.description || ('Play ' + game.title + ' instantly in your browser on KopiPlay. Free online game with zero downloads.'))}</p>
+              </div>
+              <div class="game-details-controls">
+                <h4>Game Controls</h4>
+                <div class="game-controls-keys">${controlsHtml}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Horizontal Banner Below Game Player & Controls -->
+          <div class="ad-section-container ad-section-below-player">
+            ${kopiAds.render('game_below_player', { size: '728x90' })}
+          </div>
+        </div>
+
+        <!-- 4. Right Vertical Ad (300x600 Half-Page or 300x250 Display Ad) -->
+        <aside class="game-stage-side-ad game-stage-side-ad-right" aria-label="Right Vertical Advertisement">
+          ${kopiAds.render('game_sidebar_right', { size: '300x600' })}
+        </aside>
+      </div>
+      ` : `
+      <!-- Clean Distraction-Free Playing Stage (Ads Disabled) -->
+      <div class="game-stage-clean" style="max-width: 1040px; margin: 0 auto 36px auto; width: 100%; display: flex; flex-direction: column; gap: 20px;">
+        <!-- 16:9 Cinematic Player Container -->
+        <div class="player-stage-card" id="playerStageCard">
+          <iframe id="gameIframe"
+                  src="${embedUrl}"
+                  title="${escapeHtml(game.title)}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowfullscreen
+                  loading="eager"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+          </iframe>
+          <button class="player-overlay-fullscreen-btn" id="playerOverlayFullscreenBtn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen" onclick="window.NEXUS.toggleFullscreen()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          </button>
+        </div>
+
+        <!-- Game Details & Meta Card: Title, Badges, Actions, Description, Controls -->
+        <div class="game-details-meta-card">
+          <div class="game-details-header">
+            <div class="game-details-title-wrap">
+              <h1 class="game-details-title">${escapeHtml(game.title)}</h1>
+              <div class="game-details-tags">
+                <span class="game-tag-badge">${escapeHtml(game.category || 'Arcade')}</span>
+                <span class="game-tag-badge">Free Instant Play</span>
+                ${game.rating ? ('<span class="game-tag-rating">★ ' + escapeHtml(String(game.rating)) + '</span>') : ''}
+                ${game.plays ? ('<span class="game-tag-plays">▶ ' + Number(game.plays).toLocaleString() + ' Plays</span>') : ''}
+              </div>
+            </div>
+            <div class="game-details-actions">
+              <button class="player-fav-btn ${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('${game.slug}', event)" title="Favorite" aria-label="Favorite">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span id="detailFavText">${isFav ? 'Favorited' : 'Add to Favorites'}</span>
+              </button>
+              <button class="player-share-btn" onclick="window.NEXUS.shareGame()" title="Share Game">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="game-details-body">
+            <div class="game-details-desc">
+              <h4>About ${escapeHtml(game.title)}</h4>
+              <p>${escapeHtml(game.description || ('Play ' + game.title + ' instantly in your browser on KopiPlay. Free online game with zero downloads.'))}</p>
+            </div>
+            <div class="game-details-controls">
+              <h4>Game Controls</h4>
+              <div class="game-controls-keys">${controlsHtml}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `}

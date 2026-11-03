@@ -496,33 +496,130 @@ body.mobile-sidebar-open .mobile-drawer-overlay {
 }
 
 /* --------------------------------------------------------------------------
-   4. Category Quick Pills Filter Strip (All Games View & Category Navigation)
+   4. Category Navigation Bar & Smooth Horizontal Scroll
+   Container with Edge Navigation Arrows, Edge Fades, and Center Auto-Scroll
    -------------------------------------------------------------------------- */
+.category-nav-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 22px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 .category-quick-bar {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
   overflow-x: auto;
-  padding: 6px 0 14px;
-  margin-bottom: 24px;
-  scrollbar-width: thin;
-  scrollbar-color: #2B3548 transparent;
+  overflow-y: hidden;
+  width: 100%;
+  padding: 8px 52px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
 }
 
 .category-quick-bar::-webkit-scrollbar {
-  height: 5px;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-.category-quick-bar::-webkit-scrollbar-track {
-  background: transparent;
+/* Edge Fade Overlays */
+.cat-nav-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 76px;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.25s ease;
 }
 
-.category-quick-bar::-webkit-scrollbar-thumb {
-  background: #2B3548;
-  border-radius: 9999px;
+.cat-nav-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #101522 55%, rgba(16, 21, 34, 0.85) 75%, transparent 100%);
 }
 
+.cat-nav-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #101522 55%, rgba(16, 21, 34, 0.85) 75%, transparent 100%);
+}
+
+.cat-nav-fade.is-hidden {
+  opacity: 0;
+}
+
+/* Navigation Arrow Buttons */
+.cat-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1B2435;
+  border: 1.5px solid #2B3548;
+  color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 8;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cat-nav-arrow svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.18s ease;
+}
+
+.cat-nav-arrow:hover {
+  background: #8B5CF6;
+  border-color: #A855F7;
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+
+.cat-nav-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.cat-nav-arrow.cat-nav-prev {
+  left: 6px;
+}
+
+.cat-nav-arrow.cat-nav-next {
+  right: 6px;
+}
+
+.cat-nav-arrow.cat-nav-prev:hover svg {
+  transform: translateX(-2px);
+}
+
+.cat-nav-arrow.cat-nav-next:hover svg {
+  transform: translateX(2px);
+}
+
+.cat-nav-arrow.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.8);
+}
+
+/* Category Quick Pill */
 .category-quick-pill {
   display: inline-flex;
   align-items: center;
@@ -539,11 +636,14 @@ body.mobile-sidebar-open .mobile-drawer-overlay {
   white-space: nowrap;
   flex-shrink: 0;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
 }
 
 .category-quick-pill svg {
   width: 15px;
   height: 15px;
+  flex-shrink: 0;
 }
 
 .category-quick-pill:hover {
@@ -561,7 +661,7 @@ body.mobile-sidebar-open .mobile-drawer-overlay {
 }
 
 /* --------------------------------------------------------------------------
-   5. Mixed-Size Bento Game Grid (Matches Left Panel in Reference)
+   5. Mixed-Size Bento Game Grid (Matches Left Panel in Reference) (Matches Left Panel in Reference)
    Dense, Image-First, Squircle Cards with 18px-22px Radius
    -------------------------------------------------------------------------- */
 .mixed-game-grid {
@@ -1628,4 +1728,396 @@ body.mobile-sidebar-open .mobile-drawer-overlay {
 .footer-bottom-sep {
   color: #43526E;
   font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   KopiPlay Centralized Advertising System Styles
+   Compliant, Dark Gaming Theme, CLS-Protected Ad Slots
+   ========================================================================== */
+
+/* Main Ad Slot Container */
+.kopi-ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #151D2E;
+  border: 1.5px solid #2B3548;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin: 18px 0;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kopi-ad-container:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtle, Compliant Advertisement Disclaimer Label */
+.kopi-ad-label {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #7A869E;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Inner Frame Area (Holds AdSense <ins> or Placeholder) */
+.kopi-ad-frame {
+  position: relative;
+  border-radius: 10px;
+  background: rgba(16, 21, 34, 0.7);
+  border: 1.5px dashed #2B3548;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Standard Frame Sizes */
+.kopi-ad-frame.ad-frame-728x90 {
+  max-width: 728px;
+  height: 90px;
+}
+
+.kopi-ad-frame.ad-frame-300x250 {
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+}
+
+.kopi-ad-frame.ad-frame-160x600 {
+  width: 160px;
+  height: 600px;
+  max-width: 100%;
+}
+
+.kopi-ad-frame.ad-frame-300x600 {
+  width: 300px;
+  height: 600px;
+  max-width: 100%;
+}
+
+.kopi-ad-frame.ad-frame-responsive {
+  width: 100%;
+  min-height: 90px;
+}
+
+/* Neutral Placeholder Inside Frame */
+.kopi-ad-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.kopi-ad-placeholder-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7A869E;
+  margin-bottom: 2px;
+}
+
+.kopi-ad-placeholder-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.kopi-ad-placeholder-text {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #A7B0C0;
+  letter-spacing: 0.3px;
+}
+
+.kopi-ad-placeholder-size {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #7A869E;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  padding: 1px 8px;
+  border-radius: 4px;
+}
+
+.kopi-ad-placeholder-id {
+  font-size: 0.65rem;
+  color: #5A667E;
+  margin-top: 2px;
+}
+
+.kopi-ad-placeholder-id code {
+  color: #8B5CF6;
+  font-size: 0.65rem;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Ad-Free Layout Resilience (Collapses completely when ADS_ENABLED = false)
+   -------------------------------------------------------------------------- */
+.ad-section-container:empty,
+.homepage-side-ad:empty,
+.game-stage-side-ad:empty,
+.kopi-ad-container:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+.game-stage-clean {
+  max-width: 1040px;
+  margin: 0 auto 36px auto;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Homepage Layout with Skyscraper Sidebars
+   -------------------------------------------------------------------------- */
+.homepage-with-sidebars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.homepage-main-column {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Large Desktop Skyscraper Sidebars (>= 1560px) */
+.homepage-side-ad {
+  display: none;
+  flex-shrink: 0;
+  width: 180px;
+  position: sticky;
+  top: calc(var(--header-height) + 16px);
+  z-index: 5;
+}
+
+.homepage-side-ad .kopi-ad-container {
+  margin: 0;
+  padding: 16px 8px;
+}
+
+@media (min-width: 1560px) {
+  .homepage-side-ad {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Game Detail Page 3-Column Stage Layout
+   -------------------------------------------------------------------------- */
+.game-stage-3col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.game-stage-center {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-stage-side-ad {
+  display: none;
+  flex-shrink: 0;
+  position: sticky;
+  top: calc(var(--header-height) + 16px);
+  z-index: 5;
+}
+
+.game-stage-side-ad-left {
+  width: 180px;
+}
+
+.game-stage-side-ad-right {
+  width: 320px;
+}
+
+.game-stage-side-ad .kopi-ad-container {
+  margin: 0;
+}
+
+@media (min-width: 1200px) {
+  .game-stage-side-ad-right {
+    display: block;
+  }
+}
+
+@media (min-width: 1480px) {
+  .game-stage-side-ad-left {
+    display: block;
+  }
+}
+
+/* Game Meta Card below player (Title, Controls, Description) */
+.game-details-meta-card {
+  background: #151D2E;
+  border: 1.5px solid #2B3548;
+  border-radius: 16px;
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-details-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #2B3548;
+}
+
+.game-details-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  margin: 0 0 6px 0;
+}
+
+.game-details-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.game-tag-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  color: #A7B0C0;
+}
+
+.game-tag-rating {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FBBF24;
+}
+
+.game-tag-plays {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #60A5FA;
+}
+
+.game-details-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #1B2435;
+  border: 1px solid #2B3548;
+  color: #F8FAFC;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.player-share-btn:hover {
+  background: #222E44;
+  border-color: #3B82F6;
+  color: #3B82F6;
+  transform: translateY(-1px);
+}
+
+.game-details-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+}
+
+.game-details-desc h4,
+.game-details-controls h4 {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+.game-details-desc p {
+  font-size: 0.9rem;
+  color: #A7B0C0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.game-controls-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .game-details-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }

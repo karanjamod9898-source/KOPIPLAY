@@ -67,6 +67,37 @@
     grid-row: span 2 !important;
   }
 
+  
+  /* Mobile Category Bar Responsive */
+  .category-quick-bar {
+    padding: 6px 36px 8px 36px;
+    gap: 8px;
+  }
+  .category-quick-pill {
+    padding: 7px 13px;
+    font-size: 0.82rem;
+  }
+  .category-quick-bar {
+    padding: 6px 42px;
+  }
+  .cat-nav-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  .cat-nav-arrow.cat-nav-prev {
+    left: 4px;
+  }
+  .cat-nav-arrow.cat-nav-next {
+    right: 4px;
+  }
+  .cat-nav-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+  .cat-nav-fade {
+    width: 52px;
+  }
+
   /* Mobile Category Grid: 3 columns */
   .category-showcase-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -169,5 +200,42 @@
   }
   .main-content {
     padding: 16px 14px 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Ad System Rules (Mobile & Tablet Layout Protection)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .homepage-side-ad,
+  .game-stage-side-ad-left,
+  .game-stage-side-ad-right {
+    display: none !important;
+  }
+
+  .kopi-ad-frame.ad-frame-728x90 {
+    max-width: 100%;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .kopi-ad-container {
+    padding: 10px 12px;
+    margin: 14px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .kopi-ad-placeholder-text {
+    font-size: 0.75rem;
+  }
+  .kopi-ad-placeholder-id {
+    display: none;
+  }
+  .game-details-meta-card {
+    padding: 16px 14px;
+  }
+  .game-details-title {
+    font-size: 1.25rem;
   }
 }

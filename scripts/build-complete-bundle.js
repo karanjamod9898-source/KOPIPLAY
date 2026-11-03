@@ -473,40 +473,241 @@ const bundleScript = `/**
     \`;
   }
 
-  // --- Google AdSense Engine (Prepared, Inactive by Default) ---
-  const ADS_CONFIG = {
-    enabled: false,
-    client: '',
-    slots: {
-      homeLeaderboard: '',
-      categoryBanner: '',
-      gameSidebar: '',
-      gameFooter: ''
+    // =========================================================================
+  // CENTRAL ADVERTISING CONFIGURATION SWITCH
+  // =========================================================================
+  // Set to true when ready to enable advertisements across the website.
+  // Set to false during development or before ad network approval.
+  const ADS_ENABLED = false;
+
+  // --- Centralized Advertising Management Engine (KopiPlay Ads System) ---
+  const KOPI_ADS_CONFIG = {
+    // Master Switch: Controls whether advertising containers are rendered
+    enabled: ADS_ENABLED,
+
+    // Google AdSense Configuration (Populate when publisher credentials are ready)
+    adsense: {
+      enabled: false,           // Set to true once publisher ID and slot IDs are configured
+      client: '',               // e.g., 'ca-pub-XXXXXXXXXXXXXXXX'
+      scriptUrl: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    },
+
+    // Custom Network Configuration (for Playwire, NitroPay, Venatus, etc.)
+    customNetwork: {
+      enabled: false,
+      headerSnippet: ''
+    },
+
+    // Registered Ad Placements (All 9 Standardized Positions preserved for future activation)
+    placements: {
+      homepage_top: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_categories: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_sidebar_left: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_sidebar_right: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      homepage_games_inline: {
+        enabled: true,
+        size: '728x90',
+        label: 'SPONSORED',
+        slotId: '',
+        customCode: ''
+      },
+      game_sidebar_left: {
+        enabled: true,
+        size: '160x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      game_sidebar_right: {
+        enabled: true,
+        size: '300x600',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      game_below_player: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      },
+      footer_ad: {
+        enabled: true,
+        size: '728x90',
+        label: 'ADVERTISEMENT',
+        slotId: '',
+        customCode: ''
+      }
     }
   };
 
-  const nexusAds = {
-    init: function (config) {
-      if (config && typeof config === 'object') {
-        Object.assign(ADS_CONFIG, config);
+  const kopiAds = {
+    config: KOPI_ADS_CONFIG,
+
+    // Helper to query if advertisements are globally enabled
+    isEnabled: function () {
+      return Boolean(KOPI_ADS_CONFIG.enabled);
+    },
+
+    // Runtime Configuration Method (allows dynamic toggling e.g. window.kopiAds.configure({ enabled: true }))
+    configure: function (userConfig) {
+      if (!userConfig || typeof userConfig !== 'object') return;
+      if (typeof userConfig.enabled === 'boolean') {
+        KOPI_ADS_CONFIG.enabled = userConfig.enabled;
+      }
+      if (userConfig.adsense) {
+        Object.assign(KOPI_ADS_CONFIG.adsense, userConfig.adsense);
+      }
+      if (userConfig.customNetwork) {
+        Object.assign(KOPI_ADS_CONFIG.customNetwork, userConfig.customNetwork);
+      }
+      if (userConfig.placements) {
+        for (const [key, val] of Object.entries(userConfig.placements)) {
+          if (KOPI_ADS_CONFIG.placements[key]) {
+            Object.assign(KOPI_ADS_CONFIG.placements[key], val);
+          } else {
+            KOPI_ADS_CONFIG.placements[key] = val;
+          }
+        }
       }
     },
-    renderSlot: function (slotName) {
-      if (!ADS_CONFIG.enabled || !ADS_CONFIG.client || !ADS_CONFIG.slots[slotName]) {
-        return '';
+
+    // Script Loader Guard (Ensures external ad SDK loads once only when enabled)
+    loadAdSenseScript: function () {
+      if (!this.isEnabled() || !KOPI_ADS_CONFIG.adsense.enabled || !KOPI_ADS_CONFIG.adsense.client) return;
+      if (document.getElementById('kopi-adsense-script')) return;
+      const script = document.createElement('script');
+      script.id = 'kopi-adsense-script';
+      script.async = true;
+      script.src = \`\${KOPI_ADS_CONFIG.adsense.scriptUrl}?client=\${encodeURIComponent(KOPI_ADS_CONFIG.adsense.client)}\`;
+      script.crossOrigin = 'anonymous';
+      document.head.appendChild(script);
+    },
+
+    // Reusable Ad Slot HTML Generator (Returns empty string when ADS_ENABLED is false)
+    render: function (placementId, overrides = {}) {
+      if (!this.isEnabled()) return '';
+
+      const placement = KOPI_ADS_CONFIG.placements[placementId];
+      if (placement && placement.enabled === false) return '';
+
+      const size = overrides.size || (placement ? placement.size : '728x90');
+      const label = overrides.label || (placement ? placement.label : 'ADVERTISEMENT');
+      const slotId = (placement && placement.slotId) || '';
+      const customCode = (placement && placement.customCode) || '';
+
+      // Dimensions mapping
+      let frameClass = 'ad-frame-responsive';
+      let sizeText = 'Responsive';
+      let minHeight = '90px';
+
+      if (size === '728x90') {
+        frameClass = 'ad-frame-728x90';
+        sizeText = '728 &times; 90 px';
+        minHeight = '90px';
+      } else if (size === '300x250') {
+        frameClass = 'ad-frame-300x250';
+        sizeText = '300 &times; 250 px';
+        minHeight = '250px';
+      } else if (size === '160x600') {
+        frameClass = 'ad-frame-160x600';
+        sizeText = '160 &times; 600 px';
+        minHeight = '600px';
+      } else if (size === '300x600') {
+        frameClass = 'ad-frame-300x600';
+        sizeText = '300 &times; 600 px';
+        minHeight = '600px';
       }
+
+      // 1. Google AdSense Active State
+      if (KOPI_ADS_CONFIG.adsense.enabled && KOPI_ADS_CONFIG.adsense.client && slotId) {
+        kopiAds.loadAdSenseScript();
+        return \`
+          <div class="kopi-ad-container kopi-ad-\${escapeHtml(placementId)}" data-ad-placement="\${escapeHtml(placementId)}" style="min-height:\${minHeight};">
+            <div class="kopi-ad-label">\${escapeHtml(label)}</div>
+            <div class="kopi-ad-frame \${frameClass}">
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="\${escapeHtml(KOPI_ADS_CONFIG.adsense.client)}"
+                   data-ad-slot="\${escapeHtml(slotId)}"
+                   data-ad-format="\${size === '160x600' || size === '300x600' ? 'vertical' : 'auto'}"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+        \`;
+      }
+
+      // 2. Custom Ad Network Snippet
+      if (customCode) {
+        return \`
+          <div class="kopi-ad-container kopi-ad-\${escapeHtml(placementId)}" data-ad-placement="\${escapeHtml(placementId)}" style="min-height:\${minHeight};">
+            <div class="kopi-ad-label">\${escapeHtml(label)}</div>
+            <div class="kopi-ad-frame \${frameClass}">
+              \${customCode}
+            </div>
+          </div>
+        \`;
+      }
+
+      // 3. Compliant Dark-Theme Monetization Placeholder (Default when enabled)
       return \`
-        <div class="nexus-ad-slot-wrap" data-slot="\${escapeHtml(slotName)}" style="margin: 20px 0; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="\${escapeHtml(ADS_CONFIG.client)}"
-               data-ad-slot="\${escapeHtml(ADS_CONFIG.slots[slotName])}"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
+        <!-- Monetization Ad Slot: \${escapeHtml(placementId)} -->
+        <aside class="kopi-ad-container kopi-ad-\${escapeHtml(placementId)}" data-ad-placement="\${escapeHtml(placementId)}" aria-label="\${escapeHtml(label)}" style="min-height:\${minHeight};">
+          <div class="kopi-ad-label">\${escapeHtml(label)}</div>
+          <div class="kopi-ad-frame \${frameClass}">
+            <div class="kopi-ad-placeholder">
+              <div class="kopi-ad-placeholder-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div class="kopi-ad-placeholder-text">Advertisement Space</div>
+              <div class="kopi-ad-placeholder-size">\${sizeText}</div>
+              <div class="kopi-ad-placeholder-id">Placement: <code>\${escapeHtml(placementId)}</code></div>
+            </div>
+          </div>
+        </aside>
       \`;
     }
   };
+
+  // Backwards compatibility alias for nexusAds
+  const nexusAds = {
+    init: function (config) {
+      kopiAds.configure(config);
+    },
+    renderSlot: function (slotName) {
+      return kopiAds.render(slotName);
+    }
+  };
+
 
   // --- Analytics Engine (Configurable, Zero Tracking when Disabled) ---
   const ANALYTICS_CONFIG = {
@@ -1179,31 +1380,102 @@ const bundleScript = `/**
     }).join('');
 
     // Remaining Explore Games: Complete catalog coverage
+    const showAds = kopiAds.isEnabled();
     const exploreGames = catalog.slice(52);
+    const exploreBatch1 = showAds ? exploreGames.slice(0, 24) : [];
+    const exploreBatch2 = showAds ? exploreGames.slice(24) : [];
 
-    const html = \`
-      <!-- Dense Image-First Mixed-Size Game Grid (Matches Left Panel of Reference) -->
-      <section class="mixed-game-grid" aria-label="Featured Free Online Games">
-        \${mixedGridHtml}
-      </section>
+    const html = showAds ? \`
+      <div class="homepage-with-sidebars">
+        <!-- Left Desktop Skyscraper Ad (Visible on Large Screens >= 1560px) -->
+        <aside class="homepage-side-ad homepage-side-ad-left" aria-label="Left Skyscraper Ad">
+          \${kopiAds.render('homepage_sidebar_left', { size: '160x600' })}
+        </aside>
 
-      <!-- Game Categories Showcase Section (Matches Middle-Right Panel of Reference) -->
-      \${renderCategoryShowcase()}
+        <!-- Main Central Column -->
+        <div class="homepage-main-column">
+          <!-- 1. Top Banner Advertisement (Below Main Nav, Above Featured Games) -->
+          <div class="ad-section-container ad-section-top">
+            \${kopiAds.render('homepage_top', { size: '728x90' })}
+          </div>
 
-      <!-- Complete Explore Games Library -->
-      <section class="explore-all-section" style="margin-top: 20px; margin-bottom: 40px;">
-        <div class="section-header-clean">
-          <h2 class="section-title-clean">Explore More Games (\${catalog.length})</h2>
-          <a href="#/games" class="related-view-all">View All (\${catalog.length})</a>
+          <!-- Dense Image-First Mixed-Size Game Grid (Featured Section) -->
+          <section class="mixed-game-grid" aria-label="Featured Free Online Games">
+            \${mixedGridHtml}
+          </section>
+
+          <!-- Game Categories Showcase Section -->
+          \${renderCategoryShowcase()}
+
+          <!-- 2. Advertisement Between Categories and Explore More Games -->
+          <div class="ad-section-container ad-section-mid">
+            \${kopiAds.render('homepage_categories', { size: '728x90' })}
+          </div>
+
+          <!-- 3. Complete Explore Games Library with Inline Ad Break -->
+          <section class="explore-all-section" style="margin-top: 20px; margin-bottom: 40px;">
+            <div class="section-header-clean">
+              <h2 class="section-title-clean">Explore More Games (\${catalog.length})</h2>
+              <a href="#/games" class="related-view-all">View All (\${catalog.length})</a>
+            </div>
+
+            <!-- First Group of Game Rows -->
+            <div class="games-grid">
+              \${exploreBatch1.map(renderCard).join('')}
+            </div>
+
+            <!-- 4. Inline Advertisement Between Game Rows -->
+            <div class="ad-section-container ad-section-inline" style="margin: 28px 0;">
+              \${kopiAds.render('homepage_games_inline', { size: '728x90', label: 'SPONSORED' })}
+            </div>
+
+            <!-- Second Group of Game Rows -->
+            <div class="games-grid">
+              \${exploreBatch2.map(renderCard).join('')}
+            </div>
+          </section>
+
+          <!-- Rich Homepage SEO Content Section -->
+          \${renderHomepageSeoSection()}
+
+          <!-- 5. Footer Leaderboard Advertisement -->
+          <div class="ad-section-container ad-section-bottom" style="margin: 32px 0 16px 0;">
+            \${kopiAds.render('footer_ad', { size: '728x90' })}
+          </div>
         </div>
-        <div class="games-grid">
-          \${exploreGames.map(renderCard).join('')}
-        </div>
-      </section>
 
-      <!-- Rich Homepage SEO Content Section -->
-      \${renderHomepageSeoSection()}
+        <!-- Right Desktop Skyscraper Ad (Visible on Large Screens >= 1560px) -->
+        <aside class="homepage-side-ad homepage-side-ad-right" aria-label="Right Skyscraper Ad">
+          \${kopiAds.render('homepage_sidebar_right', { size: '160x600' })}
+        </aside>
+      </div>
+    \` : \`
+      <div class="homepage-main-column" style="width: 100%; max-width: var(--container-max); margin: 0 auto;">
+        <!-- Dense Image-First Mixed-Size Game Grid (Featured Section) -->
+        <section class="mixed-game-grid" aria-label="Featured Free Online Games">
+          \${mixedGridHtml}
+        </section>
+
+        <!-- Game Categories Showcase Section -->
+        \${renderCategoryShowcase()}
+
+        <!-- Complete Explore Games Library (Continuous Grid, Zero Ad Gaps) -->
+        <section class="explore-all-section" style="margin-top: 28px; margin-bottom: 40px;">
+          <div class="section-header-clean">
+            <h2 class="section-title-clean">Explore More Games (\${catalog.length})</h2>
+            <a href="#/games" class="related-view-all">View All (\${catalog.length})</a>
+          </div>
+
+          <div class="games-grid">
+            \${exploreGames.map(renderCard).join('')}
+          </div>
+        </section>
+
+        <!-- Rich Homepage SEO Content Section -->
+        \${renderHomepageSeoSection()}
+      </div>
     \`;
+
 
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -1304,6 +1576,50 @@ const bundleScript = `/**
       \`;
     }
 
+        // Check if category navigation wrapper and games grid are already in the DOM
+    const existingWrapper = main.querySelector('.category-nav-wrapper');
+    const existingGrid = main.querySelector('#mainGamesGrid');
+
+    if (existingWrapper && existingGrid) {
+      // IN-PLACE SPA UPDATE: Keep category bar intact without DOM destruction
+      const headerTitle = main.querySelector('h1');
+      if (headerTitle) headerTitle.textContent = title;
+      const introPara = headerTitle ? headerTitle.parentElement.querySelector('p') : null;
+      if (introPara) introPara.textContent = introText;
+      const countPill = main.querySelector('.sidebar-section-count');
+      if (countPill) countPill.textContent = \`\${games.length} \${games.length === 1 ? 'Game' : 'Games'}\`;
+      const badgeIcon = main.querySelector('.section-badge-icon');
+      if (badgeIcon) badgeIcon.innerHTML = iconSvg;
+
+      const bar = existingWrapper.querySelector('.category-quick-bar');
+      if (bar) {
+        bar.querySelectorAll('.category-quick-pill').forEach(pill => {
+          const pillCat = pill.getAttribute('data-category');
+          const isTarget = activeCatSlug ? (pillCat === activeCatSlug) : (pillCat === 'all');
+          pill.classList.toggle('active', isTarget);
+        });
+
+        const activePill = bar.querySelector('.category-quick-pill.active');
+        if (activePill && typeof window._kopiScrollToPill === 'function') {
+          window._kopiScrollToPill(activePill, true);
+        }
+      }
+
+      existingGrid.innerHTML = cardsHtml;
+
+      const existingFaq = main.querySelector('.portal-seo-section');
+      if (existingFaq) {
+        if (categoryFaqHtml) {
+          existingFaq.outerHTML = categoryFaqHtml;
+        } else {
+          existingFaq.remove();
+        }
+      } else if (categoryFaqHtml) {
+        main.insertAdjacentHTML('beforeend', categoryFaqHtml);
+      }
+      return;
+    }
+
     const html = \`
       <div style="margin-bottom: 24px;">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
@@ -1327,26 +1643,48 @@ const bundleScript = `/**
           </div>
         </div>
 
-        <!-- Category Shortcuts Bar -->
-        <div class="category-quick-bar" style="margin-bottom: 20px;">
-          <a href="#/games" class="category-quick-pill \${!activeCatSlug ? 'active' : ''}">
-            <span>All (\${catalog.length})</span>
-          </a>
-          \${categoryList.map(c => {
-            const count = categoryCounts[c.slug] || 0;
-            if (count === 0) return '';
-            const isActive = activeCatSlug === c.slug;
-            return \`
-              <a href="#/category/\${c.slug}" class="category-quick-pill \${isActive ? 'active' : ''}">
-                <span>\${getCategoryIcon(c.slug)}</span>
-                <span>\${c.name} (\${count})</span>
-              </a>
-            \`;
-          }).join('')}
+        <!-- Horizontal Category Navigation Bar with Smooth Scroll & Edge Arrows -->
+        <div class="category-nav-wrapper" aria-label="Category Navigation">
+          <!-- Left Navigation Arrow & Subtle Edge Fade -->
+          <div class="cat-nav-fade cat-nav-fade-left is-hidden" aria-hidden="true"></div>
+          <button class="cat-nav-arrow cat-nav-prev is-hidden" aria-label="Previous categories" title="Scroll left" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Horizontal Scroll Track -->
+          <div class="category-quick-bar" id="categoryQuickBar">
+            <a href="#/games" class="category-quick-pill \${!activeCatSlug ? 'active' : ''}" data-category="all">
+              <span>All (\${catalog.length})</span>
+            </a>
+            \${categoryList.map(c => {
+              const count = categoryCounts[c.slug] || 0;
+              if (count === 0) return '';
+              const isActive = activeCatSlug === c.slug;
+              return \`
+                <a href="#/category/\${c.slug}" class="category-quick-pill \${isActive ? 'active' : ''}" data-category="\${c.slug}">
+                  <span>\${getCategoryIcon(c.slug)}</span>
+                  <span>\${c.name} (\${count})</span>
+                </a>
+              \`;
+            }).join('')}
+          </div>
+
+          <!-- Right Navigation Arrow & Subtle Edge Fade -->
+          <div class="cat-nav-fade cat-nav-fade-right" aria-hidden="true"></div>
+          <button class="cat-nav-arrow cat-nav-next" aria-label="Next categories" title="Scroll right" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
 
-      \${nexusAds.renderSlot('categoryBanner')}
+      \${kopiAds.isEnabled() ? \`
+      <div class="ad-section-container ad-section-category" style="margin: 20px 0;">
+        \${kopiAds.render('homepage_categories', { size: '728x90' })}
+      </div>\` : ''}
 
       <div class="games-grid" id="mainGamesGrid">
         \${cardsHtml}
@@ -1357,10 +1695,131 @@ const bundleScript = `/**
 
     main.innerHTML = html;
     window.scrollTo({ top: 0, behavior: 'instant' });
+    initCategoryNav(activeCatSlug);
   }
 
-  
-  // --- Monetization & Reusable Ad Slot Component ---
+  // --- Category Navigation Bar Engine (Smooth Auto-Scroll & Edge Arrow System) ---
+  function initCategoryNav(activeCatSlug) {
+    const wrapper = document.querySelector('.category-nav-wrapper');
+    if (!wrapper) return;
+    const bar = wrapper.querySelector('.category-quick-bar');
+    const prevBtn = wrapper.querySelector('.cat-nav-arrow.cat-nav-prev');
+    const nextBtn = wrapper.querySelector('.cat-nav-arrow.cat-nav-next');
+    const fadeLeft = wrapper.querySelector('.cat-nav-fade-left');
+    const fadeRight = wrapper.querySelector('.cat-nav-fade-right');
+    if (!bar) return;
+
+    function updateArrows() {
+      const maxScroll = Math.max(0, bar.scrollWidth - bar.clientWidth);
+      const atStart = bar.scrollLeft <= 5;
+      const atEnd = bar.scrollLeft >= maxScroll - 5;
+
+      if (maxScroll <= 5) {
+        if (prevBtn) { prevBtn.classList.add('is-hidden'); prevBtn.disabled = true; }
+        if (nextBtn) { nextBtn.classList.add('is-hidden'); nextBtn.disabled = true; }
+        if (fadeLeft) fadeLeft.classList.add('is-hidden');
+        if (fadeRight) fadeRight.classList.add('is-hidden');
+      } else {
+        if (prevBtn) {
+          prevBtn.classList.toggle('is-hidden', atStart);
+          prevBtn.disabled = atStart;
+        }
+        if (nextBtn) {
+          nextBtn.classList.toggle('is-hidden', atEnd);
+          nextBtn.disabled = atEnd;
+        }
+        if (fadeLeft) fadeLeft.classList.toggle('is-hidden', atStart);
+        if (fadeRight) fadeRight.classList.toggle('is-hidden', atEnd);
+      }
+    }
+
+    function scrollToPill(pill, smooth = true) {
+      if (!pill || !bar) return;
+      const pillLeft = pill.offsetLeft;
+      const pillWidth = pill.offsetWidth;
+      const containerWidth = bar.clientWidth;
+      const targetScroll = pillLeft - (containerWidth / 2) + (pillWidth / 2);
+      const maxScroll = Math.max(0, bar.scrollWidth - containerWidth);
+      const boundedTarget = Math.max(0, Math.min(maxScroll, targetScroll));
+      bar.scrollTo({
+        left: boundedTarget,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+      setTimeout(updateArrows, smooth ? 350 : 20);
+    }
+
+    window._kopiScrollToPill = scrollToPill;
+
+    function scrollToActivePill(smooth = false) {
+      const activePill = bar.querySelector('.category-quick-pill.active');
+      if (activePill) {
+        scrollToPill(activePill, smooth);
+      }
+    }
+
+    // Left and Right Arrow Navigation: moves 75% of visible container width
+    if (prevBtn) {
+      prevBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const scrollAmount = Math.round(bar.clientWidth * 0.75);
+        bar.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        setTimeout(updateArrows, 350);
+      };
+    }
+
+    if (nextBtn) {
+      nextBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const scrollAmount = Math.round(bar.clientWidth * 0.75);
+        bar.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateArrows, 350);
+      };
+    }
+
+    // Auto-scroll when clicking category buttons so selected category is centered & reveals adjacent ones
+    bar.querySelectorAll('.category-quick-pill').forEach(pill => {
+      pill.addEventListener('click', function () {
+        bar.querySelectorAll('.category-quick-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        scrollToPill(pill, true);
+      });
+    });
+
+    // Horizontal mouse wheel support
+    bar.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && !e.ctrlKey) {
+        const maxScroll = bar.scrollWidth - bar.clientWidth;
+        const canScrollLeft = e.deltaY < 0 && bar.scrollLeft > 0;
+        const canScrollRight = e.deltaY > 0 && bar.scrollLeft < maxScroll;
+        if (canScrollLeft || canScrollRight) {
+          e.preventDefault();
+          bar.scrollLeft += e.deltaY;
+          updateArrows();
+        }
+      }
+    }, { passive: false });
+
+    bar.addEventListener('scroll', updateArrows, { passive: true });
+
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(function () {
+        updateArrows();
+      });
+      ro.observe(bar);
+    } else {
+      window.addEventListener('resize', updateArrows, { passive: true });
+    }
+
+    // Initial positioning: instant on load so active category is positioned without jump
+    scrollToActivePill(false);
+    updateArrows();
+  }
+
+
+
+    // --- Monetization & Reusable Ad Slot Component ---
   /**
    * Reusable Ad Slot Component
    * Renders a reserved, compliant advertisement container for authorized ad networks.
@@ -1506,9 +1965,82 @@ const bundleScript = `/**
         </button>
       </nav>
 
-      <!-- Main Game Detail Layout: 16:9 Cinematic Player on Left, Professional Ad Container on Right -->
-      <div class="game-detail-layout">
-        <!-- 16:9 Cinematic Player Container (Unchanged) -->
+      \${kopiAds.isEnabled() ? \`
+      <!-- 3-Column Playing Stage: Left Vertical Ad, Center Player & Details, Right Vertical Ad -->
+      <div class="game-stage-3col">
+        <!-- 1. Left Vertical Ad (160x600 Skyscraper on Desktop >= 1480px) -->
+        <aside class="game-stage-side-ad game-stage-side-ad-left" aria-label="Left Vertical Advertisement">
+          \${kopiAds.render('game_sidebar_left', { size: '160x600' })}
+        </aside>
+
+        <!-- 2. Center Main Column: 16:9 Player, Fullscreen, Title, Details, Controls & Below-Player Ad -->
+        <div class="game-stage-center">
+          <!-- 16:9 Cinematic Player Container (Unchanged) -->
+          <div class="player-stage-card" id="playerStageCard">
+            <iframe id="gameIframe"
+                    src="\${embedUrl}"
+                    title="\${escapeHtml(game.title)}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowfullscreen
+                    loading="eager"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+            </iframe>
+            <button class="player-overlay-fullscreen-btn" id="playerOverlayFullscreenBtn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen" onclick="window.NEXUS.toggleFullscreen()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+          </div>
+
+          <!-- Game Details & Meta Card: Title, Badges, Actions, Description, Controls -->
+          <div class="game-details-meta-card">
+            <div class="game-details-header">
+              <div class="game-details-title-wrap">
+                <h1 class="game-details-title">\${escapeHtml(game.title)}</h1>
+                <div class="game-details-tags">
+                  <span class="game-tag-badge">\${escapeHtml(game.category || 'Arcade')}</span>
+                  <span class="game-tag-badge">Free Instant Play</span>
+                  \${game.rating ? ('<span class="game-tag-rating">★ ' + escapeHtml(String(game.rating)) + '</span>') : ''}
+                  \${game.plays ? ('<span class="game-tag-plays">▶ ' + Number(game.plays).toLocaleString() + ' Plays</span>') : ''}
+                </div>
+              </div>
+              <div class="game-details-actions">
+                <button class="player-fav-btn \${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('\${game.slug}', event)" title="Favorite" aria-label="Favorite">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <span id="detailFavText">\${isFav ? 'Favorited' : 'Add to Favorites'}</span>
+                </button>
+                <button class="player-share-btn" onclick="window.NEXUS.shareGame()" title="Share Game">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                  <span>Share</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="game-details-body">
+              <div class="game-details-desc">
+                <h4>About \${escapeHtml(game.title)}</h4>
+                <p>\${escapeHtml(game.description || ('Play ' + game.title + ' instantly in your browser on KopiPlay. Free online game with zero downloads.'))}</p>
+              </div>
+              <div class="game-details-controls">
+                <h4>Game Controls</h4>
+                <div class="game-controls-keys">\${controlsHtml}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Horizontal Banner Below Game Player & Controls -->
+          <div class="ad-section-container ad-section-below-player">
+            \${kopiAds.render('game_below_player', { size: '728x90' })}
+          </div>
+        </div>
+
+        <!-- 4. Right Vertical Ad (300x600 Half-Page or 300x250 Display Ad) -->
+        <aside class="game-stage-side-ad game-stage-side-ad-right" aria-label="Right Vertical Advertisement">
+          \${kopiAds.render('game_sidebar_right', { size: '300x600' })}
+        </aside>
+      </div>
+      \` : \`
+      <!-- Clean Distraction-Free Playing Stage (Ads Disabled) -->
+      <div class="game-stage-clean" style="max-width: 1040px; margin: 0 auto 36px auto; width: 100%; display: flex; flex-direction: column; gap: 20px;">
+        <!-- 16:9 Cinematic Player Container -->
         <div class="player-stage-card" id="playerStageCard">
           <iframe id="gameIframe"
                   src="\${embedUrl}"
@@ -1523,9 +2055,44 @@ const bundleScript = `/**
           </button>
         </div>
 
-        <!-- Right Advertisement Container (Replaces duplicate game info card) -->
-        \${renderAdSlot('game-detail-sidebar')}
+        <!-- Game Details & Meta Card: Title, Badges, Actions, Description, Controls -->
+        <div class="game-details-meta-card">
+          <div class="game-details-header">
+            <div class="game-details-title-wrap">
+              <h1 class="game-details-title">\${escapeHtml(game.title)}</h1>
+              <div class="game-details-tags">
+                <span class="game-tag-badge">\${escapeHtml(game.category || 'Arcade')}</span>
+                <span class="game-tag-badge">Free Instant Play</span>
+                \${game.rating ? ('<span class="game-tag-rating">★ ' + escapeHtml(String(game.rating)) + '</span>') : ''}
+                \${game.plays ? ('<span class="game-tag-plays">▶ ' + Number(game.plays).toLocaleString() + ' Plays</span>') : ''}
+              </div>
+            </div>
+            <div class="game-details-actions">
+              <button class="player-fav-btn \${isFav ? 'is-fav' : ''}" id="detailFavBtn" onclick="window.NEXUS.toggleFav('\${game.slug}', event)" title="Favorite" aria-label="Favorite">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="\${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span id="detailFavText">\${isFav ? 'Favorited' : 'Add to Favorites'}</span>
+              </button>
+              <button class="player-share-btn" onclick="window.NEXUS.shareGame()" title="Share Game">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="game-details-body">
+            <div class="game-details-desc">
+              <h4>About \${escapeHtml(game.title)}</h4>
+              <p>\${escapeHtml(game.description || ('Play ' + game.title + ' instantly in your browser on KopiPlay. Free online game with zero downloads.'))}</p>
+            </div>
+            <div class="game-details-controls">
+              <h4>Game Controls</h4>
+              <div class="game-controls-keys">\${controlsHtml}</div>
+            </div>
+          </div>
+        </div>
       </div>
+      \`}
+
 
       <!-- Related Games Strip (Matches Bottom of Reference Player Panel) -->
       <section class="related-games-section">
@@ -2062,7 +2629,8 @@ const bundleScript = `/**
       const catObj = categoryList.find(c => c.slug === catSlug);
       const catName = catObj ? catObj.name : catSlug.replace('-', ' ');
       const filtered = catalog.filter(g => g._categories && g._categories.includes(catSlug));
-      renderAllGamesView(catName + ' Games', filtered, catSlug);
+      const formattedTitle = catName.toLowerCase().endsWith('games') ? catName : (catName + ' Games');
+      renderAllGamesView(formattedTitle, filtered, catSlug);
     } else if (hash.startsWith('#/game/')) {
       const slug = hash.replace('#/game/', '');
       renderGameDetail(slug);
@@ -2102,7 +2670,10 @@ const bundleScript = `/**
   }
 
   // --- Global Window NEXUS Namespace ---
-  window.KOPI = window.KIPO = window.NEXUS = {
+  window.KOPI = window.KIPO = window.KOPI = window.KIPO = window.kopiAds = kopiAds;
+  window.NEXUS = {
+    ads: kopiAds,
+    configureAds: kopiAds.configure,
     playRandomGame: function () {
       if (!catalog || catalog.length === 0) return;
       const randomIndex = Math.floor(Math.random() * catalog.length);
