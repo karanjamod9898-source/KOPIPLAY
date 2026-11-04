@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-11-04T05:59:51.325Z",
+  "passedTotal": 19,
+  "failedTotal": 0,
+  "tests": [
+    {
+      "name": "Fixed Sidebar presence and dimensions",
+      "passed": true,
+      "details": "Width: 240px, Position: fixed"
+    },
+    {
+      "name": "Sidebar KopiPlay branding",
+      "passed": true,
+      "details": "Brand text: KopiPlay"
+    },
+    {
+      "name": "Sidebar Home active pill and dynamic game count",
+      "passed": true,
+      "details": "Home active: true, Game count badge: 187"
+    },
+    {
+      "name": "Sidebar 3D controller art present",
+      "passed": true,
+      "details": "Art element present at bottom of sidebar"
+    },
+    {
+      "name": "Top Category Navigation Bar & Arrows",
+      "passed": true,
+      "details": "Pill count: 23, Arrows: true"
+    },
+    {
+      "name": "Hero Banner existence and visibility",
+      "passed": true,
+      "details": "Headline: Play 187+ Free Online Games"
+    },
+    {
+      "name": "Hero Banner 4 feature pills",
+      "passed": true,
+      "details": "Features: No Download | Play Instantly | 100% Free | Safe & Secure"
+    },
+    {
+      "name": "Hero Banner gamer artwork loaded",
+      "passed": true,
+      "details": "Artwork loaded successfully"
+    },
+    {
+      "name": "All 187 games loaded directly in mosaic grid",
+      "passed": true,
+      "details": "Total game cards: 187"
+    },
+    {
+      "name": "First game card is large 2x2 featured game",
+      "passed": true,
+      "details": "First card: Neon Horizon: Cyber Racer, Span: 2x2, Badge: CAR"
+    },
+    {
+      "name": "Asymmetric card size distribution",
+      "passed": true,
+      "details": "2x2: 16, 2x1: 15, 1x2: 15, 1x1: 141"
+    },
+    {
+      "name": "Dynamic glowing neon border distribution",
+      "passed": true,
+      "details": "Cyan: 47, Purple: 47, Blue: 47, Pink: 46"
+    },
+    {
+      "name": "Category filter: Racing filtered properly",
+      "passed": true,
+      "details": "Indicator text: \"Racing Games · 12 Games\", Cards displayed: 12"
+    },
+    {
+      "name": "Clear Filter restores all 187 games and hides indicator",
+      "passed": true,
+      "details": "Cards: 187, Indicator hidden: true"
+    },
+    {
+      "name": "Sidebar All Categories accordion opens with sub-categories",
+      "passed": true,
+      "details": "Accordion isOpen: true, Subitems: 22"
+    },
+    {
+      "name": "Desktop 1920x1080 Full HD Render",
+      "passed": true,
+      "details": "Full HD layout captured"
+    },
+    {
+      "name": "Mobile: Header visible with hamburger toggle",
+      "passed": true,
+      "details": "Mobile header active"
+    },
+    {
+      "name": "Mobile: Sidebar off-canvas by default",
+      "passed": true,
+      "details": "Sidebar correctly tucked away"
+    },
+    {
+      "name": "Mobile: Zero horizontal scroll overflow",
+      "passed": true,
+      "details": "Page does not overflow 375px width"
+    }
+  ]
+}

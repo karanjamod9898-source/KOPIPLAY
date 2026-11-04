@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C1E"/>
+      <stop offset="40%" stop-color="#141038"/>
+      <stop offset="75%" stop-color="#241042"/>
+      <stop offset="100%" stop-color="#070914"/>
+    </linearGradient>
+
+    <!-- Radial Nebula Ambient Glow -->
+    <radialGradient id="nebulaGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#080C1E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Block 1 (Base - Deep Purple) -->
+    <linearGradient id="top1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="left1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="right1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5B21B6"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </linearGradient>
+
+    <!-- Block 2 (Cyan / Turquoise) -->
+    <linearGradient id="top2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="left2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="right2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+
+    <!-- Block 3 (Emerald Mint) -->
+    <linearGradient id="top3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="left3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="right3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+
+    <!-- Block 4 (Solar Amber Gold) -->
+    <linearGradient id="top4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#FACC15"/>
+    </linearGradient>
+    <linearGradient id="left4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="right4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A16207"/>
+      <stop offset="100%" stop-color="#713F12"/>
+    </linearGradient>
+
+    <!-- Block 5 (Electric Rose / Coral) -->
+    <linearGradient id="top5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+    <linearGradient id="left5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+    <linearGradient id="right5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9F1239"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+
+    <!-- Moving Floating Block (Electric Cyan / White Glow) -->
+    <linearGradient id="topMoving" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+    <linearGradient id="leftMoving" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="rightMoving" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#0E7490"/>
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="32" fill="url(#bgGrad)"/>
+  <rect width="512" height="512" rx="32" fill="url(#nebulaGlow)"/>
+
+  <!-- Twinkling Space Stars -->
+  <circle cx="85" cy="70" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="160" cy="45" r="2" fill="#22D3EE" opacity="0.9"/>
+  <circle cx="430" cy="85" r="1.5" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="465" cy="190" r="2" fill="#C084FC" opacity="0.8"/>
+  <circle cx="65" cy="240" r="1.5" fill="#38BDF8" opacity="0.6"/>
+  <circle cx="110" cy="380" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="420" cy="350" r="1.5" fill="#FDE047" opacity="0.6"/>
+
+  <!-- 3D ISOMETRIC TOWER STACK -->
+  <!-- Center is around x=256. Isometric projection: dx = (x - z) * cos(30), dy = (x + z) * sin(30) - y -->
+  
+  <!-- Ground Grid Platform Floor -->
+  <ellipse cx="256" cy="445" rx="160" ry="40" fill="#070B18" stroke="rgba(34, 211, 238, 0.25)" stroke-width="2"/>
+  <ellipse cx="256" cy="445" rx="110" ry="28" fill="none" stroke="rgba(192, 132, 252, 0.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- BLOCK 1 (Y: 415) -->
+  <g id="block1" filter="url(#softShadow)">
+    <!-- Top Face -->
+    <polygon points="256,365 370,400 256,435 142,400" fill="url(#top1)"/>
+    <!-- Left Face -->
+    <polygon points="142,400 256,435 256,462 142,427" fill="url(#left1)"/>
+    <!-- Right Face -->
+    <polygon points="256,435 370,400 370,427 256,462" fill="url(#right1)"/>
+  </g>
+
+  <!-- BLOCK 2 (Y: 375) -->
+  <g id="block2" filter="url(#softShadow)">
+    <polygon points="256,325 360,358 256,391 152,358" fill="url(#top2)"/>
+    <polygon points="152,358 256,391 256,416 152,383" fill="url(#left2)"/>
+    <polygon points="256,391 360,358 360,383 256,416" fill="url(#right2)"/>
+  </g>
+
+  <!-- BLOCK 3 (Y: 335) -->
+  <g id="block3" filter="url(#softShadow)">
+    <polygon points="256,285 348,316 256,347 164,316" fill="url(#top3)"/>
+    <polygon points="164,316 256,347 256,370 164,339" fill="url(#left3)"/>
+    <polygon points="256,347 348,316 348,339 256,370" fill="url(#right3)"/>
+  </g>
+
+  <!-- BLOCK 4 (Y: 295) -->
+  <g id="block4" filter="url(#softShadow)">
+    <polygon points="256,245 338,274 256,303 174,274" fill="url(#top4)"/>
+    <polygon points="174,274 256,303 256,324 174,295" fill="url(#left4)"/>
+    <polygon points="256,303 338,274 338,295 256,324" fill="url(#right4)"/>
+  </g>
+
+  <!-- BLOCK 5 (Y: 255) -->
+  <g id="block5" filter="url(#softShadow)">
+    <polygon points="256,205 328,232 256,259 184,232" fill="url(#top5)"/>
+    <polygon points="184,232 256,259 256,280 184,253" fill="url(#left5)"/>
+    <polygon points="256,259 328,232 328,253 256,280" fill="url(#right5)"/>
+  </g>
+
+  <!-- PERFECT PLACEMENT SHOCKWAVE RING -->
+  <ellipse cx="256" cy="205" rx="85" ry="26" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+  <ellipse cx="256" cy="205" rx="100" ry="32" fill="none" stroke="#22D3EE" stroke-width="2" opacity="0.4"/>
+
+  <!-- MOVING FLOATING BLOCK (Offset to X right, gliding into place) -->
+  <g id="movingBlock" filter="url(#glow)">
+    <polygon points="310,145 378,170 310,195 242,170" fill="url(#topMoving)"/>
+    <polygon points="242,170 310,195 310,218 242,193" fill="url(#leftMoving)"/>
+    <polygon points="310,195 378,170 378,193 310,218" fill="url(#rightMoving)"/>
+    
+    <!-- Motion trails behind block -->
+    <path d="M 230 170 L 242 170" stroke="rgba(34, 211, 238, 0.6)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 220 185 L 240 185" stroke="rgba(192, 132, 252, 0.5)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- TUMBLING SLICED PIECE FALLING -->
+  <g transform="translate(130, 240) rotate(-18)" opacity="0.85">
+    <polygon points="30,10 60,20 30,30 0,20" fill="url(#top4)"/>
+    <polygon points="0,20 30,30 30,42 0,32" fill="url(#left4)"/>
+    <polygon points="30,30 60,20 60,32 30,42" fill="url(#right4)"/>
+  </g>
+
+  <!-- SPARKLES & STARS AROUND DROP -->
+  <path d="M 256 185 L 259 193 L 267 196 L 259 199 L 256 207 L 253 199 L 245 196 L 253 193 Z" fill="#FDE047" filter="url(#glow)"/>
+  <path d="M 330 215 L 332 220 L 337 222 L 332 224 L 330 229 L 328 224 L 323 222 L 328 220 Z" fill="#22D3EE"/>
+  <path d="M 190 205 L 192 210 L 197 212 L 192 214 L 190 219 L 188 214 L 183 212 L 188 210 Z" fill="#C084FC"/>
+
+  <!-- TOP HEADER BADGES -->
+  <rect x="28" y="28" width="95" height="28" rx="14" fill="rgba(124, 58, 237, 0.35)" stroke="rgba(168, 85, 247, 0.6)" stroke-width="1.2"/>
+  <text x="75" y="46" font-family="'Outfit', system-ui, sans-serif" font-size="12" font-weight="800" fill="#E2E8F0" text-anchor="middle" letter-spacing="0.5">3D ARCADE</text>
+
+  <rect x="390" y="28" width="94" height="28" rx="14" fill="rgba(6, 182, 212, 0.3)" stroke="rgba(34, 211, 238, 0.6)" stroke-width="1.2"/>
+  <text x="437" y="46" font-family="'Outfit', system-ui, sans-serif" font-size="12" font-weight="800" fill="#22D3EE" text-anchor="middle" letter-spacing="0.5">NEW GAME</text>
+
+  <!-- GAME LOGO TITLE OVERLAY (Bottom) -->
+  <g transform="translate(256, 105)">
+    <!-- Shadow Glow -->
+    <text x="0" y="0" font-family="'Outfit', 'Impact', system-ui, sans-serif" font-size="38" font-weight="900" fill="#000000" opacity="0.6" text-anchor="middle" letter-spacing="1">TOWER BUILDER</text>
+    <!-- Crisp Gradient Fill -->
+    <text x="0" y="-2" font-family="'Outfit', 'Impact', system-ui, sans-serif" font-size="38" font-weight="900" fill="url(#titleGrad)" text-anchor="middle" letter-spacing="1" filter="url(#glow)">TOWER BUILDER</text>
+  </g>
+</svg>
+

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-11-03T13:36:28.396Z",
+  "passedTotal": 17,
+  "failedTotal": 0,
+  "tests": [
+    {
+      "name": "Category nav wrapper, strip, and arrow buttons mounted in DOM",
+      "passed": true,
+      "details": "{\"hasWrapper\":true,\"hasStrip\":true,\"hasLeftArrow\":true,\"hasRightArrow\":true,\"leftDisabled\":true,\"rightDisabled\":false,\"initialScroll\":0,\"totalButtons\":23}"
+    },
+    {
+      "name": "Left arrow initially disabled at scrollLeft = 0",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Right arrow initially enabled to reveal next categories",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "All 23 category filter buttons present in strip",
+      "passed": true,
+      "details": "Total: 23"
+    },
+    {
+      "name": "Clicking Platform triggers automatic forward scroll",
+      "passed": true,
+      "details": "scroll: 0 -> 1014"
+    },
+    {
+      "name": "Platform button remains fully visible (not cut off)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Upcoming categories (Multiplayer, Arcade) are smoothly revealed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Clicking Board Games continues smooth forward scroll and reveals subsequent categories",
+      "passed": true,
+      "details": "{\"beforeScroll\":1014,\"afterScroll\":2127,\"scrollIncreased\":true,\"isBoardGamesFullyVisible\":true,\"isCardGamesVisible\":true}"
+    },
+    {
+      "name": "Clicking left arrow smoothly scrolls backward",
+      "passed": true,
+      "details": "scroll: 2127 -> 1265"
+    },
+    {
+      "name": "Clicking right arrow smoothly scrolls forward",
+      "passed": true,
+      "details": "scroll: 1263 -> 2120"
+    },
+    {
+      "name": "Mouse wheel vertically scrolls horizontal category strip",
+      "passed": true,
+      "details": "scroll: 400 -> 502"
+    },
+    {
+      "name": "Click-and-drag scrolls the category bar smoothly",
+      "passed": true,
+      "details": "scroll: 400 -> 568"
+    },
+    {
+      "name": "Reaching last category automatically disables right arrow & enables left arrow",
+      "passed": true,
+      "details": "{\"scrollLeft\":2127,\"maxScroll\":2127,\"isNearEnd\":true,\"rightDisabled\":true,\"leftEnabled\":true,\"isIoActive\":true}"
+    },
+    {
+      "name": "Resetting to All Games returns to start with left arrow disabled",
+      "passed": true,
+      "details": "{\"scrollLeft\":14,\"leftDisabled\":true,\"rightEnabled\":true,\"allActive\":true}"
+    },
+    {
+      "name": "Tablet (768px) category bar has zero horizontal page overflow",
+      "passed": true,
+      "details": "docW vs winW"
+    },
+    {
+      "name": "Mobile (375px) has zero page overflow, auto-scrolls, and reveals next category (Car)",
+      "passed": true,
+      "details": "{\"hasPageOverflow\":false,\"scrollIncreased\":true,\"afterScroll\":543,\"isRacingActive\":true,\"isCarRevealed\":true}"
+    },
+    {
+      "name": "Wide Desktop (1920px) has zero horizontal overflow",
+      "passed": true,
+      "details": ""
+    }
+  ]
+}

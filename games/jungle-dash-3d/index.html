@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jungle Dash 3D – Endless Jungle Adventure</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- 3D WebGL Canvas Container -->
+  <div id="gameCanvasContainer"></div>
+
+  <!-- Floating Text Popups Layer -->
+  <div id="floatingTextContainer"></div>
+
+  <!-- UI Overlays -->
+  <div class="ui-layer">
+    <!-- Top Global App Bar -->
+    <header class="game-top-bar interactive">
+      <div class="brand-wrap">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div class="brand-title">JUNGLE DASH <span>3D</span></div>
+      </div>
+
+      <div class="top-bar-actions">
+        <!-- Coin Counter Badge -->
+        <div class="coin-badge">
+          <span class="coin-icon">¢</span>
+          <span class="coin-balance-val">200</span>
+        </div>
+
+        <!-- Gem Counter Badge -->
+        <div class="gem-badge">
+          <span class="gem-icon">💎</span>
+          <span class="gem-balance-val">10</span>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button type="button" class="icon-btn" id="btnSoundToggle" aria-label="Toggle Sound" title="Sound Mute/Unmute">
+          <svg id="soundIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg id="soundIconOff" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </button>
+
+        <!-- Fullscreen -->
+        <button type="button" class="icon-btn" id="btnFullscreen" aria-label="Toggle Fullscreen" title="Fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 1. Main Menu Screen View -->
+    <div class="screen-view active interactive" id="screenMenu">
+      <div class="menu-center-card">
+        <h1 class="game-hero-logo">JUNGLE DASH<br>3D</h1>
+        <p class="game-tagline">Sprint, Leap & Slide through the Lost Temple Realm!</p>
+
+        <div class="menu-buttons-grid">
+          <button type="button" class="btn-arcade-play" id="btnMenuPlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            PLAY EXPEDITION
+          </button>
+          <button type="button" class="btn-menu-sec" id="btnMenuWorlds">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            WORLDS (5 REALMS)
+          </button>
+          <button type="button" class="btn-menu-sec" id="btnMenuShop">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            EXPLORER SHOP (4 SKINS)
+          </button>
+          <button type="button" class="btn-menu-sec" id="btnMenuMissions">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            MISSIONS & REWARDS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Worlds Screen View -->
+    <div class="screen-view interactive" id="screenWorlds">
+      <div class="levels-header">
+        <h2 class="screen-header-title">SELECT EXPEDITION REALM</h2>
+        <button type="button" class="btn-menu-sec" id="btnWorldsBack">BACK TO MENU</button>
+      </div>
+      <div class="levels-grid" id="worldsGrid"></div>
+    </div>
+
+    <!-- 3. Shop Screen View -->
+    <div class="screen-view interactive" id="screenShop">
+      <div class="levels-header">
+        <h2 class="screen-header-title">EXPLORER OUTFIT SHOP</h2>
+        <button type="button" class="btn-menu-sec" id="btnShopBack">BACK TO MENU</button>
+      </div>
+
+      <div class="shop-container">
+        <!-- 3D Turntable Preview Canvas -->
+        <div class="shop-preview-pane" id="shopCanvasWrap">
+          <div class="shop-nav-arrows">
+            <button type="button" class="btn-nav-car" id="btnShopPrev">❮</button>
+            <button type="button" class="btn-nav-car" id="btnShopNext">❯</button>
+          </div>
+        </div>
+
+        <!-- Skin Info & Action -->
+        <div class="shop-info-pane">
+          <h3 class="car-name-title" id="shopSkinName">Classic Explorer</h3>
+          <p class="car-desc-text" id="shopSkinDesc">The iconic courageous adventurer ready for ancient temple expeditions!</p>
+          <button type="button" class="btn-action btn-selected" id="btnShopAction">EQUIPPED</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Missions Screen View -->
+    <div class="screen-view interactive" id="screenMissions">
+      <div class="levels-header">
+        <h2 class="screen-header-title">EXPEDITION MISSIONS</h2>
+        <button type="button" class="btn-menu-sec" id="btnMissionsBack">BACK TO MENU</button>
+      </div>
+      <div class="missions-list" id="missionsList"></div>
+    </div>
+
+    <!-- 5. Active In-Game HUD (Zero Overlap Layout) -->
+    <div class="hud-layer" id="hudLayer">
+      <div class="hud-top-bar">
+        <!-- Distance Card (Top-Left) -->
+        <div class="hud-stat-card distance-card">
+          <span class="hud-stat-label">DISTANCE</span>
+          <strong class="hud-stat-val" id="hudDistVal">0m</strong>
+        </div>
+
+        <!-- Center Score Badge (Top-Center) -->
+        <div class="hud-center-score">
+          <span class="hud-score-label">SCORE</span>
+          <strong id="hudScoreVal">0</strong>
+        </div>
+
+        <!-- Coins, Gems & Pause (Top-Right) -->
+        <div class="hud-right-group">
+          <div class="hud-counter-pill coin-pill">
+            <span class="coin-icon">¢</span>
+            <strong id="hudCoinsVal">0</strong>
+          </div>
+          <div class="hud-counter-pill gem-pill">
+            <span class="gem-icon">💎</span>
+            <strong id="hudGemsVal">0</strong>
+          </div>
+          <button type="button" class="icon-btn" id="btnHudPause" aria-label="Pause Expedition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Dock: Active Power-Ups -->
+      <div class="hud-bottom-dock" id="hudActivePowerups"></div>
+
+      <!-- Mobile Touch Controls -->
+      <div class="mobile-controls-wrap" id="mobileControls">
+        <div class="dpad-cluster">
+          <button type="button" class="touch-btn" id="btnTouchLeft">◀</button>
+          <button type="button" class="touch-btn" id="btnTouchRight">▶</button>
+        </div>
+        <div class="action-cluster">
+          <button type="button" class="touch-btn jump" id="btnTouchJump">JUMP</button>
+          <button type="button" class="touch-btn slide" id="btnTouchSlide">SLIDE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Pause Modal -->
+  <div class="game-modal" id="modalPause">
+    <div class="modal-content-card">
+      <h2 class="modal-title">EXPEDITION PAUSED</h2>
+      <p style="color:#94A3B8; margin-bottom:24px;">Controls: A/D or Left/Right Arrow to switch lanes, W or Space to Jump, S to Slide.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn-arcade-play" id="btnResume">RESUME EXPEDITION</button>
+        <button type="button" class="btn-menu-sec" id="btnRestartPause">RETRY RUN</button>
+        <button type="button" class="btn-menu-sec" id="btnQuitPause">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div class="game-modal" id="modalGameOver">
+    <div class="modal-content-card">
+      <div id="goNewRecord" class="new-record-ribbon" style="display:none;">🏆 NEW PERSONAL BEST RECORD!</div>
+      <h2 class="modal-title defeat">EXPEDITION OVER!</h2>
+      <p style="color:#94A3B8;">You tripped on an ancient jungle hazard.</p>
+
+      <div class="modal-stats-grid">
+        <div class="m-stat-box"><div class="m-stat-val" id="goDistance">0m</div><div class="m-stat-label">DISTANCE</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goScore">0</div><div class="m-stat-label">TOTAL SCORE</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goCoins">0</div><div class="m-stat-label">COINS COLLECTED</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goGems">0</div><div class="m-stat-label">GEMS FOUND</div></div>
+        <div class="m-stat-box" style="grid-column: span 2;"><div class="m-stat-val" id="goBestScore" style="color:#FACC15;">0</div><div class="m-stat-label">ALL-TIME HIGH SCORE</div></div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-arcade-play" id="btnGameOverRetry">RUN AGAIN</button>
+        <button type="button" class="btn-menu-sec" id="btnGameOverMenu">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Engine Dependencies -->
+  <script src="three.min.js"></script>
+  <script src="js/textures.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/powerups.js"></script>
+  <script src="js/missions.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
+

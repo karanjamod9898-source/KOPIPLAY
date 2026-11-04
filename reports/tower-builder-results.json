@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-11-04T11:01:57.364Z",
+  "passed": 22,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Homepage: Tower Builder is present",
+      "pass": true,
+      "details": "Found: Tower Builder, Badge: ARCADE"
+    },
+    {
+      "name": "Homepage: Thumbnail points to SVG",
+      "pass": true,
+      "details": "assets/images/games/tower-builder.svg"
+    },
+    {
+      "name": "All Games: 188 total games present",
+      "pass": true,
+      "details": "Total cards: 188"
+    },
+    {
+      "name": "All Games: Tower Builder card present",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "New Games: Tower Builder appears in New Games filter",
+      "pass": true,
+      "details": "Total new games: 68"
+    },
+    {
+      "name": "Arcade Category: Tower Builder listed in Arcade",
+      "pass": true,
+      "details": "Arcade games count: 48"
+    },
+    {
+      "name": "Game Detail: Title matches Tower Builder",
+      "pass": true,
+      "details": "Tower Builder"
+    },
+    {
+      "name": "Game Detail: Iframe src is games/tower-builder/index.html",
+      "pass": true,
+      "details": "games/tower-builder/index.html"
+    },
+    {
+      "name": "Game 3D: Canvas created & rendering",
+      "pass": true,
+      "details": "1584x849"
+    },
+    {
+      "name": "Game UI: Start Game modal displayed initially",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Game Start: Modal dismissed and game active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Gameplay: Block 1 successfully stacked",
+      "pass": true,
+      "details": "Score: 1"
+    },
+    {
+      "name": "Gameplay: Block 2 successfully stacked",
+      "pass": true,
+      "details": "Score: 2"
+    },
+    {
+      "name": "Game Pause: Pause modal opened",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Game Resume: Resumed back to playing state",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Sound: Mute state persists in localStorage",
+      "pass": true,
+      "details": "Initial: true, Toggled: false"
+    },
+    {
+      "name": "Game Over: Modal activates after miss",
+      "pass": true,
+      "details": "Final score: 2"
+    },
+    {
+      "name": "Best Score: Persisted properly",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Replay: Play Again button restarts tower seamlessly",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Mobile: Viewport resized to 375px",
+      "pass": true,
+      "details": "Width: 375px"
+    },
+    {
+      "name": "Mobile: Touch tap drops block successfully",
+      "pass": true,
+      "details": "Score: 1"
+    },
+    {
+      "name": "Console: Zero runtime errors",
+      "pass": true,
+      "details": ""
+    }
+  ]
+}

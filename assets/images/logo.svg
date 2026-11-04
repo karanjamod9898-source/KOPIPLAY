@@ -1,43 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
   <defs>
-    <!-- Vibrant Blue-to-Purple Gradient -->
-    <linearGradient id="kopi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="35%" stop-color="#3B82F6" />
-      <stop offset="70%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#A855F7" />
+    <!-- Vibrant Gamepad Purple & Cyan Gradients -->
+    <linearGradient id="logo-pad-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="40%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#6D28D9" />
     </linearGradient>
-    <linearGradient id="kopi-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="logo-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#06B6D4" />
     </linearGradient>
-    <filter id="subtle-shadow" x="-15%" y="-15%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3B82F6" flood-opacity="0.35" />
+    <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#8B5CF6" flood-opacity="0.45" />
     </filter>
   </defs>
 
-  <!-- Modern Gaming Emblem Icon -->
-  <g transform="translate(6, 6)" filter="url(#subtle-shadow)">
-    <!-- Base Rounded Shield -->
-    <rect x="0" y="0" width="44" height="44" rx="13" fill="url(#kopi-grad)" />
-    
-    <!-- Dynamic Play Triangle -->
-    <path d="M 18 14 L 33 22 L 18 30 Z" fill="#FFFFFF" />
-    
-    <!-- Gamepad Accent Nodes -->
-    <circle cx="15" cy="14" r="2.2" fill="#38BDF8" />
-    <circle cx="32" cy="12" r="2.5" fill="#A5F3FC" />
-    <circle cx="31" cy="32" r="2.5" fill="#E0E7FF" />
-    
-    <!-- Sleek inner highlight curve -->
-    <path d="M 6 12 Q 22 2 38 12" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  <!-- 3D Style Game Controller Icon -->
+  <g transform="translate(6, 6)" filter="url(#logo-glow)">
+    <!-- Controller Body -->
+    <path d="M 8 16 C 5 24 2 34 8 40 C 13 44 19 39 23 32 L 27 32 C 31 39 37 44 42 40 C 48 34 45 24 42 16 C 39 10 32 8 25 8 C 18 8 11 10 8 16 Z"
+          fill="url(#logo-pad-grad)" />
+    <!-- Top Bumpers & Highlights -->
+    <ellipse cx="15" cy="11" rx="5" ry="2" fill="rgba(255, 255, 255, 0.45)" />
+    <ellipse cx="35" cy="11" rx="5" ry="2" fill="rgba(255, 255, 255, 0.45)" />
+    <!-- Directional Pad (White) -->
+    <path d="M 16 19 L 18 19 L 18 16 L 20 16 L 20 19 L 22 19 L 22 21 L 20 21 L 20 24 L 18 24 L 18 21 L 16 21 Z"
+          fill="#FFFFFF" />
+    <!-- Action Buttons (Colorful Cyan / Pink / Yellow) -->
+    <circle cx="34" cy="17" r="1.8" fill="#FACC15" />
+    <circle cx="38" cy="20" r="1.8" fill="#22D3EE" />
+    <circle cx="30" cy="20" r="1.8" fill="#F43F5E" />
+    <circle cx="34" cy="23" r="1.8" fill="#10B981" />
+    <!-- Center Logo Accent -->
+    <circle cx="25" cy="20" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
   </g>
 
-  <!-- Brand Typography: KOPI in bright white, PLAY in vibrant blue-purple gradient -->
-  <text x="60" y="34" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" letter-spacing="-0.5">
-    <tspan fill="#FFFFFF">KOPI</tspan><tspan fill="url(#kopi-grad)">PLAY</tspan>
+  <!-- Brand Typography: Kopi in White, Play in Cyan -->
+  <text x="62" y="32" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="25" font-weight="900" letter-spacing="-0.3">
+    <tspan fill="#FFFFFF">Kopi</tspan><tspan fill="#22D3EE">Play</tspan>
   </text>
   
-  <!-- Subtitle Tag -->
-  <text x="61" y="47" fill="#94A3B8" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.8">FREE ONLINE GAMES</text>
+  <!-- Subtitle Tag: Play Free Online Games -->
+  <text x="63" y="46" fill="#A5B4FC" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" letter-spacing="0.2">Play Free Online Games</text>
 </svg>

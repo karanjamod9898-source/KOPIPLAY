@@ -1,0 +1,588 @@
+/**
+ * Jungle Dash 3D - High-Fidelity Character & Obstacle Models Engine
+ * Replaces primitive low-poly blocks with sculpted, anatomically proportioned cartoon adventurers,
+ * gnarled fallen logs, spinning pendulum blade traps, blazing fire braziers, and ancient idol ruins.
+ */
+class ModelFactory {
+  static get SKINS() {
+    return [
+      {
+        id: 'classic_explorer',
+        name: 'Classic Explorer',
+        price: 0,
+        unlocked: true,
+        jacketColor: 0xDC2626,
+        shirtColor: 0xFACC15,
+        pantsColor: 0x2563EB,
+        bootsColor: 0x78350F,
+        backpackColor: 0x92400E,
+        hairColor: 0x451A03,
+        description: 'Courageous jungle explorer equipped with heavy-duty expedition gear.'
+      },
+      {
+        id: 'temple_raider',
+        name: 'Temple Raider',
+        price: 250,
+        unlocked: false,
+        jacketColor: 0x15803D,
+        shirtColor: 0xD97706,
+        pantsColor: 0x334155,
+        bootsColor: 0x1E293B,
+        backpackColor: 0x166534,
+        hairColor: 0x18181B,
+        description: 'Hardened ruins specialist with weathered camouflage attire.'
+      },
+      {
+        id: 'cyber_voyager',
+        name: 'Cyber Voyager',
+        price: 500,
+        unlocked: false,
+        jacketColor: 0x06B6D4,
+        shirtColor: 0xD946EF,
+        pantsColor: 0x0F172A,
+        bootsColor: 0x38BDF8,
+        backpackColor: 0x8B5CF6,
+        hairColor: 0xE0E7FF,
+        description: 'Futuristic explorer outfitted with glowing neon composite fibers.'
+      },
+      {
+        id: 'golden_champion',
+        name: 'Golden Champion',
+        price: 1000,
+        unlocked: false,
+        jacketColor: 0xFACC15,
+        shirtColor: 0xFEF08A,
+        pantsColor: 0xB45309,
+        bootsColor: 0xF59E0B,
+        backpackColor: 0xD97706,
+        hairColor: 0x78350F,
+        description: 'Gilded master adventurer who conquered all temple ruins!'
+      }
+    ];
+  }
+
+  /**
+   * Builds the Proportioned 3D Cartoon Jungle Adventurer (Temple Run Style)
+   */
+  static createPlayer(skinDef = ModelFactory.SKINS[0]) {
+    const root = new THREE.Group();
+    root.name = 'playerRoot';
+
+    // Materials
+    const skinMat = new THREE.MeshLambertMaterial({ color: 0xFCD34D });
+    const jacketMat = new THREE.MeshLambertMaterial({ color: skinDef.jacketColor });
+    const shirtMat = new THREE.MeshLambertMaterial({ color: skinDef.shirtColor });
+    const pantsMat = new THREE.MeshLambertMaterial({ color: skinDef.pantsColor });
+    const bootsMat = new THREE.MeshLambertMaterial({ color: skinDef.bootsColor });
+    const backpackMat = new THREE.MeshLambertMaterial({ color: skinDef.backpackColor });
+    const hairMat = new THREE.MeshLambertMaterial({ color: skinDef.hairColor });
+    const leatherMat = new THREE.MeshLambertMaterial({ color: 0x451A03 });
+    const whiteMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
+    const blackMat = new THREE.MeshBasicMaterial({ color: 0x0F172A });
+
+    // HIPS / PELVIS ROOT
+    const hips = new THREE.Group();
+    hips.position.y = 0.95;
+    root.add(hips);
+
+    // Pelvis geometry
+    const pelvisGeo = new THREE.CylinderGeometry(0.24, 0.22, 0.22, 12);
+    const pelvis = new THREE.Mesh(pelvisGeo, pantsMat);
+    pelvis.position.y = -0.05;
+    hips.add(pelvis);
+
+    // Leather Belt & Buckle
+    const belt = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.08, 14), leatherMat);
+    belt.position.y = 0.05;
+    hips.add(belt);
+
+    const buckle = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.09, 0.1), new THREE.MeshBasicMaterial({ color: 0xFACC15 }));
+    buckle.position.set(0, 0.05, 0.23);
+    hips.add(buckle);
+
+    // SPINE / TORSO
+    const spine = new THREE.Group();
+    spine.position.y = 0.08;
+    hips.add(spine);
+
+    // Chest & Safari Explorer Jacket
+    const chestGeo = new THREE.CylinderGeometry(0.28, 0.24, 0.48, 12);
+    chestGeo.scale(1.15, 1.0, 0.85); // Oval muscular chest
+    const chest = new THREE.Mesh(chestGeo, jacketMat);
+    chest.position.y = 0.24;
+    spine.add(chest);
+
+    // Inner Shirt V-neck
+    const vneck = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.28, 0.1), shirtMat);
+    vneck.position.set(0, 0.32, 0.22);
+    spine.add(vneck);
+
+    // Explorer Collar
+    const collar = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.05, 8, 16, Math.PI), jacketMat);
+    collar.position.set(0, 0.48, 0.02);
+    collar.rotation.x = Math.PI / 2;
+    spine.add(collar);
+
+    // 3D Explorer Backpack
+    const packGroup = new THREE.Group();
+    packGroup.position.set(0, 0.24, -0.28);
+
+    const packBody = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.46, 0.24), backpackMat);
+    packGroup.add(packBody);
+
+    const packFlap = new THREE.Mesh(new THREE.BoxGeometry(0.44, 0.14, 0.26), leatherMat);
+    packFlap.position.y = 0.22;
+    packGroup.add(packFlap);
+
+    // Rolled Explorer Bedroll / Map on top
+    const rollGeo = new THREE.CylinderGeometry(0.09, 0.09, 0.48, 12);
+    rollGeo.rotateZ(Math.PI / 2);
+    const roll = new THREE.Mesh(rollGeo, new THREE.MeshLambertMaterial({ color: 0xFEF3C7 }));
+    roll.position.set(0, 0.34, 0);
+    packGroup.add(roll);
+
+    // Leather straps
+    [-0.14, 0.14].forEach(sx => {
+      const strap = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.48, 0.04), leatherMat);
+      strap.position.set(sx, 0, 0.25);
+      packGroup.add(strap);
+    });
+    spine.add(packGroup);
+
+    // NECK & HEAD
+    const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.11, 0.14, 10), skinMat);
+    neck.position.y = 0.54;
+    spine.add(neck);
+
+    const headGroup = new THREE.Group();
+    headGroup.position.y = 0.72;
+    spine.add(headGroup);
+
+    // Sculpted Head Sphere
+    const headGeo = new THREE.SphereGeometry(0.24, 14, 14);
+    headGeo.scale(0.95, 1.05, 0.95);
+    const head = new THREE.Mesh(headGeo, skinMat);
+    headGroup.add(head);
+
+    // Nose
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.08, 6), skinMat);
+    nose.position.set(0, -0.02, 0.24);
+    nose.rotation.x = Math.PI / 2;
+    headGroup.add(nose);
+
+    // Eyes with Pupils & Specular Glint
+    [-0.09, 0.09].forEach(ex => {
+      const eyeWhite = new THREE.Mesh(new THREE.SphereGeometry(0.055, 8, 8), whiteMat);
+      eyeWhite.scale.set(1.0, 1.1, 0.4);
+      eyeWhite.position.set(ex, 0.04, 0.21);
+      headGroup.add(eyeWhite);
+
+      const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.03, 8, 8), blackMat);
+      pupil.position.set(ex, 0.04, 0.235);
+      headGroup.add(pupil);
+    });
+
+    // Friendly Explorer Hair
+    const hairBase = new THREE.Mesh(new THREE.SphereGeometry(0.26, 12, 12), hairMat);
+    hairBase.position.set(0, 0.06, -0.03);
+    headGroup.add(hairBase);
+
+    // Front Hair Tufts / Quiff
+    const tuft1 = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.18, 6), hairMat);
+    tuft1.position.set(-0.06, 0.24, 0.18);
+    tuft1.rotation.set(-0.4, 0, -0.2);
+    headGroup.add(tuft1);
+
+    const tuft2 = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.22, 6), hairMat);
+    tuft2.position.set(0.06, 0.26, 0.16);
+    tuft2.rotation.set(-0.4, 0, 0.2);
+    headGroup.add(tuft2);
+
+    // LIMBS: ARMS (SHOULDER -> UPPER ARM -> FOREARM -> GLOVE)
+    const createArm = (isLeft) => {
+      const side = isLeft ? -1 : 1;
+      const shoulder = new THREE.Group();
+      shoulder.position.set(side * 0.35, 0.42, 0);
+
+      // Upper arm
+      const upperArm = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.07, 0.32, 8), jacketMat);
+      upperArm.position.y = -0.16;
+      shoulder.add(upperArm);
+
+      // Elbow joint
+      const elbow = new THREE.Group();
+      elbow.position.y = -0.32;
+      shoulder.add(elbow);
+
+      // Forearm & rolled sleeve
+      const sleeve = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.03, 6, 12), jacketMat);
+      sleeve.rotation.x = Math.PI / 2;
+      elbow.add(sleeve);
+
+      const forearm = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.065, 0.28, 8), skinMat);
+      forearm.position.y = -0.14;
+      elbow.add(forearm);
+
+      // Fingerless Explorer Glove
+      const glove = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.14, 0.09), leatherMat);
+      glove.position.y = -0.32;
+      elbow.add(glove);
+
+      spine.add(shoulder);
+      return { shoulder, elbow };
+    };
+
+    const leftArm = createArm(true);
+    const rightArm = createArm(false);
+
+    // LIMBS: LEGS (HIP -> THIGH -> CALF -> BOOT)
+    const createLeg = (isLeft) => {
+      const side = isLeft ? -1 : 1;
+      const hipJoint = new THREE.Group();
+      hipJoint.position.set(side * 0.15, -0.12, 0);
+
+      // Thigh
+      const thigh = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.095, 0.42, 10), pantsMat);
+      thigh.position.y = -0.21;
+      hipJoint.add(thigh);
+
+      // Knee joint
+      const knee = new THREE.Group();
+      knee.position.y = -0.42;
+      hipJoint.add(knee);
+
+      // Calf
+      const calf = new THREE.Mesh(new THREE.CylinderGeometry(0.095, 0.085, 0.38, 10), pantsMat);
+      calf.position.y = -0.19;
+      knee.add(calf);
+
+      // Detailed Hiking Boot
+      const bootGroup = new THREE.Group();
+      bootGroup.position.set(0, -0.40, 0.04);
+
+      // Main boot
+      const bootBody = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.18, 0.28), bootsMat);
+      bootGroup.add(bootBody);
+
+      // Thick Lugged Tread Sole
+      const sole = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.06, 0.30), blackMat);
+      sole.position.y = -0.11;
+      bootGroup.add(sole);
+
+      // Laces / Tongue
+      const tongue = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.14, 0.06), leatherMat);
+      tongue.position.set(0, 0.04, 0.11);
+      bootGroup.add(tongue);
+
+      knee.add(bootGroup);
+
+      hips.add(hipJoint);
+      return { hipJoint, knee };
+    };
+
+    const leftLeg = createLeg(true);
+    const rightLeg = createLeg(false);
+
+    // Hoverboard & Shield Meshes
+    const hoverboardGeo = new THREE.BoxGeometry(0.85, 0.09, 1.8);
+    const hoverboardMat = new THREE.MeshPhongMaterial({
+      color: 0x06B6D4,
+      emissive: 0x0891B2,
+      specular: 0xFFFFFF,
+      shininess: 90
+    });
+    const hoverboard = new THREE.Mesh(hoverboardGeo, hoverboardMat);
+    hoverboard.position.set(0, -0.06, 0);
+    hoverboard.visible = false;
+    root.add(hoverboard);
+
+    const shieldGeo = new THREE.SphereGeometry(1.35, 24, 24);
+    const shieldMat = new THREE.MeshBasicMaterial({
+      color: 0x38BDF8,
+      transparent: true,
+      opacity: 0.35
+    });
+    const shield = new THREE.Mesh(shieldGeo, shieldMat);
+    shield.position.y = 0.95;
+    shield.visible = false;
+    root.add(shield);
+
+    return {
+      root,
+      hips,
+      spine,
+      headGroup,
+      leftArm,
+      rightArm,
+      leftLeg,
+      rightLeg,
+      hoverboard,
+      shield
+    };
+  }
+
+  /**
+   * 3D Golden Spinning Coin with Inset Medallion
+   */
+  static createCoin() {
+    const group = new THREE.Group();
+    const coinGeo = new THREE.CylinderGeometry(0.48, 0.48, 0.12, 24);
+    coinGeo.rotateX(Math.PI / 2);
+
+    const coinMat = new THREE.MeshStandardMaterial({
+      color: 0xFACC15,
+      metalness: 0.85,
+      roughness: 0.22,
+      emissive: 0xB45309,
+      emissiveIntensity: 0.25
+    });
+    const coin = new THREE.Mesh(coinGeo, coinMat);
+    group.add(coin);
+
+    // Star Inset on Coin Face
+    const starGeo = new THREE.RingGeometry(0.18, 0.32, 5);
+    const starMat = new THREE.MeshBasicMaterial({ color: 0xFEF08A, side: THREE.DoubleSide });
+    const starF = new THREE.Mesh(starGeo, starMat);
+    starF.position.z = 0.065;
+    group.add(starF);
+
+    const starB = new THREE.Mesh(starGeo, starMat);
+    starB.position.z = -0.065;
+    group.add(starB);
+
+    return group;
+  }
+
+  /**
+   * 3D Faceted Sparkling Blue Gem
+   */
+  static createGem() {
+    const group = new THREE.Group();
+    const gemGeo = new THREE.OctahedronGeometry(0.44, 0);
+    const gemMat = new THREE.MeshPhongMaterial({
+      color: 0x06B6D4,
+      emissive: 0x0284C7,
+      specular: 0xFFFFFF,
+      shininess: 100,
+      transparent: true,
+      opacity: 0.92
+    });
+    const gem = new THREE.Mesh(gemGeo, gemMat);
+    gem.scale.set(1.0, 1.45, 1.0);
+    group.add(gem);
+
+    return group;
+  }
+
+  /**
+   * 3D Powerup Tokens
+   */
+  static createPowerupMesh(type) {
+    const group = new THREE.Group();
+
+    let orbColor = 0xFACC15;
+    if (type === 'magnet') orbColor = 0xEF4444;
+    else if (type === 'shield') orbColor = 0x38BDF8;
+    else if (type === 'boost') orbColor = 0xF97316;
+    else if (type === 'multiplier') orbColor = 0xA855F7;
+    else if (type === 'hoverboard') orbColor = 0x06B6D4;
+
+    const orbGeo = new THREE.SphereGeometry(0.55, 16, 16);
+    const orbMat = new THREE.MeshPhongMaterial({
+      color: orbColor,
+      emissive: orbColor,
+      emissiveIntensity: 0.4,
+      transparent: true,
+      opacity: 0.8,
+      shininess: 90
+    });
+    const orb = new THREE.Mesh(orbGeo, orbMat);
+    group.add(orb);
+
+    if (type === 'magnet') {
+      const mag = new THREE.Mesh(new THREE.TorusGeometry(0.24, 0.08, 8, 16, Math.PI), new THREE.MeshLambertMaterial({ color: 0xFFFFFF }));
+      mag.rotation.z = Math.PI;
+      group.add(mag);
+    } else if (type === 'shield') {
+      const s = new THREE.Mesh(new THREE.OctahedronGeometry(0.26), new THREE.MeshLambertMaterial({ color: 0xFFFFFF }));
+      group.add(s);
+    } else if (type === 'boost') {
+      const bolt = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.45, 4), new THREE.MeshLambertMaterial({ color: 0xFEF08A }));
+      group.add(bolt);
+    } else if (type === 'multiplier') {
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.26, 0.08, 8, 16), new THREE.MeshLambertMaterial({ color: 0xFFFFFF }));
+      group.add(ring);
+    } else if (type === 'hoverboard') {
+      const board = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.06, 0.5), new THREE.MeshLambertMaterial({ color: 0xFFFFFF }));
+      group.add(board);
+    }
+
+    return group;
+  }
+
+  /**
+   * Premium 3D Obstacles (Temple Run Quality)
+   */
+  static createObstacle(type) {
+    const group = new THREE.Group();
+
+    if (type === 'fallen_log') {
+      // 1. Fallen Mossy Jungle Log (Jumpable)
+      const barkTex = TextureGenerator.getTreeBark();
+      const logMat = new THREE.MeshStandardMaterial({
+        map: barkTex,
+        roughness: 0.85
+      });
+
+      const logGeo = new THREE.CylinderGeometry(0.38, 0.44, 2.3, 14);
+      logGeo.rotateZ(Math.PI / 2);
+      const log = new THREE.Mesh(logGeo, logMat);
+      log.position.y = 0.42;
+      group.add(log);
+
+      // Tree Branch Stub
+      const stub = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 0.6, 8), logMat);
+      stub.position.set(-0.4, 0.72, 0.1);
+      stub.rotation.z = 0.4;
+      group.add(stub);
+
+      // Lush Green Moss patches
+      const mossMat = new THREE.MeshLambertMaterial({ color: 0x15803D });
+      const moss1 = new THREE.Mesh(new THREE.SphereGeometry(0.3, 8, 8), mossMat);
+      moss1.scale.set(1.4, 0.4, 0.8);
+      moss1.position.set(0.3, 0.75, 0);
+      group.add(moss1);
+
+      group.userData = { hitType: 'low', height: 0.8, width: 2.3 };
+    } else if (type === 'fire_pit') {
+      // 2. Ceremonial Temple Fire Pit (Jumpable)
+      const stoneMat = new THREE.MeshStandardMaterial({
+        map: TextureGenerator.getStonePath(),
+        roughness: 0.9
+      });
+
+      // Carved stone hearth rim
+      const pitGeo = new THREE.BoxGeometry(2.3, 0.45, 1.4);
+      const pit = new THREE.Mesh(pitGeo, stoneMat);
+      pit.position.y = 0.22;
+      group.add(pit);
+
+      // Molten fire embers bed
+      const emberMat = new THREE.MeshBasicMaterial({ color: 0xF97316 });
+      const ember = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.0), emberMat);
+      ember.rotateX(-Math.PI / 2);
+      ember.position.y = 0.46;
+      group.add(ember);
+
+      // Blazing Fire Cones
+      const flameMat = new THREE.MeshBasicMaterial({ color: 0xEF4444 });
+      for (let f = -0.7; f <= 0.7; f += 0.35) {
+        const flame = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.65, 6), flameMat);
+        flame.position.set(f, 0.75, (Math.random() - 0.5) * 0.4);
+        group.add(flame);
+      }
+
+      group.userData = { hitType: 'low', height: 0.85, width: 2.3 };
+    } else if (type === 'spiked_pendulum') {
+      // 3. Giant Swinging Spiked Pendulum Blade Trap (Moving Obstacle / Slide or Evade)
+      const woodMat = new THREE.MeshStandardMaterial({ map: TextureGenerator.getTreeBark() });
+      const stoneMat = new THREE.MeshStandardMaterial({ map: TextureGenerator.getStonePath() });
+
+      // Support Arch
+      const postL = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.28, 4.8, 10), stoneMat);
+      postL.position.set(-1.3, 2.4, 0);
+      group.add(postL);
+
+      const postR = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.28, 4.8, 10), stoneMat);
+      postR.position.set(1.3, 2.4, 0);
+      group.add(postR);
+
+      const topBeam = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.5, 0.5), woodMat);
+      topBeam.position.set(0, 4.6, 0);
+      group.add(topBeam);
+
+      // Swinging Pendulum Arm
+      const pendulum = new THREE.Group();
+      pendulum.position.set(0, 4.4, 0);
+
+      const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 3.2, 8), woodMat);
+      shaft.position.y = -1.6;
+      pendulum.add(shaft);
+
+      // Heavy Spiked Log / Blade at base of pendulum
+      const bladeGeo = new THREE.CylinderGeometry(0.45, 0.45, 1.6, 12);
+      bladeGeo.rotateZ(Math.PI / 2);
+      const blade = new THREE.Mesh(bladeGeo, new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.8 }));
+      blade.position.y = -3.2;
+      pendulum.add(blade);
+
+      // Spikes around blade
+      const spikeGeo = new THREE.ConeGeometry(0.1, 0.35, 6);
+      for (let s = 0; s < 8; s++) {
+        const spike = new THREE.Mesh(spikeGeo, new THREE.MeshStandardMaterial({ color: 0xFACC15, metalness: 0.9 }));
+        const ang = (s / 8) * Math.PI * 2;
+        spike.position.set(0, -3.2 + Math.sin(ang) * 0.48, Math.cos(ang) * 0.48);
+        spike.rotation.x = ang + Math.PI / 2;
+        pendulum.add(spike);
+      }
+
+      group.add(pendulum);
+      group.userData = { hitType: 'pendulum', pendulumMesh: pendulum, height: 3.5, width: 2.6 };
+    } else if (type === 'temple_gate') {
+      // 4. Low Ancient Spiked Stone Archway Gate (Must Slide Under)
+      const stoneMat = new THREE.MeshStandardMaterial({ map: TextureGenerator.getTempleStone(), roughness: 0.85 });
+      const woodMat = new THREE.MeshStandardMaterial({ map: TextureGenerator.getTreeBark() });
+
+      const pillarL = new THREE.Mesh(new THREE.BoxGeometry(0.5, 3.4, 0.5), stoneMat);
+      pillarL.position.set(-1.25, 1.7, 0);
+      group.add(pillarL);
+
+      const pillarR = new THREE.Mesh(new THREE.BoxGeometry(0.5, 3.4, 0.5), stoneMat);
+      pillarR.position.set(1.25, 1.7, 0);
+      group.add(pillarR);
+
+      // Low Crossbeam hanging down
+      const lowBeam = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.7, 0.4), woodMat);
+      lowBeam.position.set(0, 1.8, 0);
+      group.add(lowBeam);
+
+      // Sharp iron spikes pointing down
+      const spikeMat = new THREE.MeshStandardMaterial({ color: 0x1E293B, metalness: 0.9 });
+      for (let sp = -0.9; sp <= 0.9; sp += 0.3) {
+        const spike = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.4, 6), spikeMat);
+        spike.position.set(sp, 1.3, 0);
+        spike.rotation.x = Math.PI;
+        group.add(spike);
+      }
+
+      group.userData = { hitType: 'high', clearance: 0.9, height: 3.4, width: 2.6 };
+    } else if (type === 'stone_idol') {
+      // 5. Giant Ancient Carved Aztec Stone Idol (Full Lane Blocker)
+      const stoneMat = new THREE.MeshStandardMaterial({ map: TextureGenerator.getTempleStone(), roughness: 0.9 });
+
+      const bodyGeo = new THREE.BoxGeometry(1.8, 2.6, 1.5);
+      const idol = new THREE.Mesh(bodyGeo, stoneMat);
+      idol.position.y = 1.3;
+      group.add(idol);
+
+      // Glowing Eyes
+      const eyeMat = new THREE.MeshBasicMaterial({ color: 0xFACC15 });
+      [-0.45, 0.45].forEach(ex => {
+        const eye = new THREE.Mesh(new THREE.SphereGeometry(0.14, 8, 8), eyeMat);
+        eye.position.set(ex, 1.8, 0.78);
+        group.add(eye);
+      });
+
+      // Mossy overgrown crest on head
+      const crest = new THREE.Mesh(new THREE.DodecahedronGeometry(0.8), new THREE.MeshLambertMaterial({ color: 0x166534 }));
+      crest.position.set(0, 2.7, 0);
+      group.add(crest);
+
+      group.userData = { hitType: 'block', height: 2.8, width: 1.8 };
+    }
+
+    return group;
+  }
+}
+
+window.ModelFactory = ModelFactory;

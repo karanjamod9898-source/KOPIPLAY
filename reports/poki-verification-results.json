@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-03T12:02:12.701Z",
+  "passedTotal": 12,
+  "failedTotal": 0,
+  "tests": [
+    {
+      "name": "Homepage body has poki-home-mode class",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Top navbar is hidden on homepage",
+      "passed": true,
+      "details": "display: none"
+    },
+    {
+      "name": "Top-left Poki brand command tile exists in grid",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "All 187 games directly present on homepage",
+      "passed": true,
+      "details": "Count: 187"
+    },
+    {
+      "name": "Game cards are squircle squircles with full-bleed image",
+      "passed": true,
+      "details": "{\"borderRadius\":\"18px\",\"objectFit\":\"cover\",\"hasOverlay\":true,\"hasContentBox\":false}"
+    },
+    {
+      "name": "Asymmetric varied grid spans distributed across all 187 games",
+      "passed": true,
+      "details": "{\"span2x2\":16,\"span2x1\":28,\"span1x2\":20,\"span1x1\":123}"
+    },
+    {
+      "name": "Category filter (Action) works in-place and preserves brand tile",
+      "passed": true,
+      "details": "Count: 35"
+    },
+    {
+      "name": "Clearing filter restores all 187 games",
+      "passed": true,
+      "details": "Count: 187"
+    },
+    {
+      "name": "Live search filtering works seamlessly",
+      "passed": true,
+      "details": "Found: 7"
+    },
+    {
+      "name": "Tablet 768px layout rendered with zero overflow",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mobile 375px layout rendered with zero overflow",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Game playing view restores header and game stage",
+      "passed": true,
+      "details": ""
+    }
+  ]
+}

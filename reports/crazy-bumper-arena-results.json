@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-11-04T11:45:10.348Z",
+  "passed": 26,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Homepage: Crazy Bumper Arena is present",
+      "pass": true,
+      "details": "Found: Crazy Bumper Arena, Badge: "
+    },
+    {
+      "name": "Homepage: Thumbnail points to SVG",
+      "pass": true,
+      "details": "assets/images/games/crazy-bumper-arena.svg"
+    },
+    {
+      "name": "All Games: 189 total games present",
+      "pass": true,
+      "details": "Total cards: 189"
+    },
+    {
+      "name": "All Games: Crazy Bumper Arena card present",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "New Games: Crazy Bumper Arena appears in New Games filter",
+      "pass": true,
+      "details": "Total new games: 69"
+    },
+    {
+      "name": "Arcade Category: Crazy Bumper Arena listed in Arcade",
+      "pass": true,
+      "details": "Arcade games count: 49"
+    },
+    {
+      "name": "Game Detail: Title matches Crazy Bumper Arena",
+      "pass": true,
+      "details": "Crazy Bumper Arena"
+    },
+    {
+      "name": "Game Detail: Iframe src is games/crazy-bumper-arena/index.html",
+      "pass": true,
+      "details": "games/crazy-bumper-arena/index.html"
+    },
+    {
+      "name": "Game 3D: WebGL canvas rendering",
+      "pass": true,
+      "details": "1584x849"
+    },
+    {
+      "name": "Game UI: Main Menu active on launch",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Levels: 5 distinct arena battlegrounds displayed",
+      "pass": true,
+      "details": "Levels: 5"
+    },
+    {
+      "name": "Garage: 3D Turntable & 8 Car Designs loaded",
+      "pass": true,
+      "details": "Current: Red Rocket, Total: 8"
+    },
+    {
+      "name": "Garage: Next button cycles bumper car models",
+      "pass": true,
+      "details": "New car: Neon Phantom"
+    },
+    {
+      "name": "Match: Playing state initialized",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Bumper Cars: Player car & 5 AI opponents instantiated",
+      "pass": true,
+      "details": "AI: 5"
+    },
+    {
+      "name": "Items: 3D Coins & Power-ups spawned",
+      "pass": true,
+      "details": "Coins: 14, Power-ups: 4"
+    },
+    {
+      "name": "Driving Physics: Throttle accelerates vehicle smoothly",
+      "pass": true,
+      "details": "Speed: 2.9 m/s"
+    },
+    {
+      "name": "Driving Physics: Steering turns vehicle smoothly",
+      "pass": true,
+      "details": "Heading delta: 1.58 rad"
+    },
+    {
+      "name": "AI: Opponents drive and navigate arena autonomously",
+      "pass": true,
+      "details": "AI Speeds: 10.3, 18.3, 16.5, 17.2, 18.5"
+    },
+    {
+      "name": "Collisions: Bumper impact triggers knockback impulse & score",
+      "pass": true,
+      "details": "Score: 1316"
+    },
+    {
+      "name": "Power-ups: Spacebar triggers active power-up (Nitro Boost)",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Pause: Pause button opens modal and pauses state",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Resume: Resumed battle state seamlessly",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Sound: Mute toggle persists in localStorage",
+      "pass": true,
+      "details": "Initial: true, Toggled: false"
+    },
+    {
+      "name": "Mobile: Virtual touch steering and throttle controls active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Console: Zero runtime errors",
+      "pass": true,
+      "details": ""
+    }
+  ]
+}

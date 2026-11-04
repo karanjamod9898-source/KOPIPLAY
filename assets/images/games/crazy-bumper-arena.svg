@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="arenaBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="60%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#070A14" />
+    </radialGradient>
+
+    <!-- Floor Grid Glow -->
+    <linearGradient id="neonFloor" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Red Bumper Car Body Gradient -->
+    <linearGradient id="carBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F87171" />
+      <stop offset="35%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+
+    <!-- Rubber Bumper Gradient -->
+    <linearGradient id="rubberBumper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+
+    <!-- Gold Text Gradient -->
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="45%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#CA8A04" />
+    </linearGradient>
+
+    <!-- Cyan Flare -->
+    <radialGradient id="cyanFlare" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="48" fill="url(#arenaBg)" />
+
+  <!-- Stadium Lighting Rays -->
+  <polygon points="60,0 180,320 0,380" fill="white" opacity="0.04" />
+  <polygon points="452,0 332,320 512,380" fill="white" opacity="0.04" />
+
+  <!-- Arena Floor Oval Grid -->
+  <ellipse cx="256" cy="380" rx="230" ry="85" fill="url(#neonFloor)" />
+  <ellipse cx="256" cy="380" rx="230" ry="85" fill="none" stroke="#06B6D4" stroke-width="4" opacity="0.6" />
+  <ellipse cx="256" cy="380" rx="160" ry="58" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="8 6" opacity="0.4" />
+
+  <!-- Impact Sparks Behind Car -->
+  <circle cx="390" cy="320" r="45" fill="url(#cyanFlare)" />
+  <line x1="390" y1="320" x2="440" y2="290" stroke="#FACC15" stroke-width="4" stroke-linecap="round" />
+  <line x1="390" y1="320" x2="450" y2="340" stroke="#FACC15" stroke-width="3" stroke-linecap="round" />
+  <line x1="390" y1="320" x2="420" y2="365" stroke="#FACC15" stroke-width="4" stroke-linecap="round" />
+  <line x1="390" y1="320" x2="360" y2="270" stroke="#EF4444" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Opponent Car (Slightly in Background on right) -->
+  <g transform="translate(340, 260) scale(0.65)">
+    <!-- Bumper -->
+    <ellipse cx="0" cy="50" rx="110" ry="38" fill="url(#rubberBumper)" stroke="#475569" stroke-width="4" />
+    <!-- Body -->
+    <path d="M-80,45 C-80,0 80,0 80,45 Z" fill="#06B6D4" />
+    <path d="M-50,15 C-50,-20 50,-20 50,15 Z" fill="#0284C7" />
+  </g>
+
+  <!-- Hero Player Bumper Car (Centered Front 3/4 Perspective) -->
+  <g id="heroCar">
+    <!-- Shadow -->
+    <ellipse cx="230" cy="395" rx="150" ry="36" fill="#020617" opacity="0.75" />
+
+    <!-- Rubber Bumper Outer Ring -->
+    <path d="M70,335 C65,295 120,270 230,270 C340,270 395,295 390,335 C385,380 320,405 230,405 C140,405 75,380 70,335 Z" fill="url(#rubberBumper)" stroke="#64748B" stroke-width="4" />
+    <!-- Chrome Trim Accent Ring -->
+    <path d="M85,335 C80,305 130,285 230,285 C330,285 380,305 375,335 C370,368 315,390 230,390 C145,390 90,368 85,335 Z" fill="none" stroke="#E2E8F0" stroke-width="3" opacity="0.85" />
+
+    <!-- Main Aerodynamic Red Car Body -->
+    <path d="M98,325 C92,270 145,240 230,240 C315,240 368,270 362,325 C356,365 305,380 230,380 C155,380 104,365 98,325 Z" fill="url(#carBody)" />
+
+    <!-- Hood Accent Stripes (Gold Racing Stripes) -->
+    <path d="M210,310 L220,375 L240,375 L250,310 Z" fill="#FACC15" />
+
+    <!-- Dual Glowing Headlights -->
+    <ellipse cx="145" cy="342" rx="18" ry="12" fill="#FEF08A" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="145" cy="342" r="28" fill="url(#cyanFlare)" />
+
+    <ellipse cx="315" cy="342" rx="18" ry="12" fill="#FEF08A" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="315" cy="342" r="28" fill="url(#cyanFlare)" />
+
+    <!-- Cockpit Interior -->
+    <ellipse cx="230" cy="275" rx="85" ry="32" fill="#0F172A" />
+
+    <!-- Steering Wheel -->
+    <ellipse cx="230" cy="285" rx="28" ry="14" fill="none" stroke="#E2E8F0" stroke-width="6" />
+
+    <!-- 3D Driver Character -->
+    <!-- Torso -->
+    <path d="M195,275 C195,230 265,230 265,275 Z" fill="#3B82F6" />
+    <!-- Arms -->
+    <path d="M195,255 L215,285" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" />
+    <path d="M265,255 L245,285" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" />
+    <!-- Hands -->
+    <circle cx="215" cy="285" r="7" fill="#FCD34D" />
+    <circle cx="245" cy="285" r="7" fill="#FCD34D" />
+
+    <!-- Driver Head & Hair -->
+    <circle cx="230" cy="210" r="32" fill="#FCD34D" />
+    <!-- Cap / Helmet -->
+    <path d="M196,210 C196,175 264,175 264,210 Z" fill="#EF4444" />
+    <polygon points="196,206 264,206 276,214 184,214" fill="#DC2626" />
+
+    <!-- Eyes & Smile -->
+    <circle cx="218" cy="216" r="4.5" fill="#0F172A" />
+    <circle cx="242" cy="216" r="4.5" fill="#0F172A" />
+    <path d="M222,228 Q230,238 238,228" fill="none" stroke="#991B1B" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Carnival Pole & Electric Beacon -->
+    <line x1="170" y1="270" x2="160" y2="85" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round" />
+    <circle cx="160" cy="85" r="10" fill="#FACC15" />
+    <circle cx="160" cy="85" r="22" fill="url(#cyanFlare)" />
+  </g>
+
+  <!-- Title Badge Typography Overlay -->
+  <g transform="translate(256, 435)">
+    <!-- Shadow banner -->
+    <rect x="-195" y="-34" width="390" height="58" rx="16" fill="#070A14" opacity="0.9" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+    <text x="0" y="-8" text-anchor="middle" font-family="'Outfit', Arial Black, sans-serif" font-weight="950" font-size="28" fill="url(#goldText)" letter-spacing="1">CRAZY BUMPER</text>
+    <text x="0" y="16" text-anchor="middle" font-family="'Outfit', Arial Black, sans-serif" font-weight="900" font-size="20" fill="#38BDF8" letter-spacing="4">ARENA 3D</text>
+  </g>
+</svg>
+

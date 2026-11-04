@@ -1,38 +1,74 @@
 /* ==========================================================================
-   KopiPlay - Responsive Breakpoint System
-   Breakpoints: Mobile (375px, 390px), Tablet (768px), Desktop (1024px, 1366px+)
+   KopiPlay - Clean Responsive Breakpoint System
+   Breakpoints: 320px, 375px, 390px, 430px, 768px, 1024px, 1280px, 1366px, 1440px, 1920px
+   Grid Columns: Large Desktop: 6 | Laptop: 5 | Tablet: 3-4 | Mobile: 2
    ========================================================================== */
 
-@media (max-width: 1024px) {
-  .site-header {
-    padding: 0 20px;
-  }
-  .category-showcase-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .game-detail-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .game-ad-container {
-    max-width: 380px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-  .about-cta-banner {
-    flex-direction: column;
-    align-items: flex-start;
+/* Large Desktop (>= 1440px) */
+@media (min-width: 1440px) {
+  .games-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 16px !important;
   }
 }
 
-@media (max-width: 768px) {
+/* Laptop (1025px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1025px) {
+  .games-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 14px !important;
+  }
+  .related-games-strip {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
   .site-header {
     padding: 0 16px;
   }
+  .header-inner {
+    padding: 0 12px;
+  }
+  .main-content {
+    padding: 16px 16px 48px;
+  }
+  .games-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+  }
+  .related-games-strip {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .seo-highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .game-details-body {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* Small Tablet & Large Mobile (560px - 767px) */
+@media (max-width: 767px) and (min-width: 560px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  .related-games-strip {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+}
+
+/* Mobile Devices (<= 768px Common Adjustments) */
+@media (max-width: 768px) {
   .header-nav {
     display: none;
   }
@@ -42,200 +78,201 @@
   .header-action-btn .action-text {
     display: none;
   }
+  .header-action-btn {
+    padding: 8px 10px;
+  }
   .mobile-search-toggle {
     display: flex;
   }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  .hero-section {
+    padding: 24px 16px 20px;
+    margin-bottom: 18px;
+  }
+  .hero-title {
+    font-size: 1.65rem;
+  }
+  .hero-description {
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+  }
+  .hero-search-input {
+    height: 44px;
+    font-size: 0.92rem;
+    padding: 0 40px 0 38px;
+  }
+  .hero-search-icon {
+    left: 12px;
+    width: 17px;
+    height: 17px;
+  }
+  .portal-seo-section {
+    padding: 20px 18px;
+  }
+  .portal-seo-section h2 {
+    font-size: 1.3rem;
+  }
+}
 
-  /* Mobile Homepage (Phone 1 Mockup in Reference): 2-Column Mixed Grid */
-  .mixed-game-grid {
+/* Mobile Phones (<= 559px, down to 320px) */
+@media (max-width: 559px) {
+  .main-content {
+    padding: 12px 10px 40px;
+  }
+  .games-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
-
-  .mixed-game-grid .game-card.card-large {
-    grid-column: span 2 !important;
-    grid-row: span 2 !important;
+  .related-games-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
   }
-
-  .mixed-game-grid .game-card.card-wide {
-    grid-column: span 2 !important;
-    grid-row: span 1 !important;
+  .card-content {
+    padding: 8px 10px;
   }
-
-  .mixed-game-grid .game-card.card-tall {
-    grid-column: span 1 !important;
-    grid-row: span 2 !important;
-  }
-
-  
-  /* Mobile Category Bar Responsive */
-  .category-quick-bar {
-    padding: 6px 36px 8px 36px;
-    gap: 8px;
-  }
-  .category-quick-pill {
-    padding: 7px 13px;
+  .card-title {
     font-size: 0.82rem;
   }
-  .category-quick-bar {
-    padding: 6px 42px;
+  .card-meta {
+    font-size: 0.7rem;
   }
-  .cat-nav-arrow {
-    width: 32px;
-    height: 32px;
-  }
-  .cat-nav-arrow.cat-nav-prev {
-    left: 4px;
-  }
-  .cat-nav-arrow.cat-nav-next {
-    right: 4px;
-  }
-  .cat-nav-arrow svg {
-    width: 15px;
-    height: 15px;
-  }
-  .cat-nav-fade {
-    width: 52px;
-  }
-
-  /* Mobile Category Grid: 3 columns */
-  .category-showcase-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .category-showcase-card {
-    padding: 16px 10px;
-  }
-
-  /* Mobile Player: Stacked, Player First, Ad Slot Below, Related Games Below */
-  .game-detail-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .player-stage-card {
-    min-height: 220px;
-    border-radius: 14px;
-    width: 100%;
-  }
-
-  .game-ad-container {
-    max-width: 340px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 16px 12px;
-    border-radius: 14px;
-  }
-
-  .ad-slot-frame.ad-slot-300x250 {
-    width: 300px;
-    height: 250px;
-    max-width: 100%;
-  }
-
-  .portal-seo-section {
-    padding: 24px 20px;
-  }
-
-  .seo-highlight-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Legal & Information Pages Mobile Adjustments */
-  .legal-page-wrapper {
-    margin-bottom: 40px;
-  }
-  .legal-card {
-    padding: 22px 18px;
-    border-radius: 14px;
-  }
-  .legal-title {
-    font-size: 1.65rem;
-  }
-  .about-feature-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .about-cta-banner {
-    padding: 22px 18px;
-    border-radius: 14px;
-  }
-  .contact-support-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Mobile Footer: Clean Single Column Stack with no overflow */
-  .site-footer {
-    padding: 40px 18px 24px;
-    margin-top: 48px;
-  }
-
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
-
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-}
-
-@media (max-width: 480px) {
-  .category-showcase-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-title {
+    font-size: 1.4rem;
   }
-  .cat-card-label {
-    font-size: 0.88rem;
+  .hero-description {
+    font-size: 0.86rem;
   }
-  .main-content {
-    padding: 16px 14px 40px;
+  .games-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
-}
-
-/* --------------------------------------------------------------------------
-   Responsive Ad System Rules (Mobile & Tablet Layout Protection)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .homepage-side-ad,
-  .game-stage-side-ad-left,
-  .game-stage-side-ad-right {
-    display: none !important;
+  .games-sort-wrap {
+    width: 100%;
+    justify-content: space-between;
   }
-
-  .kopi-ad-frame.ad-frame-728x90 {
-    max-width: 100%;
-    height: auto;
-    min-height: 60px;
-  }
-
-  .kopi-ad-container {
-    padding: 10px 12px;
-    margin: 14px 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .kopi-ad-placeholder-text {
-    font-size: 0.75rem;
-  }
-  .kopi-ad-placeholder-id {
-    display: none;
+  .player-stage-card {
+    min-height: 220px;
+    border-radius: 12px;
   }
   .game-details-meta-card {
-    padding: 16px 14px;
+    padding: 16px;
   }
   .game-details-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+  }
+  .game-details-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .game-details-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .legal-header-card,
+  .legal-card,
+  .contact-form-card {
+    padding: 18px 16px;
+  }
+  .legal-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra Small Screens (<= 360px down to 320px) */
+@media (max-width: 360px) {
+  .header-logo-text {
+    font-size: 1.15rem;
+  }
+  .header-inner {
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .main-content {
+    padding: 10px 8px 36px;
+  }
+  .games-grid {
+    gap: 8px !important;
+  }
+}
+
+/* Guaranteed Zero Horizontal Overflow across all screens */
+html, body, .app-layout, .app-main-wrapper, .main-content, .games-grid {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+
+/* ==========================================================================
+   POKI GRID RESPONSIVE BREAKPOINTS (Proportional 1:1 Square Squircles)
+   Maintains 1:1 Aspect Ratio across all devices so game thumbnails are NEVER cropped
+   ========================================================================== */
+
+.poki-card {
+  aspect-ratio: 1 / 1 !important;
+}
+
+.poki-card.span-2x2 {
+  grid-column: span 2 !important;
+  grid-row: span 2 !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+.poki-card.span-1x1 {
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+@media (min-width: 1600px) {
+  .poki-grid {
+    grid-template-columns: repeat(11, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 1599px) and (min-width: 1280px) {
+  .poki-grid {
+    grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .poki-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .poki-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .poki-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .poki-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 7px !important;
   }
 }

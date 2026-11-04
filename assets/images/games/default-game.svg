@@ -1,38 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
   <defs>
-    <linearGradient id="dfg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19" />
-      <stop offset="50%" stop-color="#141c2e" />
-      <stop offset="100%" stop-color="#070a12" />
+    <linearGradient id="dfg-teal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#EDF2F7" />
     </linearGradient>
-    <filter id="glow-dfg">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
 
-  <rect width="400" height="250" fill="url(#dfg-bg)" />
-  <rect x="10" y="10" width="380" height="230" rx="12" fill="none" stroke="rgba(0, 240, 255, 0.15)" stroke-width="2" stroke-dasharray="6,6" />
+  <rect width="400" height="300" fill="url(#dfg-teal-bg)" />
+  <rect x="8" y="8" width="384" height="284" rx="14" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="6,6" />
 
-  <!-- Modern Gamepad Outline -->
-  <g transform="translate(145, 65) scale(1.1)" filter="url(#glow-dfg)">
-    <!-- Controller Body -->
-    <path d="M 15 35 C 10 70 25 85 45 85 C 55 85 65 75 75 75 C 85 75 95 85 105 85 C 125 85 140 70 135 35 C 130 15 100 15 75 25 C 50 15 20 15 15 35 Z" fill="#0b1120" stroke="#00f0ff" stroke-width="2.5" />
+  <!-- Modern Gamepad Outline in Teal -->
+  <g transform="translate(140, 85) scale(1.1)">
+    <path d="M 15 35 C 10 70 25 85 45 85 C 55 85 65 75 75 75 C 85 75 95 85 105 85 C 125 85 140 70 135 35 C 130 15 100 15 75 25 C 50 15 20 15 15 35 Z" fill="#FFFFFF" stroke="#0F766E" stroke-width="2.5" />
     
     <!-- D-Pad -->
-    <rect x="35" y="38" width="16" height="6" rx="2" fill="#00f0ff" />
-    <rect x="40" y="33" width="6" height="16" rx="2" fill="#00f0ff" />
+    <rect x="35" y="38" width="16" height="6" rx="2" fill="#14B8A6" />
+    <rect x="40" y="33" width="6" height="16" rx="2" fill="#14B8A6" />
 
     <!-- Action Buttons -->
-    <circle cx="105" cy="35" r="3.5" fill="#ff0055" />
-    <circle cx="115" cy="42" r="3.5" fill="#a855f7" />
-    <circle cx="95" cy="42" r="3.5" fill="#10b981" />
-    <circle cx="105" cy="50" r="3.5" fill="#f59e0b" />
+    <circle cx="105" cy="35" r="3.5" fill="#EF4444" />
+    <circle cx="115" cy="42" r="3.5" fill="#0F766E" />
+    <circle cx="95" cy="42" r="3.5" fill="#10B981" />
+    <circle cx="105" cy="50" r="3.5" fill="#F59E0B" />
   </g>
 
-  <text x="200" y="185" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="1">KOPIPLAY</text>
-  <text x="200" y="205" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">PREVIEW NOT AVAILABLE</text>
+  <text x="200" y="215" fill="#172033" font-family="'Outfit', -apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0.5">KOPIPLAY</text>
+  <text x="200" y="235" fill="#64748B" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">INSTANT PLAY</text>
 </svg>

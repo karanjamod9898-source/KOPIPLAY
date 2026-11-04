@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-11-04T06:17:24.294Z",
+  "passedTotal": 27,
+  "failedTotal": 0,
+  "pagesTested": [],
+  "tests": [
+    {
+      "name": "Homepage: Fixed left sidebar & hidden top header",
+      "passed": true,
+      "details": "Sidebar fixed, desktop header clean"
+    },
+    {
+      "name": "Homepage: Hero banner & 187 games loaded",
+      "passed": true,
+      "details": "Hero: true, Games: 187"
+    },
+    {
+      "name": "Favorites (Empty): Professional dark empty card with glow & icon",
+      "passed": true,
+      "details": "Title: No Favorite Games Saved Yet"
+    },
+    {
+      "name": "Favorites (Empty): Action button present",
+      "passed": true,
+      "details": "Button: Explore All 187+ Games"
+    },
+    {
+      "name": "Favorites (Empty): Curated recommendations grid loaded",
+      "passed": true,
+      "details": "Recommendations: 14 cards"
+    },
+    {
+      "name": "Favorites (Empty): Sidebar fixed & white header prevented",
+      "passed": true,
+      "details": "Layout fully preserved"
+    },
+    {
+      "name": "Favorites (Populated): Grid displays saved favorite games",
+      "passed": true,
+      "details": "Favorited cards: 3"
+    },
+    {
+      "name": "Favorites (Populated): Clear All Favorites button present",
+      "passed": true,
+      "details": "Clear button mounted"
+    },
+    {
+      "name": "Favorites (Populated): Sidebar badge synchronized",
+      "passed": true,
+      "details": "Sidebar badge: 3"
+    },
+    {
+      "name": "Recently Played: Displays played history cards",
+      "passed": true,
+      "details": "History cards: 2"
+    },
+    {
+      "name": "Recently Played: Clear History button present",
+      "passed": true,
+      "details": "Clear button mounted"
+    },
+    {
+      "name": "Popular Games: Non-zero games filter resolved",
+      "passed": true,
+      "details": "Popular games loaded: 186"
+    },
+    {
+      "name": "New Releases: Verified games loaded",
+      "passed": true,
+      "details": "New games loaded: 67"
+    },
+    {
+      "name": "All Games: All 187 games loaded with sort dropdown",
+      "passed": true,
+      "details": "Cards: 187, Sort: true"
+    },
+    {
+      "name": "Game Page: 16:9 Cinematic player & iframe mounted",
+      "passed": true,
+      "details": "Embed: games/neon-racer/index.html"
+    },
+    {
+      "name": "Game Page: Fullscreen, Favorite & Share buttons active",
+      "passed": true,
+      "details": "Controls active"
+    },
+    {
+      "name": "Game Page: Tactile keycap controls parsed",
+      "passed": true,
+      "details": "Controls instructions mounted"
+    },
+    {
+      "name": "Game Page: Related games recommendations mounted",
+      "passed": true,
+      "details": "Related cards: 5"
+    },
+    {
+      "name": "Game Page: Dark glass styling without white cards",
+      "passed": true,
+      "details": "Dark glass verified"
+    },
+    {
+      "name": "About Us: Dark gaming cards with mission & highlights",
+      "passed": true,
+      "details": "Cards: 2, Dark: true"
+    },
+    {
+      "name": "Contact Us: Form inputs & interactive support mounted",
+      "passed": true,
+      "details": "Contact form ready"
+    },
+    {
+      "name": "Privacy Policy: Content rendered in dark theme",
+      "passed": true,
+      "details": "Title: Privacy Policy"
+    },
+    {
+      "name": "Terms of Service: Content rendered in dark theme",
+      "passed": true,
+      "details": "Title: Terms & Conditions"
+    },
+    {
+      "name": "DMCA Page: Content rendered in dark theme",
+      "passed": true,
+      "details": "Title: DMCA & Copyright Policy"
+    },
+    {
+      "name": "Disclaimer Page: Content rendered in dark theme",
+      "passed": true,
+      "details": "Title: Website Disclaimer"
+    },
+    {
+      "name": "Mobile Favorites: Zero horizontal scroll overflow",
+      "passed": true,
+      "details": "375px width strictly contained"
+    },
+    {
+      "name": "Mobile Game Detail: Zero horizontal scroll overflow",
+      "passed": true,
+      "details": "16:9 player responsive"
+    }
+  ]
+}

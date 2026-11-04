@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tower Builder 3D – Play Online on KopiPlay</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #070A14;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF;
+      touch-action: none;
+    }
+
+    #game-canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    canvas#three-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Ambient Dynamic Sky Gradient */
+    .sky-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #090E24 0%, #171B3E 45%, #251B42 80%, #34183E 100%);
+      transition: background 1.5s ease;
+      z-index: 0;
+    }
+
+    /* Floating Clouds / Stars Layer */
+    .sky-stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 150px, #22D3EE, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 240px 90px, #C084FC, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 320px 240px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 450px 70px, #38BDF8, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 600px 300px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 700px 400px;
+      z-index: 1;
+    }
+
+    /* Game HUD Overlay */
+    .game-ui-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 20px;
+    }
+
+    /* Top Bar */
+    .ui-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      pointer-events: auto;
+    }
+
+    .ui-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ui-logo-icon {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    }
+
+    .ui-logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 2.2;
+    }
+
+    .ui-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ui-game-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      color: #FFFFFF;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      line-height: 1.1;
+    }
+
+    .ui-game-title span {
+      background: linear-gradient(135deg, #22D3EE, #C084FC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ui-best-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #FACC15;
+    }
+
+    .ui-best-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    /* Top Action Buttons */
+    .ui-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ui-icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .ui-icon-btn:hover {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: #22D3EE;
+      color: #22D3EE;
+      transform: scale(1.08);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
+    }
+
+    .ui-icon-btn:active {
+      transform: scale(0.95);
+    }
+
+    .ui-icon-btn svg {
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+
+    /* Center Live Score Display */
+    .ui-center-score {
+      position: absolute;
+      top: 75px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .live-score-number {
+      font-size: 3.8rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(34, 211, 238, 0.4);
+      letter-spacing: -1.5px;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .live-score-number.pop {
+      transform: scale(1.22);
+      color: #22D3EE;
+    }
+
+    /* Combo Pill */
+    .combo-pill {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(6, 182, 212, 0.85));
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(-8px) scale(0.85);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .combo-pill.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Floating Perfect Bonus Banner */
+    .floating-feedback {
+      position: absolute;
+      top: 175px;
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #FACC15;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.8), 0 0 20px rgba(250, 204, 21, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floating-feedback.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-20px);
+    }
+
+    /* Bottom Prompt */
+    .ui-bottom-prompt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      pointer-events: none;
+    }
+
+    .tap-hint-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: rgba(255, 255, 255, 0.75);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      animation: pulseHint 2s infinite ease-in-out;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    @keyframes pulseHint {
+      0%, 100% { opacity: 0.6; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    /* Overlay Screens (Start, Pause, Game Over) */
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 10, 20, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1.5px solid rgba(124, 58, 237, 0.4);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(124, 58, 237, 0.25);
+      width: 100%;
+      max-width: 380px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-icon-header {
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+    }
+
+    .modal-icon-header svg {
+      width: 36px;
+      height: 36px;
+      stroke: #FFFFFF;
+      fill: none;
+      stroke-width: 2.2;
+    }
+
+    .modal-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      color: #FFFFFF;
+    }
+
+    .modal-title span {
+      background: linear-gradient(135deg, #22D3EE, #C084FC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .modal-subtitle {
+      font-size: 0.9rem;
+      color: #94A3B8;
+      margin-bottom: 24px;
+      line-height: 1.45;
+    }
+
+    /* Score Stats Grid in Game Over */
+    .stats-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .stat-box {
+      background: rgba(7, 10, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94A3B8;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .stat-box.highlight {
+      border-color: rgba(250, 204, 21, 0.45);
+      background: rgba(250, 204, 21, 0.08);
+    }
+
+    .stat-box.highlight .stat-value {
+      color: #FACC15;
+    }
+
+    /* Buttons */
+    .btn-game-primary {
+      width: 100%;
+      height: 48px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+      border: none;
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.45);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      outline: none;
+    }
+
+    .btn-game-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(124, 58, 237, 0.6), 0 0 20px rgba(34, 211, 238, 0.4);
+    }
+
+    .btn-game-primary:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-game-secondary {
+      width: 100%;
+      height: 44px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #CBD5E1;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      transition: all 0.18s ease;
+      outline: none;
+    }
+
+    .btn-game-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+    }
+
+    /* Celebration Banner */
+    .new-best-banner {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.9), rgba(245, 158, 11, 0.9));
+      color: #070A14;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(250, 204, 21, 0.4);
+      animation: pulseBest 1.5s infinite;
+    }
+
+    .new-best-banner.active {
+      display: inline-flex;
+    }
+
+    @keyframes pulseBest {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    /* Small Screen Adjustments */
+    @media (max-width: 480px) {
+      .game-ui-layer {
+        padding: 12px 14px;
+      }
+      .ui-game-title {
+        font-size: 1rem;
+      }
+      .live-score-number {
+        font-size: 3.2rem;
+      }
+      .modal-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky-background" id="skyBg"></div>
+  <div class="sky-stars"></div>
+
+  <!-- 3D WebGL Canvas Container -->
+  <div id="game-canvas-container"></div>
+
+  <!-- Active In-Game HUD -->
+  <div class="game-ui-layer">
+    <!-- Top Nav -->
+    <header class="ui-top-bar">
+      <div class="ui-brand">
+        <div class="ui-logo-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="ui-title-wrap">
+          <h1 class="ui-game-title">TOWER <span>BUILDER</span></h1>
+          <div class="ui-best-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>BEST: <strong id="hudBestScore">0</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-actions">
+        <!-- Sound Mute/Unmute -->
+        <button type="button" class="ui-icon-btn" id="btnSoundToggle" aria-label="Toggle Sound" title="Toggle Sound">
+          <svg id="iconSoundOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="iconSoundOff" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Pause Button -->
+        <button type="button" class="ui-icon-btn" id="btnPauseToggle" aria-label="Pause Game" title="Pause Game">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+
+        <!-- Fullscreen Button -->
+        <button type="button" class="ui-icon-btn" id="btnFullscreen" aria-label="Toggle Fullscreen" title="Toggle Fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Center Dynamic Live Score -->
+    <div class="ui-center-score">
+      <div class="live-score-number" id="liveScore">0</div>
+      <div class="combo-pill" id="comboPill">
+        <span>Combo</span> <strong id="comboCount">x1</strong>
+      </div>
+    </div>
+
+    <!-- Floating Perfect Feedback -->
+    <div class="floating-feedback" id="floatingFeedback">+PERFECT!</div>
+
+    <!-- Bottom Controls Guide -->
+    <footer class="ui-bottom-prompt" id="bottomPrompt">
+      <div class="tap-hint-text">TAP SCREEN OR PRESS SPACE TO DROP</div>
+    </footer>
+  </div>
+
+  <!-- START GAME SCREEN -->
+  <div class="modal-overlay active" id="modalStart">
+    <div class="modal-card">
+      <div class="modal-icon-header">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <h2 class="modal-title">TOWER <span>BUILDER</span></h2>
+      <p class="modal-subtitle">Stack 3D blocks with precision timing. Slice overhangs, chain perfect placements, and construct the ultimate skyscraper!</p>
+      
+      <div class="stats-card-grid">
+        <div class="stat-box highlight">
+          <span class="stat-label">All-Time Best</span>
+          <span class="stat-value" id="startBestScore">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Highest Tower</span>
+          <span class="stat-value" id="startBestTower">0F</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-game-primary" id="btnStartGame">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>START PLAYING</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PAUSE MODAL -->
+  <div class="modal-overlay" id="modalPause">
+    <div class="modal-card">
+      <h2 class="modal-title">GAME <span>PAUSED</span></h2>
+      <p class="modal-subtitle">Take a breather. Your tower is waiting right where you left it!</p>
+
+      <button type="button" class="btn-game-primary" id="btnResumeGame">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>RESUME GAME</span>
+      </button>
+
+      <button type="button" class="btn-game-secondary" id="btnRestartFromPause">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        <span>RESTART TOWER</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- GAME OVER MODAL -->
+  <div class="modal-overlay" id="modalGameOver">
+    <div class="modal-card">
+      <div class="new-best-banner" id="newBestBanner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>NEW HIGH SCORE!</span>
+      </div>
+
+      <h2 class="modal-title">TOWER <span>COLLAPSED</span></h2>
+      <p class="modal-subtitle">Good run! Here is how your tower stacked up:</p>
+
+      <div class="stats-card-grid">
+        <div class="stat-box">
+          <span class="stat-label">Final Score</span>
+          <span class="stat-value" id="goFinalScore">0</span>
+        </div>
+        <div class="stat-box highlight">
+          <span class="stat-label">Best Score</span>
+          <span class="stat-value" id="goBestScore">0</span>
+        </div>
+      </div>
+
+      <div class="stats-card-grid" style="margin-top: -12px;">
+        <div class="stat-box">
+          <span class="stat-label">Floors Built</span>
+          <span class="stat-value" id="goFloorsBuilt">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Max Combo</span>
+          <span class="stat-value" id="goMaxCombo">x0</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-game-primary" id="btnPlayAgain">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        <span>PLAY AGAIN</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Local Offline Three.js r128 Library -->
+  <script src="three.min.js"></script>
+
+  <!-- Complete Premium Tower Builder Game Logic -->
+  <script>
+    (function () {
+      'use strict';
+
+      // --- Web Audio Synthesizer (Zero Audio Asset Dependencies) ---
+      class SoundFX {
+        constructor() {
+          this.ctx = null;
+          this.muted = localStorage.getItem('kopi_tower_builder_muted') === 'true';
+          this.pentatonic = [
+            261.63, 293.66, 329.63, 392.00, 440.00, // C4, D4, E4, G4, A4
+            523.25, 587.33, 659.25, 783.99, 880.00, // C5, D5, E5, G5, A5
+            1046.50, 1174.66, 1318.51               // C6, D6, E6
+          ];
+          this.bgmTimer = null;
+          this.bgmStep = 0;
+        }
+
+        init() {
+          if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) {
+              this.ctx = new AudioCtx();
+            }
+          }
+          if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume();
+          }
+        }
+
+        toggleMute() {
+          this.muted = !this.muted;
+          localStorage.setItem('kopi_tower_builder_muted', this.muted);
+          return this.muted;
+        }
+
+        // Standard Block Landing Pop
+        playPlace(layer) {
+          if (this.muted) return;
+          this.init();
+          if (!this.ctx) return;
+
+          const now = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+
+          const baseFreq = 220 + ((layer * 6) % 300);
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(baseFreq, now);
+          osc.frequency.exponentialRampToValueAtTime(baseFreq * 0.5, now + 0.12);
+
+          gain.gain.setValueAtTime(0.25, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start(now);
+          osc.stop(now + 0.13);
+        }
+
+        // Ascending Bell Chime for Perfect Alignment
+        playPerfect(combo) {
+          if (this.muted) return;
+          this.init();
+          if (!this.ctx) return;
+
+          const now = this.ctx.currentTime;
+          const noteIndex = Math.min(combo - 1, this.pentatonic.length - 1);
+          const freq = this.pentatonic[Math.max(0, noteIndex)];
+
+          // Primary harmonic
+          const osc1 = this.ctx.createOscillator();
+          const gain1 = this.ctx.createGain();
+          osc1.type = 'sine';
+          osc1.frequency.setValueAtTime(freq, now);
+
+          gain1.gain.setValueAtTime(0.35, now);
+          gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+          osc1.connect(gain1);
+          gain1.connect(this.ctx.destination);
+          osc1.start(now);
+          osc1.stop(now + 0.46);
+
+          // Sparkle overtone (octave)
+          const osc2 = this.ctx.createOscillator();
+          const gain2 = this.ctx.createGain();
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(freq * 2, now);
+
+          gain2.gain.setValueAtTime(0.18, now);
+          gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+
+          osc2.connect(gain2);
+          gain2.connect(this.ctx.destination);
+          osc2.start(now);
+          osc2.stop(now + 0.36);
+        }
+
+        // Slice / Swooosh Sound
+        playSlice() {
+          if (this.muted) return;
+          this.init();
+          if (!this.ctx) return;
+
+          const now = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(140, now + 0.18);
+
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.19);
+        }
+
+        // Game Over Bass Thud
+        playGameOver() {
+          if (this.muted) return;
+          this.init();
+          if (!this.ctx) return;
+
+          const now = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(160, now);
+          osc.frequency.exponentialRampToValueAtTime(40, now + 0.7);
+
+          gain.gain.setValueAtTime(0.4, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.72);
+        }
+      }
+
+      const sfx = new SoundFX();
+
+      // --- Three.js Game Engine ---
+      const BLOCK_HEIGHT = 0.8;
+      const INITIAL_SIZE = 3.2;
+      const PERFECT_TOLERANCE = 0.085; // Snaps to perfect if within ~8.5cm
+
+      // Dynamic Curated Vibrant Color Palette Sequence
+      // Guaranteed distinct colors: Pink, Red, Orange, Yellow, Lime, Green, Cyan, Blue, Indigo, Purple, Magenta, Coral Rose
+      const VIBRANT_PALETTE = [
+        { name: 'Vibrant Pink',    hex: '#EC4899', h: 330, s: 88, l: 60 },
+        { name: 'Vivid Red',       hex: '#EF4444', h: 0,   s: 86, l: 58 },
+        { name: 'Bright Orange',   hex: '#F97316', h: 24,  s: 95, l: 54 },
+        { name: 'Golden Yellow',   hex: '#FACC15', h: 48,  s: 96, l: 52 },
+        { name: 'Electric Lime',   hex: '#84CC16', h: 84,  s: 84, l: 48 },
+        { name: 'Emerald Green',   hex: '#10B981', h: 158, s: 84, l: 44 },
+        { name: 'Aqua Cyan',       hex: '#06B6D4', h: 188, s: 94, l: 48 },
+        { name: 'Royal Blue',      hex: '#3B82F6', h: 217, s: 92, l: 60 },
+        { name: 'Deep Indigo',     hex: '#6366F1', h: 240, s: 88, l: 66 },
+        { name: 'Vivid Purple',    hex: '#8B5CF6', h: 260, s: 92, l: 66 },
+        { name: 'Hot Magenta',     hex: '#D946EF', h: 290, s: 88, l: 62 },
+        { name: 'Coral Rose',      hex: '#FB7185', h: 350, s: 94, l: 68 }
+      ];
+      window.VIBRANT_PALETTE = VIBRANT_PALETTE;
+
+      class TowerGame {
+        constructor() {
+          this.container = document.getElementById('game-canvas-container');
+          this.liveScoreEl = document.getElementById('liveScore');
+          this.comboPill = document.getElementById('comboPill');
+          this.comboCountEl = document.getElementById('comboCount');
+          this.floatingFeedback = document.getElementById('floatingFeedback');
+          this.hudBestScoreEl = document.getElementById('hudBestScore');
+          this.skyBg = document.getElementById('skyBg');
+
+          // Storage state
+          this.bestScore = parseInt(localStorage.getItem('kopi_tower_builder_best') || '0', 10);
+          this.bestTower = parseInt(localStorage.getItem('kopi_tower_builder_height') || '0', 10);
+          this.hudBestScoreEl.textContent = this.bestScore;
+
+          // Game state
+          this.score = 0;
+          this.combo = 0;
+          this.maxCombo = 0;
+          this.layer = 0;
+          this.state = 'ready'; // 'ready', 'playing', 'paused', 'over'
+          this.colorOffset = 0;
+
+          // Tower stacking data
+          this.stack = [];
+          this.fallingPieces = [];
+          this.particles = [];
+          this.shockwaves = [];
+
+          // Moving block state
+          this.activeBlock = null;
+          this.activeAxis = 'x'; // 'x' or 'z'
+          this.direction = 1;
+          this.speed = 4.2;
+          this.moveLimit = 5.2;
+
+          // Three.js Core
+          this.scene = null;
+          this.camera = null;
+          this.renderer = null;
+          this.targetCameraY = 3.5;
+          this.lastTime = 0;
+
+          this.initThree();
+          this.initEvents();
+          this.updateUiScreens();
+          window.towerGame = this;
+          this.animate(0);
+        }
+
+        initThree() {
+          const width = this.container.clientWidth || window.innerWidth;
+          const height = this.container.clientHeight || window.innerHeight;
+
+          // 1. Scene
+          this.scene = new THREE.Scene();
+          this.scene.fog = new THREE.FogExp2(0x090E24, 0.015);
+
+          // 2. Camera (Isometric Orthographic Projection)
+          const aspect = width / height;
+          const d = 5.2;
+          this.camera = new THREE.OrthographicCamera(
+            -d * aspect, d * aspect,
+            d, -d,
+            -50, 500
+          );
+          this.camera.position.set(5, 5, 5);
+          this.camera.lookAt(0, 0, 0);
+
+          // 3. Renderer with antialiasing and shadow map
+          this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+          this.renderer.setSize(width, height);
+          this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+          this.renderer.shadowMap.enabled = true;
+          this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+          this.container.appendChild(this.renderer.domElement);
+
+          // 4. Premium Lighting
+          const ambient = new THREE.AmbientLight(0xffffff, 0.72);
+          this.scene.add(ambient);
+
+          const sunLight = new THREE.DirectionalLight(0xffffff, 0.75);
+          sunLight.position.set(10, 20, 10);
+          sunLight.castShadow = true;
+          sunLight.shadow.mapSize.width = 1024;
+          sunLight.shadow.mapSize.height = 1024;
+          sunLight.shadow.camera.near = 0.5;
+          sunLight.shadow.camera.far = 60;
+          const shadowD = 8;
+          sunLight.shadow.camera.left = -shadowD;
+          sunLight.shadow.camera.right = shadowD;
+          sunLight.shadow.camera.top = shadowD;
+          sunLight.shadow.camera.bottom = -shadowD;
+          this.sunLight = sunLight;
+          this.scene.add(sunLight);
+
+          // Cyan / Magenta Ambient Rim Lights for Dark Neon Aesthetics
+          const cyanRim = new THREE.DirectionalLight(0x22D3EE, 0.35);
+          cyanRim.position.set(-10, 8, -10);
+          this.scene.add(cyanRim);
+
+          const purpleRim = new THREE.DirectionalLight(0xC084FC, 0.28);
+          purpleRim.position.set(0, -5, 0);
+          this.scene.add(purpleRim);
+
+          // 5. Build Initial Pedestal / Foundation
+          this.resetTower();
+        }
+
+        getColorForLayer(layerIndex) {
+          const total = VIBRANT_PALETTE.length;
+          const index = ((this.colorOffset || 0) + layerIndex) % total;
+          const item = VIBRANT_PALETTE[index];
+          const col = new THREE.Color();
+          col.setHSL(item.h / 360, item.s / 100, item.l / 100);
+          return col;
+        }
+
+        disposeMesh(mesh) {
+          if (!mesh) return;
+          if (mesh.geometry) mesh.geometry.dispose();
+          if (mesh.material) {
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach(m => m && m.dispose && m.dispose());
+            } else if (mesh.material.dispose) {
+              mesh.material.dispose();
+            }
+          }
+        }
+
+        createBlockMesh(w, h, d, color) {
+          const geo = new THREE.BoxGeometry(w, h, d);
+
+          // Top face (+Y, index 2) - bright highlighted sheen
+          const topColor = color.clone().offsetHSL(0, -0.03, 0.12);
+          // Front face (+Z, index 4) - primary saturated vibrant face
+          const frontColor = color.clone();
+          // Right face (+X, index 0) - subtle shade for 3D depth & contour
+          const rightColor = color.clone().offsetHSL(0, 0.02, -0.11);
+          // Left face (-X, index 1)
+          const leftColor = color.clone().offsetHSL(0, 0.02, -0.11);
+          // Bottom face (-Y, index 3)
+          const bottomColor = color.clone().offsetHSL(0, -0.05, -0.22);
+          // Back face (-Z, index 5)
+          const backColor = color.clone().offsetHSL(0, 0.02, -0.13);
+
+          const createMat = (faceColor, shininess = 28, emissiveMult = 0.05, specMult = 0.22) => {
+            return new THREE.MeshPhongMaterial({
+              color: faceColor,
+              emissive: faceColor.clone().multiplyScalar(emissiveMult),
+              specular: new THREE.Color(0xffffff).multiplyScalar(specMult),
+              shininess: shininess,
+              flatShading: false
+            });
+          };
+
+          // Three.js BoxGeometry material array order:
+          // 0: +X (Right)
+          // 1: -X (Left)
+          // 2: +Y (Top)
+          // 3: -Y (Bottom)
+          // 4: +Z (Front)
+          // 5: -Z (Back)
+          const materials = [
+            createMat(rightColor, 22, 0.03, 0.15),  // Right (+X)
+            createMat(leftColor, 22, 0.03, 0.15),   // Left (-X)
+            createMat(topColor, 45, 0.08, 0.32),    // Top (+Y)
+            createMat(bottomColor, 10, 0.01, 0.08), // Bottom (-Y)
+            createMat(frontColor, 28, 0.05, 0.22),  // Front (+Z)
+            createMat(backColor, 20, 0.03, 0.12)    // Back (-Z)
+          ];
+
+          const mesh = new THREE.Mesh(geo, materials);
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
+          return mesh;
+        }
+
+        resetTower() {
+          // Dispose and remove existing blocks
+          this.stack.forEach(b => {
+            this.scene.remove(b.mesh);
+            this.disposeMesh(b.mesh);
+          });
+          this.stack = [];
+
+          this.fallingPieces.forEach(p => {
+            this.scene.remove(p.mesh);
+            this.disposeMesh(p.mesh);
+          });
+          this.fallingPieces = [];
+
+          this.particles.forEach(p => {
+            this.scene.remove(p.mesh);
+            this.disposeMesh(p.mesh);
+          });
+          this.particles = [];
+
+          this.shockwaves.forEach(s => {
+            this.scene.remove(s.mesh);
+            this.disposeMesh(s.mesh);
+          });
+          this.shockwaves = [];
+
+          if (this.activeBlock) {
+            this.scene.remove(this.activeBlock.mesh);
+            this.disposeMesh(this.activeBlock.mesh);
+            this.activeBlock = null;
+          }
+
+          // Layer 0: Sturdy Foundation Base Block
+          const baseColor = this.getColorForLayer(0);
+          const baseMesh = this.createBlockMesh(INITIAL_SIZE, BLOCK_HEIGHT * 2, INITIAL_SIZE, baseColor);
+          baseMesh.position.set(0, 0, 0);
+          this.scene.add(baseMesh);
+
+          this.stack.push({
+            mesh: baseMesh,
+            x: 0,
+            y: 0,
+            z: 0,
+            w: INITIAL_SIZE,
+            d: INITIAL_SIZE,
+            color: baseColor
+          });
+
+          this.layer = 1;
+          this.score = 0;
+          this.combo = 0;
+          this.maxCombo = 0;
+          this.speed = 4.2;
+          this.targetCameraY = 3.5;
+          this.camera.position.set(5, 5, 5);
+
+          this.liveScoreEl.textContent = '0';
+          this.comboPill.classList.remove('visible');
+
+          // Spawn First Moving Block
+          this.spawnNextBlock();
+        }
+
+        spawnNextBlock() {
+          const prev = this.stack[this.stack.length - 1];
+          this.activeAxis = (this.layer % 2 === 1) ? 'x' : 'z';
+
+          const color = this.getColorForLayer(this.layer);
+          const mesh = this.createBlockMesh(prev.w, BLOCK_HEIGHT, prev.d, color);
+
+          const yPos = (this.layer * BLOCK_HEIGHT) + (BLOCK_HEIGHT / 2);
+          const startDist = -this.moveLimit;
+
+          if (this.activeAxis === 'x') {
+            mesh.position.set(startDist, yPos, prev.z);
+          } else {
+            mesh.position.set(prev.x, yPos, startDist);
+          }
+
+          this.scene.add(mesh);
+
+          this.activeBlock = {
+            mesh: mesh,
+            axis: this.activeAxis,
+            x: mesh.position.x,
+            y: yPos,
+            z: mesh.position.z,
+            w: prev.w,
+            d: prev.d,
+            color: color
+          };
+
+          this.direction = 1;
+        }
+
+        // Action: Drop Block on Player Gesture (Click / Tap / Space)
+        dropBlock() {
+          if (this.state !== 'playing' || !this.activeBlock) return;
+
+          const prev = this.stack[this.stack.length - 1];
+          const curr = this.activeBlock;
+          const axis = curr.axis;
+
+          // Compute alignment offset along active axis
+          const delta = (axis === 'x') ? (curr.mesh.position.x - prev.x) : (curr.mesh.position.z - prev.z);
+          const absDelta = Math.abs(delta);
+          const currentDimension = (axis === 'x') ? curr.w : curr.d;
+
+          // 1. COMPLETE MISS -> Tower Game Over!
+          if (absDelta >= currentDimension) {
+            this.triggerMiss(curr);
+            return;
+          }
+
+          // 2. PERFECT ALIGNMENT -> Bonus & Combos!
+          if (absDelta <= PERFECT_TOLERANCE) {
+            // Snap position exactly
+            if (axis === 'x') {
+              curr.mesh.position.x = prev.x;
+            } else {
+              curr.mesh.position.z = prev.z;
+            }
+
+            this.combo++;
+            if (this.combo > this.maxCombo) this.maxCombo = this.combo;
+
+            sfx.playPerfect(this.combo);
+            this.createShockwave(curr.mesh.position, curr.w, curr.d, curr.color);
+            this.createSparkles(curr.mesh.position, curr.color);
+            this.showFloatingFeedback(`+PERFECT! x${this.combo}`);
+
+            // Reward: Expand block slightly if chained combos
+            if (this.combo >= 6 && (curr.w < INITIAL_SIZE || curr.d < INITIAL_SIZE)) {
+              curr.w = Math.min(INITIAL_SIZE, curr.w + 0.15);
+              curr.d = Math.min(INITIAL_SIZE, curr.d + 0.15);
+              curr.mesh.geometry.dispose();
+              curr.mesh.geometry = new THREE.BoxGeometry(curr.w, BLOCK_HEIGHT, curr.d);
+            }
+
+            this.finalizePlacement(curr, prev, 0, 0);
+          } 
+          // 3. OVERHANG SLICE -> Slice & Fall
+          else {
+            this.combo = 0;
+            this.comboPill.classList.remove('visible');
+
+            const overlap = currentDimension - absDelta;
+            const cutSize = absDelta;
+
+            // Compute center of placed block & falling sliced block
+            let placedX = prev.x;
+            let placedZ = prev.z;
+            let cutX = prev.x;
+            let cutZ = prev.z;
+
+            let placedW = curr.w;
+            let placedD = curr.d;
+            let cutW = curr.w;
+            let cutD = curr.d;
+
+            if (axis === 'x') {
+              placedW = overlap;
+              cutW = cutSize;
+              placedX = prev.x + (delta / 2);
+              cutX = (delta > 0) ? (placedX + (overlap / 2) + (cutSize / 2)) : (placedX - (overlap / 2) - (cutSize / 2));
+            } else {
+              placedD = overlap;
+              cutD = cutSize;
+              placedZ = prev.z + (delta / 2);
+              cutZ = (delta > 0) ? (placedZ + (overlap / 2) + (cutSize / 2)) : (placedZ - (overlap / 2) - (cutSize / 2));
+            }
+
+            // Update placed block
+            curr.mesh.geometry.dispose();
+            curr.mesh.geometry = new THREE.BoxGeometry(placedW, BLOCK_HEIGHT, placedD);
+            curr.mesh.position.set(placedX, curr.y, placedZ);
+            curr.w = placedW;
+            curr.d = placedD;
+
+            // Spawn sliced piece with tumble gravity physics
+            this.spawnFallingPiece(cutW, BLOCK_HEIGHT, cutD, cutX, curr.y, cutZ, curr.color, axis, delta > 0 ? 1 : -1);
+
+            sfx.playSlice();
+            sfx.playPlace(this.layer);
+
+            this.finalizePlacement(curr, prev, placedX, placedZ);
+          }
+        }
+
+        finalizePlacement(curr, prev, posX, posZ) {
+          // Add to stack
+          this.stack.push({
+            mesh: curr.mesh,
+            x: curr.mesh.position.x,
+            y: curr.y,
+            z: curr.mesh.position.z,
+            w: curr.w,
+            d: curr.d,
+            color: curr.color
+          });
+
+          this.score++;
+          this.layer++;
+
+          // Update Score UI with Pop Animation
+          this.liveScoreEl.textContent = this.score;
+          this.liveScoreEl.classList.remove('pop');
+          void this.liveScoreEl.offsetWidth; // Trigger reflow
+          this.liveScoreEl.classList.add('pop');
+
+          if (this.combo > 1) {
+            this.comboPill.classList.add('visible');
+            this.comboCountEl.textContent = `x${this.combo}`;
+          } else {
+            this.comboPill.classList.remove('visible');
+          }
+
+          // Camera follow upward
+          this.targetCameraY = (this.layer * BLOCK_HEIGHT) + 3.5;
+
+          // Increase speed gradually for progressive challenge
+          this.speed = Math.min(10.2, 4.2 + (this.layer * 0.11));
+
+          // Ambient Sky Color Transition as tower reaches sky
+          this.updateSkyHue(this.layer);
+
+          // Clear active block & spawn next
+          this.activeBlock = null;
+          this.spawnNextBlock();
+        }
+
+        spawnFallingPiece(w, h, d, x, y, z, color, axis, directionSign) {
+          const mesh = this.createBlockMesh(w, h, d, color);
+          mesh.position.set(x, y, z);
+          this.scene.add(mesh);
+
+          this.fallingPieces.push({
+            mesh: mesh,
+            vy: 0.04, // slight upward bounce then gravity
+            rotX: (axis === 'z') ? directionSign * 0.05 : (Math.random() - 0.5) * 0.04,
+            rotZ: (axis === 'x') ? -directionSign * 0.05 : (Math.random() - 0.5) * 0.04
+          });
+        }
+
+        triggerMiss(curr) {
+          this.state = 'over';
+          sfx.playGameOver();
+
+          // Entire moving block tumbles down
+          this.spawnFallingPiece(curr.w, BLOCK_HEIGHT, curr.d, curr.mesh.position.x, curr.y, curr.mesh.position.z, curr.color, curr.axis, this.direction);
+          this.scene.remove(curr.mesh);
+          this.disposeMesh(curr.mesh);
+          this.activeBlock = null;
+
+          // Handle High Score
+          const isNewBest = this.score > this.bestScore;
+          if (isNewBest) {
+            this.bestScore = this.score;
+            localStorage.setItem('kopi_tower_builder_best', this.bestScore);
+            this.hudBestScoreEl.textContent = this.bestScore;
+          }
+
+          if (this.layer > this.bestTower) {
+            this.bestTower = this.layer;
+            localStorage.setItem('kopi_tower_builder_height', this.bestTower);
+          }
+
+          // Delay Game Over Modal for visual dramatic effect
+          setTimeout(() => {
+            this.showGameOverModal(isNewBest);
+          }, 900);
+        }
+
+        createShockwave(pos, w, d, color) {
+          const ringGeo = new THREE.RingGeometry(Math.max(w, d) * 0.45, Math.max(w, d) * 0.52, 32);
+          ringGeo.rotateX(-Math.PI / 2);
+          const ringMat = new THREE.MeshBasicMaterial({
+            color: 0xFFFFFF,
+            transparent: true,
+            opacity: 0.85,
+            side: THREE.DoubleSide
+          });
+          const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+          ringMesh.position.set(pos.x, pos.y + BLOCK_HEIGHT / 2 + 0.02, pos.z);
+          this.scene.add(ringMesh);
+
+          this.shockwaves.push({
+            mesh: ringMesh,
+            scale: 1,
+            opacity: 0.85
+          });
+        }
+
+        createSparkles(pos, color) {
+          const count = 18;
+          const geo = new THREE.BufferGeometry();
+          const positions = [];
+          const velocities = [];
+
+          for (let i = 0; i < count; i++) {
+            positions.push(pos.x + (Math.random() - 0.5) * 2, pos.y + BLOCK_HEIGHT / 2, pos.z + (Math.random() - 0.5) * 2);
+            velocities.push(
+              (Math.random() - 0.5) * 0.12,
+              Math.random() * 0.14 + 0.05,
+              (Math.random() - 0.5) * 0.12
+            );
+          }
+
+          geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+          const mat = new THREE.PointsMaterial({
+            color: 0xFACC15,
+            size: 0.14,
+            transparent: true,
+            opacity: 1
+          });
+          const points = new THREE.Points(geo, mat);
+          this.scene.add(points);
+
+          this.particles.push({
+            mesh: points,
+            velocities: velocities,
+            life: 1.0
+          });
+        }
+
+        showFloatingFeedback(text) {
+          this.floatingFeedback.textContent = text;
+          this.floatingFeedback.classList.remove('show');
+          void this.floatingFeedback.offsetWidth;
+          this.floatingFeedback.classList.add('show');
+          setTimeout(() => {
+            this.floatingFeedback.classList.remove('show');
+          }, 700);
+        }
+
+        updateSkyHue(layer) {
+          // Dynamic atmosphere shift as tower reaches stratosphere
+          const progress = Math.min(layer / 40, 1);
+          const r1 = Math.round(9 - progress * 5);
+          const g1 = Math.round(14 - progress * 8);
+          const b1 = Math.round(36 + progress * 15);
+          this.skyBg.style.background = `linear-gradient(180deg, rgb(${r1}, ${g1}, ${b1}) 0%, #151132 45%, #251B42 80%, #070A14 100%)`;
+        }
+
+        updateUiScreens() {
+          document.getElementById('startBestScore').textContent = this.bestScore;
+          document.getElementById('startBestTower').textContent = `${this.bestTower}F`;
+          this.hudBestScoreEl.textContent = this.bestScore;
+        }
+
+        showGameOverModal(isNewBest) {
+          document.getElementById('goFinalScore').textContent = this.score;
+          document.getElementById('goBestScore').textContent = this.bestScore;
+          document.getElementById('goFloorsBuilt').textContent = `${this.layer}F`;
+          document.getElementById('goMaxCombo').textContent = `x${this.maxCombo}`;
+
+          const newBestBanner = document.getElementById('newBestBanner');
+          if (isNewBest && this.score > 0) {
+            newBestBanner.classList.add('active');
+          } else {
+            newBestBanner.classList.remove('active');
+          }
+
+          document.getElementById('modalGameOver').classList.add('active');
+        }
+
+        startGame() {
+          sfx.init();
+          document.getElementById('modalStart').classList.remove('active');
+          document.getElementById('modalGameOver').classList.remove('active');
+          document.getElementById('modalPause').classList.remove('active');
+          this.colorOffset = (this.colorOffset + 1) % VIBRANT_PALETTE.length;
+          this.resetTower();
+          this.state = 'playing';
+        }
+
+        pauseGame() {
+          if (this.state !== 'playing') return;
+          this.state = 'paused';
+          document.getElementById('modalPause').classList.add('active');
+        }
+
+        resumeGame() {
+          if (this.state !== 'paused') return;
+          document.getElementById('modalPause').classList.remove('active');
+          this.state = 'playing';
+        }
+
+        initEvents() {
+          // Start Button
+          document.getElementById('btnStartGame').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.startGame();
+          });
+
+          // Play Again Button
+          document.getElementById('btnPlayAgain').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.startGame();
+          });
+
+          // Resume Button
+          document.getElementById('btnResumeGame').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.resumeGame();
+          });
+
+          // Restart From Pause
+          document.getElementById('btnRestartFromPause').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.startGame();
+          });
+
+          // Pause Button in HUD
+          document.getElementById('btnPauseToggle').addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (this.state === 'playing') this.pauseGame();
+            else if (this.state === 'paused') this.resumeGame();
+          });
+
+          // Sound Toggle Button
+          const btnSound = document.getElementById('btnSoundToggle');
+          const iconOn = document.getElementById('iconSoundOn');
+          const iconOff = document.getElementById('iconSoundOff');
+
+          const updateSoundIcons = (muted) => {
+            iconOn.style.display = muted ? 'none' : 'block';
+            iconOff.style.display = muted ? 'block' : 'none';
+          };
+          updateSoundIcons(sfx.muted);
+
+          btnSound.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const muted = sfx.toggleMute();
+            updateSoundIcons(muted);
+          });
+
+          // Fullscreen Toggle
+          document.getElementById('btnFullscreen').addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+              if (document.exitFullscreen) document.exitFullscreen();
+            }
+          });
+
+          // Controls: Tap / Click Anywhere on Canvas
+          const handleAction = (e) => {
+            // Prevent triggers on modal clicks
+            if (e && e.target && typeof e.target.closest === 'function') {
+              if (e.target.closest('.modal-card') || e.target.closest('.ui-actions')) {
+                return;
+              }
+            }
+            if (this.state === 'ready') {
+              this.startGame();
+            } else if (this.state === 'playing') {
+              this.dropBlock();
+            }
+          };
+
+          window.addEventListener('pointerdown', (e) => {
+            handleAction(e);
+          });
+
+          // Keyboard Controls
+          window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+              e.preventDefault();
+              handleAction(e);
+            } else if (e.code === 'KeyP' || e.code === 'Escape') {
+              if (this.state === 'playing') this.pauseGame();
+              else if (this.state === 'paused') this.resumeGame();
+            } else if (e.code === 'KeyM') {
+              const muted = sfx.toggleMute();
+              updateSoundIcons(muted);
+            } else if (e.code === 'KeyR') {
+              this.startGame();
+            }
+          });
+
+          // Handle Resize
+          window.addEventListener('resize', () => {
+            this.onResize();
+          });
+        }
+
+        onResize() {
+          if (!this.camera || !this.renderer) return;
+          const width = this.container.clientWidth || window.innerWidth;
+          const height = this.container.clientHeight || window.innerHeight;
+
+          const aspect = width / height;
+          const d = 5.2;
+
+          this.camera.left = -d * aspect;
+          this.camera.right = d * aspect;
+          this.camera.top = d;
+          this.camera.bottom = -d;
+          this.camera.updateProjectionMatrix();
+
+          this.renderer.setSize(width, height);
+          this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        }
+
+        animate(timestamp) {
+          requestAnimationFrame((t) => this.animate(t));
+
+          const delta = Math.min((timestamp - this.lastTime) / 1000, 0.08) || 0.016;
+          this.lastTime = timestamp;
+
+          // 1. Update Active Moving Block
+          if (this.state === 'playing' && this.activeBlock) {
+            const block = this.activeBlock;
+            const pos = block.mesh.position;
+
+            if (block.axis === 'x') {
+              pos.x += this.direction * this.speed * delta;
+              if (pos.x > this.moveLimit) {
+                pos.x = this.moveLimit;
+                this.direction = -1;
+              } else if (pos.x < -this.moveLimit) {
+                pos.x = -this.moveLimit;
+                this.direction = 1;
+              }
+            } else {
+              pos.z += this.direction * this.speed * delta;
+              if (pos.z > this.moveLimit) {
+                pos.z = this.moveLimit;
+                this.direction = -1;
+              } else if (pos.z < -this.moveLimit) {
+                pos.z = -this.moveLimit;
+                this.direction = 1;
+              }
+            }
+          }
+
+          // 2. Physics: Falling Pieces with Gravity & Tumble
+          for (let i = this.fallingPieces.length - 1; i >= 0; i--) {
+            const piece = this.fallingPieces[i];
+            piece.vy -= 0.014;
+            piece.mesh.position.y += piece.vy;
+            piece.mesh.rotation.x += piece.rotX;
+            piece.mesh.rotation.z += piece.rotZ;
+
+            // Remove when far below tower
+            if (piece.mesh.position.y < (this.stack[0].y - 12)) {
+              this.scene.remove(piece.mesh);
+              this.disposeMesh(piece.mesh);
+              this.fallingPieces.splice(i, 1);
+            }
+          }
+
+          // 3. Shockwave Rings
+          for (let i = this.shockwaves.length - 1; i >= 0; i--) {
+            const shock = this.shockwaves[i];
+            shock.scale += delta * 3.5;
+            shock.opacity -= delta * 1.8;
+            shock.mesh.scale.set(shock.scale, shock.scale, shock.scale);
+            shock.mesh.material.opacity = Math.max(0, shock.opacity);
+
+            if (shock.opacity <= 0) {
+              this.scene.remove(shock.mesh);
+              this.disposeMesh(shock.mesh);
+              this.shockwaves.splice(i, 1);
+            }
+          }
+
+          // 4. Sparkle Particles
+          for (let i = this.particles.length - 1; i >= 0; i--) {
+            const part = this.particles[i];
+            part.life -= delta * 1.5;
+            const posAttr = part.mesh.geometry.attributes.position;
+            const arr = posAttr.array;
+
+            for (let j = 0; j < arr.length; j += 3) {
+              arr[j] += part.velocities[j];
+              arr[j + 1] += part.velocities[j + 1];
+              part.velocities[j + 1] -= 0.006; // gravity
+              arr[j + 2] += part.velocities[j + 2];
+            }
+            posAttr.needsUpdate = true;
+            part.mesh.material.opacity = Math.max(0, part.life);
+
+            if (part.life <= 0) {
+              this.scene.remove(part.mesh);
+              this.disposeMesh(part.mesh);
+              this.particles.splice(i, 1);
+            }
+          }
+
+          // 5. Smooth Camera Tracking
+          const cameraLerpSpeed = 0.065;
+          this.camera.position.y += (this.targetCameraY - this.camera.position.y) * cameraLerpSpeed;
+          this.camera.lookAt(0, this.camera.position.y - 3.5, 0);
+
+          if (this.sunLight) {
+            this.sunLight.position.y = this.camera.position.y + 12;
+            this.sunLight.target.position.set(0, this.camera.position.y - 3.5, 0);
+            this.sunLight.target.updateMatrixWorld();
+          }
+
+          this.renderer.render(this.scene, this.camera);
+        }
+      }
+
+      // Initialize game after DOM loaded
+      window.addEventListener('DOMContentLoaded', () => {
+        new TowerGame();
+      });
+    })();
+  </script>
+</body>
+</html>

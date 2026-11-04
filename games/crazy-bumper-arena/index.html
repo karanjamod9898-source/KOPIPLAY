@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Crazy Bumper Arena – 3D Bumper Car Battle</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- 3D WebGL Canvas Container -->
+  <div id="gameCanvasContainer"></div>
+
+  <!-- Floating Text Popups Layer -->
+  <div id="floatingTextContainer"></div>
+
+  <!-- UI Overlays -->
+  <div class="ui-layer">
+    <!-- Top Global App Bar -->
+    <header class="game-top-bar interactive">
+      <div class="brand-wrap">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        </div>
+        <div class="brand-title">CRAZY BUMPER <span>ARENA</span></div>
+      </div>
+
+      <div class="top-bar-actions">
+        <!-- Coin Counter Badge -->
+        <div class="coin-badge">
+          <span class="coin-icon">¢</span>
+          <span class="coin-balance-val">150</span>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button type="button" class="icon-btn" id="btnSoundToggle" aria-label="Toggle Sound" title="Sound Mute/Unmute">
+          <svg id="soundIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg id="soundIconOff" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </button>
+
+        <!-- Fullscreen -->
+        <button type="button" class="icon-btn" id="btnFullscreen" aria-label="Toggle Fullscreen" title="Fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 1. Main Menu Screen View -->
+    <div class="screen-view active interactive" id="screenMenu">
+      <div class="menu-center-card">
+        <h1 class="game-hero-logo">CRAZY BUMPER<br>ARENA 3D</h1>
+        <p class="game-tagline">Smash, Bash & Dominate the Bumper Battleground!</p>
+
+        <div class="menu-buttons-grid">
+          <button type="button" class="btn-arcade-play" id="btnMenuPlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            PLAY ARENA
+          </button>
+          <button type="button" class="btn-menu-sec" id="btnMenuLevels">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            LEVEL SELECT (5 ARENAS)
+          </button>
+          <button type="button" class="btn-menu-sec" id="btnMenuGarage">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2H5C3.3 6 2 7.3 2 9v9c0 1.1.9 2 2 2h1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2h6v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2h1c1.1 0 2-.9 2-2V9c0-1.7-1.3-3-3-3zm-13 8c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm12 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zM7 9l1-3h8l1 3H7z"/></svg>
+            3D CAR GARAGE (8 CARS)
+          </button>
+        </div>
+
+        <div class="daily-reward-wrap">
+          <button type="button" class="btn-daily-reward" id="btnDailyReward">🎁 CLAIM DAILY +100 COINS</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Level Select Screen View -->
+    <div class="screen-view interactive" id="screenLevels">
+      <div class="levels-header">
+        <h2 class="screen-header-title">SELECT BATTLE ARENA</h2>
+        <button type="button" class="btn-menu-sec" id="btnLevelsBack">BACK TO MENU</button>
+      </div>
+      <div class="levels-grid" id="levelsGrid"></div>
+    </div>
+
+    <!-- 3. Garage & Customization Screen View -->
+    <div class="screen-view interactive" id="screenGarage">
+      <div class="levels-header">
+        <h2 class="screen-header-title">3D CAR GARAGE</h2>
+        <button type="button" class="btn-menu-sec" id="btnGarageBack">BACK TO MENU</button>
+      </div>
+
+      <div class="garage-container">
+        <!-- 3D Preview Turntable Canvas Window -->
+        <div class="garage-preview-pane" id="garageCanvasWrap">
+          <div class="garage-nav-arrows">
+            <button type="button" class="btn-nav-car" id="btnGaragePrev">❮</button>
+            <button type="button" class="btn-nav-car" id="btnGarageNext">❯</button>
+          </div>
+        </div>
+
+        <!-- Car Info & Attribute Pane -->
+        <div class="garage-info-pane">
+          <h3 class="car-name-title" id="garageCarName">Red Rocket</h3>
+          <div class="car-cat-sub" id="garageCarCategory">Classic Class</div>
+          <p class="car-desc-text" id="garageCarDesc">The beloved classic bumper car. Balanced, punchy, and built to withstand heavyweight collisions!</p>
+
+          <div class="stats-group">
+            <div class="stat-row">
+              <div class="stat-label-wrap"><span>TOP SPEED</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" id="statSpeedBar" style="width: 82%;"></div></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-wrap"><span>HANDLING</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" id="statHandlingBar" style="width: 78%;"></div></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-wrap"><span>IMPACT FORCE</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" id="statImpactBar" style="width: 85%;"></div></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label-wrap"><span>STABILITY</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" id="statStabilityBar" style="width: 80%;"></div></div>
+            </div>
+          </div>
+
+          <div class="paint-picker-wrap">
+            <div class="paint-label">PAINT FINISH</div>
+            <div class="paint-swatches">
+              <div class="paint-swatch" style="background:#2563EB;" data-color="#2563EB" title="Blue"></div>
+              <div class="paint-swatch" style="background:#EF4444;" data-color="#EF4444" title="Red"></div>
+              <div class="paint-swatch" style="background:#FACC15;" data-color="#FACC15" title="Yellow"></div>
+              <div class="paint-swatch" style="background:#10B981;" data-color="#10B981" title="Green"></div>
+              <div class="paint-swatch" style="background:#EC4899;" data-color="#EC4899" title="Pink"></div>
+              <div class="paint-swatch" style="background:#8B5CF6;" data-color="#8B5CF6" title="Purple"></div>
+              <div class="paint-swatch" style="background:#18181B;" data-color="#18181B" title="Black"></div>
+              <div class="paint-swatch" style="background:#F8FAFC;" data-color="#F8FAFC" title="White"></div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-action btn-selected" id="btnGarageAction">SELECTED</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Active In-Game HUD -->
+    <div class="hud-layer" id="hudLayer">
+      <div class="hud-top-bar">
+        <!-- Player Armor Card (Top-Left) -->
+        <div class="hud-armor-card">
+          <div class="hud-armor-meta">
+            <span>BUMPER ARMOR</span>
+            <span class="hud-armor-val" id="hudHealthText">100%</span>
+          </div>
+          <div class="hud-armor-track">
+            <div class="hud-armor-fill" id="hudHealthBar" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <!-- Center Match Timer (Top-Center) -->
+        <div class="hud-center-timer">
+          <span class="hud-timer-icon">⏱️</span>
+          <span id="hudTimer">90s</span>
+        </div>
+
+        <!-- Score, Coins, Remaining Opponents & Pause (Top-Right) -->
+        <div class="hud-right-group">
+          <div class="hud-counter-pill score-pill"><span>SCORE:</span> <strong id="hudScore">0</strong></div>
+          <div class="hud-counter-pill coin-pill"><span class="coin-icon">¢</span> <strong id="hudCoins">0</strong></div>
+          <div class="hud-counter-pill cars-pill"><span>CARS:</span> <strong id="hudOpponents">5</strong></div>
+          <button type="button" class="icon-btn" id="btnHudPause" aria-label="Pause Match">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Dock: Active Power-up Badge -->
+      <div class="hud-bottom-dock">
+        <div class="active-powerup-badge" id="hudActivePowerup">POWER: NITRO</div>
+      </div>
+
+      <!-- Mobile Touch Controls -->
+      <div class="mobile-controls-wrap" id="mobileControls">
+        <div class="dpad-cluster">
+          <button type="button" class="touch-btn" id="btnTouchLeft">◀</button>
+          <button type="button" class="touch-btn" id="btnTouchRight">▶</button>
+        </div>
+        <div class="action-cluster">
+          <button type="button" class="touch-btn power" id="btnTouchPower">⚡</button>
+          <button type="button" class="touch-btn brake" id="btnTouchBrake">REV</button>
+          <button type="button" class="touch-btn gas" id="btnTouchGas">GAS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Pause Modal -->
+  <div class="game-modal" id="modalPause">
+    <div class="modal-content-card">
+      <h2 class="modal-title">MATCH PAUSED</h2>
+      <p style="color:#94A3B8; margin-bottom:24px;">Controls: WASD or Arrow Keys to steer/throttle, Space for Power-up.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn-arcade-play" id="btnResume">RESUME BATTLE</button>
+        <button type="button" class="btn-menu-sec" id="btnRestartPause">RESTART MATCH</button>
+        <button type="button" class="btn-menu-sec" id="btnQuitPause">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div class="game-modal" id="modalGameOver">
+    <div class="modal-content-card">
+      <h2 class="modal-title defeat">CAR KNOCKED OUT!</h2>
+      <p style="color:#94A3B8;">Your bumper armor was destroyed in the arena battle.</p>
+
+      <div class="modal-stats-grid">
+        <div class="m-stat-box"><div class="m-stat-val" id="goScore">0</div><div class="m-stat-label">FINAL SCORE</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goCoins">0</div><div class="m-stat-label">COINS EARNED</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goKOs">0</div><div class="m-stat-label">KNOCKOUTS</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="goTime">0s</div><div class="m-stat-label">SURVIVAL TIME</div></div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-arcade-play" id="btnGameOverRetry">RETRY ARENA</button>
+        <button type="button" class="btn-menu-sec" id="btnGameOverMenu">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Victory Modal -->
+  <div class="game-modal" id="modalVictory">
+    <div class="modal-content-card">
+      <h2 class="modal-title victory">ARENA CHAMPION!</h2>
+      <div style="font-size: 2rem; margin-bottom: 12px;" id="vicStars">⭐⭐⭐</div>
+      <p style="color:#94A3B8;">You dominated the battleground and outlasted the competition!</p>
+
+      <div class="modal-stats-grid">
+        <div class="m-stat-box"><div class="m-stat-val" id="vicScore">0</div><div class="m-stat-label">MATCH SCORE</div></div>
+        <div class="m-stat-box"><div class="m-stat-val" id="vicCoins">0</div><div class="m-stat-label">COINS COLLECTED</div></div>
+        <div class="m-stat-box" style="grid-column: span 2;"><div class="m-stat-val" id="vicBonus" style="color:#FACC15;">+100 Coins</div><div class="m-stat-label">ARENA VICTORY BONUS</div></div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-arcade-play" id="btnVictoryNext">NEXT ARENA</button>
+        <button type="button" class="btn-menu-sec" id="btnVictoryMenu">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Engine Dependencies (Local Three.js & Modular Components) -->
+  <script src="three.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/arena.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/powerups.js"></script>
+  <script src="js/garage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
+

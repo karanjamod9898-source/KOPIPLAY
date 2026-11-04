@@ -1,81 +1,90 @@
 /* ==========================================================================
-   KopiPlay - Premium Gaming Portal Design System
-   Exact Reference Palette: #101522 Background, #1B2435 Panels, #3B82F6 & #A855F7 Accents
+   KopiPlay - Premium Dark Navy Gaming Portal Design System
+   Exact Reference Palette: Dark Navy Background (#070A14), Dark Navy Sidebar (#090D1A)
+   Purple, Violet, Cyan & Blue Accents Matching Reference Image
    ========================================================================== */
 
 :root {
   /* Layout Dimensions */
-  --header-height: 64px;
-  --max-content-width: 1680px;
+  --header-height: 60px;
+  --sidebar-width: 240px;
+  --max-content-width: 100%;
 
-  /* Color Palette - User Reference Image Specification */
-  --bg-page: #101522;
-  --bg-card: #1B2435;
-  --bg-surface: #1B2435;
-  --bg-surface-hover: #222E44;
-  --bg-surface-active: #2A3854;
-  --bg-input: #151D2C;
-  --bg-input-focus: #1A2436;
+  /* Dark Navy Gaming Theme Palette (Matching Reference Image) */
+  --bg-page: #070A14;
+  --bg-page-alt: #0B0F1C;
+  --bg-sidebar: linear-gradient(180deg, #090D1A 0%, #0D1326 100%);
+  --bg-card: #0F172A;
+  --bg-surface: rgba(15, 23, 42, 0.75);
+  --bg-surface-hover: rgba(30, 41, 59, 0.85);
+  --bg-surface-active: rgba(51, 65, 85, 0.9);
+  --bg-input: rgba(15, 23, 42, 0.85);
+  --bg-input-focus: #1E293B;
 
-  /* Accents */
-  --accent-primary: #3B82F6;
-  --accent-primary-hover: #60A5FA;
-  --accent-primary-glow: rgba(59, 130, 246, 0.35);
+  /* Primary Accent: Purple & Violet */
+  --accent-primary: #7C3AED;
+  --accent-primary-hover: #6D28D9;
+  --accent-primary-light: #DDD6FE;
+  --accent-primary-glow: rgba(124, 58, 237, 0.45);
+  --accent-violet: #8B5CF6;
+  --accent-fuchsia: #A855F7;
 
-  --accent-secondary: #A855F7;
-  --accent-secondary-hover: #C084FC;
-  --accent-purple: #8B5CF6;
-  --accent-purple-glow: rgba(139, 92, 246, 0.4);
+  /* Secondary Accent: Electric Cyan & Bright Blue */
+  --accent-secondary: #06B6D4;
+  --accent-cyan: #22D3EE;
+  --accent-cyan-glow: rgba(34, 211, 238, 0.4);
+  --accent-blue: #2563EB;
+  --accent-blue-bright: #38BDF8;
 
-  --accent-coral: #FF4757;
-  --accent-amber: #F59E0B;
-  --accent-green: #10B981;
-  --accent-cyan: #06B6D4;
+  /* Highlights */
+  --accent-yellow: #FACC15;
+  --accent-green: #22C55E;
+  --accent-coral: #F43F5E;
 
   /* Gradients */
-  --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
-  --purple-gradient: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
-  --purple-gradient-hover: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
-  --card-overlay-gradient: linear-gradient(180deg, rgba(16, 21, 34, 0) 40%, rgba(16, 21, 34, 0.88) 100%);
+  --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
+  --purple-gradient: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
+  --cyan-gradient: linear-gradient(135deg, #06B6D4 0%, #38BDF8 100%);
+  --hero-gradient: linear-gradient(135deg, #240740 0%, #3E1066 28%, #1D184E 62%, #080D1D 100%);
+  --card-overlay-gradient: linear-gradient(180deg, rgba(7, 10, 20, 0) 50%, rgba(7, 10, 20, 0.9) 100%);
 
   /* Typography Colors */
-  --text-primary: #F8FAFC;
-  --text-secondary: #A7B0C0;
-  --text-muted: #7A869E;
-  --text-light: #4E5970;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-light: #E2E8F0;
   --text-on-accent: #FFFFFF;
 
   /* Borders & Dividers */
-  --border-subtle: #2B3548;
-  --border-card: #2B3548;
-  --border-card-hover: #8B5CF6;
-  --border-focus: #3B82F6;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --border-card-hover: rgba(34, 211, 238, 0.5);
+  --border-focus: #8B5CF6;
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Shadows - Reference Portal Elevation */
-  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 3px 8px rgba(0, 0, 0, 0.45);
-  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.35);
-  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.55), 0 0 16px rgba(139, 92, 246, 0.25);
-  --shadow-dropdown: 0 18px 45px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 24px rgba(139, 92, 246, 0.35);
+  /* Shadows - Modern Soft Elevation */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 10px 28px rgba(6, 182, 212, 0.35);
+  --shadow-dropdown: 0 16px 36px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 24px rgba(124, 58, 237, 0.45);
 
-  /* Border Radii - Rounded Gaming Aesthetic */
+  /* Border Radii */
   --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 22px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
   /* Transitions */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-normal: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Base Reset */
@@ -100,6 +109,7 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -131,8 +141,8 @@ img {
 
 /* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -140,12 +150,12 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2B3548;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: rgba(168, 85, 247, 0.5);
 }
 
 /* Prevent horizontal overflow */
@@ -161,32 +171,35 @@ body.mobile-sidebar-open {
   touch-action: none;
 }
 
-/* Full-Width App Layout Matching Reference */
+/* App Layout - Desktop Fixed Left Sidebar + Main Content */
 .app-layout {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
   width: 100%;
   max-width: 100vw;
+  background-color: var(--bg-page);
   overflow-x: hidden;
+  position: relative;
 }
 
 .app-main-wrapper {
   flex: 1;
-  width: 100%;
-  max-width: 100vw;
+  width: calc(100% - var(--sidebar-width));
+  max-width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-left: 0 !important;
+  background-color: var(--bg-page);
+  box-sizing: border-box;
+  transition: margin-left var(--transition-normal);
 }
 
 .main-content {
   flex: 1;
   width: 100%;
-  max-width: var(--max-content-width);
-  margin: 0 auto;
-  padding: 24px 28px 60px;
+  max-width: 100%;
+  padding: 14px 18px 40px;
   box-sizing: border-box;
 }
 
@@ -207,33 +220,37 @@ body.mobile-sidebar-open {
   user-select: none;
 }
 
+.btn-primary,
 .btn-purple {
   background: var(--purple-gradient);
   color: #FFFFFF;
-  box-shadow: 0 4px 18px var(--accent-purple-glow);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45);
+  border: 1px solid rgba(216, 180, 254, 0.4);
 }
 
+.btn-primary:hover,
 .btn-purple:hover {
-  background: var(--purple-gradient-hover);
+  background: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
 }
 
 .btn-secondary {
   background: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn-secondary:hover {
   background: var(--bg-surface-hover);
-  border-color: var(--accent-primary);
-  color: #FFFFFF;
+  border-color: var(--accent-secondary);
+  color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
-/* Tactile 3D Keycap */
+/* Tactile Keycap for Game Controls */
 .keycap {
   display: inline-flex;
   align-items: center;
@@ -244,10 +261,10 @@ body.mobile-sidebar-open {
   font-family: var(--font-heading);
   font-size: 0.76rem;
   font-weight: 800;
-  color: #F8FAFC;
-  background: #1B2435;
-  border: 1px solid #2B3548;
-  border-bottom: 3px solid #0F1624;
+  color: var(--text-primary);
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-bottom: 2.5px solid #94A3B8;
   border-radius: 6px;
   user-select: none;
   text-transform: uppercase;

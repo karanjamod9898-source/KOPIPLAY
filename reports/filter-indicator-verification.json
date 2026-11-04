@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-03T13:33:46.875Z",
+  "passedTotal": 12,
+  "failedTotal": 0,
+  "tests": [
+    {
+      "name": "Initial indicator is hidden on All Games",
+      "passed": true,
+      "details": "{\"hasIndicator\":true,\"indicatorDisplay\":\"none\",\"hasLegacyHeader\":false,\"hasPokiBanner\":false}"
+    },
+    {
+      "name": "Oversized legacy header and banner are not displayed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Indicator appears with display: flex on category selection",
+      "passed": true,
+      "details": "Visible: true"
+    },
+    {
+      "name": "Indicator height is compact between 35px and 45px",
+      "passed": true,
+      "details": "Actual height: 42px"
+    },
+    {
+      "name": "Left side contains Category Name and Game Count separated by dot",
+      "passed": true,
+      "details": "Strategy Games · 8 Games"
+    },
+    {
+      "name": "Right side has Clear Filter button",
+      "passed": true,
+      "details": "Text: Clear Filter"
+    },
+    {
+      "name": "No oversized white banner inside grid",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Strategy cards correctly filtered (8 games)",
+      "passed": true,
+      "details": "Cards: 8"
+    },
+    {
+      "name": "Category indicator updates dynamically to Action Games (35 Games)",
+      "passed": true,
+      "details": "{\"catName\":\"Action Games\",\"count\":\"35 Games\",\"cards\":35}"
+    },
+    {
+      "name": "Clear Filter hides the indicator and restores All 187 Games",
+      "passed": true,
+      "details": "{\"display\":\"none\",\"cards\":187,\"allActive\":true}"
+    },
+    {
+      "name": "Mobile (375px) indicator has compact height (35-42px)",
+      "passed": true,
+      "details": "Actual height: 38px"
+    },
+    {
+      "name": "Mobile (375px) has ZERO horizontal page overflow",
+      "passed": true,
+      "details": "docW: 375, scrollW: 375"
+    }
+  ]
+}

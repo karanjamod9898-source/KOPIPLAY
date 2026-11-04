@@ -2,6 +2,116 @@
 // Brand: KopiPlay
 window.KOPI_CATALOG = window.KIPO_CATALOG = window.NEXUS_CATALOG = [
   {
+    "id": "jungle-dash-3d",
+    "title": "Jungle Dash 3D",
+    "slug": "jungle-dash-3d",
+    "aliases": [
+      "jungle-dash",
+      "jungle-runner-3d",
+      "temple-jungle-dash"
+    ],
+    "category": "Adventure",
+    "secondaryCategory": "Action",
+    "thumbnail": "assets/images/games/jungle-dash-3d.jpg",
+    "fallbackThumbnail": "assets/images/games/default-game.svg",
+    "description": "Sprint, leap, and slide through uncharted tropical jungles and ancient stone temples! Dodge fallen logs, giant stone idol heads, and dangerous hanging vines. Collect spinning gold coins and blue gems across 5 exotic worlds!",
+    "gameUrl": "games/jungle-dash-3d/index.html",
+    "embedAllowed": true,
+    "controls": "A/D or Left/Right Arrow to switch lanes. W or Up Arrow or Space to jump. S or Down Arrow to slide. Mobile: Swipe Left/Right/Up/Down. Escape to pause.",
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "badge": "NEW",
+    "technology": "WebGL / Three.js 3D",
+    "controlsType": "Keyboard, Swipe & Touch",
+    "tags": [
+      "Adventure",
+      "Action",
+      "3D",
+      "Runner",
+      "Endless Runner",
+      "Jungle",
+      "Temple",
+      "Coins"
+    ],
+    "developer": "KopiPlay Studios",
+    "instructions": "Navigate the 3-lane ancient stone bridge. Leap over fallen mossy logs and slide under low temple archways. Collect golden coins and blue gems to unlock legendary explorer outfits in the shop!",
+    "releaseDate": "2026-11-04",
+    "isAuthorized": true
+  },
+  {
+    "id": "crazy-bumper-arena",
+    "title": "Crazy Bumper Arena",
+    "slug": "crazy-bumper-arena",
+    "aliases": [
+      "crazy-bumper-arena-3d",
+      "bumper-car-battle",
+      "bumper-cars-3d"
+    ],
+    "category": "Arcade",
+    "thumbnail": "assets/images/games/crazy-bumper-arena.jpg",
+    "fallbackThumbnail": "assets/images/games/default-game.svg",
+    "description": "Smash, bash, and dominate the battleground in Crazy Bumper Arena! Drive customized 3D bumper cars, slam into 5 AI rivals, collect nitro boosts and shields, outlast the match timer, and conquer all 5 vibrant arena battlegrounds!",
+    "gameUrl": "games/crazy-bumper-arena/index.html",
+    "embedAllowed": true,
+    "controls": "WASD or Arrow Keys to steer and accelerate. Spacebar to unleash collected Power-Ups (Nitro, Super Bumper, Shield, Magnet, Shockwave). Escape to pause.",
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "badge": "NEW",
+    "technology": "WebGL / Three.js 3D",
+    "controlsType": "Keyboard, Mouse & Touch",
+    "tags": [
+      "Arcade",
+      "Racing",
+      "3D",
+      "Cars",
+      "Battle",
+      "Action",
+      "Multiplayer",
+      "Physics"
+    ],
+    "developer": "KopiPlay Studios",
+    "instructions": "Choose your bumper car in the 3D garage. Navigate the arena, ram opponents with high-speed elastic collisions, and collect gold coins and mystery power-up orbs. Avoid getting your bumper armor destroyed before the match timer expires!",
+    "releaseDate": "2026-11-04",
+    "isAuthorized": true
+  },
+  {
+    "id": "tower-builder",
+    "title": "Tower Builder",
+    "slug": "tower-builder",
+    "aliases": [
+      "tower-builder-3d",
+      "tower-stack-3d"
+    ],
+    "category": "Arcade",
+    "thumbnail": "assets/images/games/tower-builder.svg",
+    "fallbackThumbnail": "assets/images/games/default-game.svg",
+    "description": "Stack moving 3D blocks with precision timing to construct the tallest skyscraper. Slice overhangs, chain perfect placements, trigger combo multipliers, and reach the stratosphere in this addictive arcade classic!",
+    "gameUrl": "games/tower-builder/index.html",
+    "embedAllowed": true,
+    "controls": "Spacebar or Left Click / Touch Tap to drop the moving block. Align with the previous layer for perfect placement combos.",
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "badge": "NEW",
+    "technology": "WebGL / Three.js 3D",
+    "controlsType": "Mouse, Touch & Keyboard",
+    "tags": [
+      "Arcade",
+      "3D",
+      "Tower",
+      "Stacking",
+      "Physics",
+      "Skill",
+      "Casual"
+    ],
+    "developer": "KopiPlay Studios",
+    "instructions": "Time your drops accurately as the moving 3D block slides across the tower. Any overhanging portion is sliced off by gravity. Consecutive perfect drops reward you with ascending musical chime combos and block size expansion!",
+    "releaseDate": "2026-11-04",
+    "isAuthorized": true
+  },
+  {
     "id": "neon-racer-02",
     "title": "Neon Horizon: Cyber Racer",
     "slug": "neon-racer",
@@ -4955,184 +5065,5 @@ window.KOPI_CATALOG = window.KIPO_CATALOG = window.NEXUS_CATALOG = [
     "instructions": "Shoot up bubbles and match 3 or more of the same bubbles.",
     "releaseDate": "2026-04-29",
     "isAuthorized": true
-  }
-];
-
-window.KOPI_CATEGORIES = window.KIPO_CATEGORIES = window.NEXUS_CATEGORIES = [
-  {
-    "id": "shooting",
-    "name": "Shooting",
-    "slug": "shooting",
-    "icon": "crosshair",
-    "description": "Adrenaline-fueled target shootouts, space combat, and alien battles.",
-    "color": "#ef4444"
-  },
-  {
-    "id": "action",
-    "name": "Action",
-    "slug": "action",
-    "icon": "sword",
-    "description": "Fast-paced reflex action, martial arts combat, and explosive missions.",
-    "color": "#f97316"
-  },
-  {
-    "id": "adventure",
-    "name": "Adventure",
-    "slug": "adventure",
-    "icon": "compass",
-    "description": "Labyrinth dungeon quests, crystal collection, and mystery escapes.",
-    "color": "#f59e0b"
-  },
-  {
-    "id": "racing",
-    "name": "Racing",
-    "slug": "racing",
-    "icon": "flag",
-    "description": "High-speed competitive racing, mega-ramp descents, and drift tracks.",
-    "color": "#3b82f6"
-  },
-  {
-    "id": "car",
-    "name": "Car",
-    "slug": "car",
-    "icon": "car",
-    "description": "Highway cruisers, monster trucks, sports cars, and city driving.",
-    "color": "#2563eb"
-  },
-  {
-    "id": "driving",
-    "name": "Driving",
-    "slug": "driving",
-    "icon": "steering",
-    "description": "Realistic vehicular driving, parking challenges, and traffic survival.",
-    "color": "#6366f1"
-  },
-  {
-    "id": "sports",
-    "name": "Sports",
-    "slug": "sports",
-    "icon": "basketball",
-    "description": "Arcade basketball shootouts, tennis cups, and athletic challenges.",
-    "color": "#10b981"
-  },
-  {
-    "id": "football",
-    "name": "Football",
-    "slug": "football",
-    "icon": "soccer",
-    "description": "Penalty shootouts, free kicks, stadium tournaments, and soccer fun.",
-    "color": "#059669"
-  },
-  {
-    "id": "puzzle",
-    "name": "Puzzle",
-    "slug": "puzzle",
-    "icon": "puzzle",
-    "description": "Mind-bending logic puzzles, sliding blocks, match-3, and brain teasers.",
-    "color": "#8b5cf6"
-  },
-  {
-    "id": "strategy",
-    "name": "Strategy",
-    "slug": "strategy",
-    "icon": "shield",
-    "description": "Tower defense tactics, fortress sieges, and strategic board battles.",
-    "color": "#a855f7"
-  },
-  {
-    "id": "platform",
-    "name": "Platform",
-    "slug": "platform",
-    "icon": "layers",
-    "description": "Precision platform jumping, retro obstacle runners, and vertical climbs.",
-    "color": "#ec4899"
-  },
-  {
-    "id": "multiplayer",
-    "name": "Multiplayer",
-    "slug": "multiplayer",
-    "icon": "users",
-    "description": "Competitive head-to-head showdowns, 2-player battles, and arena fun.",
-    "color": "#06b6d4"
-  },
-  {
-    "id": "arcade",
-    "name": "Arcade",
-    "slug": "arcade",
-    "icon": "gamepad",
-    "description": "Golden age retro arcade machines, neon brick breakers, and snake runners.",
-    "color": "#14b8a6"
-  },
-  {
-    "id": "simulation",
-    "name": "Simulation",
-    "slug": "simulation",
-    "icon": "cpu",
-    "description": "Kitchen chef management, farm simulators, and hands-on scenarios.",
-    "color": "#eab308"
-  },
-  {
-    "id": "casual",
-    "name": "Casual",
-    "slug": "casual",
-    "icon": "smile",
-    "description": "Instant-play stress-free games designed for quick pick-up-and-play fun.",
-    "color": "#0ea5e9"
-  },
-  {
-    "id": "kids-games",
-    "name": "Kids Games",
-    "slug": "kids-games",
-    "icon": "heart",
-    "description": "Family-friendly colorful adventures, cute pets, and creative puzzles.",
-    "color": "#f43f5e"
-  },
-  {
-    "id": "beauty",
-    "name": "Beauty",
-    "slug": "beauty",
-    "icon": "sparkles",
-    "description": "Princess makeovers, high-fashion dress up, and runway styling.",
-    "color": "#d946ef"
-  },
-  {
-    "id": "pool",
-    "name": "Pool",
-    "slug": "pool",
-    "icon": "circle-dot",
-    "description": "8-ball billiards, snooker trick shots, and classic carrom table boards.",
-    "color": "#10b981"
-  },
-  {
-    "id": "board-games",
-    "name": "Board Games",
-    "slug": "board-games",
-    "icon": "grid",
-    "description": "Classic tabletop ludo, dominoes, chess, and ancient mahjong solitaire.",
-    "color": "#f59e0b"
-  },
-  {
-    "id": "card-games",
-    "name": "Card Games",
-    "slug": "card-games",
-    "icon": "cards",
-    "description": "Klondike, spider solitaire, freecell, pyramid, and trick-taking cards.",
-    "color": "#6366f1"
-  },
-  {
-    "id": "clicker",
-    "name": "Clicker",
-    "slug": "clicker",
-    "icon": "mouse-pointer",
-    "description": "Satisfying tap-and-click incremental progression and rapid-reaction games.",
-    "color": "#f97316"
-  },
-  {
-    "id": "io-games",
-    "name": ".io Games",
-    "slug": "io-games",
-    "icon": "globe",
-    "description": "Arena survival score-chasers and fast-paced multiplayer-style action.",
-    "color": "#06b6d4"
   }
 ];

@@ -1,0 +1,288 @@
+{
+  "timestamp": "2026-11-03T11:30:01.231Z",
+  "passedTotal": 56,
+  "failedTotal": 0,
+  "tests": [
+    {
+      "name": "Main Background is #F8FAFC",
+      "passed": true,
+      "details": "rgb(248, 250, 252)"
+    },
+    {
+      "name": "Card Background is #FFFFFF",
+      "passed": true,
+      "details": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "Hero Heading: \"Play Free Online Games\"",
+      "passed": true,
+      "details": "Play Free Online Games"
+    },
+    {
+      "name": "Hero Description match",
+      "passed": true,
+      "details": "Discover and play hundreds of exciting online games for free."
+    },
+    {
+      "name": "Hero Prominent Search Bar Exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ALL 187 Games Displayed Directly on Homepage",
+      "passed": true,
+      "details": "Count: 187"
+    },
+    {
+      "name": "All 187 Card Links point to #/game/:slug",
+      "passed": true,
+      "details": "187/187"
+    },
+    {
+      "name": "All 187 Card Thumbnails configured with valid image URLs",
+      "passed": true,
+      "details": "187/187"
+    },
+    {
+      "name": "All 187 Card Titles present and rendered",
+      "passed": true,
+      "details": "187/187"
+    },
+    {
+      "name": "Category Click Filters Directly on Homepage (Hero intact)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Active Button updated to \"action\"",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Action Games Count Filtered (35 games)",
+      "passed": true,
+      "details": "Count: 35"
+    },
+    {
+      "name": "Section Title normalized to \"Action Games\"",
+      "passed": true,
+      "details": "Action Games"
+    },
+    {
+      "name": "\"All Games\" Restores All 187 Games Directly",
+      "passed": true,
+      "details": "Count: 187"
+    },
+    {
+      "name": "Section Title restores to \"All Games\"",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Live Search Filters Games on Grid",
+      "passed": true,
+      "details": "Count: 6"
+    },
+    {
+      "name": "Search Title shows query",
+      "passed": true,
+      "details": "Search: \"racing\""
+    },
+    {
+      "name": "Search Clear Button becomes visible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Clearing Search Restores All 187 Games",
+      "passed": true,
+      "details": "Count: 187"
+    },
+    {
+      "name": "Game Player Iframe Loaded with Valid Embed URL",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Fullscreen Overlay Button Present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Favorite Button Present on Player Stage",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Share Button Present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Game Title Rendered Correctly",
+      "passed": true,
+      "details": "Neon Horizon: Cyber Racer"
+    },
+    {
+      "name": "Related Games Strip Displays 5 Cards",
+      "passed": true,
+      "details": "Count: 5"
+    },
+    {
+      "name": "Meta Card Background is White #FFFFFF",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Favorite Toggle Works and Updates Header Badge",
+      "passed": true,
+      "details": "Badge: 1"
+    },
+    {
+      "name": "Legal Page \"#/about\" Renders Cleanly",
+      "passed": true,
+      "details": "Play Instantly. Discover More."
+    },
+    {
+      "name": "Legal Page \"#/contact\" Renders Cleanly",
+      "passed": true,
+      "details": "We'd Love to Hear From You"
+    },
+    {
+      "name": "Legal Page \"#/privacy\" Renders Cleanly",
+      "passed": true,
+      "details": "Privacy Policy"
+    },
+    {
+      "name": "Legal Page \"#/terms\" Renders Cleanly",
+      "passed": true,
+      "details": "Terms & Conditions"
+    },
+    {
+      "name": "Legal Page \"#/disclaimer\" Renders Cleanly",
+      "passed": true,
+      "details": "Website Disclaimer"
+    },
+    {
+      "name": "Legal Page \"#/dmca\" Renders Cleanly",
+      "passed": true,
+      "details": "DMCA & Copyright Policy"
+    },
+    {
+      "name": "Viewport Large Desktop 1920px: 6 Columns",
+      "passed": true,
+      "details": "Cols: 6"
+    },
+    {
+      "name": "Viewport Large Desktop 1920px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 1912px, Win: 1920px"
+    },
+    {
+      "name": "Viewport Large Desktop 1440px: 6 Columns",
+      "passed": true,
+      "details": "Cols: 6"
+    },
+    {
+      "name": "Viewport Large Desktop 1440px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 1432px, Win: 1440px"
+    },
+    {
+      "name": "Viewport Laptop 1366px: 5 Columns",
+      "passed": true,
+      "details": "Cols: 5"
+    },
+    {
+      "name": "Viewport Laptop 1366px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 1358px, Win: 1366px"
+    },
+    {
+      "name": "Viewport Laptop 1280px: 5 Columns",
+      "passed": true,
+      "details": "Cols: 5"
+    },
+    {
+      "name": "Viewport Laptop 1280px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 1272px, Win: 1280px"
+    },
+    {
+      "name": "Viewport Tablet 1024px: 4 Columns",
+      "passed": true,
+      "details": "Cols: 4"
+    },
+    {
+      "name": "Viewport Tablet 1024px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 1016px, Win: 1024px"
+    },
+    {
+      "name": "Viewport Tablet 768px: 3 or 4 Columns",
+      "passed": true,
+      "details": "Cols: 4"
+    },
+    {
+      "name": "Viewport Tablet 768px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 768px, Win: 768px"
+    },
+    {
+      "name": "Viewport Mobile 430px: 2 Columns",
+      "passed": true,
+      "details": "Cols: 2"
+    },
+    {
+      "name": "Viewport Mobile 430px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 430px, Win: 430px"
+    },
+    {
+      "name": "Viewport Mobile 390px: 2 Columns",
+      "passed": true,
+      "details": "Cols: 2"
+    },
+    {
+      "name": "Viewport Mobile 390px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 390px, Win: 390px"
+    },
+    {
+      "name": "Viewport Mobile 375px: 2 Columns",
+      "passed": true,
+      "details": "Cols: 2"
+    },
+    {
+      "name": "Viewport Mobile 375px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 375px, Win: 375px"
+    },
+    {
+      "name": "Viewport Mobile 320px: 2 Columns",
+      "passed": true,
+      "details": "Cols: 2"
+    },
+    {
+      "name": "Viewport Mobile 320px: ZERO Horizontal Overflow",
+      "passed": true,
+      "details": "Doc: 320px, Win: 320px"
+    },
+    {
+      "name": "ADS_ENABLED = false confirmed in window.KOPI",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Zero Visible Ad Containers in DOM",
+      "passed": true,
+      "details": "Count: 0"
+    },
+    {
+      "name": "Zero Browser Console Errors",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "consoleErrors": []
+}
